@@ -1,0 +1,17 @@
+:root{
+    --text-light-color:#fffffe;
+    --text-dark-color:#0d0d0d;
+    --card-bg-color:#eff0f3;
+    --primary-color:#ff8e3c;
+    --secondary-color:#d9376e;
+}
+html{
+    font-size: 62.5%;
+}
+  
+body{
+      font-family: 'Roboto', sans-serif;
+      font-size:  1.6rem;
+      line-height: 1.5;
+      text-rendering: optimizeSpeed;
+}
