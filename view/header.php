@@ -41,12 +41,12 @@
                         <li class="nav-item me-3 d-flex justify-content-between mb-5 mb-lg-0 py-5 py-lg-0 nav-sm">
                             <a class="py-5 py-lg-0 nav-link active text-upercase fw-bold fs-2 text-dark"
                                 aria-current="page" href="#">Thực đơn</a>
-                            <img src="../../public/img/slider3.jpg" alt="..." class="d-lg-none w-30 rounded-3 ms-3">
+                            <img src="../public/img/slider3.jpg" alt="..." class="d-lg-none w-30 rounded-3 ms-3">
                         </li>
                         <li class="nav-item me-3  d-flex justify-content-between mb-5 mb-lg-0 py-5 py-lg-0 nav-sm">
                             <a class="py-5 py-lg-0 nav-link active text-upercase fw-bold fs-2 text-dark"
                                 aria-current="page" href="#">Khuyến mãi</a>
-                            <img src="../../public/img/slider3.jpg" alt="..." class="d-lg-none w-30 rounded-3 ms-3">
+                            <img src="../public/img/slider3.jpg" alt="..." class="d-lg-none w-30 rounded-3 ms-3">
                         </li>
                     </ul>
                     <div class="w-50 d-lg-flex d-none d-lg-block" style="height:30px;">
@@ -64,7 +64,7 @@
                     <li class="nav-item me-3 d-flex justify-content-between mb-5 mb-lg-0 py-5 py-lg-0 nav-sm d-lg-none">
                         <a class="py-5 py-lg-0 nav-link active text-upercase fw-bold fs-2 text-dark" aria-current="page"
                             href="#">Giỏ hàng</a>
-                        <img src="../../public/img/cart.jpg" alt="..." class="d-lg-none w-25 h-25 rounded-3 ms-3">
+                        <img src="../public/img/cart.jpg" alt="..." class="d-lg-none w-25 h-25 rounded-3 ms-3">
                     </li>
                 </div>
             </div>
