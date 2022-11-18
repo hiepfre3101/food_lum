@@ -1,0 +1,214 @@
+ /*  Css product_detail */
+.container{
+    width: 100%;
+    height: 100%;
+}
+.breadcrumb{
+    background-color: white;
+}
+.breadcrumb-item{
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-weight: 400px;
+    font-size: 13px;
+    line-height: 20px;
+    color: #78838c;
+}
+.frames{
+    width: 80%;
+    margin: auto;
+    margin-top: 10% ;
+    border-radius: 3%;
+    border: solid lightgray;
+    box-shadow: 0px 0 10px 3px lightgrey;
+}
+.font{
+    margin: 7%;
+    font-family: Oswald, sans-serif;
+    font-size: 32px;
+    font-weight: 700;
+    line-height: 38px;
+    color: #202124;
+}
+.font1{
+    margin: 7%;
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-size: 15px;
+    font-weight: 400;
+    line-height: 20px;
+    color: #78838c;
+}
+.bt{
+    width: 90%;
+    margin-left: 5%;
+    background-color: #E4002B;
+    border: none;
+    border-radius: 20px;
+    padding-top: 7px;
+    padding-bottom: 7px;
+    color: #FFFF;
+    font-size: 20px;
+    font-weight: bold;
+  
+}
+.img1{
+    padding-top: 10%;
+    width: 80%;
+    margin-left: 10%;
+}
+.hr1{
+    width: 90%;
+}
+.m{
+    margin-left: 7%;
+    font-family: Oswald, sans-serif;
+    font-size: 24px;
+    font-weight: 700;
+    line-height: 38px;
+    color: #202124;
+}
+.p{
+    margin-left: 7%;
+    font-family: Oswald, sans-serif;
+    font-size: 20px;
+    font-weight: 700;
+    line-height: 38px;
+    color: gray;
+}
+.price1{
+    color: red;
+}
+/* .il{
+    width: 55%;
+} */
+.sl{
+    margin-left: 7%;
+    font-family: Oswald, sans-serif;
+    font-size: 20px;
+    font-weight: 700;
+    line-height: 38px;
+    color: gray;
+    margin-right: 5%;
+}
+.form-control{
+    width: 20px;
+}
+.btn{
+    height: 50%;
+}
+/* css binh luan */
+.container-comment{
+    width: 100%;
+    height: 100%;
+    margin: 20px;
+    padding: 20px;
+    /* border: solid gray; */
+    box-shadow: 0px 0 10px 3px lightgrey;
+}
+.dg{
+    font-family: Oswald, sans-serif;
+}
+.container-star{
+    width: 100%;
+    height: 100%;
+    border: solid 1px #F9EDE5;
+    background-color: #FFFBF8;
+    padding-bottom: 100px;
+}
+.star{
+    margin: 30px 30px 30px 30px;
+    float: left;
+}
+.s{
+    font-family: Oswald, sans-serif;
+}
+.ad{
+    font-family: Oswald, sans-serif;
+    font-size: 20px;
+}
+.fa-solid {
+    color: #EE4D2D;
+}
+.fa-regular{
+    color: #EE4D2D;
+}
+.star1{
+    margin-top : 30px;
+    
+}
+.s{
+    margin: 5px;
+    padding: 3px 30px 5px ;
+    background-color: white;
+}
+.comment{
+    margin: 20px;
+}
+.img2{
+    width: 5%;
+    border-radius: 50%; 
+    float: left;
+    
+}
+
+.comment-left{
+    width: 100%;
+    height: 100%;
+   
+}
+.comment-right{
+   padding-left: 6%;
+  
+}
+.name{
+    font-size: 15px;
+    font-family: "Helvetica Neue", Helvetica, Arial, 文泉驛正黑, "WenQuanYi Zen Hei", "Hiragino Sans GB", "儷黑 Pro", "LiHei Pro", "Heiti TC", 微軟正黑體, "Microsoft JhengHei UI", "Microsoft JhengHei", sans-serif;;
+    font-weight: normal;
+    line-height: 14px;
+}
+.star2{
+    font-size: 10px;
+   
+}
+.date{
+    margin-top: 15px;
+}
+.comment-user{
+    font-size: 17px;
+    font-family: "Helvetica Neue", Helvetica, Arial, 文泉驛正黑, "WenQuanYi Zen Hei", "Hiragino Sans GB", "儷黑 Pro", "LiHei Pro", "Heiti TC", 微軟正黑體, "Microsoft JhengHei UI", "Microsoft JhengHei", sans-serif;;
+    font-weight: normal;
+    line-height: 14px;
+    margin: 15px 0 15px 0;
+}
+.img3{
+    width: 20%;
+    height: 15%;
+}
+/* Css sản phẩm cùng loại */
+.spcl{
+    width: 100%;
+    height: 100%;
+    margin-bottom: 20px;
+    padding-left: 30px;
+}
+.container-spcl{
+    width: 30%;
+    height: 20%;
+    box-shadow: 0px 0 10px 3px lightgrey;
+    border-radius: 5px;
+    float: left;
+    margin-right: 35px;
+}
+.img4{
+    width: 65%;
+    height: 50%;
+    margin: 20px 0 0 50px;
+
+}
+.name-sp{
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;    
+    font-weight: 700;
+    font-size: 18px;
+    line-height: 20px;
+   margin: 20px 0 10px 50px;
+   padding-bottom: 30px;
+}
