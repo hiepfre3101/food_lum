@@ -1,0 +1,72 @@
+/* Bên phải */
+.card-title{
+    font-size: 32px;
+    font-family: Oswald, sans-serif;
+    font-weight: 700;
+    line-height: 38px;
+    color: #202124;
+    margin-top: 10%;
+}
+.card-title1{
+    font-size: 18px;
+    font-family: Oswald, sans-serif;
+    font-weight: 700;
+    line-height: 20px;
+    color: #202124;
+    margin-top: 10%;
+}
+.form-label{
+    font-size: 16px;
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-weight: 400px;
+    line-height: 17px;
+    color: #202124;
+}
+form{
+    margin-top: 7%;
+}
+.form-control{
+    height: 30px;
+    border: none;
+    border-bottom: 1px solid #cdcdcd;
+}
+.dangnhap{
+    background-color: #28A745;
+    color: white;
+    font-size: 15px;
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-weight: 700;
+    line-height: 20px;
+    padding: 12px 0px 12px 0px;
+    border-radius: 20px;
+}
+.dangky{
+    background-color: #CD0027;
+    color: white;
+    font-size: 15px;
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-weight: 700;
+    line-height: 20px;
+    padding: 12px 0px 12px 0px;
+    border-radius: 20px;
+}
+.btn-facebook{
+    background-color: #355089;
+    color: white;
+    font-size: 15px;
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-weight: 700;
+    line-height: 20px;
+    padding: 12px 0px 12px 0px;
+    border-radius: 20px;
+}
+.btn-google{
+    background-color: #CD0027;
+    color: white;
+    font-size: 15px;
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-weight: 700;
+    line-height: 20px;
+    padding: 12px 0px 12px 0px;
+    border-radius: 20px;
+}

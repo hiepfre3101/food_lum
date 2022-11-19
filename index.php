@@ -20,6 +20,13 @@
        break;   
       case "cart":
        showClientCart();
-       break;   
+       break;  
+      case "cart-detail":
+         showClientCartDetail();
+         break;  
+      case "login":
+         showLogin();
+         break;
+            
    }
 ?>
