@@ -1,21 +1,7 @@
-<!DOCTYPE html>
-<html lang="en">
+<?php include_once ("./view/header.php")?>
 
-<head>
-  <!--Required meta tags-->
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <title>My Page Title</title>
-  <!--Bootstrap CSS-->
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet"
-    integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
-  <link rel="stylesheet" href="../css/base.css">
-  <link rel="stylesheet" href="../css/cart.css">
-  <script src="https://kit.fontawesome.com/93843dfad1.js" crossorigin="anonymous"></script>
-</head>
-
-<body>
-  <div class="container">
+<link rel="stylesheet" href="./public/css/cart.css">
+<div class="container">
     <div class="row">
       <div class="col-lg-8">
         <h4 class="card-title mb-4 ghct">GIỎ HÀNG CỦA TÔI</h4>
@@ -68,7 +54,7 @@
                         <option value="">Minh</option>
                         <option value="">Minh</option>
                       </select>
-                      <button class="ad" type="submit">Áp dụng</button>
+                      <button class="ad px-2" type="submit">Áp dụng</button>
                     </div>
                     <br>
                     <hr class="hr">
@@ -82,12 +68,48 @@
                   </div>
                 </div>
               </div>
-              
+              <div class="recomend w-100 p-4 h-50">
+        <h2 class="dg fw-semibold ">Sản phẩm tương tự</h2>
+        <div class="row">
+            <div class="col-md-4 col-6 position-relative">
+                <a href="#">
+                    <img class="img4" src="https://static.kfcvietnam.com.vn/images/items/lg/Chikoyaki_C.jpg?v=4pbPw3" alt="">
+                </a>
+                <a href="#" class="d-flex align-items-center justify-content-center p-3 position-absolute top-10 end-10 rounded-circle bg-primary h-15 w-10  text-white text-decoration-none">
+                    <span class="fw-semibold fs-3 ">+</span>
+                </a>
+                <div class="w-75 d-flex justify-content-around position-absolute bottom-0 flex-wrap">
+                    <p class="text-white fw-semibold">Gà Giòn Cay</p>
+                    <p class="text-white fw-semibold">60000</p>
+                </div>
             </div>
-
-            <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"
-              integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3"
-              crossorigin="anonymous"></script>
-</body>
-
-</html>
+            <!--  -->
+            <div class="col-md-4 col-6 position-relative mb-2">
+                <a href="#">
+                    <img class="img4" src="https://static.kfcvietnam.com.vn/images/items/lg/Chikoyaki_C.jpg?v=4pbPw3" alt="">
+                </a>
+                <a href="#" class="d-flex align-items-center justify-content-center p-3 position-absolute top-10 end-10 rounded-circle bg-primary h-15 w-10  text-white text-decoration-none">
+                    <span class="fw-semibold fs-3 ">+</span>
+                </a>
+                <div class="w-75 d-flex justify-content-around position-absolute bottom-0 flex-wrap">
+                    <p class="text-white fw-semibold">Gà Giòn Cay</p>
+                    <p class="text-white fw-semibold">60000</p>
+                </div>
+            </div>
+            <!--  -->
+            <div class="col-md-4 col-6 position-relative">
+                <a href="#">
+                    <img class="img4" src="https://static.kfcvietnam.com.vn/images/items/lg/Chikoyaki_C.jpg?v=4pbPw3" alt="">
+                </a>
+                <a href="#" class="d-flex align-items-center justify-content-center p-3 position-absolute top-10 end-10 rounded-circle bg-primary h-15 w-10  text-white text-decoration-none">
+                    <span class="fw-semibold fs-3 ">+</span>
+                </a>
+                <div class="w-75 d-flex justify-content-around position-absolute bottom-0 flex-wrap">
+                    <p class="text-white fw-semibold">Gà Giòn Cay</p>
+                    <p class="text-white fw-semibold">60000</p>
+                </div>
+            </div>
+        </div>
+    </div>
+            </div>
+<?php include_once ("./view/footer.php")?>
