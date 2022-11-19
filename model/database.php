@@ -9,25 +9,26 @@ try {
     echo $e->getMessage();
 }
 
+
 // thực thi câu lệnh truy vấn
-function connect($query)
-{
-    global $pdo;
-    $stmt = $pdo->prepare($query);
-    $stmt->execute();
-    return $stmt;
-}
+// function connect($query)
+// {
+//     global $pdo;
+//     $stmt = $pdo->prepare($query);
+//     $stmt->execute();
+//     return $stmt;
+// }
 
 // lấy ra tất cả dữ liệu
-function getAll($query)
-{
-    $data = connect($query)->fetchAll();
-    return $data;
-}
+// function getAll($query)
+// {
+//     $data = connect($query)->fetchAll();
+//     return $data;
+// }
 
 // lấy ra 1 bản gi;
-function getOnce($query)
-{
-    $data = connect($query)->fetch();
-    return $data;
-}
+// function getOnce($query)
+// {
+//     $data = connect($query)->fetch();
+//     return $data;
+// }
