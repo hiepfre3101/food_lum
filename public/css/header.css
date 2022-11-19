@@ -85,3 +85,9 @@
 .nav-link:hover::before {
    width: 100%;
 }
+.text-gray{
+    color: #747474 !important;
+}
+.btn-outline-white{
+    border: 1px solid white !important;
+}

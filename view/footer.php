@@ -15,24 +15,24 @@
       </div>
 
       <div class="col-md-3 col-lg-2 col-xl-2 mx-auto">
-        <h5>VỀ KFC</h5>
+        <h5>VỀ Foodlum</h5>
         <hr class="bg-white mb-2 mt-0 d-inline-block mx-auto w-25">
         <ul class="list-unstyled">
           <li><a href="">Câu Chuyện Của Chúng Tôi</a></li>
           <li><a href="">Tin Khuyến Mãi</a></li>
-          <li><a href="">Tin tức KFC</a></li>
+          <li><a href="">Tin tức Foodlum</a></li>
           <li><a href="">Tuyển dụng</a></li>
           <li><a href="">Đặt tiệc Sinh nhật</a></li>
         </ul>
       </div>
 
       <div class="col-md-3 col-lg-2 col-xl-2 mx-auto">
-        <h5>LIÊN HỆ KFC</h5>
+        <h5>LIÊN HỆ Foolum</h5>
         <hr class="bg-white mb-2 mt-0 d-inline-block mx-auto w-25">
         <ul class="list-unstyled">
           <li><a href="">Theo dõi đơn hàng</a></li>
           <li><a href="">Hệ Thống Nhà Hàng</a></li>
-          <li><a href="">Liên hệ KFC</a></li>
+          <li><a href="">Liên hệ Foolum</a></li>
         </ul>
       </div>
 
@@ -47,12 +47,12 @@
       </div>
 
     </div>
-    <p class="name">Copyright © 2022 KFC Vietnam</p>
+    <p class="name">Copyright © 2022 Foolum Vietnam</p>
     <hr color="white">
     <br>
     <div class="row">
       <div class="col-lg-6">
-        <p class="congty">CÔNG TY LIÊN DOANH TNHH KFC VIỆT NAM</p>
+        <p class="congty">FOODLUM VIỆT NAM</p>
         <p class="n">Số 292 Bà Triệu, P. Lê Đại Hành, Q. Hai Bà Trưng, TP. Hà Nội. <br>
           Điện thoại: (028) 38489828 <br>
           Mã số thuế: 0100773885 <br>

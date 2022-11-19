@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -71,6 +70,25 @@
             </div>
         </div>
     </nav>
+    <div class="container-fluid bg-dark py-4">
+    <div class="d-flex align-items-center justify-content-center">
+        <div class="w-60 justify-content-md-end d-flex flex-wrap justify-content-sm-start">
+            <div class="d-flex justify-content-end align-items-center h-100 me-3">
+                <i class="fa-solid fa-location-dot text-gray fs-4"></i>
+                <span class="ms-3 text-white fw-semibold fs-4">Giao hàng tận nơi: </span>
+                <span class="ms-3 text-white fw-semibold fs-4">Hà Đông</span>
+            </div>
+            <div class=" d-flex justify-content-start align-items-center">
+                <i class="fa-solid fa-clock text-gray fs-4"></i>
+                <span class="ms-2 text-white fw-semibold fs-4">Giao ngay</span>
+            </div>
+        </div>
+        <div class="ms-4 w-40 d-flex justify-content-xs-end align-items-center">
+            <button role="button" class=" rounded-5 text-white bg-transparent btn-outline-white px-3 py-2 fs-4 fw-bold">Thay
+                đổi</button>
+        </div>
+    </div>
+</div>
     <script>
         function changeCart(quantity){
             const countProduct = document.querySelector('.cart-after');

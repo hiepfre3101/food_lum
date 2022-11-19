@@ -89,9 +89,6 @@
     color: gray;
     margin-right: 5%;
 }
-.form-control{
-    width: 20px;
-}
 .btn{
     height: 50%;
 }
@@ -124,12 +121,6 @@
 .ad{
     font-family: Oswald, sans-serif;
     font-size: 20px;
-}
-.fa-solid {
-    color: #EE4D2D;
-}
-.fa-regular{
-    color: #EE4D2D;
 }
 .star1{
     margin-top : 30px;
@@ -199,10 +190,8 @@
     margin-right: 35px;
 }
 .img4{
-    width: 65%;
-    height: 50%;
-    margin: 20px 0 0 50px;
-
+   width: 100%;
+   border-radius: 5px;
 }
 .name-sp{
     font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;    
@@ -211,4 +200,41 @@
     line-height: 20px;
    margin: 20px 0 10px 50px;
    padding-bottom: 30px;
+}
+.w-40{
+    width: 40%;
+}
+.border-bold{
+    border: 2px solid var(--text-dark) !important;
+}
+.h-60{
+    height: 60%;
+}
+.text-white{
+    color: white;
+}
+.recomend{
+    border-radius: 15px;
+    background-color: var(--text-dark);
+}
+.top-25{
+    top:25%;
+}
+.top-10{
+    top:10%;
+}
+.end-10{
+  right: 10%;
+}
+.bg-primary{
+    background-color: var(--primary-color) !important;
+}
+.w-20{
+    width: 20%;
+}
+.h-15{
+    height: 15%;
+}
+.w-10{
+    width: 13%;
 }
