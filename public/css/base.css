@@ -39,4 +39,23 @@ body{
     background: #888;
     border-radius: 5px;
 }
-  
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+.outline-none{
+  outline: none !important;
+}
+.border-none{
+  border: none !important;
+}
+.w-60{
+  width: 60%;
+}
+.w-40{
+  width: 40%;
+}
+.w-30{
+  width: 30%;
+}
