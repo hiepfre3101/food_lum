@@ -18,5 +18,8 @@
       case "product-detail":
        showClientProductDetail();
        break;   
+      case "cart":
+       showClientCart();
+       break;   
    }
 ?>
