@@ -2,11 +2,11 @@
 // required model here ...
 require_once("./model/config.php");
 require_once("./model/database.php");
-require_once ("./model/m_category.php");
-require_once ("./model/m_category.php");
-require_once ("./model/m_product.php");
-require_once ("./model/m_user.php");
-require_once ("./model/m_cart.php");
+require_once("./model/m_category.php");
+require_once("./model/m_category.php");
+require_once("./model/m_product.php");
+require_once("./model/m_user.php");
+require_once("./model/m_cart.php");
 
 // require controller here...
 require_once("./controller/c_render.php");
@@ -30,8 +30,8 @@ switch ($ctr) {
         break;
         //ctr = "cart" cần id user nhưng đang đợi làm nốt!
     case "cart":
-        displayClientCart();
-        break;    
+        displayCart();
+        break;
     case "cart-detail":
         showClientCartDetail();
         break;
@@ -41,6 +41,8 @@ switch ($ctr) {
     case "sign-up":
         showSignup();
         break;
-     
+        // admin
+    case "":
+        
+        break;
 }
-?>
