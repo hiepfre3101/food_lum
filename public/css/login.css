@@ -15,23 +15,26 @@
     color: #202124;
     margin-top: 10%;
 }
-.form-label{
-    font-size: 16px;
-    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-    font-weight: 400px;
-    line-height: 17px;
-    color: #202124;
-}
-form{
-    margin-top: 7%;
-}
-.form-control{
+.form-input{
     height: 30px;
+    outline: none;
     border: none;
-    border-bottom: 1px solid #cdcdcd;
+    border-radius: 0;
+    border-bottom: 1px solid black;
+    transition: 0.3s ease-in-out; 
+    font-size:2rem;
+    box-shadow: none !important;
+}
+.form-input:focus{
+    border-bottom: 2px solid var(--secondary-color);
+}
+.ivalid{
+    color: red;
+    font-size: 1.2rem;
 }
 .dangnhap{
     background-color: #28A745;
+    border: 1px solid #28A745  !important;
     color: white;
     font-size: 15px;
     font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
@@ -42,6 +45,7 @@ form{
 }
 .dangky{
     background-color: #CD0027;
+    border: 1px solid #CD0027  !important;
     color: white;
     font-size: 15px;
     font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
@@ -52,6 +56,7 @@ form{
 }
 .btn-facebook{
     background-color: #355089;
+    border: 1px solid #355089  !important;
     color: white;
     font-size: 15px;
     font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
@@ -62,6 +67,7 @@ form{
 }
 .btn-google{
     background-color: #CD0027;
+    border: 1px solid #CD0027  !important;
     color: white;
     font-size: 15px;
     font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;

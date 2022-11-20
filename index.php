@@ -38,6 +38,9 @@ switch ($ctr) {
     case "login":
         showLogin();
         break;
-
+    case "sign-up":
+        showSignup();
+        break;
+     
 }
 ?>
