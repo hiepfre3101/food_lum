@@ -22,5 +22,9 @@ function showLogin()
 {
     render("login", [], 0);
 }
+function showSignup()
+{
+    render("signup", [], 0);
+}
 
 ?>

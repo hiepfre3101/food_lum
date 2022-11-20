@@ -1,6 +1,8 @@
 //Đối tượng validator
 function validator(object) {
-  const selectorRules = {}; //1 object lưu các rule cần thực hiện
+  const selectorRules = {}; //1 object lưu các rule cần thực hiện 
+                            //key: là các id input truyền vào
+                            // value : mảng các rule phải validate
   //Hàm thực hiện validate
   function validate(inputEle, rule) {
     let rules = selectorRules[rule.selector];
@@ -9,7 +11,7 @@ function validator(object) {
       erroMess = rules[i](inputEle.value);
       if (erroMess) break;
     }
-    const erroEle = inputEle.parentElement.querySelector(".form-message");
+    const erroEle = inputEle.parentElement.querySelector(object.erroSelector);
     if (erroMess) {
       erroEle.innerText = erroMess;
       erroEle.className += " ivalid";
@@ -35,7 +37,7 @@ function validator(object) {
         e.preventDefault();
       }
     };
-    //Gán từng rule vào mảng 'selectorRules[rule.selector]'
+    //Gán từng rule vào mảng 'selectorRules[rule.selector]' + xử lí onblur, oninput
     object.rules.map((rule) => {
       if (Array.isArray(selectorRules[rule.selector])) {
         selectorRules[rule.selector].push(rule.test);
@@ -49,7 +51,7 @@ function validator(object) {
         };
 
         inputEle.oninput = function () {
-          let errorEle = inputEle.parentElement.querySelector(".form-message");
+          let errorEle = inputEle.parentElement.querySelector(object.erroSelector);
           errorEle.innerText = "";
           inputEle.parentElement.classList.remove("invalid");
         };
