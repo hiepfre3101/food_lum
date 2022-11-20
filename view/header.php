@@ -58,9 +58,11 @@
                                 type="submit"><i class="fa-solid fa-magnifying-glass text-primary"></i> </button>
                         </form>
                         <i class="fa-solid fa-circle-user fs-1 px-3 d-none d-lg-block text-dark" role="button"></i>
-                        <i class="fa-solid fa-burger fs-1 cart text-dark" role="button">
-                            <div class="cart-after">0</div>
-                        </i>
+                        <a href="?ctr=cart" class="d-none d-lg-block">
+                            <i class="fa-solid fa-burger fs-1 cart text-dark" role="button">
+                                <div class="cart-after">0</div>
+                            </i>
+                        </a>
                     </div>
                     <li class="nav-item me-3 d-flex justify-content-between mb-5 mb-lg-0 py-5 py-lg-0 nav-sm d-lg-none">
                         <a class="py-5 py-lg-0 nav-link active text-upercase fw-bold fs-2 text-dark" aria-current="page"

@@ -217,3 +217,6 @@
 .btn-prev{
     margin-left: 11% !important;
 }
+.mh-50{
+    max-height: 50px !important;
+}
