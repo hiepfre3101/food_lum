@@ -26,14 +26,14 @@ include_once("./view/header.php");
                 </div>
             </a>
         </div>
-        <button class="carousel-control-prev position-absolute top-50 ms-5 translate-middle rounded-4 bg-overlay-dark h-10 w-10 btn-prev"
+        <button class="carousel-control-prev position-absolute top-50 ms-5 translate-middle rounded-4  h-10 w-10 btn-prev"
                 type="button" data-bs-target="#carouselHeroInterval" data-bs-slide="prev">
-            <span class="carousel-control-prev-icon text-white" aria-hidden="true"></span>
+            <span class="carousel-control-prev-icon text-white fs-1 fw-bold" aria-hidden="true"></span>
             <span class="visually-hidden">Previous</span>
         </button>
-        <button class="carousel-control-next top-50 end-0 translate-middle bg-overlay-dark rounded-4 h-10 w-10 float-end"
+        <button class="carousel-control-next top-50 end-0 translate-middle  rounded-4 h-10 w-10 float-end"
                 type="button" data-bs-target="#carouselHeroInterval" data-bs-slide="next">
-            <span class="carousel-control-next-icon text-white" aria-hidden="true"></span>
+            <span class="carousel-control-next-icon text-white fs-1 fw-bold" aria-hidden="true"></span>
             <span class="visually-hidden">Next</span>
         </button>
     </div>
@@ -66,12 +66,12 @@ include_once("./view/header.php");
             <span class="fw-semibold fs-1">CÓ THỂ BẠN SẼ THÍCH MÓN NÀY</span>
             <p class="title-line flex-fill"></p>
         </h1>
-        <!--hiển thị sản phẩm cũng là dùng đường dẫn ảnh tạm thời chỉnh sửa său-->
+        <!--hiển thị sản phẩm cũng là dùng đường dẫn ảnh tạm thời chỉnh sửa sau-->
         <div class="row">
             <?php foreach ($arrProduct as $value) { ?>
                 <div class="col-xxl-2 col-lg-3 col-6 col-sm-4 mb-5">
                     <div class="card w-100 shadow" style="width: 18rem;">
-                        <a class="overflow-hidden" href="#">
+                        <a class="overflow-hidden" href="?ctr=product-detail&&id=<?=$value['idpro']?>">
                             <img src="<?=$value['image']?>" class="card-img-top img-col" alt="...">
                         </a>
                         <div class="card-body">
@@ -79,7 +79,7 @@ include_once("./view/header.php");
                                 <h5 class="card-title fs-3 fw-bold"><?=$value['product_name']?></h5>
                                 <h5 class="card-title fs-3"><?=$value['product_price']?><span>đ</span></h5>
                             </div>
-                            <p class="card-text"><?=$value['descripton']?></p>
+                            <p class="card-text overflow-hidden mh-50"><?=$value['descripton']?><a href="?ctr=product-detail&&id=<?=$value['idpro']?>" class="fs-5">Xem chi tiết</a></p>
                             <a href="?ctr=product-detail&&id=<?=$value['idpro']?>" class="btn bg-secondary text-white rounded-6 fs-3 w-50 fw-semibold">Thêm</a>
                         </div>
                     </div>

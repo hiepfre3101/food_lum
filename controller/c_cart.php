@@ -6,3 +6,7 @@ function displayCart(){
     $arrCarrt = getCart();
     render("cart",["arrCart"=>$arrCarrt],0);
 }
+//xem cart mà không thêm sản phẩm nào
+function displayClientCart(){
+    render("cart",[],0);
+}

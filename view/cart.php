@@ -2,11 +2,9 @@
 
 <link rel="stylesheet" href="./public/css/cart.css">
 <div class="container">
+  <h4 class="card-title mb-4 ghct">GIỎ HÀNG CỦA TÔI</h4>
   <div class="row">
-    <div class="col-lg-8">
-      <h4 class="card-title mb-4 ghct">GIỎ HÀNG CỦA TÔI</h4>
-      <br>
-
+    <div class="col-lg-8 overflow-auto cart-wrapper">
       <div class="giohang">
         <img class="gh1" src="https://static.kfcvietnam.com.vn/images/items/lg/Pepsi-Can.jpg?v=30YRKL" alt="">
         <div class="tengh">
@@ -18,7 +16,6 @@
           <p class="pr">10000 <span>đ</span></p>
         </div>
         <div class="xn">
-          <a class="cn" href="">Chỉnh sửa</a>
           <a class="cn" href="">Xoá</a>
         </div>
       </div>
