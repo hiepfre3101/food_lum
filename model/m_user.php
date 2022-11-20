@@ -25,4 +25,13 @@ function updateUser($data=[])
     $stmt->execute($data);
 }
 
+function getAllDataUser(){
+    global $pdo;
+    $query = "SELECT * FROM user";
+    $stmt = $pdo->prepare($query);
+    $stmt->execute();
+    $result = $stmt->fetchAll();
+    return $result;
+}
+
 

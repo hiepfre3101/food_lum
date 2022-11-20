@@ -3,29 +3,30 @@
 <div class="container">
     <div class="row">
         <div class="col-lg-6 sp">
-            <img class="img1" src="https://static.kfcvietnam.com.vn/images/items/lg/1_Chikoyaki.jpg?v=ELErO4" alt="">
+            <img class="img1" src="<?= $product['image'] ?>" alt="">
         </div>
         <div class="col-lg-6 fo">
-            <div class="frames px-3">
-                <h3 class="font">1 MIẾNG GÀ CHIKOYAKI</h3>
-                <h6 class="font1">1 Miếng Gà Chikoyaki</h6>
-                <hr class="hr1">
-                <h4 class="m">MÓN CỦA BẠN</h4>
-                <p class="p">Giá: <strong class="price1"> 40000đ</strong></p>
-                <div class="input-group il">
-                    <p class="sl ">Số lượng: </p>
-                    <div class="d-flex w-50 justify-content-around">
-                        <span style="border:2px solid black" class="input-group-text btn p-4 rounded-circle fw-semibold d-flex align-items-center justify-content-center fs-3" onclick="this.parentNode.querySelector('input[type=number]').stepDown()"> - </span>
-                        <input type="number" value="1" class="outline-none border-none shadow-none form-control text-center w-25 h-50 fs-3 fw-semibold" min="1" max="100">
-                        <span style="border:2px solid black" class="input-group-text btn p-4 rounded-circle fw-semibold d-flex align-items-center justify-content-center fs-3" onclick="this.parentNode.querySelector('input[type=number]').stepUp()"> + </span>
+            <form action="?ctr=cart&&id=<?=$product['idpro']?>" method="POST">
+                <div class="frames px-3">
+                    <h3 class="font"><?= $product['product_name'] ?></h3>
+                    <h6 class="font1"><?= $product['descripton'] ?></h6>
+                    <hr class="hr1">
+                    <h4 class="m">MÓN CỦA BẠN</h4>
+                    <p class="p">Giá: <strong class="price1"><?= $product['product_price'] ?>đ</strong></p>
+                    <div class="input-group il">
+                        <p class="sl ">Số lượng: </p>
+                        <div class="d-flex w-50 justify-content-around">
+                            <span style="border:2px solid black" class="input-group-text btn p-4 rounded-circle fw-semibold d-flex align-items-center justify-content-center fs-3" onclick="this.parentNode.querySelector('input[type=number]').stepDown()"> - </span>
+                            <input type="number" value="1" class="outline-none border-none shadow-none form-control text-center w-25 h-50 fs-3 fw-semibold" name="quantity" min="1" max="100">
+                            <span style="border:2px solid black" class="input-group-text btn p-4 rounded-circle fw-semibold d-flex align-items-center justify-content-center fs-3" onclick="this.parentNode.querySelector('input[type=number]').stepUp()"> + </span>
+                        </div>
                     </div>
+                    <hr class="hr1">
+                    <button type="submit" class="bt" name="">Thêm vào giỏ hàng</button>
+                    <br>
+                    <br>
                 </div>
-                <hr class="hr1">
-                <button class="bt" name="">Thêm vào giỏ hàng</button>
-                <br>
-                <br>
-            </div>
-
+            </form>
         </div>
     </div>
     <div class="row">

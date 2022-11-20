@@ -15,6 +15,7 @@
     <link rel="stylesheet" href="./public/css/base.css">
     <link rel="stylesheet" href="./public/css/header.css">
     <link rel="stylesheet" href="./public/css/footer.css">
+    <link rel="shortcut icon" href="./public/img/Picture1.png" type="image/x-icon">
 </head>
 
 <body  onload="changeCart(0)">
