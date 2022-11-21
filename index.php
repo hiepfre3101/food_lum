@@ -28,9 +28,8 @@ switch ($ctr) {
     case "add-cart":
         displayCart();
         break;
-        //ctr = "cart" cần id user nhưng đang đợi làm nốt!
     case "cart":
-        displayClientCart();
+        displayCart();
         break;    
     case "cart-detail":
         showClientCartDetail();

@@ -6,26 +6,35 @@
     <div class="row">
         <div class="col-lg-8 overflow-auto cart-wrapper">
             <!--      hiển thị danh sách sản phẩm của giỏ hàng-->
-            <?php foreach ($arrCart as $key => $value) {?>
-            <div class="giohang">
-                <img class="gh1" src="<?=getOneDataProducts($key)['image']?>" alt="">
-                <div class="tengh">
-                    <p class="namegh"><?=getOneDataProducts($key)['product_name']?></p>
-
-                    <span class="input-group-text btn btn-danger"
-                          onclick="this.parentNode.querySelector('input[type=number]').stepDown()"> - </span>
-                    <input type="number" value="<?=$value?>" class="form-control text-center" min="1" max="100">
-                    <span class="input-group-text btn btn-success"
-                          onclick="this.parentNode.querySelector('input[type=number]').stepUp()"> + </span>
-                    <p class="pr"><?=getOneDataProducts($key)['product_price']?><span>đ</span></p>
-                </div>
-                <div class="xn">
-                    <a class="cn" href="">Xoá</a>
-                </div>
-            </div>
-            <?php }?>
+            <?php 
+             if(!is_array($arrCart)){
+              echo "<h2 class='fw-semibold'>Hãy đặt món ăn ngay nào</h2>";
+             } else
+                foreach ($arrCart as $key => $value):?>
+                     <div class='giohang d-flex justify-content-start'>
+                        <img class='gh1' src="<?=getOneDataProducts($key)['image']?>" alt=''>
+                       <div class="info-cart-block w-75">
+                            <div class='tengh'>
+                                    <p class='namegh'><?=getOneDataProducts($key)['product_name']?></p>
+                               <div class="w-100 d-flex justify-content-start">
+                                    <div class="action-block w-50 d-flex justify-content-around">
+                                        <span class='input-group-text btn btn-danger h-100 d-flex align-items-center justify-content-center fw-bold fs-3'
+                                              onclick="this.parentNode.querySelector('input[type=number]').stepDown()"> - </span>
+                                        <input type='number' value='<?php $value?>' class='form-control text-center border h-100 fs-3 flex-fill ms-2 me-2' min='1' max='100'>
+                                        <span class='input-group-text btn btn-success h-100 d-flex align-items-center justify-content-center fw-bold fs-3'
+                                              onclick="this.parentNode.querySelector('input[type=number]').stepUp()"> + </span>
+                                    </div>
+                                    <p class='pr w-25 fs-3 d-flex align-items-center ms-3'><?=getOneDataProducts($key)['product_price']?><span>đ</span></p>
+                               </div>
+                            </div>
+                            <div class='xn'>
+                                <a class='cn' href=''>Xoá</a>
+                            </div>
+                       </div>
+                    </div>
+                <?php endforeach;?>
         </div>
-        <div class="col-lg-4">
+        <div class="col-lg-4 mt-5 mt-lg-0">
             <div class="giohang-right">
                 <p class="mon">2 MÓN</p>
                 <hr class="hr">
