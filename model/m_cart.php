@@ -1,6 +1,9 @@
 <?php
 function getCart(){
-    return $_SESSION['arrCart'];
+    if(isset($_SESSION['arrCart'])){
+        return $_SESSION['arrCart'];
+    }
+  return "Hãy đặt các món ăn ngay nào !!";
 }
 function addCart($id,$quantity){
     $_SESSION['arrCart'][$id] = $quantity;
