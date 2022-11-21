@@ -29,18 +29,21 @@
                       <input name="" class="form-control form-input" type="text" id="phone">
                       <p class="form-message"></p>
                     </div> <!-- form-group// -->
+                    <div class="form-group">
+                      <label for="email" class="form-label">Địa chỉ</label>
+                      <input name="" class="form-control form-input" type="text" id="address">
+                      <p class="form-message"></p>
+                    </div> <!-- form-group// -->
                         <div class="form-group">
                             <label for="password" class="form-label">Mật khẩu</label>
                             <input name="" class="form-control form-input" type="password" id="password">
                             <p class="form-message"></p>
                         </div> <!-- form-group// -->
-    
-                        <div class="form-group">                       
-                            <label class="float-left custom-control custom-checkbox"> <input type="checkbox"
-                                    class="custom-control-input" checked="">
-                                <div class="custom-control-label"> Tôi đã đọc và đồng ý các chính sách của <strong>FOODLUM Việt Nam </strong></div>
-                            </label>
-                        </div>
+                        <div class="form-group">
+                            <label for="password" class="form-label">Xác nhận mật khẩu</label>
+                            <input name="" class="form-control form-input" type="password" id="repassword">
+                            <p class="form-message"></p>
+                        </div> <!-- form-group// -->
                         <br>
                         <br> <!-- form-group form-check .// -->
                         <div class="form-group">

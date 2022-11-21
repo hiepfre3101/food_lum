@@ -6,7 +6,7 @@
   function render($path,$data=[], $role){
       extract($data);
       if($role == 1) {
-        $view = "./admin/view".$path.".php";
+        $view = "./admin/view/".$path.".php";
       }else if($role == 0){
         $view = "./view/".$path.".php";
       }
