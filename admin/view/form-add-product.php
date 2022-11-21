@@ -1,4 +1,4 @@
-<?php require_once("header.php")?>
+<?php require_once("./admin/view/header.php")?>
 <!-- end header -->
 
 <div class="form-add-product">
@@ -16,9 +16,10 @@
             <div class="row-left"><label for="category-form">Loại sản phẩm : </label></div>
             <div class="row-rigth">
                 <select class="form-control" name="" id="category-form">
-                    <option value="">1</option>
-                    <option value="">2</option>
-                    <option value="">3</option>
+                    <option value="">Chon loai san pham</option>
+                    <?php foreach($categories as $value):?>
+                        <option value="<?=$value["iddm"]?>"><?=$value["categories_name"]?></option>
+                    <?php endforeach?>
                 </select>
             </div>
         </div>
@@ -38,4 +39,4 @@
         <button>Thêm sản phảm</button>
     </form>
 </div>
-<?php require_once("footer.php")?>
+<?php require_once("./admin/view/footer.php")?>

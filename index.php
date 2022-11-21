@@ -40,6 +40,8 @@ switch ($ctr) {
     case "sign-up":
         showSignup();
         break;
-        // admin
-
+    //admin
+    case "add-product":
+        showAddProduct();
+        break;
 }
