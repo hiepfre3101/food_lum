@@ -2,7 +2,7 @@
 
     <link rel="stylesheet" href="./public/css/cart.css">
     <div class="container">
-        <form action="?ctr=" method="post">
+        <form action="?ctr=cart-detail" method="post">
             <h4 class="card-title mb-4 ghct">GIỎ HÀNG CỦA TÔI</h4>
             <div class="row">
                 <div class="col-lg-8 overflow-auto cart-wrapper">

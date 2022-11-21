@@ -65,11 +65,14 @@
                 <div class="container">
                     <div class="giohang-right1 ">
                         <p class="mon">TÓM TẮT ĐƠN HÀNG</p>
-                        <p class="ttt">2x 1 Miếng Gà Chikoyaki <span class="ttt1">80000đ</span></p>
+                        <?php foreach ($arrCart as $key => $value) { ?>
+                            <p class="ttt"><?=$value?>x <?=getOneDataProducts($key)['product_name']?> <span class="ttt1"><?=getOneDataProducts($key)['product_price']*$value?>đ</span></p>
+                            <?php global $totalPrice; $totalPrice += (getOneDataProducts($key)['product_price']*$value);?>
+                        <?php } ?>
                         <hr class="hr1">
-                        <p class="tdh">Tổng đơn hàng <span class="tdh1">50000đ</span></p>
+                        <p class="tdh">Tổng đơn hàng <span class="tdh1"><?=$totalPrice?>đ</span></p>
                         <p class="tdh">Phí giao hàng <span class="tdh1">10000đ</span></p>
-                        <p class="ttt">Tổng thanh toán <span class="ttt1">60000đ</span></p>
+                        <p class="ttt">Tổng thanh toán <span class="ttt1"><?=$totalPrice + 10000?>đ</span></p>
                         <br>
                     </div>
                 </div>

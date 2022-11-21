@@ -13,10 +13,6 @@ function showClientCart()
     render("cart", [], 0);
 }
 
-function showClientCartDetail()
-{
-    render("cart-detail", [], 0);
-}
 
 function showLogin()
 {

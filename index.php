@@ -32,7 +32,7 @@ switch ($ctr) {
         displayCart();
         break;
     case "cart-detail":
-        showClientCartDetail();
+        showCheckOut();
         break;
     case "login":
         showLogin();
