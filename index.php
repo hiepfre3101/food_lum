@@ -41,7 +41,5 @@ switch ($ctr) {
         showSignup();
         break;
         // admin
-    case "":
-        
-        break;
+
 }
