@@ -11,3 +11,5 @@ function displayCart()
     render("cart", ["arrCart" => $arrCarrt], 0);
 }
 
+
+
