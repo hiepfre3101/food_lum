@@ -196,7 +196,7 @@
 }
 .img-col{
     height: 200px;
-    object-fit: fill;
+    object-fit: cover;
     transition: 0.5s ease-in-out;
 }
 .img-col:hover{
@@ -219,4 +219,7 @@
 }
 .mh-50{
     max-height: 50px !important;
+}
+.mw-50{
+    max-width: 50% !important;
 }
