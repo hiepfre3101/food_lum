@@ -40,6 +40,6 @@ switch ($ctr) {
     case "sign-up":
         showSignup();
         break;
-     
+        
 }
 ?>

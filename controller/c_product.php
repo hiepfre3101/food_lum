@@ -6,5 +6,4 @@ function showClientProductDetail()
     $product = getOneDataProducts($id);
     render("product-detail", ["product"=>$product], 0);
 }
-
 ?>
