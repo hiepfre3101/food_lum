@@ -20,17 +20,22 @@
                                         <div class="w-100 d-flex justify-content-start">
                                             <div class="action-block w-50 d-flex justify-content-around">
                                         <span class='input-group-text btn btn-danger h-100 d-flex align-items-center justify-content-center fw-bold fs-3'
-                                              onclick="this.parentNode.querySelector('input[type=number]').stepDown()"> - </span>
-                                                <input type='number' name="<?= $key ?>" value='<?= $value ?>'
+                                              onclick="mathPrice(<?= getOneDataProducts($key)['product_price']?>,'minus',<?=$key?>,'money<?=$key?>')"> - </span>
+                                                <input type='number' 
+                                                       name="<?= $key ?>" 
+                                                       value='<?= $value ?>'
                                                        class='form-control text-center border h-100 fs-3 flex-fill ms-2 me-2'
-                                                       min='1' max='100'>
+                                                       id="<?=$key?>"
+                                                       min='1' max='100'
+                                                       readonly
+                                                       />
                                                 <span class='input-group-text btn btn-success h-100 d-flex align-items-center justify-content-center fw-bold fs-3'
-                                                      onclick="this.parentNode.querySelector('input[type=number]').stepUp()"> + </span>
+                                                      onclick="mathPrice(<?= getOneDataProducts($key)['product_price']?>,'plus',<?=$key?>,'money<?=$key?>')"> + </span>
                                             </div>
                                             <!--lấy giá ở đây-->
-                                            <div class="price-save"
-                                                 hidden><?= getOneDataProducts($key)['product_price'] ?></div>
-                                            <p class='pr w-25 fs-3 d-flex align-items-center ms-3'>giá js<span>đ</span>
+                                            <p class='pr w-25 fs-3 d-flex align-items-center ms-3'>
+                                                <span id="money<?=$key?>"><?=(int)$arrCart[$key] * getOneDataProducts($key)['product_price']?></span>
+                                                <span>đ</span>
                                             </p>
                                         </div>
                                     </div>
@@ -39,8 +44,7 @@
                                     </div>
                                 </div>
                             </div>
-                        <?php }
-                    } ?>
+                        <?php }}?>
                 </div>
                 <div class="col-lg-4 mt-5 mt-lg-0">
                     <div class="giohang-right">
@@ -56,8 +60,7 @@
                         <br>
                         <hr class="hr">
                         <p class="tdh">Tổng đơn hàng <span class="tdh1">50000đ</span></p>
-                        <p class="tdh">Phí giao hàng <span class="tdh1">10000đ</span></p>
-                        <p class="ttt">Tổng thanh toán <span class="ttt1">60000đ</span></p>
+                        <p class="ttt">Tổng thanh toán <span class="ttt1">50000đ</span></p>
                         <hr class="hr">
                         <button class="thanhtoan" type="submit">Thanh toán</button>
                         <br>
@@ -119,4 +122,5 @@
             </div>
         </form>
     </div>
+    <script src="./public/js/main.js"></script>
 <?php include_once("./view/footer.php") ?>

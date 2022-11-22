@@ -12,13 +12,21 @@
                     <h6 class="font1"><?= $product['descripton'] ?></h6>
                     <hr class="hr1">
                     <h4 class="m">MÓN CỦA BẠN</h4>
-                    <p class="p">Giá: <strong class="price1"><?= $product['product_price'] ?>đ</strong></p>
+                    <p class="p">Giá: <strong class="price1" id="money"><?= $product['product_price'] ?></strong>đ</p>
                     <div class="input-group il">
                         <p class="sl ">Số lượng: </p>
                         <div class="d-flex w-50 justify-content-around">
-                            <span style="border:2px solid black" class="input-group-text btn p-4 rounded-circle fw-semibold d-flex align-items-center justify-content-center fs-3" onclick="this.parentNode.querySelector('input[type=number]').stepDown()"> - </span>
-                            <input type="number" value="1" class="outline-none border-none shadow-none form-control text-center w-25 h-50 fs-3 fw-semibold" name="quantity" min="1" max="100">
-                            <span style="border:2px solid black" class="input-group-text btn p-4 rounded-circle fw-semibold d-flex align-items-center justify-content-center fs-3" onclick="this.parentNode.querySelector('input[type=number]').stepUp()"> + </span>
+                            <span onclick="mathPrice(<?= $product['product_price'] ?>,'minus',<?=$product['idpro']?>,'money')" style="border:2px solid black" class="input-group-text btn p-4 rounded-circle fw-semibold d-flex align-items-center justify-content-center fs-3" > - </span>
+                            <input 
+                                type="number" 
+                                id="<?=$product['idpro']?>" 
+                                value="1" 
+                                class="outline-none border-none shadow-none form-control text-center w-25 h-50 fs-3 fw-semibold" 
+                                name="quantity" min="1" max="100"
+                                onchange="changePrice(<?= $product['product_price'] ?>)"
+                                readonly
+                                />
+                            <span onclick="mathPrice(<?= $product['product_price'] ?>,'plus',<?=$product['idpro']?>,'money')" style="border:2px solid black" class="input-group-text btn p-4 rounded-circle fw-semibold d-flex align-items-center justify-content-center fs-3" > + </span>
                         </div>
                     </div>
                     <hr class="hr1">
@@ -172,5 +180,5 @@
         </div>
     </div>
 </div>
-
+<script src="./public/js/main.js"></script>
 <?php include_once("./view/footer.php") ?>
