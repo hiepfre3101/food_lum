@@ -13,6 +13,7 @@ require_once("./controller/c_render.php");
 require_once("./controller/c_client.php");
 require_once("./controller/c_product.php");
 require_once("./controller/c_cart.php");
+require_once("./controller/c_user.php");
 
 //@param : $ctr viết tắt controller, đây là biến để truyền lên thanh url có thể đặt tên tùy thích
 // nhưng để ctr nhằm thể hiện là đang gọi ctr nào.
@@ -39,6 +40,9 @@ switch ($ctr) {
         break;
     case "sign-up":
         showSignup();
+        break;
+    case "save-user":
+        signUp();
         break;
     //admin
     case "add-product":

@@ -7,6 +7,16 @@ function addUser($data = [])
     $stmt = $pdo->prepare($query);
     $stmt->execute($data);
 }
+$data = [
+    "user_name" => "Dương",
+    "full_name" => "Nguyễn Ánh Dương",
+    "pass" => "123123",
+    "email" => "duongna1603@gmail.com",
+    "phone" => "0388989077",
+    "address" => "Hà tây",
+    "position" => '1'
+];
+addUser($data);
 
 function deleteUser($id)
 {
@@ -16,7 +26,7 @@ function deleteUser($id)
     $stmt->execute();
 }
 
-function updateUser($data=[])
+function updateUser($data = [])
 {
 //    không cho cập nhật email và
     global $pdo;
@@ -25,7 +35,8 @@ function updateUser($data=[])
     $stmt->execute($data);
 }
 
-function getAllDataUser(){
+function getAllDataUser()
+{
     global $pdo;
     $query = "SELECT * FROM user";
     $stmt = $pdo->prepare($query);

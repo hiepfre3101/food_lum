@@ -6,13 +6,10 @@ function showClientHome()
     render("home", ["arrProduct"=>$arrProduct,"arrCategory"=>$arrCategory], 0);
 }
 
-
-
 function showClientCart()
 {
     render("cart", [], 0);
 }
-
 
 function showLogin()
 {
