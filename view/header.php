@@ -57,7 +57,14 @@
                                 class="btn btn-outline-primary w-10 h-100 d-flex align-items-center justify-content-center"
                                 type="submit"><i class="fa-solid fa-magnifying-glass text-primary"></i> </button>
                         </form>
-                        <i class="fa-solid fa-circle-user fs-1 px-3 d-none d-lg-block text-dark" role="button"></i>
+                        <div class="fa-solid fa-circle-user fs-1 px-3 d-none d-lg-block text-dark icon-user position-relative" role="button">
+                             <div  class="menu-child  bg-primary position-absolute p-3">
+                               <a href="?ctr=login" class="text-dark fs-4 fw-semibold link-child">Đăng nhập</a>
+                               <a href="?ctr=sign-up" class="text-dark fs-4 fw-semibold link-child">Đăng kí</a>
+                               <a href="#" class="text-dark fs-4 fw-semibold link-child">Hồ sơ của bạn</a>
+                               <a href="?ctr=logout" class="text-dark fs-4 fw-semibold link-child">Đăng xuất</a>
+                           </div>
+                        </div>
                         <a href="?ctr=cart" class="d-none d-lg-block">
                             <i class="fa-solid fa-burger fs-1 cart text-dark" role="button">
                                 <div class="cart-after">0</div>
@@ -66,7 +73,7 @@
                     </div>
                     <li class="nav-item me-3 d-flex justify-content-between mb-5 mb-lg-0 py-5 py-lg-0 nav-sm d-lg-none">
                         <a class="py-5 py-lg-0 nav-link active text-upercase fw-bold fs-2 text-dark" aria-current="page"
-                            href="#">Giỏ hàng</a>
+                            href="?ctr=cart">Giỏ hàng</a>
                         <img src="./public/img/cart.jpg" alt="..." class="d-lg-none w-25 h-25 rounded-3 ms-3">
                     </li>
                 </div>

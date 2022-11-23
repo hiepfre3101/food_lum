@@ -70,6 +70,11 @@
         validator.isRequired("#phone"),
         validator.isRequired("#password"),
         validator.isEmail("#email"),
+        validator.isRequired("#repassword"),
+        validator.isPasswordConfirm("#repassword",()=>{
+          const pwd = document.querySelector("#password");
+          return pwd.value;
+        })
     ]
  })
 </script>
