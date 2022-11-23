@@ -34,8 +34,9 @@
             <div class="row-left"><label for="img-form">Ảnh sản phẩm : </label></div>
             <div class="row-rigth">
                 <label for="img-form" class="wrapper-img">
+                    <img src="https://picsum.photos/200/300" alt="">
                 </label>
-                <input type="file" name="img-product-add" id="img-form" >
+                <input  type="file" style="transform: translateY(-100000px)" name="img-product-add" id="img-form" >
                 <p class="form-message" style="color:red;"></p>
             </div>
         </div>

@@ -38,6 +38,12 @@ switch ($ctr) {
     case "login":
         showLogin();
         break;
+    case "check-login":
+        signIn($_POST['username'],$_POST['password']);
+        break;
+    case "logout":
+        logOunt();
+        break;
     case "sign-up":
         showSignup();
         break;
@@ -54,4 +60,5 @@ switch ($ctr) {
     case"user-list":
         showListUser();
         break;
+
 }

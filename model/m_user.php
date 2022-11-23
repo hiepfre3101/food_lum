@@ -35,4 +35,15 @@ function getAllDataUser()
     return $result;
 }
 
+function getOneDataUser($id)
+{
+    global $pdo;
+    $query = "SELECT * FROM user WHERE iduser = $id";
+    $stmt = $pdo->prepare($query);
+    $stmt->execute();
+    $result = $stmt->fetch();
+    return $result;
+}
+
+
 

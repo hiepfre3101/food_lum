@@ -1,9 +1,10 @@
 <?php
 function showClientHome()
 {
-    $arrProduct = getAllDataProducts();
+    $page = pageCount('products', 'idpro', '8');
+    $arrProduct = pagination('products', '8');
     $arrCategory = getAllDataCategory();
-    render("home", ["arrProduct"=>$arrProduct,"arrCategory"=>$arrCategory], 0);
+    render("home", ["arrProduct"=>$arrProduct,"arrCategory"=>$arrCategory,"countPage"=>$page], 0);
 }
 
 function showClientCart()

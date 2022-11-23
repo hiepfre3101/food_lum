@@ -8,16 +8,16 @@
             <div class="col-lg-7 p-5">
                 <div class="card-body">
                     <h4 class="card-title mb-4">ĐĂNG NHẬP</h4>
-                    <form class="form-login">
+                    <form class="form-login" action="?ctr=check-login" method="post">
                         <div class="form-group">
-                            <label for="email" class="form-label">Địa chỉ email</label>
-                            <input name="" class="form-control form-input" type="text">
-                            <p class="form-message"></p>
+                            <label for="email" class="form-label">Tài khoản</label>
+                            <input name="username" class="form-control form-input" type="text">
+                            <p class="form-message" style="color: red"><?=isset($_GET['fail'])?"Sai tên đăng nhập hoặc mật khẩu":""?></p>
                         </div> <!-- form-group// -->
                         <div class="form-group">
                             <label for="password" class="form-label">Mật khẩu</label>
-                            <input name="" class="form-control form-input" type="password">
-                            <p class="form-message"></p>
+                            <input name="password" class="form-control form-input" type="password">
+                            <p class="form-message" style="color: red"><?=isset($_GET['fail'])?"Sai tên đăng nhập hoặc mật khẩu":""?></p>
                         </div> <!-- form-group// -->
     
                         <div class="form-group">
