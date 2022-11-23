@@ -59,46 +59,6 @@ include_once("./view/header.php");
             <?php } ?>
         </div>
     </div>
-    <div class="grid-block w-100 p-5">
-        <h1 class="d-flex align-items-center">
-            <img src="./public/img/gif1.gif" alt="..." class="w-10">
-            <span class="fw-semibold fs-1">CÓ THỂ BẠN SẼ THÍCH MÓN NÀY</span>
-            <p class="title-line flex-fill"></p>
-        </h1>
-        <!--hiển thị sản phẩm cũng là dùng đường dẫn ảnh tạm thời chỉnh sửa sau-->
-        <div class="row" id="product-list-1">
-            <?php foreach ($arrProduct as $value) { ?>
-                <div class="col-xxl-2 col-lg-3 col-12 col-sm-4 mb-5">
-                    <div class="card w-100 shadow" style="width: 18rem;">
-                        <a class="overflow-hidden" href="?ctr=product-detail&&id=<?= $value['idpro'] ?>">
-                            <img src="<?= $value['image'] ?>" class="card-img-top img-col" alt="...">
-                        </a>
-                        <div class="card-body">
-                            <div class="d-flex align-items-center justify-content-between ">
-                                <h5 class="card-title fs-3 fw-bold overflow-hidden mw-100"><?= $value['product_name'] ?></h5>
-                                <h5 class="card-title fs-3"><?= $value['product_price'] ?><span>đ</span></h5>
-                            </div>
-                            <div class="d-lg-flex align-items-center justify-content-start d-none">
-                                <p class="card-text overflow-hidden mh-50 mw-50"><?= $value['descripton'] ?>
-                                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                                    Veniam, provident corporis! Velit, repudiandae dicta at voluptatibus corrupti
-                                    placeat perferendis necessitatibus minus nam molestias veniam quia maiores
-                                    reiciendis quibusdam atque error.
-                                    Lorem ipsum dolor, sit amet consectetur adipisicing elit.
-                                    Vitae eveniet officia soluta odit, blanditiis ipsum aperiam adipisci fugit
-                                    exercitationem iste laboriosam in sequi, dicta maiores eligendi, est cumque nesciunt
-                                    tempore.
-                                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Assumenda iusto expedita
-                                    aspernatur voluptas alias, quam enim. Dolor repellat provident, dicta eligendi
-                                    praesentium iure totam quas tempora quia, est velit soluta.
-                                </p>
-                                <a href="?ctr=product-detail&&id=<?= $value['idpro'] ?>"
-                                   class="fs-4 text-decoration-none mt-4">...Xem chi tiết</a>
-                            </div>
-                            <a href="?ctr=product-detail&&id=<?= $value['idpro'] ?>"
-                               class="btn bg-secondary text-white rounded-6 fs-3 w-50 fw-semibold">Thêm</a>
-=======
-</div>
 <div class="grid-block w-100 p-5">
     <h1 class="d-flex align-items-center">
         <img src="./public/img/gif1.gif" alt="..." class="w-10">
@@ -123,10 +83,15 @@ include_once("./view/header.php");
                               </p>
                             <a href="?ctr=product-detail&&id=<?= $value['idpro'] ?>" class="fs-4 text-decoration-none mt-4">...Xem chi tiết</a>
                         </div>
+                        <a href="?ctr=product-detail&&id=<?= $value['idpro'] ?>"
+                               class="btn bg-secondary text-white rounded-6 fs-3 w-50 fw-semibold">Thêm</a>
                     </div>
                 </div>
+                </div>
             <?php } ?>
-        </div>
+    </div>
+</div>
+</div>
         <!--    <div class="w-100 d-flex justify-content-center align-items-center">-->
         <!--        <nav aria-label="Page navigation example">-->
         <!--            <ul class="pagination">-->
@@ -191,6 +156,5 @@ include_once("./view/header.php");
             </div>
         </div>
     </div>
-<?php
-include_once("./view/footer.php");
-?>
+
+<?php include_once("./view/footer.php")?>
