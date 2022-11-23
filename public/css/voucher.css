@@ -1,0 +1,50 @@
+.app{
+    background-color: rgb(230, 230, 230);
+}
+.avatar{
+    max-width: 25%;
+    max-height: 50px;
+    margin-right: 2rem;
+}
+.text-gray{
+    color: gray;
+}
+.text-orange{
+    color: var(--primary-color);
+}
+.link-orange:hover{
+    color: var(--primary-color) !important;
+}
+.list-wrapper{
+    border-radius: 20px;
+    background-color: white;
+}
+.title-orange::after{
+  content: "";
+  position: absolute;
+  width: 2rem;
+  height: 4rem;
+  border-radius: 5px;
+  background-color: var(--primary-color);
+  left: -25px;
+}
+.active-tab{
+    background-color: white !important;
+    border-bottom: 2px solid var(--primary-color) !important;
+    color: black !important;
+}
+.w-30{
+    width: 30%;
+}
+.w-80{
+    max-width: 85%;
+}
+.btn-save{
+    border: none;
+    border-radius: 10px;
+    height: 20%;
+    background-color: rgb(65, 195, 255);
+}
+.text-red{
+    color: var(--secondary-color) !important;
+}

@@ -54,7 +54,7 @@
 .btn-outline-primary:hover .text-primary{
     color: white !important; 
 }
-.nav-link{
+.header-link{
     position: relative;
     background-image: linear-gradient(
         to right,
@@ -68,7 +68,7 @@
      -webkit-text-fill-color: transparent;
      transition: all 0.5s ease-in-out;
 }
-.nav-link:before {
+.header-link:before {
     content: '';
     background: var(--primary-color);
     display: block;
@@ -79,10 +79,10 @@
     height: 2px;
     transition: all 0.5s ease-in-out;
   }
-.nav-link:hover{
+.header-link:hover{
     background-position: 0;
 }
-.nav-link:hover::before {
+.header-link:hover::before {
    width: 100%;
 }
 .text-gray{
