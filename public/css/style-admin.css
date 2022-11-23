@@ -609,10 +609,7 @@
 .row-rigth {
     height: 100%;
     width: 60%;
-    display: flex;
-    align-items: center;
     font-size: 20px;
-    justify-content: center;
 }
 
 .wrapper-img {
