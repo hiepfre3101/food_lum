@@ -40,13 +40,13 @@
                 <div class="offcanvas-body w-100">
                     <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                         <li class="nav-item me-3 d-flex justify-content-between mb-5 mb-lg-0 py-5 py-lg-0 nav-sm">
-                            <a class="py-5 py-lg-0 nav-link active text-upercase fw-bold fs-2 text-dark"
+                            <a class="py-5 py-lg-0 nav-link text-upercase fw-bold fs-2 text-dark header-link"
                                 aria-current="page" href="#">Thực đơn</a>
                             <img src="./public/img/slider3.jpg" alt="..." class="d-lg-none w-30 rounded-3 ms-3">
                         </li>
                         <li class="nav-item me-3  d-flex justify-content-between mb-5 mb-lg-0 py-5 py-lg-0 nav-sm">
-                            <a class="py-5 py-lg-0 nav-link active text-upercase fw-bold fs-2 text-dark"
-                                aria-current="page" href="#">Khuyến mãi</a>
+                            <a class="py-5 py-lg-0 nav-link text-upercase fw-bold fs-2 text-dark header-link"
+                                aria-current="page" href="?ctr=voucher">Khuyến mãi</a>
                             <img src="./public/img/slider3.jpg" alt="..." class="d-lg-none w-30 rounded-3 ms-3">
                         </li>
                     </ul>

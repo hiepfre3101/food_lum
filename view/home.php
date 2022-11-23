@@ -76,11 +76,6 @@ include_once("./view/header.php");
                         </div>
                         <div class="d-lg-flex align-items-center justify-content-start d-none">
                             <p class="card-text overflow-hidden mh-50 mw-50"><?= $value['descripton'] ?>
-                            Lorem ipsum dolor sit amet consectetur adipisicing elit. 
-                            Veniam, provident corporis! Velit, repudiandae dicta at voluptatibus corrupti placeat perferendis necessitatibus minus nam molestias veniam quia maiores reiciendis quibusdam atque error. 
-                            Lorem ipsum dolor, sit amet consectetur adipisicing elit. 
-                            Vitae eveniet officia soluta odit, blanditiis ipsum aperiam adipisci fugit exercitationem iste laboriosam in sequi, dicta maiores eligendi, est cumque nesciunt tempore.
-                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Assumenda iusto expedita aspernatur voluptas alias, quam enim. Dolor repellat provident, dicta eligendi praesentium iure totam quas tempora quia, est velit soluta.
                               </p>
                             <a href="?ctr=product-detail&&id=<?= $value['idpro'] ?>" class="fs-4 text-decoration-none mt-4">...Xem chi tiết</a>
                         </div>
