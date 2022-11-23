@@ -97,6 +97,31 @@ include_once("./view/header.php");
                             </div>
                             <a href="?ctr=product-detail&&id=<?= $value['idpro'] ?>"
                                class="btn bg-secondary text-white rounded-6 fs-3 w-50 fw-semibold">Thêm</a>
+=======
+</div>
+<div class="grid-block w-100 p-5">
+    <h1 class="d-flex align-items-center">
+        <img src="./public/img/gif1.gif" alt="..." class="w-10">
+        <span class="fw-semibold fs-1">CÓ THỂ BẠN SẼ THÍCH MÓN NÀY</span>
+        <p class="title-line flex-fill"></p>
+    </h1>
+    <!--hiển thị sản phẩm cũng là dùng đường dẫn ảnh tạm thời chỉnh sửa sau-->
+    <div class="row">
+        <?php foreach ($arrProduct as $value) { ?>
+            <div class="col-xxl-2 col-lg-3 col-12 col-sm-4 mb-5">
+                <div class="card w-100 shadow" style="width: 18rem;">
+                    <a class="overflow-hidden" href="?ctr=product-detail&&id=<?= $value['idpro'] ?>">
+                        <img src="<?= $value['image'] ?>" class="card-img-top img-col" alt="...">
+                    </a>
+                    <div class="card-body">
+                        <div class="d-flex align-items-center justify-content-between ">
+                            <h5 class="card-title fs-3 fw-bold overflow-hidden mw-100"><?= $value['product_name'] ?></h5>
+                            <h5 class="card-title fs-3"><?= $value['product_price'] ?><span>đ</span></h5>
+                        </div>
+                        <div class="d-lg-flex align-items-center justify-content-start d-none">
+                            <p class="card-text overflow-hidden mh-50 mw-50"><?= $value['descripton'] ?>
+                              </p>
+                            <a href="?ctr=product-detail&&id=<?= $value['idpro'] ?>" class="fs-4 text-decoration-none mt-4">...Xem chi tiết</a>
                         </div>
                     </div>
                 </div>

@@ -57,6 +57,25 @@
                     <form class="d-flex flex-fill h-100 " role="search">
                         <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
                         <button role="button"
+=======
+                <div class="offcanvas-body w-100">
+                    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                        <li class="nav-item me-3 d-flex justify-content-between mb-5 mb-lg-0 py-5 py-lg-0 nav-sm">
+                            <a class="py-5 py-lg-0 nav-link text-upercase fw-bold fs-2 text-dark header-link"
+                                aria-current="page" href="#">Thực đơn</a>
+                            <img src="./public/img/slider3.jpg" alt="..." class="d-lg-none w-30 rounded-3 ms-3">
+                        </li>
+                        <li class="nav-item me-3  d-flex justify-content-between mb-5 mb-lg-0 py-5 py-lg-0 nav-sm">
+                            <a class="py-5 py-lg-0 nav-link text-upercase fw-bold fs-2 text-dark header-link"
+                                aria-current="page" href="?ctr=voucher">Khuyến mãi</a>
+                            <img src="./public/img/slider3.jpg" alt="..." class="d-lg-none w-30 rounded-3 ms-3">
+                        </li>
+                    </ul>
+                    <div class="w-50 d-lg-flex d-none d-lg-block" style="height:30px;">
+                        <form class="d-flex flex-fill h-100 " role="search">
+                            <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+                            <button role="button"
+
                                 class="btn btn-outline-primary w-10 h-100 d-flex align-items-center justify-content-center"
                                 type="submit"><i class="fa-solid fa-magnifying-glass text-primary"></i></button>
                     </form>

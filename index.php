@@ -14,7 +14,7 @@ require_once("./controller/c_client.php");
 require_once("./controller/c_product.php");
 require_once("./controller/c_cart.php");
 require_once("./controller/c_user.php");
-
+require_once ("./controller/c_voucher.php");
 //@param : $ctr viết tắt controller, đây là biến để truyền lên thanh url có thể đặt tên tùy thích
 // nhưng để ctr nhằm thể hiện là đang gọi ctr nào.
 $ctr = isset($_GET["ctr"]) ? $_GET['ctr'] : '/';
@@ -50,6 +50,9 @@ switch ($ctr) {
     case "save-user":
         signUp();
         break;
+    case "voucher":
+        showVoucher();
+        break;    
     //admin
     case "add-product":
         showAddProduct();
