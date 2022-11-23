@@ -10,4 +10,10 @@ function showAddProduct(){
     $categories = getAllDataCategory();
     render("form-add-product",["categories"=>$categories],1);
 }
+//hiển thị sản phẩm phân trang
+function showListProduct(){
+    $page = pageCount('products','idpro','10');
+    $arrProduct = pagination('products','10');
+    render("product",["arrProducts" => $arrProduct, "countPage" => $page],1);
+}
 ?>

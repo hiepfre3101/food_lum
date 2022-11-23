@@ -8,7 +8,6 @@ function pagination($table, $end)
     isset($_GET['page']) ? $page = $_GET['page'] : $page = 1;
     $start = $end * ($page - 1);
     $query = "SELECT * FROM $table LIMIT $start,$end";
-    echo $query;
     $stmt = $pdo->prepare($query);
     $stmt->execute();
     $arr = $stmt->fetchAll();

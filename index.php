@@ -7,7 +7,7 @@ require_once("./model/m_category.php");
 require_once("./model/m_product.php");
 require_once("./model/m_user.php");
 require_once("./model/m_cart.php");
-
+require_once("./model/m_pagination.php");
 // require controller here...
 require_once("./controller/c_render.php");
 require_once("./controller/c_client.php");
@@ -47,5 +47,8 @@ switch ($ctr) {
     //admin
     case "add-product":
         showAddProduct();
+        break;
+    case "product-list":
+        showListProduct();
         break;
 }

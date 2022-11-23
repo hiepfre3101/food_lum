@@ -329,6 +329,15 @@
     height: 80px;
     border-bottom: 1px solid #676b84;
 }
+.table-main td{
+    width: 100%;
+}
+.table-main input[type="checkbox"]{
+    margin-left: 50px;
+}
+.table-main td a{
+    text-decoration: none;
+}
 
 .table-main img {
     width: 50px;
