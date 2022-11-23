@@ -99,7 +99,9 @@
 }
 
 #opent-1:checked~.sub-menu,
-#opent-2:checked~.sub-menu {
+#opent-2:checked~.sub-menu,
+#opent-3:checked~.sub-menu,
+#opent-4:checked~.sub-menu{
     display: block;
     transform: translateX(0%);
     height: auto;
@@ -107,7 +109,9 @@
 }
 
 #opent-1:checked~.up,
-#opent-2:checked~.up {
+#opent-2:checked~.up,
+#opent-3:checked~.up,
+#opent-4:checked~.up{
     transform: rotate(180deg);
 }
 
@@ -524,17 +528,22 @@
 }
 
 .pagination {
-    width: 200px;
+    width: auto;
     height: 50px;
-    float: right;
     display: flex;
     justify-content: center;
     align-items: center;
     cursor: pointer;
+    float: right;
 }
 
 .pagination a {
     text-decoration: none;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     color: var(--text-color);
 }
 
@@ -552,6 +561,8 @@
 .material-symbols-outlined {}
 
 .box-pagination {
+    width: auto;
+    height: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -560,11 +571,11 @@
 .pagination-item {
     width: 30px;
     height: 30px;
-    margin: 5px;
     display: flex;
     justify-content: center;
     align-items: center;
     border-radius: 5px;
+
 }
 
 .pagination-item.active {
@@ -582,7 +593,6 @@
     height: auto;
     margin-top: 50px;
     background-color: #fff;
-    padding: 30px;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -634,6 +644,7 @@
     width: 100%;
     height: 100%;
     object-fit: cover;
+    display: none;
 }
 
 .form-add-product form input,

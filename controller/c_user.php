@@ -12,3 +12,7 @@ function signUp(){
     addUser($data);
     header("location:index.php");
 }
+
+function showListUser(){
+    render("admin",[],1);
+}

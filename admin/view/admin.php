@@ -2,7 +2,6 @@
 <!-- end header -->
 <div class="box-table">
     <div class="action">
-        <a href=""><button>Thêm Khách Hàng</button></a>
         <a href=""><button>Chọn Tất Cả</button></a>
         <a href=""><button>Xóa Các Mục Đã Chọn</button></a>
     </div>

@@ -51,4 +51,7 @@ switch ($ctr) {
     case "product-list":
         showListProduct();
         break;
+    case"user-list":
+        showListUser();
+        break;
 }
