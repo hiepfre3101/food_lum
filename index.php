@@ -7,12 +7,13 @@ require_once("./model/m_category.php");
 require_once("./model/m_product.php");
 require_once("./model/m_user.php");
 require_once("./model/m_cart.php");
-
+require_once("./model/m_pagination.php");
 // require controller here...
 require_once("./controller/c_render.php");
 require_once("./controller/c_client.php");
 require_once("./controller/c_product.php");
 require_once("./controller/c_cart.php");
+require_once("./controller/c_user.php");
 require_once ("./controller/c_voucher.php");
 //@param : $ctr viết tắt controller, đây là biến để truyền lên thanh url có thể đặt tên tùy thích
 // nhưng để ctr nhằm thể hiện là đang gọi ctr nào.
@@ -37,8 +38,17 @@ switch ($ctr) {
     case "login":
         showLogin();
         break;
+    case "check-login":
+        signIn($_POST['username'],$_POST['password']);
+        break;
+    case "logout":
+        logOunt();
+        break;
     case "sign-up":
         showSignup();
+        break;
+    case "save-user":
+        signUp();
         break;
     case "voucher":
         showVoucher();
@@ -47,4 +57,11 @@ switch ($ctr) {
     case "add-product":
         showAddProduct();
         break;
+    case "product-list":
+        showListProduct();
+        break;
+    case"user-list":
+        showListUser();
+        break;
+
 }

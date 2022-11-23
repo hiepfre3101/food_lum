@@ -16,7 +16,7 @@ function deleteUser($id)
     $stmt->execute();
 }
 
-function updateUser($data=[])
+function updateUser($data = [])
 {
 //    không cho cập nhật email và
     global $pdo;
@@ -25,7 +25,8 @@ function updateUser($data=[])
     $stmt->execute($data);
 }
 
-function getAllDataUser(){
+function getAllDataUser()
+{
     global $pdo;
     $query = "SELECT * FROM user";
     $stmt = $pdo->prepare($query);
@@ -33,5 +34,16 @@ function getAllDataUser(){
     $result = $stmt->fetchAll();
     return $result;
 }
+
+function getOneDataUser($id)
+{
+    global $pdo;
+    $query = "SELECT * FROM user WHERE iduser = $id";
+    $stmt = $pdo->prepare($query);
+    $stmt->execute();
+    $result = $stmt->fetch();
+    return $result;
+}
+
 
 
