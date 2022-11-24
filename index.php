@@ -8,6 +8,7 @@ require_once("./model/m_product.php");
 require_once("./model/m_user.php");
 require_once("./model/m_cart.php");
 require_once("./model/m_pagination.php");
+require_once("./model/m_voucher.php");
 // require controller here...
 require_once("./controller/c_render.php");
 require_once("./controller/c_client.php");
@@ -53,6 +54,12 @@ switch ($ctr) {
     case "voucher":
         showVoucher();
         break;    
+    case "save-user-voucher":
+        saveVoucherUser();
+        break;    
+    case "voucher-user":
+        showVoucherUser();
+        break;    
     //admin
     case "add-product":
         showAddProduct();
@@ -63,5 +70,4 @@ switch ($ctr) {
     case"user-list":
         showListUser();
         break;
-
 }

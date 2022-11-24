@@ -22,6 +22,7 @@ function signIn($userName,$password){
                     header("location:index.php?ctr=home");
                 }else{
                     header("location:index.php?ctr=user-list");
+                    break;
                 }
             }
         }else{
@@ -32,6 +33,7 @@ function signIn($userName,$password){
 
 function logOunt(){
     unset($_SESSION['idUser']);
+    unset($_SESSION['arrCart']);//Xóa giỏ hàng của từng user
     header("location:index.php?ctr=home");
 }
 

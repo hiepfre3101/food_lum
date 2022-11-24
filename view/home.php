@@ -92,27 +92,6 @@ include_once("./view/header.php");
     </div>
 </div>
 </div>
-        <!--    <div class="w-100 d-flex justify-content-center align-items-center">-->
-        <!--        <nav aria-label="Page navigation example">-->
-        <!--            <ul class="pagination">-->
-        <!--                <li class="page-item">-->
-        <!--                    <a class="page-link" href="#" aria-label="Previous">-->
-        <!--                        <span aria-hidden="true" class="fs-3 text-orange">&laquo;</span>-->
-        <!--                        <span class="sr-only">Previous</span>-->
-        <!--                    </a>-->
-        <!--                </li>-->
-        <!--                <li class="page-item"><a class="page-link fs-3 text-orange" href="#">1</a></li>-->
-        <!--                <li class="page-item"><a class="page-link fs-3 text-orange" href="#">2</a></li>-->
-        <!--                <li class="page-item"><a class="page-link fs-3 text-orange" href="#">3</a></li>-->
-        <!--                <li class="page-item">-->
-        <!--                    <a class="page-link" href="#" aria-label="Next">-->
-        <!--                        <span aria-hidden="true" class="fs-3 text-orange">&raquo;</span>-->
-        <!--                        <span class="sr-only">Next</span>-->
-        <!--                    </a>-->
-        <!--                </li>-->
-        <!--            </ul>-->
-        <!--        </nav>-->
-        <!--    </div>-->
         <div class="pagination">
             <div class="pagination-left">
                 <a href="<?php if (isset($_GET['page']) && $_GET['page'] >= 2) {

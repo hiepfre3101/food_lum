@@ -53,7 +53,10 @@
                         <p class="gg">Bạn có Mã giảm giá?</p>
                         <div class="vc">
                             <select class="vou" name="" id="">
-                                <option value="0" selected>Chọn voucher</option>
+                                <option value="0" >Chọn voucher</option>
+                                <?php foreach($vouchers as $value):?>
+                                    <option value="<?php $value['id']?>" ><?=$value["content"]?></option>
+                                <?php endforeach?>
                             </select>
                             <button class="ad px-2" type="submit">Áp dụng</button>
                         </div>

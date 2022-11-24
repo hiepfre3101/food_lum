@@ -24,10 +24,10 @@
             <div class="mt-5">
                 <ul class="nav nav-pills">
                     <li class="nav-item">
-                      <a class="nav-link active-tab fs-3 text-dark" aria-current="page" href="#">Tất cả</a>
+                      <a class="nav-link  fs-3 text-dark" aria-current="page" href="?ctr=voucher">Tất cả</a>
                     </li>
                     <li class="nav-item">
-                      <a class="nav-link fs-3 text-dark" href="?ctr=voucher-user">Của bạn</a>
+                      <a class="nav-link fs-3 text-dark active-tab" href="?ctr=voucher-user">Của bạn</a>
                     </li>
                   </ul>
                  <div class="row mt-4">
@@ -41,8 +41,7 @@
                          ?>.jpg" alt="img" class="w-75 h-100">
                         <div class="d-flex align-items-center justify-content-center flex-fill flex-column">
                             <p class="fs-2 fw-bold text-red"><?= $value["discount"]?><span style="color: var(--secondary-color);">%</span></p>
-                           <a href="?ctr=save-user-voucher&idVoucher=<?=$value['idvc']?>" class="d-block w-75"> <button class="w-100 h-100 btn-save fw-semibold fs-4 text-white" <?php if(!isset($_SESSION["idUser"]))echo "disabled";?>>Lưu</button></a>
-                            <p class="fs-4 text-dark">Số lượng: <span class=""><?=$value["quantity"]?></span></p>
+                           <a href="?ctr=cart" class="d-block w-75"> <button class="w-100 h-100 btn-save fw-semibold fs-4 text-white" <?php if(!isset($_SESSION["idUser"]))echo "disabled";?>>Sử dụng ngay</button></a>
                             <p style="color:navy; cursor:pointer;" class="fs-5" data-bs-toggle="tooltip" data-bs-placement="top" data-bs-title="Tổng đơn tối thiểu 250000đ">Điều kiện</p>
                         </div>
                      </div>

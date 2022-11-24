@@ -2,9 +2,12 @@
 
 function showClientProductDetail()
 {
-    $id = $_GET['id'];
+    if(isset($_SESSION['idUser'])){
+         $id = $_GET['id'];
     $product = getOneDataProducts($id);
     render("product-detail", ["product" => $product], 0);
+    }
+    render("login", [], 0);
 }
 
 function showAddProduct()
