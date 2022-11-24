@@ -76,3 +76,22 @@
     padding: 12px 0px 12px 0px;
     border-radius: 20px;
 }
+
+.row-rigth {
+    height: 100%;
+    width: 60%;
+    font-size: 20px;
+}
+.wrapper-img {
+    display: block;
+    width: 100%;
+    height: 200px;
+    border: 1px solid #05d34e;
+}
+
+.wrapper-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: none;
+}

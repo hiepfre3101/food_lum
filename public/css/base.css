@@ -47,6 +47,12 @@ input::-webkit-inner-spin-button {
 a {
   text-decoration: none !important;
 }
+button:disabled,
+button[disabled]{
+ cursor: not-allowed !important;
+  background-color: #cccccc !important;
+  color: #666666 !important;
+}
 .outline-none{
   outline: none !important;
 }
