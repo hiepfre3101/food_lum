@@ -79,8 +79,7 @@ include_once("./view/header.php");
                             <h5 class="card-title fs-3"><?= $value['product_price'] ?><span>đ</span></h5>
                         </div>
                         <div class="d-lg-flex align-items-center justify-content-start d-none">
-                            <p class="card-text overflow-hidden mh-50 mw-50"><?= $value['descripton'] ?>
-                              </p>
+                            <p class="card-text overflow-hidden mh-50 mw-50"><?= $value['descripton'] ?></p>
                             <a href="?ctr=product-detail&&id=<?= $value['idpro'] ?>" class="fs-4 text-decoration-none mt-4">...Xem chi tiết</a>
                         </div>
                         <a href="?ctr=product-detail&&id=<?= $value['idpro'] ?>"
