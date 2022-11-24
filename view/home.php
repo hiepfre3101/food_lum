@@ -66,7 +66,7 @@ include_once("./view/header.php");
         <p class="title-line flex-fill"></p>
     </h1>
     <!--hiển thị sản phẩm cũng là dùng đường dẫn ảnh tạm thời chỉnh sửa sau-->
-    <div class="row">
+    <div class="row" id="product-list-1">
         <?php foreach ($arrProduct as $value) { ?>
             <div class="col-xxl-2 col-lg-3 col-12 col-sm-4 mb-5">
                 <div class="card w-100 shadow" style="width: 18rem;">

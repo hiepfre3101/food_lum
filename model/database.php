@@ -1,4 +1,5 @@
 <?php
+ob_start();
 require_once 'config.php';
 
 $dsn = "mysql:host=" . DB_HOST . ";dbname=" . DB_NAME . ";charset=UTF8";

@@ -20,8 +20,9 @@ function signIn($userName,$password){
                 $_SESSION['idUser'] = $value['iduser'];
                 if($value['position'] == 0){
                     header("location:index.php?ctr=home");
+                    break;
                 }else{
-                    header("location:index.php?ctr=user-list");
+                    header("location:index.php?ctr=product-list");
                     break;
                 }
             }
