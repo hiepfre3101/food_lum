@@ -269,7 +269,10 @@
 }
 .ttt1{
     float: right;
-    margin-right: 10%;
+    border: none;
+    outline: none;
+    width: 20%;
+    padding-left: 5%;
 }
 .thanhtoan{
     width: 80%;

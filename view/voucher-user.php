@@ -1,17 +1,18 @@
 <?php include_once ("./view/header.php")?>
 <link rel="stylesheet" href="./public/css/voucher.css">
-    <div class="d-block d-lg-flex justify-content-between flex-wrap py-4 px-5 app">
-       <div class="acc-wrapper  me-lg-5">
+    <div class="row app w-100 px-5 py-4">
+    <div class="acc-wrapper col-lg-3 col-10">
             <div class="profile-block w-100 d-flex align-items-center justify-content-start">
-                <div class="">
-                    <p class="fs-4 fw-semibold"><?php if(isset($_SESSION['idUser'])) 
-                    echo getOneDataUser($_SESSION['idUser'])['user_name'];
+                <div class="d-flex justify-content-start">
+                   <?php if(isset($_SESSION['idUser'])){
+                      echo "<img class='rounded-circle w-30 me-5' src =".getOneDataUser($_SESSION['idUser'])['avatar']."></img>";
+                      echo "<div><p class='fs-4 fw-semibold'>".getOneDataUser($_SESSION['idUser'])['user_name']."</p>";
+                      echo "<a href='#' class='text-decoration-none text-gray d-flex justify-content-start align-items-center fs-5 text-gray'><i class='fa-solid fa-pencil'></i> Sửa hồ sơ</a></div>";
+                    } 
                        else{
                          echo "<a href='?ctr=login'>Đăng nhập</a>";
                        }                    
                     ?>
-                </p>
-                    <a href="#" class="text-decoration-none text-gray d-flex justify-content-start align-items-center fs-5 text-gray"><i class="fa-solid fa-pencil"></i> Sửa hồ sơ</a>
                 </div>
             </div>
             <nav class="d-flex flex-column justify-content-center mt-5">
@@ -19,7 +20,7 @@
                <a href="#" class="d-flex justify-content-start align-items-center fs-4 text-decoration-none"><i class="fa-solid fa-ticket-simple me-2 "></i><span class="text-dark link-orange">Kho Voucher</span></a>
             </nav>
        </div>
-       <div class="list-wrapper w-80 p-5 flex-fill">
+       <div class="list-wrapper col-lg-9 col-12 p-5">
             <p class="text-dark fw-semibold fs-1 title-orange position-relative ms-4">Kho Voucher</p>
             <div class="mt-5">
                 <ul class="nav nav-pills">
@@ -41,8 +42,8 @@
                          ?>.jpg" alt="img" class="w-75 h-100">
                         <div class="d-flex align-items-center justify-content-center flex-fill flex-column">
                             <p class="fs-2 fw-bold text-red"><?= $value["discount"]?><span style="color: var(--secondary-color);">%</span></p>
-                           <a href="?ctr=cart" class="d-block w-75"> <button class="w-100 h-100 btn-save fw-semibold fs-4 text-white" <?php if(!isset($_SESSION["idUser"]))echo "disabled";?>>Sử dụng ngay</button></a>
-                            <p style="color:navy; cursor:pointer;" class="fs-5" data-bs-toggle="tooltip" data-bs-placement="top" data-bs-title="Tổng đơn tối thiểu 250000đ">Điều kiện</p>
+                           <a href="?ctr=cart" class="d-block w-75"> <button class="w-100 h-100 btn-save fw-semibold fs-4 text-white" <?php if($value['status']==1)echo "disabled";?>>Sử dụng ngay</button></a>
+                            <p style="color:navy; cursor:pointer;" class="fs-5" data-bs-toggle="tooltip" data-bs-placement="top" data-bs-title="Tổng tiền tích lũy tối thiểu <?=$value["conditionVoucher"]?>đ">Điều kiện</p>
                         </div>
                      </div>
                      <?php endforeach?>
