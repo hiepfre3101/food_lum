@@ -18,7 +18,7 @@ function getOneVoucher($id){
 }
 function getAllVoucherUser($idUser){
     global $pdo;
-   $query = "SELECT vc.discount, vc.content,vcdt.id,vcdt.status 
+   $query = "SELECT vc.discount,vc.content,vc.conditionVoucher,vcdt.id,vcdt.status 
             FROM voucher_detail as vcdt 
             join voucher as vc 
             on vc.idvc = vcdt.idvc
@@ -36,4 +36,11 @@ function saveVoucherDetail($data){
              (?,?,?);";
    $stmt = $pdo->prepare($query);
    $stmt->execute($data);           
+}
+
+function changeStatusVoucher($idVoucher){
+    global $pdo;
+    $query = "UPDATE voucher_detail SET status = 1 WHERE id=$idVoucher";
+    $stmt = $pdo->prepare($query);
+   $stmt->execute();    
 }

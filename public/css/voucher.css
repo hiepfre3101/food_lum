@@ -33,11 +33,17 @@
     border-bottom: 2px solid var(--primary-color) !important;
     color: black !important;
 }
+.w-20{
+    width: 20%;
+}
 .w-30{
     width: 30%;
 }
-.w-80{
-    max-width: 85%;
+.mw-80{
+    max-width: 80%;
+}
+.mw-70{
+    max-width: 70%;
 }
 .btn-save{
     border: none;

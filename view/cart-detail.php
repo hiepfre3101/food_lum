@@ -63,16 +63,20 @@
             </div>
             <div class="col-lg-5">
                 <div class="container">
-                    <div class="giohang-right1 ">
-                        <p class="mon">TÓM TẮT ĐƠN HÀNG</p>
-                        <?php foreach ($arrCart as $key => $value) { ?>
-                            <p class="ttt"><?=$value?>x <?=getOneDataProducts($key)['product_name']?> <span class="ttt1"><?=getOneDataProducts($key)['product_price']*$value?>đ</span></p>
-                            <?php global $totalPrice; $totalPrice += (getOneDataProducts($key)['product_price']*$value);?>
-                        <?php } ?>
+                    <div class="giohang-right1 py-5">
+                        <p class="fs-2 fw- d-flex align-items-center justify-content-center">TÓM TẮT ĐƠN HÀNG</p>
+                      <div class="px-4">
+                            <?php foreach ($arrCart as $key => $value) { ?>
+                                <p class="fw-bold"><?=$value?>x <?=getOneDataProducts($key)['product_name']?> <span class="tdh1"><?=getOneDataProducts($key)['product_price']*$value?>đ</span></p>
+                                <?php global $totalPrice; $totalPrice += (getOneDataProducts($key)['product_price']*$value);?>
+                            <?php } ?>
+                      </div>
                         <hr class="hr1">
-                        <p class="tdh">Tổng đơn hàng <span class="tdh1"><?=$totalPrice?>đ</span></p>
-                        <p class="tdh">Phí giao hàng <span class="tdh1">10000đ</span></p>
-                        <p class="ttt">Tổng thanh toán <span class="ttt1"><?=$totalPrice + 10000?>đ</span></p>
+                        <div class="d-flex flex-column align-items-center px-4 fw-bold">
+                            <p class="w-100 d-flex justify-content-between">Tổng đơn hàng <span class="tdh1"><?=$total?>đ</span></p>
+                            <p class="w-100 d-flex justify-content-between">Phí giao hàng <span class="tdh1">10000đ</span></p>
+                            <p class="w-100 d-flex justify-content-between">Tổng thanh toán <span class="tdh1"><?=$total + 10000?>đ</span></p>
+                        </div>
                         <br>
                     </div>
                 </div>
