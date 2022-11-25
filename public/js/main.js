@@ -12,17 +12,33 @@ function mathPrice(price, action, selector, moneyUiId) {
       }
       quantityAfter = 1;
       break;
-    case "change":
-      quantityAfter = parseInt(quantity.value);
-      break;
     default:
       quantityAfter = 1;
   }
   quantity.value = quantityAfter;
   const moneyUi = document.querySelector(`#${moneyUiId}`);
-  const total = quantityAfter * price;
-  moneyUi.innerText = total;
+  const totalEachProduct = quantityAfter * price;
+  moneyUi.innerText = totalEachProduct;
+  loadTotal();
 }
+
+function loadTotal(){
+  const listTotal = document.querySelectorAll('.money-each');
+  const totalOrder = document.querySelector('#totalOrder');
+  const listOption = document.querySelectorAll(".vou option");
+  let discount=0;
+  for(let i = 0; i<listOption.length;i++){
+    if(listOption[i].selected===true){
+      discount  = parseInt(listOption[i].id);
+    };
+  }
+  let totalMoney=0;
+ for (let i =0;i<listTotal.length;i++){
+    totalMoney+=parseInt(listTotal[i].innerText);
+ }
+ totalOrder.value = totalMoney - totalMoney*parseInt(discount)/100;
+}
+
 
 // js admin hiển thị ảnh khi chọn file
 const boxImg = document.querySelector(".wrapper-img");
@@ -34,3 +50,4 @@ if (boxImg || file) {
     img.style.display = "block";
   });
 }
+

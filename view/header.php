@@ -21,7 +21,7 @@
 
 </head>
 
-<body onload="changeCart(0)">
+<body onload="loadTotal()">
 <nav class="navbar navbar-expand-lg  container-fluid px-lg-5 py-lg-4">
     <div class="container-fluid">
         <a class="navbar-brand w-10 d-flex justify-content-center " href="?ctr=home"><img

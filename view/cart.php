@@ -1,7 +1,7 @@
 <?php include_once("./view/header.php") ?>
-
     <link rel="stylesheet" href="./public/css/cart.css">
-    <div class="container">
+    <script src="./public/js/main.js" type="text/javascript"></script>
+    <div class="container" onload="loadTotal()">
         <form action="?ctr=cart-detail" method="post">
             <h4 class="card-title mb-4 ghct">GIỎ HÀNG CỦA TÔI</h4>
             <div class="row">
@@ -34,7 +34,7 @@
                                             </div>
                                             <!--lấy giá ở đây-->
                                             <p class='pr w-25 fs-3 d-flex align-items-center ms-3'>
-                                                <span id="money<?=$key?>"><?=(int)$arrCart[$key] * getOneDataProducts($key)['product_price']?></span>
+                                                <span class="money-each" id="money<?=$key?>"><?=(int)$arrCart[$key] * getOneDataProducts($key)['product_price']?></span>
                                                 <span>đ</span>
                                             </p>
                                         </div>
@@ -48,24 +48,36 @@
                 </div>
                 <div class="col-lg-4 mt-5 mt-lg-0">
                     <div class="giohang-right">
-                        <p class="mon">2 MÓN</p>
+                        <p class="mon">
+                            <?php if(isset($_SESSION["arrCart"])){
+                                echo count($_SESSION["arrCart"]);
+                             }else{
+                                echo "0";
+                             }
+                            ?> MÓN</p>
                         <hr class="hr">
                         <p class="gg">Bạn có Mã giảm giá?</p>
                         <div class="vc">
-                            <select class="vou" name="" id="">
-                                <option value="0" >Chọn voucher</option>
+                            <select name="voucherId" class="vou"  id="voucher">
+                                <option value="" id="0">Chọn voucher</option>
                                 <?php foreach($vouchers as $value):?>
-                                    <option value="<?php $value['id']?>" ><?=$value["content"]?></option>
+                                   <!--id : lưu trữ discount của từng voucher để tính tiền js-->
+                                   <!--value : truyền id của voucher sang back end-->
+                                    <option  value="<?=$value['id']?>" id="<?=$value["discount"]?>"><?=$value["content"]?></option>
                                 <?php endforeach?>
                             </select>
-                            <button class="ad px-2" type="submit">Áp dụng</button>
+                            <button class="ad px-2" type="button" onclick="loadTotal()">Áp dụng</button>
                         </div>
                         <br>
                         <hr class="hr">
-                        <p class="tdh">Tổng đơn hàng <span class="tdh1">50000đ</span></p>
-                        <p class="ttt">Tổng thanh toán <span class="ttt1">50000đ</span></p>
-                        <hr class="hr">
-                        <button class="thanhtoan" type="submit">Thanh toán</button>
+                            <p class="ttt d-flex justify-content-start align-items-center">
+                                Tổng thanh toán: 
+                            <input type="text" readonly class="ttt1 fw-bold" id="totalOrder" name="total" value="">
+                                 <span>đ</span>
+                             </input>
+                            </p>
+                            <hr class="hr">
+                            <button class="thanhtoan" type="submit">Thanh toán</button>
                         <br>
                         <br>
                     </div>
@@ -125,5 +137,4 @@
             </div>
         </form>
     </div>
-    <script src="./public/js/main.js"></script>
 <?php include_once("./view/footer.php") ?>

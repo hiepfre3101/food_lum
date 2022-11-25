@@ -7,7 +7,8 @@ function signUp(){
         "email" => $_POST['email'],
         "phone" => $_POST['phone'],
         "address" => $_POST['address'],
-        "position" => 0
+        "position" => 0,
+        "avatar" => "./public/img/".$_FILES["avatar"]["name"]
     ];
     addUser($data);
     header("location:index.php");
