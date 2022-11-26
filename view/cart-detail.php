@@ -84,7 +84,11 @@
                     <p class="w-100 d-flex justify-content-between">Tổng thanh toán <span
                                 class="tdh1"><?= $_POST['total'] += 10000 ?>đ</span></p>
                     <input hidden type="text" name="total" value="<?= $_POST['total'] ?>">
+<<<<<<< HEAD
                     <input hidden type="text" name="voucher" value="<?= $_POST['voucherId'] ?>">
+=======
+                    <input hidden type="text" name="voucherId" value="<?= $_POST['voucherId'] ?>">
+>>>>>>> 8cf05e35024d2873dbdaf728fd199a2b9944abb7
                 </div>
                 <br>
             </div>

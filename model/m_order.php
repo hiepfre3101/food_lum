@@ -69,7 +69,6 @@ function productDetailOrder($id){
     $data = $stmt->fetchAll();
     return $data;
 }
-
 function getUserOrder($idUser){
     global $pdo;
     $query = "SELECT od.date_time, od.status, od.total,oddt.idpro, oddt.quantity 
@@ -83,3 +82,10 @@ function getUserOrder($idUser){
     $data = $stmt->fetchAll();
     return $data;
 }
+function changeStatusOrder($id,$status){
+    global $pdo;
+    $query = "UPDATE order_user SET status = $status WHERE idorder=$id";
+    $stmt = $pdo->prepare($query);
+    $stmt->execute();
+}
+

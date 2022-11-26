@@ -14,12 +14,20 @@ function showOrderDetail()
     $arrProduct = productDetailOrder($_GET['idOrder']);
     render("detail-order", ["idUser"=>$idUser,"arrProduct"=>$arrProduct,"total"=>$total], 1);
 }
+function updateSattusOrder(){
+    $status = $_POST['status'];
+    $idOrder = $_GET['idOrder'];
+    changeStatusOrder($idOrder,$status);
+    showOrder();
+}
 
 function addOrderNew()
 {
+//    1.
 //    thực hiện thêm dữ liệu vào bảng order său đó lấy mảng sản phẩm trong giỏ hàng thêm vào bảng order_detail
     $total = $_POST['total'];
     $iduser = $_SESSION['idUser'];
+    $idVouCher = $_POST['voucherId'];
     $date = date('Y-m-d');
 //    kiểm tra xem có đơn hàng nào không nếu khôgn có thì gán giá trị bàng 1 cho id còn nếu khôgn có lấy giá trị id đơn hàng mới nhất +1
     if(empty(countOrder())){
@@ -48,6 +56,7 @@ function addOrderNew()
         addDataOrderDetail($DetailOrder);
     }
     setArrCart([]);
+    changeStatusVoucher($idVouCher,$iduser);
     header("location:index.php?ctr=order-user");
 }
 
@@ -56,3 +65,5 @@ function showClientOrder(){
     $orders = getUserOrder($idUser);
     render('order-user',["orders"=>$orders],0);
 }
+
+
