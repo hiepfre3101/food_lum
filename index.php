@@ -84,7 +84,7 @@ switch ($ctr) {
         showOrder();
         break;
     case "detail-order":
-        showOrderDetail();
+        showOrderDetail(1);
         break;
     case "status-Order":
         updateSattusOrder();
