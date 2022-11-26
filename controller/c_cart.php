@@ -29,7 +29,6 @@ function showCheckOut()
     setArrCart($data);
 //    lấy dữ liệu mới nhất của cart
     $arrCart = getCart();
-//    lấy tông tin của user sử lý său do chưa có phần đăng nhập
     $arrInfoUsser = getOneDataUser($_SESSION['idUser']);
     render("cart-detail", ["arrCart" => $arrCart, "arrInfoUser" => $arrInfoUsser], 0);
 }

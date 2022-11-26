@@ -70,3 +70,10 @@ function productDetailOrder($id){
     return $data;
 }
 
+function changeStatusOrder($id,$status){
+    global $pdo;
+    $query = "UPDATE order_user SET status = $status WHERE idorder=$id";
+    $stmt = $pdo->prepare($query);
+    $stmt->execute();
+}
+

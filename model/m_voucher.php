@@ -38,9 +38,9 @@ function saveVoucherDetail($data){
    $stmt->execute($data);           
 }
 
-function changeStatusVoucher($idVoucher){
+function changeStatusVoucher($idVoucher,$idUser){
     global $pdo;
-    $query = "UPDATE voucher_detail SET status = 1 WHERE id=$idVoucher";
+    $query = "UPDATE voucher_detail SET status = 1 WHERE idvc=$idVoucher AND iduser=$idUser";
     $stmt = $pdo->prepare($query);
    $stmt->execute();    
 }
