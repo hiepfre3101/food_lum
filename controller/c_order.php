@@ -7,12 +7,12 @@ function showOrder()
     render("order", ["arrOrder" => $arrOrder, "countPage" => $pageCount], 1);
 }
 // hiển thị chi tiết đơn hàng của admin
-function showOrderDetail()
+function showOrderDetail($role)
 {
     $idUser = getOneDataUser($_GET['idUser']);
     $total = getOneDataOrder($_GET['idOrder']);
     $arrProduct = productDetailOrder($_GET['idOrder']);
-    render("detail-order", ["idUser"=>$idUser,"arrProduct"=>$arrProduct,"total"=>$total], 1);
+    render("detail-order", ["idUser"=>$idUser,"arrProduct"=>$arrProduct,"total"=>$total], $role);
 }
 function updateSattusOrder(){
     $status = $_POST['status'];
