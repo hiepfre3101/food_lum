@@ -6,7 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link rel="stylesheet" href="../../public/css/style-admin.css">
+    <link rel="stylesheet" href="./public/css/style-admin.css">
     <!-- link icon -->
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
 </head>
@@ -27,9 +27,6 @@
                         </span>
                         <a href="">Bảng Điều Khiển</a>
                     </span>
-                    <span class="material-symbols-outlined">
-                        expand_more
-                    </span>
                 </li>
                 <label for="opent-1">
                     <li class="item">
@@ -44,7 +41,7 @@
                             expand_more
                         </span>
                         <ul class="sub-menu">
-                            <li class="sub-itme"><a href="">Danh Sách Sản Phẩm</a></li>
+                            <li class="sub-itme"><a href="?ctr=product-list">Danh Sách Sản Phẩm</a></li>
                             <li class="sub-itme"><a href="">Danh Mục Sản Phẩm</a></li>
                         </ul>
                     </li>
@@ -63,87 +60,46 @@
                         </span>
                         <ul class="sub-menu">
                             <li class="sub-itme"><a href="">Danh Sách Khách Hàng</a></li>
-                            <li class="sub-itme"><a href="">Danh Mục Sản Phẩm</a></li>
+                            <li class="sub-itme"><a href="">Thêm Khách Hàng</a></li>
                         </ul>
                     </li>
                 </label>
-                <li class="item">
-                    <span>
-                        <span class="material-symbols-outlined">
-                            home
+                <label for="opent-3">
+                    <li class="item">
+                        <span>
+                            <span class="material-symbols-outlined">
+                                home
+                            </span>
+                            <a>Bình Luận</a>
                         </span>
-                        <a href="">Bình Luận</a>
-                    </span>
-                    <span class="material-symbols-outlined">
-                        expand_more
-                    </span>
-                </li>
-                <li class="item">
-                    <span>
-                        <span class="material-symbols-outlined">
-                            home
+                        <input type="checkbox" hidden id="opent-3">
+                        <span class="material-symbols-outlined up">
+                            expand_more
                         </span>
-                        <a href="">Đơn Hàng</a>
-                    </span>
-                    <span class="material-symbols-outlined">
-                        expand_more
-                    </span>
-                </li>
-                <li class="item">
-                    <span>
-                        <span class="material-symbols-outlined">
-                            home
+                        <ul class="sub-menu">
+                            <li class="sub-itme"><a href="">Tất Cả Bình Luận</a></li>
+                            <li class="sub-itme"><a href="">Thống Kê Bình Luận</a></li>
+                        </ul>
+                    </li>
+                </label>
+                <label for="opent-4">
+                    <li class="item">
+                        <span>
+                            <span class="material-symbols-outlined">
+                                home
+                            </span>
+                            <a>Đơn Hàng</a>
                         </span>
-                        <a href="">Đơn Hàng</a>
-                    </span>
-                    <span class="material-symbols-outlined">
-                        expand_more
-                    </span>
-                </li>
-                <li class="item">
-                    <span>
-                        <span class="material-symbols-outlined">
-                            home
+                        <input type="checkbox" hidden id="opent-4">
+                        <span class="material-symbols-outlined up">
+                            expand_more
                         </span>
-                        <a href="">Đơn Hàng</a>
-                    </span>
-                    <span class="material-symbols-outlined">
-                        expand_more
-                    </span>
-                </li>
-                <li class="item">
-                    <span>
-                        <span class="material-symbols-outlined">
-                            home
-                        </span>
-                        <a href="">Đơn Hàng</a>
-                    </span>
-                    <span class="material-symbols-outlined">
-                        expand_more
-                    </span>
-                </li>
-                <li class="item">
-                    <span>
-                        <span class="material-symbols-outlined">
-                            home
-                        </span>
-                        <a href="">Đơn Hàng</a>
-                    </span>
-                    <span class="material-symbols-outlined">
-                        expand_more
-                    </span>
-                </li>
-                <li class="item">
-                    <span>
-                        <span class="material-symbols-outlined">
-                            home
-                        </span>
-                        <a href="">Đơn Hàng</a>
-                    </span>
-                    <span class="material-symbols-outlined">
-                        expand_more
-                    </span>
-                </li>
+                        <ul class="sub-menu">
+                            <li class="sub-itme"><a href="?ctr=list-order">Đơn Hàng Mới</a></li>
+                            <li class="sub-itme"><a href="">Đơn Hàng Đang Giao</a></li>
+                        </ul>
+                    </li>
+                </label>
             </ul>
         </div>
         <div class="box-main">

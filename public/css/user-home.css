@@ -145,15 +145,6 @@
 .w-70{
     width: 70%;
 }
-.w-60{
-    width: 60%;
-}
-.w-40{
-    width: 40%;
-}
-.w-30{
-    width: 30%;
-}
 .bg-black{
     background-color: black;
 }
@@ -205,7 +196,7 @@
 }
 .img-col{
     height: 200px;
-    object-fit: fill;
+    object-fit: cover;
     transition: 0.5s ease-in-out;
 }
 .img-col:hover{
@@ -225,4 +216,69 @@
 }
 .btn-prev{
     margin-left: 11% !important;
+}
+.mh-50{
+    max-height: 50px !important;
+}
+.mw-50{
+    max-width: 50% !important;
+}
+
+/*css pagination*/
+
+.pagination {
+    width: auto;
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+
+.pagination a {
+    text-decoration: none;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: var(--text-color);
+}
+.pagination-left,
+.pagination-right {
+    width: 30px;
+    height: 30px;
+    margin: 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 5px;
+}
+
+.material-symbols-outlined {}
+
+.box-pagination {
+    width: auto;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.pagination-item {
+    width: 30px;
+    height: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 5px;
+
+}
+
+.pagination-item.active {
+    background-color: #3b76ef;
+}
+
+.pagination-item.active a {
+    color: #fff;
 }

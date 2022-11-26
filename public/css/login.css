@@ -1,0 +1,97 @@
+/* Bên phải */
+.card-title{
+    font-size: 32px;
+    font-family: Oswald, sans-serif;
+    font-weight: 700;
+    line-height: 38px;
+    color: #202124;
+    margin-top: 10%;
+}
+.card-title1{
+    font-size: 18px;
+    font-family: Oswald, sans-serif;
+    font-weight: 700;
+    line-height: 20px;
+    color: #202124;
+    margin-top: 10%;
+}
+.form-input{
+    height: 30px;
+    outline: none;
+    border: none;
+    border-radius: 0;
+    border-bottom: 1px solid black;
+    transition: 0.3s ease-in-out; 
+    font-size:2rem;
+    box-shadow: none !important;
+}
+.form-input:focus{
+    border-bottom: 2px solid var(--secondary-color);
+}
+.ivalid{
+    color: red;
+    font-size: 1.2rem;
+}
+.dangnhap{
+    background-color: #28A745;
+    border: 1px solid #28A745  !important;
+    color: white;
+    font-size: 15px;
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-weight: 700;
+    line-height: 20px;
+    padding: 12px 0px 12px 0px;
+    border-radius: 20px;
+}
+.dangky{
+    background-color: #CD0027;
+    border: 1px solid #CD0027  !important;
+    color: white;
+    font-size: 15px;
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-weight: 700;
+    line-height: 20px;
+    padding: 12px 0px 12px 0px;
+    border-radius: 20px;
+}
+.btn-facebook{
+    background-color: #355089;
+    border: 1px solid #355089  !important;
+    color: white;
+    font-size: 15px;
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-weight: 700;
+    line-height: 20px;
+    padding: 12px 0px 12px 0px;
+    border-radius: 20px;
+}
+.btn-google{
+    background-color: #CD0027;
+    border: 1px solid #CD0027  !important;
+    color: white;
+    font-size: 15px;
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-weight: 700;
+    line-height: 20px;
+    padding: 12px 0px 12px 0px;
+    border-radius: 20px;
+}
+
+.row-rigth {
+    height: 100%;
+    width: 60%;
+    font-size: 20px;
+}
+.wrapper-img {
+    display: block;
+    width: 100%;
+    height: 200px;
+    border: 1px solid #05d34e;
+}
+
+.wrapper-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: none;
+}
