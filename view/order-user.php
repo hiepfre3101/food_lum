@@ -39,7 +39,7 @@
                             <p class="fw-bold">Đơn hàng ngày :<span class="text-red"> <?= $value["date_time"] ?></span></p>
                             <p class="fw-bold">Tổng tiền: <span class="text-red"><?= $value["total"] ?>đ</span></p>
                             <div class="dropdown">
-                                <button class="p-2 text-white btn-save dropdown-toggle w-100 h-100" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                <button class="p-2 text-white btn-save dropdown-toggle w-100 h-100" disabled type="button" data-bs-toggle="dropdown" aria-expanded="false">
                                     Chi tiết
                                 </button>
                                 <div class="dropdown-menu">

@@ -71,12 +71,8 @@ function productDetailOrder($id){
 }
 function getUserOrder($idUser){
     global $pdo;
-    $query = "SELECT od.date_time, od.status, od.total,oddt.idpro, oddt.quantity 
-              FROM order_user as od 
-              INNER JOIN order_detail as oddt
-             ON od.idorder = oddt.idorder
-             GROUP BY od.id_user
-             HAVING od.id_user = $idUser";
+    $query = "SELECT * FROM order_user
+             WHERE id_user = $idUser";
     $stmt = $pdo->prepare($query);
     $stmt->execute();
     $data = $stmt->fetchAll();
