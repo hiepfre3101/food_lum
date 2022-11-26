@@ -45,7 +45,6 @@ function addOrderNew()
     ];
     addDataOrder($data);
 //// lấy mảng giỏ hàng
-/// 2.
     $arrCart = getCart();
 //    key của mảng này là id của sản phẩm trong giỏ hàng còn value của nó chính là số lượng sản phẩm có trong giỏ hàng
     foreach ($arrCart as $key => $value){
@@ -57,8 +56,14 @@ function addOrderNew()
         addDataOrderDetail($DetailOrder);
     }
     setArrCart([]);
-//    3. cập nhật trạng thái của voucher_detail
     changeStatusVoucher($idVouCher,$iduser);
-    header("location:index.php?ctr=home&&đặt hành thành công");
+    header("location:index.php?ctr=order-user");
 }
+
+function showClientOrder(){
+    $idUser = $_SESSION["idUser"];
+    $orders = getUserOrder($idUser);
+    render('order-user',["orders"=>$orders],0);
+}
+
 
