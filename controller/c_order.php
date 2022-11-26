@@ -48,5 +48,11 @@ function addOrderNew()
         addDataOrderDetail($DetailOrder);
     }
     setArrCart([]);
-    header("location:index.php?ctr=home&&đặt hành thành công");
+    header("location:index.php?ctr=order-user");
+}
+
+function showClientOrder(){
+    $idUser = $_SESSION["idUser"];
+    $orders = getUserOrder($idUser);
+    render('order-user',["orders"=>$orders],0);
 }

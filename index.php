@@ -67,6 +67,9 @@ switch ($ctr) {
     case "add-order";
         addOrderNew();
         break;
+    case "order-user":
+        showClientOrder();
+        break;    
     //admin
     case "add-product":
         showAddProduct();
