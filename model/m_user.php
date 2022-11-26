@@ -3,7 +3,7 @@ include_once "database.php";
 function addUser($data = [])
 {
     global $pdo;
-    $query = "INSERT INTO user (user_name,full_name,pass,email,phone,address,position) VALUE (:user_name,:full_name,:pass,:email,:phone,:address,:position)";
+    $query = "INSERT INTO user (user_name,full_name,pass,email,phone,address,position,avatar) VALUE (:user_name,:full_name,:pass,:email,:phone,:address,:position,:avatar)";
     $stmt = $pdo->prepare($query);
     $stmt->execute($data);
 }

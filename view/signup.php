@@ -40,7 +40,7 @@
               <label for="img-form" class="wrapper-img">
                 <img src="https://picsum.photos/200/300" alt="" >
               </label>
-              <input type="file" name="img-product-add" id="img-form">
+              <input type="file" name="avatar" id="img-form">
               <p class="form-message" style="color:red;"></p>
             </div>
           </div> <!-- form-group// -->

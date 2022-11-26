@@ -11,6 +11,7 @@ function signUp(){
         "avatar" => "./public/img/".$_FILES["avatar"]["name"]
     ];
     addUser($data);
+    move_uploaded_file($_FILES["avatar"]["tmp_name"],"./public/img/".$_FILES["avatar"]["name"]);
     header("location:index.php");
 }
 function signIn($userName,$password){

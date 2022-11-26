@@ -23,6 +23,7 @@
         $status
       ];
       saveVoucherDetail($data);
+      changeQuantityVoucher($idVoucher);
       header("location:index.php?ctr=voucher");
    }
 ?>

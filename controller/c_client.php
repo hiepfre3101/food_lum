@@ -21,4 +21,17 @@ function showSignup()
     render("signup", [], 0);
 }
 
+function getInfoHeader(){
+    if(isset($_SESSION["arrCart"])){
+        $countCart = count($_SESSION["arrCart"]);
+        $userInfo = getOneDataUser($_SESSION["idUser"]);
+    }else if(isset($_SESSION["idUser"])){
+        $userInfo = getOneDataUser($_SESSION["idUser"]);
+        $countCart=0;
+    }else{
+        $userInfo = [];
+        $countCart=0;
+    }
+    render("header",["countCart"=>$countCart,"userInfo"=>$userInfo],0);
+}
 ?>
