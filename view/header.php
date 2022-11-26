@@ -77,7 +77,7 @@
                     </div>
                     <a href="?ctr=cart" class="d-none d-lg-block">
                         <i class="fa-solid fa-burger fs-1 cart text-dark" role="button">
-                            <div class="cart-after">0</div>
+                            <div class="cart-after"><?=$countCart?></div>
                         </i>
                     </a>
                 </div>
@@ -96,7 +96,7 @@
             <div class="d-flex justify-content-end align-items-center h-100 me-3">
                 <i class="fa-solid fa-location-dot text-gray fs-4"></i>
                 <span class="ms-3 text-white fw-semibold fs-4">Giao hàng tận nơi: </span>
-                <span class="ms-3 text-white fw-semibold fs-4">Hà Đông</span>
+                <span class="ms-3 text-white fw-semibold fs-4"><?php if(isset($_SESSION["idUser"])){echo $userInfo["address"];}?></span>
             </div>
             <div class=" d-flex justify-content-start align-items-center">
                 <i class="fa-solid fa-clock text-gray fs-4"></i>

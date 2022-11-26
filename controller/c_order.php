@@ -57,7 +57,7 @@ function addOrderNew()
     }
     setArrCart([]);
     changeStatusVoucher($idVouCher, $iduser);
-    // header("location:index.php?ctr=order-user");
+    header("location:index.php?ctr=order-user");
 }
 
 function showClientOrder()

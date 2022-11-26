@@ -26,58 +26,73 @@ $ctr = isset($_GET["ctr"]) ? $_GET['ctr'] : '/';
 switch ($ctr) {
     case "/";
     case "home":
+        getInfoHeader();
         showClientHome();
         break;
     case "product-detail":
+        getInfoHeader();
         showClientProductDetail();
         break;
     case "add-cart":
-        displayCart();
+        getInfoHeader();
+        addProductCart();
         break;
     case "cart":
+        getInfoHeader();
         displayCart();
         break;
     case "cart-detail":
+        getInfoHeader();
         showCheckOut();
         break;
     case "login":
+        getInfoHeader();
         showLogin();
         break;
     case "check-login":
+        getInfoHeader();
         signIn($_POST['username'], $_POST['password']);
         break;
     case "logout":
+        getInfoHeader();
         logOunt();
         break;
     case "sign-up":
+        getInfoHeader();
         showSignup();
         break;
     case "save-user":
+        getInfoHeader();
         signUp();
         break;
     case "voucher":
+        getInfoHeader();
         showVoucher();
         break;
     case "save-user-voucher":
+        getInfoHeader();
         saveVoucherUser();
         break;
     case "voucher-user":
+        getInfoHeader();
         showVoucherUser();
         break;
     case "add-order";
+        getInfoHeader();
         addOrderNew();
         break;
     case "order-user":
+        getInfoHeader();
         showClientOrder();
-        break;    
-    //admin
+        break;
+        //admin
     case "add-product":
         showAddProduct();
         break;
     case "product-list":
         showListProduct();
         break;
-    case"user-list":
+    case "user-list":
         showListUser();
         break;
     case "list-order":
@@ -89,5 +104,4 @@ switch ($ctr) {
     case "status-Order":
         updateSattusOrder();
         break;
-
 }
