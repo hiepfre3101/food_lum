@@ -336,8 +336,8 @@
 .table-main td{
     width: 100%;
 }
-.table-main input[type="checkbox"]{
-    margin-left: 50px;
+.table-main tr td:first-child{
+    padding-left: 50px;
 }
 .table-main td a{
     text-decoration: none;

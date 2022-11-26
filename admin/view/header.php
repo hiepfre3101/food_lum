@@ -95,7 +95,7 @@
                             expand_more
                         </span>
                         <ul class="sub-menu">
-                            <li class="sub-itme"><a href="">Đơn Hàng Mới</a></li>
+                            <li class="sub-itme"><a href="?ctr=list-order">Đơn Hàng Mới</a></li>
                             <li class="sub-itme"><a href="">Đơn Hàng Đang Giao</a></li>
                         </ul>
                     </li>
