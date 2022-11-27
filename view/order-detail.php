@@ -43,8 +43,7 @@
                             </tr>
                         <?php endforeach ?>
                     </tbody>
-                    <p class="fw-bold">Voucher: <span class="text-red"><?= $order["discount"] ?>%</span></p>
-                    <p class="fw-bold">Giảm giá: <span class="text-red"><?= $order["discount"]/100*$order["total"]?>đ</span></p>
+                    <p class="fw-bold">Phí ship: <span class="text-red">10000đ</span></p>
                     <p class="fw-bold">Tổng tiền: <span class="text-red"><?= $order["total"] ?>đ</span></p>
                     <hr>
                 </table>

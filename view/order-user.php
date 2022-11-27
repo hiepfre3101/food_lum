@@ -27,9 +27,11 @@
                 <li class="nav-item">
                     <a class="nav-link active-tab fs-3 text-dark" aria-current="page" href="#">Tất cả</a>
                 </li>
+                <li><a class="nav-link fs-3 text-dark" href="#">Đang giao</a></li>
                 <li class="nav-item">
-                    <a class="nav-link fs-3 text-dark" href="#">Đang giao</a>
+                    <a class="nav-link fs-3 text-dark" href="#">Giao hàng thành công</a>
                 </li>
+
             </ul>
             <div class="row mt-4">
                 <?php foreach ($orders as $value) : ?>
@@ -39,7 +41,7 @@
                             <p class="fw-bold">Đơn hàng ngày :<span class="text-red"> <?= $value["date_time"] ?></span></p>
                             <p class="fw-bold">Tổng tiền: <span class="text-red"><?= $value["total"] ?>đ</span></p>
                             <div class="dropdown">
-                                <a href="?ctr=order-detail-user&order=<?=$value["idorder"]?>" class="d-block px-3 py-2 text-white btn-save w-100 h-100"  type="button" >
+                                <a href="?ctr=order-detail-user&order=<?= $value["idorder"] ?>" class="d-block px-3 py-2 text-white btn-save w-100 h-100" type="button">
                                     Chi tiết
                                 </a>
                             </div>

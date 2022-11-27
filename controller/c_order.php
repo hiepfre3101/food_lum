@@ -42,7 +42,7 @@ function addOrderNew()
         "id_user" => $iduser,
         "date_time" => $date,
         "total" => $total,
-        "idvc_detail" => $idVouCher
+       
     ];
     addDataOrder($data);
     //// lấy mảng giỏ hàng
@@ -57,7 +57,9 @@ function addOrderNew()
         addDataOrderDetail($DetailOrder);
     }
     setArrCart([]);
-    changeStatusVoucher($idVouCher, $iduser);
+    if($idVouCher){
+         changeStatusVoucher($idVouCher, $iduser);
+    }
     header("location:index.php?ctr=order-user");
 }
 

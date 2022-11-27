@@ -12,12 +12,8 @@ function getAllDataOrder()
 function getOneDataOrder($id)
 {
     global $pdo;
-    $query = "SELECT od.*, vc.discount
-    FROM `order_user` as od
-    JOIN voucher_detail as vcdt 
-    on od.idvc_detail = vcdt.id
-    JOIN voucher as vc
-    on vcdt.idvc = vc.idvc
+    $query = "SELECT *
+    FROM `order_user` 
     WHERE idorder =$id";
     $stmt = $pdo->prepare($query);  
     $stmt->execute();
@@ -28,7 +24,7 @@ function getOneDataOrder($id)
 function addDataOrder($data = [])
 {
     global $pdo;
-    $query = "INSERT INTO order_user (idorder,id_user, date_time, total, status,idvc_detail) VALUE (:idorder,:id_user, :date_time, :total, '1',:idvc_detail)";
+    $query = "INSERT INTO order_user (idorder,id_user, date_time, total, status) VALUE (:idorder,:id_user, :date_time, :total, '1')";
     $stmt = $pdo->prepare($query);
     $stmt->execute($data);
 }
