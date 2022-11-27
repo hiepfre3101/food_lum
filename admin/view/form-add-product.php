@@ -3,7 +3,7 @@
 
 <div class="form-add-product">
     <p class="title">Thêm mới sản phẩm</p>
-    <form action="" class="form-add">
+    <form action="?ctr=Add-product" method="post" class="form-add" enctype="multipart/form-data">
         <div class="row-form">
             <div class="row-left"><label for="name-form">Tên sản phẩm : </label></div>
             <div class="row-rigth">
@@ -21,7 +21,7 @@
         <div class="row-form">
             <div class="row-left"><label for="category-form">Loại sản phẩm : </label></div>
             <div class="row-rigth">
-                <select class="form-control" name="" id="category-form">
+                <select class="form-control" name="category" id="category-form">
                     <option value="">Chon loai san pham</option>
                     <?php foreach($categories as $value):?>
                         <option value="<?=$value["iddm"]?>"><?=$value["categories_name"]?></option>

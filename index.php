@@ -85,7 +85,7 @@ switch ($ctr) {
         getInfoHeader();
         showClientOrder();
         break;
-        //admin
+    //admin
     case "add-product":
         showAddProduct();
         break;
@@ -103,5 +103,8 @@ switch ($ctr) {
         break;
     case "status-Order":
         updateSattusOrder();
+        break;
+    case "Add-product":
+        addNewProduct();
         break;
 }
