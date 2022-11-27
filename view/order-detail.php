@@ -21,31 +21,33 @@
         </nav>
     </div>
     <div class="list-wrapper col-lg-9 col-12 p-5 ">
-        <p class="text-dark fw-semibold fs-1 title-orange position-relative ms-4">Đơn hàng</p>
-        <div class="mt-5">
-            <ul class="nav nav-pills">
-                <li class="nav-item">
-                    <a class="nav-link active-tab fs-3 text-dark" aria-current="page" href="#">Tất cả</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link fs-3 text-dark" href="#">Đang giao</a>
-                </li>
-            </ul>
-            <div class="row mt-4">
-                <?php foreach ($orders as $value) : ?>
-                    <div class="col-lg-6 col-12 voucher shadow-lg d-flex justify-content-between mb-5 p-4">
-                        <img src="./public/img/delivery.gif" alt="" class="w-25">
-                        <div class="d-flex align-items-center justify-content-center flex-fill flex-column">
-                            <p class="fw-bold">Đơn hàng ngày :<span class="text-red"> <?= $value["date_time"] ?></span></p>
-                            <p class="fw-bold">Tổng tiền: <span class="text-red"><?= $value["total"] ?>đ</span></p>
-                            <div class="dropdown">
-                                <a href="?ctr=order-detail-user&order=<?=$value["idorder"]?>" class="d-block px-3 py-2 text-white btn-save w-100 h-100"  type="button" >
-                                    Chi tiết
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                <?php endforeach ?>
+        <p class="text-dark fw-semibold fs-1 title-orange position-relative ms-4">Chi tiết đơn hàng</p>
+        <p class="fw-bold">Đơn hàng ngày :<span class="text-red"> <?= $order["date_time"] ?></span></p>
+        <div class="d-flex justify-content-around">
+            <img src="./public/img/order.gif" alt="" class="w-25">
+            <div class="mt-5 flex-fill">
+                <table class="mt-4 w-100">
+                    <thead>
+                        <th>Món ăn</th>
+                        <th>Số lượng</th>
+                        <th>Đơn giá</th>
+                        <th>Thành tiền</th>
+                    </thead>
+                    <tbody>
+                        <?php foreach ($orderDetails as $value) : ?>
+                            <tr>
+                                <th><?= $value["product_name"] ?></th>
+                                <th><?= $value["quantity"] ?></th>
+                                <th><?= $value["product_price"] ?></th>
+                                <th><?= $value["quantity"] * $value["product_price"] ?></th>
+                            </tr>
+                        <?php endforeach ?>
+                    </tbody>
+                    <p class="fw-bold">Voucher: <span class="text-red"><?= $order["discount"] ?>%</span></p>
+                    <p class="fw-bold">Giảm giá: <span class="text-red"><?= $order["discount"]/100*$order["total"]?>đ</span></p>
+                    <p class="fw-bold">Tổng tiền: <span class="text-red"><?= $order["total"] ?>đ</span></p>
+                    <hr>
+                </table>
             </div>
         </div>
     </div>
