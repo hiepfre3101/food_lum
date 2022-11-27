@@ -1,11 +1,18 @@
 <?php
+
+use function PHPSTORM_META\type;
+
 function displayCart()
 {
     $arrCarrt = getCart();
-    if($arrCarrt){
-         $vouchers = getAllVoucherUser($_SESSION['idUser']);
+    if($arrCarrt && isset($_SESSION["idUser"])){
+         $vouchers = getAllVoucherUserUseful($_SESSION['idUser']);
+    }else if(isset($_SESSION["idUser"])){
+        $arrCarrt ="";
+        $vouchers = getAllVoucherUserUseful($_SESSION['idUser']);
     }else{
-      return "Hãy mua hàng ngay nào";  
+         header("location:?ctr=login");
+      die;
     }
      render("cart",["arrCart"=>$arrCarrt, "vouchers"=>$vouchers],0);
 }
