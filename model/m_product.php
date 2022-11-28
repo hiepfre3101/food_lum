@@ -72,7 +72,7 @@ function addImg($data = []){
 // lấy các ảnh cùng sản phẩm
 function getImg($id){
     global $pdo;
-    $query = "SELECT * FROM img_product WHERE idpro = $id";
+    $query = "SELECT src FROM img_product WHERE idpro = $id";
     $stmt = $pdo->prepare($query);
     $stmt->execute();
     $arrImg = $stmt->fetchAll();

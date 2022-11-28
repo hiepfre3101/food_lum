@@ -114,6 +114,6 @@ switch ($ctr) {
         addNewProduct();
         break;
     case "list-category":
-        showListCategory();
+        // showListCategory();
         break;
 }
