@@ -88,7 +88,7 @@ switch ($ctr) {
     case "order-detail-user":
         getInfoHeader();
         showClientOrderDetail();
-        break;    
+        break;
     //admin
     case "add-product":
         showAddProduct();
