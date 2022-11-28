@@ -4,7 +4,7 @@ function addProduct($data = [])
 {
     global $pdo;
     // các khai báo chuẩn bị sql đọc tại https://www.php.net/manual/en/pdostatement.execute.phps
-    $query = "INSERT INTO products (product_name,product_price,descripton,image,iddm) VALUE (:product_name,:product_price,:descripton,:image,:iddm)";
+    $query = "INSERT INTO products (idpro,product_name,product_price,descripton,iddm) VALUE (:idpro,:product_name,:product_price,:descripton,:iddm)";
     $stmt = $pdo->prepare($query);
     $stmt->execute($data);
 }
@@ -39,4 +39,42 @@ function getOneDataProducts($id){
     $stmt->execute();
     $result = $stmt->fetch();
     return $result;
+}
+
+// đếm số bản gi trong bảng product
+function countProduct()
+{
+    global $pdo;
+    $query = "SELECT COUNT(idpro) AS 'count' FROM products";
+    $stmt = $pdo->prepare($query);
+    $stmt->execute();
+    $count = $stmt->fetch();
+    return $count[0];
+}
+// lấy id cuối cùng của bảng product
+function getIdProduct()
+{
+    global $pdo;
+    $query = "SELECT idpro FROM products ORDER BY idpro DESC LIMIT 1;";
+    $stmt = $pdo->prepare($query);
+    $stmt->execute();
+    $id = $stmt->fetch();
+    return $id[0];
+}
+// thểm ảnh vào bảng ảnh
+function addImg($data = []){
+    global $pdo;
+    $query = "INSERT INTO img_product (idpro, src) VALUE (:idpro, :src)";
+    $stmt = $pdo->prepare($query);
+    $stmt->execute($data);
+}
+
+// lấy các ảnh cùng sản phẩm
+function getImg($id){
+    global $pdo;
+    $query = "SELECT * FROM img_product WHERE idpro = $id";
+    $stmt = $pdo->prepare($query);
+    $stmt->execute();
+    $arrImg = $stmt->fetchAll();
+    return $arrImg;
 }

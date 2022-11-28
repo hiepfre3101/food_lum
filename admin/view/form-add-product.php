@@ -33,10 +33,20 @@
         <div class="row-form">
             <div class="row-left"><label for="img-form">Ảnh sản phẩm : </label></div>
             <div class="row-rigth">
-                <label for="img-form" class="wrapper-img">
+                <label for="img-form-1" class="wrapper-img">
                     <img src="https://picsum.photos/200/300" alt="">
                 </label>
-                <input  type="file" style="transform: translateY(-100000px)" name="img-product-add" id="img-form" >
+                <input  type="file" style="transform: translateY(-100000px)" class="img-form" name="img-product-add-1" id="img-form-1" >
+
+                <label for="img-form-2" class="wrapper-img">
+                    <img src="https://picsum.photos/200/300" alt="">
+                </label>
+                <input  type="file" style="transform: translateY(-100000px)" class="img-form" name="img-product-add-2" id="img-form-2" >
+
+                <label for="img-form-3" class="wrapper-img">
+                    <img src="https://picsum.photos/200/300" alt="">
+                </label>
+                <input  type="file" style="transform: translateY(-100000px)" class="img-form" name="img-product-add-3" id="img-form-3" >
                 <p class="form-message" style="color:red;"></p>
             </div>
         </div>
@@ -59,7 +69,9 @@
            validator.isRequired("#name-form"),
            validator.isRequired("#price-form"),
            validator.isRequired("#category-form"),
-           validator.isRequired("#img-form"),
+           validator.isRequired("#img-form-1"),
+           validator.isRequired("#img-form-2"),
+           validator.isRequired("#img-form-3"),
            validator.isRequired("#description-form"),
        ]
     });
