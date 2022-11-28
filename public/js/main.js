@@ -70,3 +70,6 @@ if (file2[0]) {
 
 }
 
+function tabImg(data=[]){
+    console.log(data);
+}

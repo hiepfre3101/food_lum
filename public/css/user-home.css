@@ -223,7 +223,9 @@
 .mw-50{
     max-width: 50% !important;
 }
-
+.product{
+    max-height: 300px;
+}
 /*css pagination*/
 
 .pagination {
