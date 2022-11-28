@@ -4,7 +4,7 @@ function addProduct($data = [])
 {
     global $pdo;
     // các khai báo chuẩn bị sql đọc tại https://www.php.net/manual/en/pdostatement.execute.phps
-    $query = "INSERT INTO products (idpro,product_name,product_price,descripton,iddm) VALUE (:idpro,:product_name,:product_price,:descripton,:iddm)";
+    $query = "INSERT INTO products (idpro,product_name,product_price,descripton,image,iddm) VALUE (:idpro,:product_name,:product_price,:descripton,:image,:iddm)";
     $stmt = $pdo->prepare($query);
     $stmt->execute($data);
 }

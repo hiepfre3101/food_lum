@@ -5,7 +5,7 @@
       <div class="profile-block w-100 d-flex align-items-center justify-content-start">
          <div class="d-flex justify-content-start">
             <?php if (isset($_SESSION['idUser'])) {
-               echo "<img class='rounded-circle w-30 me-5' src =" . getOneDataUser($_SESSION['idUser'])['avatar'] . "></img>";
+               echo "<img class='rounded-circle  me-5 img-block img-block-small' src =" . getOneDataUser($_SESSION['idUser'])['avatar'] . "></img>";
                echo "<div><p class='fs-4 fw-semibold'>" . getOneDataUser($_SESSION['idUser'])['user_name'] . "</p>";
                echo "<a href='#' class='text-decoration-none text-gray d-flex justify-content-start align-items-center fs-5 text-gray'><i class='fa-solid fa-pencil'></i> Sửa hồ sơ</a></div>";
             } else {
@@ -15,7 +15,7 @@
          </div>
       </div>
       <nav class="d-flex flex-column justify-content-center mt-5">
-         <a href="#" class="d-flex justify-content-start align-items-center fs-4 text-decoration-none"><i class="fa-regular fa-user me-2 "></i><span class="text-dark link-orange">Tài khoản của tôi</span></a>
+         <a href="?ctr=user-profile" class="d-flex justify-content-start align-items-center fs-4 text-decoration-none"><i class="fa-regular fa-user me-2 "></i><span class="text-dark link-orange">Tài khoản của tôi</span></a>
          <a href="?ctr=order-user" class="d-flex justify-content-start align-items-center fs-4 text-decoration-none"><i class="fa-regular fa-user me-2 "></i><span class="text-dark link-orange">Đơn hàng của tôi</span></a>
          <a href="?ctr=voucher-user" class="d-flex justify-content-start align-items-center fs-4 text-decoration-none"><i class="fa-solid fa-ticket-simple me-2 "></i><span class="text-dark link-orange">Kho Voucher</span></a>
       </nav>

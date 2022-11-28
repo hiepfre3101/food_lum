@@ -15,7 +15,7 @@
     <div class="wraper">
         <div class="sidebar">
             <div class="logo">
-                <a href="">
+                <a href="?ctr=/">
                     <img src="https://www.brandbucket.com/sites/default/files/logo_uploads/212259/large_fooduro_0.png" alt="">
                 </a>
             </div>

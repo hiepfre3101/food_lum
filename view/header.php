@@ -61,20 +61,22 @@
                                 class="btn btn-outline-primary w-10 h-100 d-flex align-items-center justify-content-center"
                                 type="submit"><i class="fa-solid fa-magnifying-glass text-primary"></i></button>
                     </form>
-                    <div class="fa-solid fa-circle-user fs-1 px-3 d-none d-lg-block text-dark icon-user position-relative"
-                         role="button">
-                        <div class="menu-child  bg-primary position-absolute p-3">
-                            <!--său khi đăng nhập -->
-                            <?php if (isset($_SESSION['idUser'])) { ?>
-                                <p style="font-size: 20px"><?= getOneDataUser($_SESSION['idUser'])['user_name'] ?></p>
-                                <a href="#" class="text-dark fs-4 fw-semibold link-child">Hồ sơ của bạn</a>
-                                <a href="?ctr=logout" class="text-dark fs-4 fw-semibold link-child">Đăng xuất</a>
-                            <?php } else { ?>
-                                <a href="?ctr=login" class="text-dark fs-4 fw-semibold link-child">Đăng nhập</a>
-                                <a href="?ctr=sign-up" class="text-dark fs-4 fw-semibold link-child">Đăng kí</a>
-                            <?php } ?>
+                 <a href="?ctr=user-profile" class="d-block">
+                        <div  class="fa-solid fa-circle-user fs-1 px-3 d-none d-lg-block text-dark icon-user position-relative"
+                             role="button">
+                            <div class="menu-child  bg-primary position-absolute p-3">
+                                <!--său khi đăng nhập -->
+                                <?php if (isset($_SESSION['idUser'])) { ?>
+                                    <p style="font-size: 20px"><?= getOneDataUser($_SESSION['idUser'])['user_name'] ?></p>
+                                    <a href="?ctr=user-profile" class="text-dark fs-4 fw-semibold link-child">Hồ sơ của bạn</a>
+                                    <a href="?ctr=logout" class="text-dark fs-4 fw-semibold link-child">Đăng xuất</a>
+                                <?php } else { ?>
+                                    <a href="?ctr=login" class="text-dark fs-4 fw-semibold link-child">Đăng nhập</a>
+                                    <a href="?ctr=sign-up" class="text-dark fs-4 fw-semibold link-child">Đăng kí</a>
+                                <?php } ?>
+                            </div>
                         </div>
-                    </div>
+                 </a>
                     <a href="?ctr=cart" class="d-none d-lg-block">
                         <i class="fa-solid fa-burger fs-1 cart text-dark" role="button">
                             <div class="cart-after"><?=$countCart?></div>
@@ -104,10 +106,10 @@
             </div>
         </div>
         <div class="ms-4 w-40 d-flex justify-content-xs-end align-items-center">
-            <button role="button" class=" rounded-5 text-white bg-transparent btn-outline-white px-3 py-2 fs-4 fw-bold">
+            <a href="?ctr=user-profile" role="button" class=" rounded-5 text-white bg-transparent btn-outline-white px-3 py-2 fs-4 fw-bold">
                 Thay
                 đổi
-            </button>
+            </a>
         </div>
     </div>
 </div>

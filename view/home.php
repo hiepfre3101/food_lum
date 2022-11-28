@@ -69,9 +69,9 @@ include_once("./view/header.php");
     <div class="row" id="product-list-1">
         <?php foreach ($arrProduct as $value) { ?>
             <div class="col-xxl-2 col-lg-3 col-12 col-sm-4 mb-5">
-                <div class="card w-100 shadow" style="width: 18rem;">
+                <div class="card w-100 shadow product" style="width: 18rem;">
                     <a class="overflow-hidden" href="?ctr=product-detail&&id=<?= $value['idpro'] ?>">
-                        <img src="<?= $value['image'] ?>" class="card-img-top img-col" alt="...">
+                        <img src="<?= $value['image'] ?>" class="card-img-top img-col img-product" alt="...">
                     </a>
                     <div class="card-body">
                         <div class="d-flex align-items-center justify-content-between ">
@@ -80,7 +80,7 @@ include_once("./view/header.php");
                         </div>
                         <div class="d-lg-flex align-items-center justify-content-start d-none">
                             <p class="card-text overflow-hidden mh-50 mw-50"><?= $value['descripton'] ?></p>
-                            <a href="?ctr=product-detail&&id=<?= $value['idpro'] ?>" class="fs-4 text-decoration-none mt-4">...Xem chi tiết</a>
+                            <a href="?ctr=product-detail&&id=<?= $value['idpro'] ?>" class="fs-4 text-decoration-none ">...Xem chi tiết</a>
                         </div>
                         <a href="?ctr=product-detail&&id=<?= $value['idpro'] ?>"
                                class="btn bg-secondary text-white rounded-6 fs-3 w-50 fw-semibold">Thêm</a>
