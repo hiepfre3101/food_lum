@@ -70,9 +70,9 @@ function addNewProduct()
     foreach ($dataImg as $value) {
         addImg($value);
     }
-    move_uploaded_file($img1['imp_name'],$name1);
-    move_uploaded_file($img2['imp_name'],$name2);
-    move_uploaded_file($img3['imp_name'],$name3);
+    move_uploaded_file($img1['tmp_name'],"public/img/".$img1["name"]);
+    move_uploaded_file($img2['tmp_name'],"public/img/".$img2["name"]);
+    move_uploaded_file($img3['tmp_name'],"public/img/".$img3["name"]);
     header("location:index.php?ctr=product-list");
 }
 
