@@ -18,9 +18,11 @@ function deleteUser($id)
 
 function updateUser($data = [])
 {
-//    không cho cập nhật email và
+//    không cho cập nhật email và position
+// cập nhật password riêng để tìm hiểu php mailer đã !
+$iduser = $_SESSION["idUser"];
     global $pdo;
-    $query = "UPDATE product SET(user_name=:user_name,full_name=:full_name,pass=:pass,phone=:phone,address=:address)";
+    $query = "UPDATE user SET user_name=?, full_name=?, phone=?, address=?, avatar=? where iduser=$iduser";
     $stmt = $pdo->prepare($query);
     $stmt->execute($data);
 }

@@ -88,6 +88,13 @@ switch ($ctr) {
     case "order-detail-user":
         getInfoHeader();
         showClientOrderDetail();
+        break;  
+    case "user-profile":
+        getInfoHeader();
+        showUserProfile();
+        break;      
+    case "save-update-user":
+        saveUpdateUser();
         break;    
         //admin
     case "add-product":
