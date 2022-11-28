@@ -115,4 +115,7 @@ switch ($ctr) {
     case "status-Order":
         updateSattusOrder();
         break;
+    case "Add-product":
+        addNewProduct();
+        break;
 }

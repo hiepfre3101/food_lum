@@ -45,24 +45,7 @@
         <br>
     </div>
     <br>
-    <div class="tggh">
-        <div class="tggh">
-            <p class="tggh1">PHƯƠNG THỨC THANH TOÁN:</p>
-            <fieldset>
-                <div class="form__radio">
-                    <label for="">
-                        <svg class="icon">
-                        </svg>
-                        <i class="fa-solid fa-money-bill-1-wave fa-2x"></i>Thanh toán khi nhận hàng</label>
-                    <input checked id="" name="" type="radio"/>
-                </div>
-            </fieldset>
-            <div>
-                <br>
-            </div>
-        </div>
-    </div>
-    <button type="submit" class="btn btn-block dathang"> Đặt hàng</button>
+    <button type="submit" name="redirect" id="redirect" class="btn btn-block dathang"> Đặt hàng</button>
     </div>
     <div class="col-lg-5">
         <div class="container">
@@ -84,7 +67,7 @@
                     <p class="w-100 d-flex justify-content-between">Tổng thanh toán <span
                                 class="tdh1"><?= $_POST['total'] += 10000 ?>đ</span></p>
                     <input hidden type="text" name="total" value="<?= $_POST['total'] ?>">
-                    <input hidden type="text" name="voucherId" value="<?= $_POST['voucherId']?>">
+                    <input hidden type="text" name="voucherId" value="<?= $_POST['voucherId'] ?>">
                 </div>
                 <br>
             </div>
