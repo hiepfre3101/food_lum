@@ -4,8 +4,9 @@ function showClientProductDetail()
 {
     if (isset($_SESSION['idUser'])) {
         $id = $_GET['id'];
+        $images = getImg($id);
         $product = getOneDataProducts($id);
-        render("product-detail", ["product" => $product], 0);
+        render("product-detail", ["product" => $product,"images"=>$images], 0);
         die;
     }
     render("login", [], 0);
@@ -37,22 +38,27 @@ function addNewProduct()
     $price = $_POST['price-product-add'];
     $desc = $_POST['description'];
     $iddm = $_POST['category'];
-    $data = [
-        "idpro" => $id,
-        "product_name" => $name,
-        "product_price" => $price,
-        "descripton" => $desc,
-        "iddm" => $iddm
-    ];
+    
     $foder = "./public/img/";
-    addProduct($data);
-//    thêm ảnh sản phẩm vào bảng ảnh sản phẩm
     $img1 = $_FILES['img-product-add-1'];
     $name1 = $foder . $img1['name'];
     $img2 = $_FILES['img-product-add-2'];
     $name2 = $foder . $img2['name'];
     $img3 = $_FILES['img-product-add-3'];
     $name3 = $foder . $img3['name'];
+    // lay anh dau tien lam img mac dinh
+    $data = [
+        "idpro" => $id,
+        "product_name" => $name,
+        "product_price" => $price,
+        "descripton" => $desc,
+        "image"=>$name1,
+        "iddm" => $iddm
+    ];
+   
+    addProduct($data);
+//    thêm ảnh sản phẩm vào bảng ảnh sản phẩm
+    
     $dataImg = [
         [
             "idpro" => $id,
