@@ -5,7 +5,7 @@
       <div class="profile-block w-100 d-flex align-items-center justify-content-start">
          <div class="d-flex justify-content-start">
             <?php if (isset($_SESSION['idUser'])) {
-               echo "<img class='rounded-circle w-25 me-5' src =" . getOneDataUser($_SESSION['idUser'])['avatar'] . "></img>";
+               echo "<img class='rounded-circle img-block img-block-small me-5' src =" . getOneDataUser($_SESSION['idUser'])['avatar'] . "></img>";
                echo "<div><p class='fs-4 fw-semibold'>" . getOneDataUser($_SESSION['idUser'])['user_name'] . "</p>";
                echo "<a href='#' class='text-decoration-none text-gray d-flex justify-content-start align-items-center fs-5 text-gray'><i class='fa-solid fa-pencil'></i> Sửa hồ sơ</a></div>";
             } else {
@@ -63,7 +63,7 @@
         </div>
           <div class="col-12 col-lg-5 px-3">
              <div class="form-group d-flex justify-content-center align-items-center flex-column">
-                      <img src="<?=$user["avatar"]?>" class="w-25 rounded-circle">
+                     <img src="<?=$user["avatar"]?>" class=" rounded-circle img-block">
                       <input type="file" class="ms-2 w-30 mt-4" name="avatar" id="avatar">
              </div>
           </div>
