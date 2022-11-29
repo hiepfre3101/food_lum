@@ -1,19 +1,12 @@
 <?php
 include_once "database.php";
     
-    function addComment($data = []){
+    function insert_binhluan($content,$iduser,$idpro,$time_send){
         global $pdo;
-        $query = 'INSERT INTO comment (content,iduser,idpro,time_send) VALUE (:content,:iduser,:idpro,:time_send);';
-        $stmt = $pdo->prepare($query);
-        $stmt->execute($data);
+        $sql = "INSERT INTO comment(content,iduser,idpro,time_send) VALUES('$content','$iduser','$idpro','$time_send')";
+        $stmt = $pdo->prepare($sql);
+        $stmt->execute();
     }
-
-    // function insert_binhluan($content,$iduser,$idpro,$time_send){
-    //     global $pdo;
-    //     $sql = "INSERT INTO comment(content,iduser,idpro,time_send) VALUES('$content','$iduser','$idpro','$time_send')";
-    //     $stmt = $pdo->prepare($sql);
-    //     $stmt->execute();
-    // }
 
     function getAllComment(){
     global $pdo;

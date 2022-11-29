@@ -43,7 +43,7 @@ $dsbl= getCommentByProductId($idpro);
             
             <div class="comment-box text-center">
                         <h4>Để lại bình luận</h4>
-                        <form action="?ctr=add-comment" method="post">
+                        <form action="<?= $_SERVER['PHP_SELF'];?>" method="post">
                         <div class="rating"> <input type="radio" name="rating" value="5" id="5"><label for="5">☆</label>
                             <input type="radio" name="rating" value="4" id="4"><label for="4">☆</label> <input
                                 type="radio" name="rating" value="3" id="3"><label for="3">☆</label> <input type="radio"
@@ -52,8 +52,7 @@ $dsbl= getCommentByProductId($idpro);
                         </div>
                         <div class="comment-area"> <textarea class="form-control" placeholder="Nội dung..."
                                 rows="4" name="content"></textarea> </div>
-                        <div class="text-center mt-4"> <button class="btn btn-success send px-5" name="guibinhluan" type="submit"> Đăng bình luận <i
-                                    class="fa fa-long-arrow-right ml-1"></i></button> </div>
+                        <div class="text-center mt-4"> <input class="btn btn-success send px-5" name="guibinhluan" type="submit" value="Đăng bình luận"></div>
                                     <input type="hidden" name="idpro" value="<?=$idpro?>">
                                     
                         </form>
@@ -76,16 +75,26 @@ $dsbl= getCommentByProductId($idpro);
                             <i class="fa-regular fa-star"></i>
                         </div>
                         <div class="date">'.$time_send.'</div>
-                        <div class="comment-user">'.$content.'</div>
-                        
+                        <div class="comment-user">'.$content.'</div>                        
                     </div>
                     <hr>
-                </div>
-                
+                </div>               
             </div>';
         }
         ?>  
         </div>
+
+        <?php
+        if(isset($_POST['guibinhluan'])&&($_POST['guibinhluan'])){
+                    $content=$_POST['content'];
+                    $idpro=$_POST['idpro'];
+                    $iduser=$_SESSION['idUser'];
+                    $time_send = date("Y-m-d");
+                    insert_binhluan($content,$iduser,$idpro,$time_send);
+                    header("location: ".$_SERVER['HTTP_REFERER']);
+                }
+
+        ?>
 
         <!--Optional JavaScript-->
         <!--jQuery first, then Popper.js, then Bootstrap JS-->
