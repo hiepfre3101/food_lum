@@ -3,38 +3,30 @@
 
     <div class="box-table" >
         <div class="action">
-            <a href="?ctr=add-product">
-                <button>Thêm Sản Phẩm</button>
-            </a>
-            <a href="">
-                <button>Chọn Tất Cả</button>
-            </a>
-            <a href="">
-                <button>Xóa Các Mục Đã Chọn</button>
+            <a href="?ctr=add-category">
+                <button>Thêm Danh Mục</button>
             </a>
         </div>
         <form action="" class="tabel-form">
             <table class="table-main" id="table1">
                 <thead>
                 <tr>
-                    <th>Chọn</th>
+                    <th>STT</th>
                     <th>Ảnh</th>
-                    <th>Tên Sản Phẩm</th>
-                    <th>Giá Tiền</th>
+                    <th>Tên Danh Mục</th>
                     <th>Thao tác</th>
                 </tr>
                 </thead>
                 <tbody>
-                <?php foreach ($arrProducts as $value) { ?>
+                <?php foreach ($arrCategories as $value) { ?>
                     <tr>
-                        <td><input type="checkbox" name="<?= $value['idpro'] ?>"></td>
-                        <td><img src="<?= getImg($value['idpro'])[0]['src'] ?>" alt=""></td>
-                        <td><?= $value['product_name'] ?></td>
-                        <td><?= $value['product_price'] ?></td>
-                        <td><a href="">
-                                <button class="btn-1">Sửa</button>
-                            </a><a href="">
-                                <button class="btn2">Xóa</button>
+                        <td><?= $value['iddm'] ?></td>
+                        <td><img src="<?= $value['image'] ?>" alt=""></td>
+                        <td><?= $value['categories_name'] ?></td>
+                        <td><a href="?ctr=update-category&&id=<?=$value['iddm']?>">
+                                <button type="button" class="btn-1">Sửa</button>
+                            </a><a href="?detail-category&&id=<?=$value['iddm']?>">
+                                <button type="button" class="btn2">Chi Tiết</button>
                             </a></td>
                     </tr>
                 <?php } ?>
@@ -47,7 +39,7 @@
                     <a href="<?php if (isset($_GET['page']) && $_GET['page'] >= 2) {
                         $count = $_GET['page'];
                         $count -= 1;
-                        echo "?ctr=product-list&&page=$count#table1";
+                        echo "?ctr=list-category&&page=$count#table1";
                     } ?>">
                     <span class="material-symbols-outlined">
                         navigate_before
@@ -64,7 +56,7 @@
                         } else if ($item == $_GET['page']) {
                             echo "active";
                         } ?>">
-                            <a href="<?= "?ctr=product-list&&page=$item" ?>#table1"><?= $item ?></a></div>
+                            <a href="<?= "?ctr=list-category&&page=$item" ?>#table1"><?= $item ?></a></div>
                     <?php } ?>
                 </div>
                 <div class="pagination-right">
@@ -72,10 +64,10 @@
                     if (isset($_GET['page']) && $_GET['page'] < $countPage) {
                         $count = $_GET['page'];
                         $count += 1;
-                        echo "?ctr=product-list&&page=$count#table1";
+                        echo "?ctr=list-category&&page=$count#table1";
                     }
                     if (!isset($_GET['page'])) {
-                        echo "?ctr=product-list&&page=2#table1";
+                        echo "?ctr=list-category&&page=2#table1";
                     }
                     ?>">
                     <span class="material-symbols-outlined">
