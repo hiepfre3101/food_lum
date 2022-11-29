@@ -54,7 +54,7 @@ if (file) {
 
 const img2 = document.querySelectorAll(".wrapper-img img");
 const file2 = document.querySelectorAll(".img-form");
-if (file2[0]) {
+if (file2.length > 1) {
     file2[0].addEventListener("change", function () {
         img2[0].src = URL.createObjectURL(file2[0].files[0]);
         img2[0].style.display = "block";

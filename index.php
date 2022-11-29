@@ -3,14 +3,12 @@
 require_once("./model/config.php");
 require_once("./model/database.php");
 require_once("./model/m_category.php");
-require_once("./model/m_category.php");
 require_once("./model/m_product.php");
 require_once("./model/m_user.php");
 require_once("./model/m_cart.php");
 require_once("./model/m_pagination.php");
 require_once("./model/m_voucher.php");
-require_once("./model/m_order.php");
-require_once("./model/m_categories.php");
+require_once("./model/m_order.php");;
 
 // require controller here...
 require_once("./controller/c_render.php");
@@ -121,6 +119,18 @@ switch ($ctr) {
         addNewProduct();
         break;
     case "list-category":
-        // showListCategory();
+         showListCategory();
+        break;
+    case "add-category":
+        showFormAddCategory();
+        break;
+    case "add-category-new":
+        addCategory();
+        break;
+    case "update-category":
+        showFormUpdate();
+        break;
+    case "update-data-category":
+        updateCategory();
         break;
 }

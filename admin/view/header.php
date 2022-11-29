@@ -42,7 +42,7 @@
                         </span>
                         <ul class="sub-menu">
                             <li class="sub-itme"><a href="?ctr=product-list">Danh Sách Sản Phẩm</a></li>
-                            <li class="sub-itme"><a href="">Danh Mục Sản Phẩm</a></li>
+                            <li class="sub-itme"><a href="?ctr=list-category">Danh Mục Sản Phẩm</a></li>
                         </ul>
                     </li>
                 </label>
