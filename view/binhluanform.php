@@ -2,7 +2,6 @@
 include "../model/m_comment.php";
 $idpro= $_REQUEST['idpro'];
 $dsbl= getCommentByProductId($idpro);
-
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -14,9 +13,9 @@ $dsbl= getCommentByProductId($idpro);
         <!--Bootstrap CSS-->
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet"
           integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">    </head>
-          <link rel="stylesheet" href="./public/css/base.css">
-        <link rel="stylesheet" href="./public/css/header.css">
-        <link rel="stylesheet" href="./public/css/footer.css">
+          <link rel="stylesheet" href="../public/css/base.css">
+        <link rel="stylesheet" href="../public/css/header.css">
+        <link rel="stylesheet" href="../public/css/footer.css">
         <link rel="stylesheet" href="../public/css/product_detail.css">
     <body>
     <div class="container-comment">
@@ -61,12 +60,12 @@ $dsbl= getCommentByProductId($idpro);
             <?php
                 foreach($dsbl as $bl){
                     extract($bl);
-                echo '<div class="comment">
-                    <div class="comment-left">
-                        <img class="img2" src="'.$avatar.'" alt="">
+                echo '<div class="comment d-flex justify-content-start mt-3 p-3">
+                    <div class="comment-left w-5 h-25 rounded-circle overflow-hidden">
+                        <img class="img2 w-100  rounded-circle" src=" .'.''.$avatar.'" alt="">
                     </div>
-                    <div class="comment-right">
-                        <p class="name" style="margin-right: 100%;">'.$user_name.'</p>
+                    <div class="comment-right px-3">
+                        <p class="name text-dark fw-bold">'.$full_name.'</p>
                         <div class="star2">
                             <i class="fa-solid fa-star"></i>
                             <i class="fa-solid fa-star"></i>
@@ -74,26 +73,27 @@ $dsbl= getCommentByProductId($idpro);
                             <i class="fa-solid fa-star"></i>
                             <i class="fa-regular fa-star"></i>
                         </div>
-                        <div class="date">'.$time_send.'</div>
-                        <div class="comment-user">'.$content.'</div>                        
+                        <div class="comment-user fs-4">'.$content.'</div>                        
+                        <div class="date fs-6">'.$time_send.'</div>
                     </div>
                     <hr>
-                </div>               
-            </div>';
+                </div>';
         }
         ?>  
         </div>
 
         <?php
-        if(isset($_POST['guibinhluan'])&&($_POST['guibinhluan'])){
+        if(isset($_SESSION["idUser"])){
+              if(isset($_POST['guibinhluan'])&&($_POST['guibinhluan'])){
                     $content=$_POST['content'];
                     $idpro=$_POST['idpro'];
                     $iduser=$_SESSION['idUser'];
                     $time_send = date("Y-m-d");
                     insert_binhluan($content,$iduser,$idpro,$time_send);
                     header("location: ".$_SERVER['HTTP_REFERER']);
+                    die;
                 }
-
+        }
         ?>
 
         <!--Optional JavaScript-->

@@ -223,12 +223,14 @@
     background-color: white;
 }
 .comment{
-    margin: 2%;
+    margin: 0;
 }
 .img2{
     width: 5%;
     border-radius: 50%; 
     float: left;
+    max-height: 50px;
+    object-fit: cover;
     
 }
 
@@ -391,4 +393,21 @@
 }
 .w-10{
     width: 13%;
+}
+.w-5{
+    width: 5%;
+}
+.fs-6{
+    font-size: 1rem;
+}
+.fs-7{
+    font-size: 0.75rem;
+}
+.bg-secondary{
+    background-color: var(--secondary-color) !important;
+}
+.btn-add{
+    width: 3rem !important;
+    height: 3rem !important;
+    box-shadow:  0px 0px 5px rgb(252, 140, 140);
 }

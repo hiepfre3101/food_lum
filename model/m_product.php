@@ -98,3 +98,14 @@ function updateDataCategoryProduct($iddm,$idpro)
     $stmt = $pdo->prepare($query);
     $stmt->execute();
 }
+
+// lấy tất cả sản phẩm cùng danh mục
+function getAllProductCategory($id){
+    global $pdo;
+    $idpro = $_GET["id"];
+    $query = "SELECT * FROM products WHERE iddm=$id AND idpro != $idpro LIMIT 0,4";
+    $stmt = $pdo->prepare($query);
+    $stmt->execute();
+    $arrProduct = $stmt->fetchAll();
+    return $arrProduct;
+}

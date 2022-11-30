@@ -15,7 +15,7 @@ function scrollNav() {
     navMenu.style.top = "0px";
     navMenu.style.boxShadow = "0px 0px 5px gray";
   } else {
-    navMenu.style.top = "18rem";
+    navMenu.style.top = "16rem";
     navMenu.style.boxShadow = "none";
   }
   scrollActive();
