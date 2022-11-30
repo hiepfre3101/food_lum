@@ -5,7 +5,9 @@ function showClientProductDetail()
         $id = $_GET['id'];
         $images = getImg($id);
         $product = getOneDataProducts($id);
-        render("product-detail", ["product" => $product,"images"=>$images], 0);
+        $idCate = $product["iddm"];
+        $productSame = getAllProductCategory($idCate);
+        render("product-detail", ["product" => $product,"images"=>$images,"productSame"=>$productSame], 0);
 }
 
 function showAddProduct()
