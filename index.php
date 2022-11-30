@@ -88,15 +88,15 @@ switch ($ctr) {
     case "order-detail-user":
         getInfoHeader();
         showClientOrderDetail();
-        break;  
+        break;
     case "user-profile":
         getInfoHeader();
         showUserProfile();
-        break;      
+        break;
     case "save-update-user":
         saveUpdateUser();
-        break;    
-        //admin
+        break;
+    //admin
     case "add-product":
         showAddProduct();
         break;
@@ -119,7 +119,7 @@ switch ($ctr) {
         addNewProduct();
         break;
     case "list-category":
-         showListCategory();
+        showListCategory();
         break;
     case "add-category":
         showFormAddCategory();
@@ -132,5 +132,18 @@ switch ($ctr) {
         break;
     case "update-data-category":
         updateCategory();
+        break;
+    case "detail-category":
+        showDetailCategory();
+        break;
+    case "update-category-product":
+        if(isset($_POST['btn-save'])){
+            updateAllCategoryProduct();
+        }else{
+            updateOneCategoryProduct();
+        }
+        break;
+    case "delete-category":
+        deleteCategory($_GET['id']);
         break;
 }

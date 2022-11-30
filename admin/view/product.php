@@ -1,19 +1,23 @@
 <?php require_once("header.php") ?>
     <!-- end header -->
 
-    <div class="box-table" >
-        <div class="action">
-            <a href="?ctr=add-product">
-                <button>Thêm Sản Phẩm</button>
-            </a>
-            <a href="">
-                <button>Chọn Tất Cả</button>
-            </a>
-            <a href="">
-                <button>Xóa Các Mục Đã Chọn</button>
-            </a>
-        </div>
-        <form action="" class="tabel-form">
+    <div class="box-table">
+        <form action="?ctr=" class="tabel-form" method="post">
+            <p class="title">Danh sách sản phẩm</p>
+            <div class="action">
+                <a href="?ctr=add-product">
+                    <button>Thêm Sản Phẩm</button>
+                </a>
+                <a>
+                    <button id="checkAll" type="button">Chọn Tất Cả</button>
+                </a>
+                <a>
+                    <button id="btn-save" onclick="return confirm('Bạn có chắch chắn xóa chứ.')" disabled type="submit">
+                        Xóa Các Mục Đã Chọn
+                    </button>
+                </a>
+            </div>
+
             <table class="table-main" id="table1">
                 <thead>
                 <tr>
