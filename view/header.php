@@ -21,7 +21,7 @@
 
 </head>
 <body onload="loadTotal()">
-    <nav class="navbar navbar-expand-lg  container-fluid px-lg-5 py-lg-4 bg-white">
+    <nav class="navbar navbar-expand-lg  container-fluid px-lg-5 py-lg-4 bg-white " id="header-menu">
         <div class="container-fluid">
             <a class="navbar-brand w-10 d-flex justify-content-center " href="?ctr=home"><img
                         src="./public/img/logo.png" alt="logo" class="img-fluid"></a>
@@ -43,7 +43,7 @@
                         <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                             <li class="nav-item me-3 d-flex justify-content-between mb-5 mb-lg-0 py-5 py-lg-0 nav-sm">
                                 <a class="py-5 py-lg-0 nav-link text-upercase fw-bold fs-2 text-dark header-link"
-                                    aria-current="page" href="#">Thực đơn</a>
+                                    aria-current="page" href="?ctr=menu">Thực đơn</a>
                                 <img src="./public/img/slider3.jpg" alt="..." class="d-lg-none w-30 rounded-3 ms-3">
                             </li>
                             <li class="nav-item me-3  d-flex justify-content-between mb-5 mb-lg-0 py-5 py-lg-0 nav-sm">

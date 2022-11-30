@@ -39,4 +39,5 @@ function getOneDataCategory($id){
     $result = $stmt->fetch();
     return $result;
 }
+
 ?>

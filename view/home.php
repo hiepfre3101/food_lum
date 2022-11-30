@@ -43,13 +43,13 @@ include_once("./view/header.php");
         </h1>
         <!--danh mục sản phẩm-->
         <div class="row mt-5">
-            <?php foreach ($arrCategory as $value) { ?>
+            <?php for($i=0;$i<count($arrCategory);$i++) { ?>
                 <div class="col-xxl-2 col-lg-3 col-6 col-sm-4  mb-5 rounded-6">
                     <div class="card rounded-6 overflow-hidden shadow-sm">
                         <!--Đang sử dụng đường dẫn ảnh tamj thời cần chinh ảnh său khi làm phần admin-->
-                        <div class="overflow-hidden"><img src="<?= $value['image'] ?>" class="card-img-top img-col rounded-top-6" alt="..."></div>
+                        <div class="overflow-hidden"><img src="<?= $arrCategory[$i]['image'] ?>" class="card-img-top img-col rounded-top-6" alt="..."></div>
                         <div class="card-body">
-                            <a href="#" class="d-flex justify-content-start align-items-center fs-3 fw-bold text-dark text-uppercase"><?= $value['categories_name'] ?></a>
+                            <a href="?ctr=menu#menu-<?=$i+1?>" class="d-flex justify-content-start align-items-center fs-3 fw-bold text-dark text-uppercase"><?= $arrCategory[$i]['categories_name'] ?></a>
                         </div>
                     </div>
                 </div>

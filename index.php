@@ -96,6 +96,10 @@ switch ($ctr) {
     case "save-update-user":
         saveUpdateUser();
         break;    
+    case "menu":
+        getInfoHeader();
+        showMenuClient();
+        break;    
         //admin
     case "add-product":
         showAddProduct();
