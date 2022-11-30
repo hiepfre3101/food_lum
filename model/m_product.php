@@ -78,6 +78,18 @@ function getImg($id){
     $arrImg = $stmt->fetchAll();
     return $arrImg;
 }
+
+function getAllProductWithCategory($idCate){
+    global $pdo;
+    $query = "SELECT p.*,cate.categories_name
+    FROM products as p
+    JOIN categories as cate
+    ON p.iddm = cate.iddm
+    WHERE p.iddm = $idCate";
+    $stmt = $pdo->prepare($query);
+    $stmt->execute();
+    $data = $stmt->fetchAll();
+    return $data;
 function updateDataCategoryProduct($iddm,$idpro)
 {
     global $pdo;
