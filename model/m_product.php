@@ -78,3 +78,10 @@ function getImg($id){
     $arrImg = $stmt->fetchAll();
     return $arrImg;
 }
+function updateDataCategoryProduct($iddm,$idpro)
+{
+    global $pdo;
+    $query = "UPDATE products SET iddm=$iddm WHERE idpro=$idpro";
+    $stmt = $pdo->prepare($query);
+    $stmt->execute();
+}
