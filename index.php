@@ -3,14 +3,12 @@
 require_once("./model/config.php");
 require_once("./model/database.php");
 require_once("./model/m_category.php");
-require_once("./model/m_category.php");
 require_once("./model/m_product.php");
 require_once("./model/m_user.php");
 require_once("./model/m_cart.php");
 require_once("./model/m_pagination.php");
 require_once("./model/m_voucher.php");
 require_once("./model/m_order.php");
-require_once("./model/m_comment.php");
 
 // require controller here...
 require_once("./controller/c_render.php");
@@ -20,7 +18,7 @@ require_once("./controller/c_cart.php");
 require_once("./controller/c_user.php");
 require_once("./controller/c_voucher.php");
 require_once("./controller/c_order.php");
-require_once("./controller/c_comment.php");
+
 //@param : $ctr viết tắt controller, đây là biến để truyền lên thanh url có thể đặt tên tùy thích
 // nhưng để ctr nhằm thể hiện là đang gọi ctr nào.
 $ctr = isset($_GET["ctr"]) ? $_GET['ctr'] : '/';
@@ -119,8 +117,4 @@ switch ($ctr) {
     case "Add-product":
         addNewProduct();
         break;
-    // Bình luận
-    // case "add-comment":
-    //     saveAddComment();
-    //     break;
 }
