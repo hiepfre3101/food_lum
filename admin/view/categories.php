@@ -2,6 +2,7 @@
     <!-- end header -->
 
     <div class="box-table" >
+        <p class="title">Danh mục sản phẩm</p>
         <div class="action">
             <a href="?ctr=add-category">
                 <button>Thêm Danh Mục</button>
@@ -25,8 +26,8 @@
                         <td><?= $value['categories_name'] ?></td>
                         <td><a href="?ctr=update-category&&id=<?=$value['iddm']?>">
                                 <button type="button" class="btn-1">Sửa</button>
-                            </a><a href="?detail-category&&id=<?=$value['iddm']?>">
-                                <button type="button" class="btn2">Chi Tiết</button>
+                            </a><a href="?ctr=detail-category&&id=<?=$value['iddm']?>">
+                                <button type="button" class="btn1">Chi Tiết</button>
                             </a></td>
                     </tr>
                 <?php } ?>

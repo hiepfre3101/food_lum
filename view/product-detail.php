@@ -106,6 +106,52 @@
                     </div>
 
                 </div>
+
+                <hr class="hr1">
+                <button type="submit" class="bt" name="">Thêm vào giỏ hàng</button>
+                <br>
+                <br>
+            </div>
+        </form>
+    </div>
+</div>
+<br>
+<br>
+<!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+            <script>
+                $(document).ready(function(){
+                    $("#binhluan").load("view/binhluanform.php", {idpro: <?=$product['idpro'] ?>?>});
+                });
+            </script> -->
+<div class="row" id="binhluan">
+<iframe src="view/binhluanform.php?idpro=<?=$product['idpro'] ?>" frameborder="0" width="100%" height="600px"></iframe>
+</div>
+<div class="recomend w-100 p-4 h-50">
+    <h2 class="dg fw-semibold ">Sản phẩm tương tự</h2>
+    <div class="row">
+        <div class="col-md-4 col-6 position-relative">
+            <a href="#">
+                <img class="img4" src="https://static.kfcvietnam.com.vn/images/items/lg/Chikoyaki_C.jpg?v=4pbPw3" alt="">
+            </a>
+            <a href="#" class="d-flex align-items-center justify-content-center p-3 position-absolute top-10 end-10 rounded-circle bg-primary h-15 w-10  text-white text-decoration-none">
+                <span class="fw-semibold fs-3 ">+</span>
+            </a>
+            <div class="w-75 d-flex justify-content-around position-absolute bottom-0 flex-wrap">
+                <p class="text-white fw-semibold">Gà Giòn Cay</p>
+                <p class="text-white fw-semibold">60000</p>
+            </div>
+        </div>
+        <!--  -->
+        <div class="col-md-4 col-6 position-relative mb-2">
+            <a href="#">
+                <img class="img4" src="https://static.kfcvietnam.com.vn/images/items/lg/Chikoyaki_C.jpg?v=4pbPw3" alt="">
+            </a>
+            <a href="#" class="d-flex align-items-center justify-content-center p-3 position-absolute top-10 end-10 rounded-circle bg-primary h-15 w-10  text-white text-decoration-none">
+                <span class="fw-semibold fs-3 ">+</span>
+            </a>
+            <div class="w-75 d-flex justify-content-around position-absolute bottom-0 flex-wrap">
+                <p class="text-white fw-semibold">Gà Giòn Cay</p>
+                <p class="text-white fw-semibold">60000</p>
             </div>
         </div>
         <div class="recomend w-100 p-4 h-50">

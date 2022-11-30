@@ -90,4 +90,10 @@ function getAllProductWithCategory($idCate){
     $stmt->execute();
     $data = $stmt->fetchAll();
     return $data;
+function updateDataCategoryProduct($iddm,$idpro)
+{
+    global $pdo;
+    $query = "UPDATE products SET iddm=$iddm WHERE idpro=$idpro";
+    $stmt = $pdo->prepare($query);
+    $stmt->execute();
 }
