@@ -13,32 +13,19 @@ include_once "database.php";
         $stmt = $pdo->prepare($sql);
         $stmt->execute();
     }
-    function loadonevote($idpro){
+    function loadstar($idpro){
     global $pdo;
-    $query = "SELECT v.star,p.idpro,us.iduser,AVG(v.star) as 'avgstar'
-    from vote as v 
-    join user as us on v.iduser = us.iduser
-    join products as p on v.idpro = p.idpro
-    where v.idpro = $idpro";
+    $query = "SELECT p.idpro,us.iduser,AVG(cmt.rating) as 'avgstar'
+    from comment as cmt 
+    join user as us on cmt.iduser = us.iduser
+    join products as p on cmt.idpro = p.idpro
+    where cmt.idpro = $idpro";
     $stm = $pdo->prepare($query);
     $stm->execute();
     $result = $stm->fetch();
     return $result;
     }
-//     function loadallvote($idpro)
-// {
-//     global $pdo;
-//     $query = "SELECT v.star, us.iduser ,us.user_name, us.avatar,v.id
-//     from vote as v 
-//     join user as us on v.iduser = us.iduser
-//     join products as p on v.idpro = p.idpro
-//     where v.idpro = $idpro";
-//     $stm = $pdo->prepare($query);
-//     $stm->execute();
-//     $result = $stm->fetchAll();
-//     return $result;
-// }
-
+    
     function getAllComment(){
     global $pdo;
     $query = "SELECT cmt.content, cmt.time_send, cmt.iduser FROM comment as cmt 
@@ -53,7 +40,7 @@ include_once "database.php";
 function getCommentByProductId($idpro)
 {
     global $pdo;
-    $query = "SELECT cmt.content, cmt.time_send, us.iduser ,us.full_name, us.avatar,cmt.idcm
+    $query = "SELECT cmt.content, cmt.time_send,cmt.rating, us.iduser ,us.full_name, us.avatar,cmt.idcm
     from comment as cmt 
     join user as us on cmt.iduser = us.iduser
     join products as p on cmt.idpro = p.idpro

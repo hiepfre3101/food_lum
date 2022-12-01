@@ -2,7 +2,7 @@
 include "../model/m_comment.php";
 $idpro= $_REQUEST['idpro'];
 $dsbl= getCommentByProductId($idpro);
-// $dsv=loadonevote($idpro);
+$ds=loadstar($idpro);
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -24,8 +24,7 @@ $dsbl= getCommentByProductId($idpro);
     <div class="container-comment">
             <h3 class="dg">Đánh Giá Sản Phẩm</h3>
             <div class="star">
-                    <p class="ad"><?= $dsv['avgstar'] ?>/5<span class="review_rating fa fa-star"></span></p>
-                   
+                    <p class="ad"><?= $ds['avgstar'] ?>/5<span class="review_rating1 fa fa-star"></span></p>                  
                 </div>
             <div class="container-star">               
                 <div class="star1">
@@ -57,21 +56,23 @@ $dsbl= getCommentByProductId($idpro);
                     </div>
             <div class="cmt-wrapper p-3">
             <?php foreach($dsbl as $bl) :?>
-                <div class="comment">
-                    <div class="comment-left">
-                        <img class="img2" src="<?=$bl['avatar']?>" alt="">
+                <div class="comment d-flex justify-content-start mt-3 p-3">
+                    <div class="comment-left w-5 h-25 rounded-circle overflow-hidden">
+                        <img class="img2 w-100  rounded-circle" src="<?=$bl['avatar']?>" alt="">
                     </div>
-                    <div class="comment-right">
-                        <p class="name fw-bold fs-4 "  style="margin-right: 100%;"><?=$bl['full_name']?></p>
-                    <div class="star">
-
-                    </div>
-                        <div class="date"><?=$bl['time_send']?></div>
-                        <div class="comment-user fw-bold"><?=$bl['content']?></div>                        
+                    <div class="comment-right px-3">
+                        <p class="name text-dark fw-bold"><?=$bl['full_name']?></p>
+                        <div class="star2">
+                        <?php for ($i = 1; $i <= $bl['rating']; $i++) {
+                        echo '<span class="review_rating fa fa-star fs-7"></span>';
+                    } ?>
+                        </div>
+                        <div class="comment-user fs-4"><?=$bl['content']?></div>                        
+                        <div class="date fs-6"><?=$bl['time_send']?></div>
                     </div>
                     <hr>
                 </div>
-                <?php endforeach ?>               
+            <?php endforeach ?>           
             </div> 
         </div>
 
@@ -84,7 +85,6 @@ $dsbl= getCommentByProductId($idpro);
                     $time_send = date("Y-m-d");
                     $rating=$_POST['rating'];
                     insert_binhluan($content,$iduser,$idpro,$time_send,$rating);
-                    // insert_vote($idpro,$iduser,$star);
                     header("location: ".$_SERVER['HTTP_REFERER']);
                     die;
                 }
