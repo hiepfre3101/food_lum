@@ -77,7 +77,7 @@
                             expand_more
                         </span>
                         <ul class="sub-menu">
-                            <li class="sub-itme"><a href="">Tất Cả Bình Luận</a></li>
+                            <li class="sub-itme"><a href="?ctr=comment-list">Tất Cả Bình Luận</a></li>
                             <li class="sub-itme"><a href="">Thống Kê Bình Luận</a></li>
                         </ul>
                     </li>
