@@ -23,10 +23,19 @@ function addProductCart()
         if (isset($_POST['quantity'])) {
             $id = $_GET['id'];
             $quantity = $_POST['quantity'];
-            addCart($id, $quantity);
-        }
-       header("location:?ctr=home");
-        die;
+        if(isset($_SESSION["arrCart"])){
+             $arrCart = $_SESSION["arrCart"];
+           foreach($arrCart as $key=>$value){
+            if($id == $key ){
+                 $quantity += $value; 
+                 break;
+           }
+         } 
+        }   
+        addCart($id, $quantity);
+    }
+        header("location:?ctr=home");
+            die;
     }
     render("login", [], 0);
 }

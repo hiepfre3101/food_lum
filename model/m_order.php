@@ -96,3 +96,4 @@ function changeStatusOrder($id, $status)
     $stmt = $pdo->prepare($query);
     $stmt->execute();
 }
+

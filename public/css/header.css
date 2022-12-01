@@ -123,3 +123,9 @@
 .bg-primary{
     background-color: var(--primary-color) !important;
 }
+.address-header{
+    top:100px;
+}
+.bg-white{
+    background-color: white;
+}

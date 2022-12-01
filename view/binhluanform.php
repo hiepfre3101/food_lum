@@ -2,9 +2,7 @@
 include "../model/m_comment.php";
 $idpro= $_REQUEST['idpro'];
 $dsbl= getCommentByProductId($idpro);
-$dsv=loadonevote($idpro);
-// $dsvt=loadallvote($idpro);
-extract($dsv);
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -16,9 +14,9 @@ extract($dsv);
         <!--Bootstrap CSS-->
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet"
           integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">    </head>
-          <link rel="stylesheet" href="./public/css/base.css">
-        <link rel="stylesheet" href="./public/css/header.css">
-        <link rel="stylesheet" href="./public/css/footer.css">
+          <link rel="stylesheet" href="../public/css/base.css">
+        <link rel="stylesheet" href="../public/css/header.css">
+        <link rel="stylesheet" href="../public/css/footer.css">
         <link rel="stylesheet" href="../public/css/product_detail.css">
         <script src="https://kit.fontawesome.com/e6b03d2b34.js" crossorigin="anonymous"></script>
 
@@ -58,36 +56,42 @@ extract($dsv);
                         </form>                        
                     </div>
             <div class="cmt-wrapper p-3">
-            <?php foreach ($dsbl as $bl) : ?>
-                <div class="comment">
+            <?php
+                foreach($dsbl as $bl){
+                    extract($bl);
+                echo '<div class="comment">
                     <div class="comment-left">
-                        <img class="img2" src="<?= $bl['avatar'] ?>" alt="">
+                        <img class="img2" src="'.$avatar.'" alt="">
                     </div>
                     <div class="comment-right">
-                        <p class="name" style="margin-right: 100%;"><?= $bl['user_name'] ?></p>
-                       
-                        <div class="date"><?= $bl['time_send'] ?></div>
-                        <div class="comment-user"><?= $bl['content'] ?></div>                        
+                        <p class="name" style="margin-right: 100%;">'.$user_name.'</p>
+                        <div class="star2">
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-regular fa-star"></i>
+                        </div>
+                        <div class="date">'.$time_send.'</div>
+                        <div class="comment-user">'.$content.'</div>                        
                     </div>
                     <hr>
                 </div>               
-            </div>            
-        <?php endforeach ?>
+            </div>';
+        }
+        ?>  
         </div>
 
         <?php
-        if(isset($_POST['guibinhluan'])&&($_POST['guibinhluan'])){                   
+        if(isset($_POST['guibinhluan'])&&($_POST['guibinhluan'])){
                     $content=$_POST['content'];
                     $idpro=$_POST['idpro'];
                     $iduser=$_SESSION['idUser'];
                     $time_send = date("Y-m-d");
                     $star=$_POST['star'];
                     insert_binhluan($content,$iduser,$idpro,$time_send);
-                    insert_vote($idpro,$iduser,$star);
-                                                        
-                   header("location: ".$_SERVER['HTTP_REFERER']);
+                    header("location: ".$_SERVER['HTTP_REFERER']);
                 }
-        
 
         ?>
 

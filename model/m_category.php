@@ -11,6 +11,8 @@ function deleteDataCategory($iddm){
     $query = "DELETE FROM categories WHERE iddm=$iddm";
     $stmt = $pdo->prepare($query);
     $stmt->execute();
+    $pdo->exec($query);// trả về mảng các lỗi của câu lện truy vấn vị trí thứ nhất trả về mã lỗi được xác định tiêu chuẩn vị trí thứ 2 trảe về mã lỗi của trình duyệt vị trí thứ 3 trả về message dành riêng cho trình duyệt
+    return $pdo->errorInfo();
 }
 function updateDataCategory($data=[]){
     global $pdo;
@@ -39,4 +41,5 @@ function getOneDataCategory($id){
     $result = $stmt->fetch();
     return $result;
 }
+
 ?>

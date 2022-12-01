@@ -70,6 +70,55 @@ if (file2.length > 1) {
 
 }
 
-function tabImg(data=[]){
+
+function tabImg(data = []) {
     console.log(data);
+}
+
+// js sửe lý check trong bảng
+const btnCheck = document.querySelector("#checkAll");
+if (btnCheck) {
+    var count = 0;
+    const slectCategory = document.querySelector(".form-control.form-new");
+    const btnSave = document.querySelector('#btn-save');
+    const arrItem = document.querySelectorAll('tr>td>input[type="checkbox"]');
+
+    function checkAll() {
+        for (item of arrItem) {
+            if (count % 2 == 0) {
+                item.checked = true;
+                btnCheck.innerText = 'Bỏ chọn tất cả';
+                if (slectCategory) {
+                    slectCategory.removeAttribute('disabled');
+                    if (slectCategory.value != 0) {
+                        btnSave.removeAttribute('disabled');
+                    }
+                }else {
+                    btnSave.removeAttribute('disabled');
+                }
+            } else {
+                item.checked = false;
+                btnCheck.innerText = 'Chọn tất cả';
+                if(slectCategory){
+                    slectCategory.setAttribute('disabled', 'disabled');
+                }
+                btnSave.setAttribute('disabled', 'disabled');
+            }
+        }
+        count++;
+    }
+
+    function checkCategory() {
+        if (slectCategory.value == 0) {
+            btnSave.setAttribute('disabled', 'disabled');
+        } else {
+            btnSave.removeAttribute('disabled');
+        }
+        console.log('111');
+    }
+
+    if (slectCategory) {
+        slectCategory.addEventListener('change', checkCategory);
+    }
+    btnCheck.addEventListener('click', checkAll);
 }
