@@ -22,7 +22,7 @@ include_once "database.php";
 function getCommentByProductId($idpro)
 {
     global $pdo;
-    $query = "SELECT cmt.content, cmt.time_send, us.iduser ,us.user_name, us.avatar,cmt.idcm
+    $query = "SELECT cmt.content, cmt.time_send, us.iduser ,us.full_name, us.avatar,cmt.idcm
     from comment as cmt 
     join user as us on cmt.iduser = us.iduser
     join products as p on cmt.idpro = p.idpro
