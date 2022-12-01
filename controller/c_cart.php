@@ -5,17 +5,18 @@ use function PHPSTORM_META\type;
 function displayCart()
 {
     $arrCarrt = getCart();
-    if($arrCarrt && isset($_SESSION["idUser"])){
-         $vouchers = getAllVoucherUserUseful($_SESSION['idUser']);
-    }else if(isset($_SESSION["idUser"])){
-        $arrCarrt ="";
+    if ($arrCarrt && isset($_SESSION["idUser"])) {
         $vouchers = getAllVoucherUserUseful($_SESSION['idUser']);
-    }else{
-         header("location:?ctr=login");
-      die;
+    } else if (isset($_SESSION["idUser"])) {
+        $arrCarrt = "";
+        $vouchers = getAllVoucherUserUseful($_SESSION['idUser']);
+    } else {
+        header("location:?ctr=login");
+        die;
     }
-     render("cart",["arrCart"=>$arrCarrt, "vouchers"=>$vouchers],0);
+    render("cart", ["arrCart" => $arrCarrt, "vouchers" => $vouchers], 0);
 }
+
 function addProductCart()
 {
     // nếu tồn tại số lượng tức là người dùng đang thực hiện thêm sản phẩm còn nếu không chỉ hiển thị sản phẩm trong giỏ hàng
@@ -25,7 +26,7 @@ function addProductCart()
             $quantity = $_POST['quantity'];
             addCart($id, $quantity);
         }
-       header("location:?ctr=home");
+        header("location:?ctr=home");
         die;
     }
     render("login", [], 0);

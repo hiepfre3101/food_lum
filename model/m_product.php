@@ -85,3 +85,13 @@ function updateDataCategoryProduct($iddm,$idpro)
     $stmt = $pdo->prepare($query);
     $stmt->execute();
 }
+
+// lấy thông tin sản phẩm và ảnh sởn phẩm
+function getInfoProduct($id){
+    global $pdo;
+    $query = "SELECT product_name,product_price,descripton,src,iddm FROM products INNER JOIN img_product ip on products.idpro = ip.idpro WHERE products.idpro = $id";
+    $stmt = $pdo->prepare($query);
+    $stmt->execute();
+    $info = $stmt->fetchAll();
+    return $info;
+}

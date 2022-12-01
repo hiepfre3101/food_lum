@@ -35,8 +35,8 @@
                         <td><img src="<?= getImg($value['idpro'])[0]['src'] ?>" alt=""></td>
                         <td><?= $value['product_name'] ?></td>
                         <td><?= $value['product_price'] ?></td>
-                        <td><a href="">
-                                <button class="btn-1">Sửa</button>
+                        <td><a href="?ctr=form-update&&id=<?=$value['idpro']?>">
+                                <button type="button" class="btn-1">Sửa</button>
                             </a><a href="">
                                 <button class="btn2">Xóa</button>
                             </a></td>

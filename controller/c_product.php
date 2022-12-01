@@ -82,4 +82,13 @@ function addNewProduct()
     header("location:index.php?ctr=product-list");
 }
 
+function showFormUpdateProduct(){
+    $arrInfo = getInfoProduct($_GET['id']);
+    $categories = getAllDataCategory();
+    render("form-update-product",["arrInfo"=>$arrInfo,"categories"=>$categories],1);
+}
+
+function updateProductAdmin(){
+
+}
 ?>

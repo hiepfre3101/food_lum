@@ -118,6 +118,12 @@ switch ($ctr) {
     case "Add-product":
         addNewProduct();
         break;
+    case "form-update":
+        showFormUpdateProduct();
+        break;
+    case "update-product":
+        updateProductAdmin();
+        break;
     case "list-category":
         showListCategory();
         break;
