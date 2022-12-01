@@ -2,7 +2,7 @@
 include "../model/m_comment.php";
 $idpro= $_REQUEST['idpro'];
 $dsbl= getCommentByProductId($idpro);
-
+$dsv=loadonevote($idpro);
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -65,13 +65,7 @@ $dsbl= getCommentByProductId($idpro);
                     </div>
                     <div class="comment-right">
                         <p class="name" style="margin-right: 100%;">'.$user_name.'</p>
-                        <div class="star2">
-                            <i class="fa-solid fa-star"></i>
-                            <i class="fa-solid fa-star"></i>
-                            <i class="fa-solid fa-star"></i>
-                            <i class="fa-solid fa-star"></i>
-                            <i class="fa-regular fa-star"></i>
-                        </div>
+                        
                         <div class="date">'.$time_send.'</div>
                         <div class="comment-user">'.$content.'</div>                        
                     </div>
@@ -83,6 +77,7 @@ $dsbl= getCommentByProductId($idpro);
         </div>
 
         <?php
+        if(isset($_SESSION['idUser'])){
         if(isset($_POST['guibinhluan'])&&($_POST['guibinhluan'])){
                     $content=$_POST['content'];
                     $idpro=$_POST['idpro'];
@@ -90,8 +85,11 @@ $dsbl= getCommentByProductId($idpro);
                     $time_send = date("Y-m-d");
                     $star=$_POST['star'];
                     insert_binhluan($content,$iduser,$idpro,$time_send);
+                    insert_vote($idpro,$iduser,$star);
                     header("location: ".$_SERVER['HTTP_REFERER']);
+                    die;
                 }
+            }
 
         ?>
 
