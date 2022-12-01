@@ -9,6 +9,7 @@ require_once("./model/m_cart.php");
 require_once("./model/m_pagination.php");
 require_once("./model/m_voucher.php");
 require_once("./model/m_order.php");
+require_once("./model/m_comment.php");
 
 // require controller here...
 require_once("./controller/c_render.php");
@@ -18,6 +19,8 @@ require_once("./controller/c_cart.php");
 require_once("./controller/c_user.php");
 require_once("./controller/c_voucher.php");
 require_once("./controller/c_order.php");
+require_once("./controller/c_comment.php");
+
 require_once ("./controller/c_categories.php");
 
 //@param : $ctr viết tắt controller, đây là biến để truyền lên thanh url có thể đặt tên tùy thích
@@ -85,6 +88,7 @@ switch ($ctr) {
         getInfoHeader();
         showClientOrder();
         break;
+        //admin
     case "order-detail-user":
         getInfoHeader();
         showClientOrderDetail();
@@ -124,6 +128,14 @@ switch ($ctr) {
     case "Add-product":
         addNewProduct();
         break;
+     case "comment-list":
+        showListComment();
+        break;
+    
+    case "detail-comment":
+        showDetailComment();
+        break;
+   
     case "list-category":
         showListCategory();
         break;
