@@ -96,12 +96,4 @@ function changeStatusOrder($id, $status)
     $stmt = $pdo->prepare($query);
     $stmt->execute();
 }
-// lấy tất cả sản phẩm cùng danh mục
-function getAllProductCategory($id){
-    global $pdo;
-    $query = "SELECT * FROM products WHERE iddm=$id";
-    $stmt = $pdo->prepare($query);
-    $stmt->execute();
-    $arrProduct = $stmt->fetchAll();
-    return $arrProduct;
-}
+

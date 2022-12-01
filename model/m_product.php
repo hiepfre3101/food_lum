@@ -78,6 +78,19 @@ function getImg($id){
     $arrImg = $stmt->fetchAll();
     return $arrImg;
 }
+
+function getAllProductWithCategory($idCate){
+    global $pdo;
+    $query = "SELECT p.*,cate.categories_name
+    FROM products as p
+    JOIN categories as cate
+    ON p.iddm = cate.iddm
+    WHERE p.iddm = $idCate";
+    $stmt = $pdo->prepare($query);
+    $stmt->execute();
+    $data = $stmt->fetchAll();
+    return $data;
+}
 function updateDataCategoryProduct($iddm,$idpro)
 {
     global $pdo;
@@ -86,12 +99,24 @@ function updateDataCategoryProduct($iddm,$idpro)
     $stmt->execute();
 }
 
+
 // lấy thông tin sản phẩm và ảnh sởn phẩm
-function getInfoProduct($id){
+function getInfoProduct($id)
+{
     global $pdo;
     $query = "SELECT product_name,product_price,descripton,src,iddm FROM products INNER JOIN img_product ip on products.idpro = ip.idpro WHERE products.idpro = $id";
     $stmt = $pdo->prepare($query);
     $stmt->execute();
     $info = $stmt->fetchAll();
     return $info;
+}
+// lấy tất cả sản phẩm cùng danh mục
+function getAllProductCategory($id){
+    global $pdo;
+    $idpro = $_GET["id"];
+    $query = "SELECT * FROM products WHERE iddm=$id AND idpro != $idpro LIMIT 0,4";
+    $stmt = $pdo->prepare($query);
+    $stmt->execute();
+    $arrProduct = $stmt->fetchAll();
+    return $arrProduct;
 }
