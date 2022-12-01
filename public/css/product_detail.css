@@ -212,6 +212,7 @@
 .ad{
     font-family: Oswald, sans-serif;
     font-size: 20px;
+    float: left;
 }
 .star1{
     margin-top : 30px;
@@ -263,7 +264,7 @@
     font-family: "Helvetica Neue", Helvetica, Arial, 文泉驛正黑, "WenQuanYi Zen Hei", "Hiragino Sans GB", "儷黑 Pro", "LiHei Pro", "Heiti TC", 微軟正黑體, "Microsoft JhengHei UI", "Microsoft JhengHei", sans-serif;;
     font-weight: normal;
     line-height: 14px;
-    margin: 15px 0 15px 0;
+    margin: 8px 0 15px 0;
 }
 .img3{
     width: 20%;
@@ -279,8 +280,13 @@
     display: none;
 }
 .review_rating {
-    font-size: 20px;
+    font-size: 10px;
     color: #f4ca16;
+    cursor: pointer;
+}
+.review_rating1 {
+    font-size: 20px;
+    color: #E4002B;
     cursor: pointer;
 }
 .rating > label {
@@ -402,7 +408,7 @@
     font-size: 1rem;
 }
 .fs-7{
-    font-size: 0.75rem;
+    font-size: 0.75rem !important;
 }
 .bg-secondary{
     background-color: var(--secondary-color) !important;

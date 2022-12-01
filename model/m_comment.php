@@ -1,13 +1,31 @@
 <?php
 include_once "database.php";
     
-    function insert_binhluan($content,$iduser,$idpro,$time_send){
+    function insert_binhluan($content,$iduser,$idpro,$time_send,$rating){
         global $pdo;
-        $sql = "INSERT INTO comment(content,iduser,idpro,time_send) VALUES('$content','$iduser','$idpro','$time_send')";
+        $sql = "INSERT INTO comment(content,iduser,idpro,time_send,rating) VALUES('$content','$iduser','$idpro','$time_send','$rating')";
         $stmt = $pdo->prepare($sql);
         $stmt->execute();
     }
-
+    function insert_vote($idpro,$iduser,$star){
+        global $pdo;
+        $sql = "INSERT INTO vote(idpro,iduser,star) VALUES('$idpro','$iduser','$star')";
+        $stmt = $pdo->prepare($sql);
+        $stmt->execute();
+    }
+    function loadstar($idpro){
+    global $pdo;
+    $query = "SELECT p.idpro,us.iduser,AVG(cmt.rating) as 'avgstar'
+    from comment as cmt 
+    join user as us on cmt.iduser = us.iduser
+    join products as p on cmt.idpro = p.idpro
+    where cmt.idpro = $idpro";
+    $stm = $pdo->prepare($query);
+    $stm->execute();
+    $result = $stm->fetch();
+    return $result;
+    }
+    
     function getAllComment(){
     global $pdo;
     $query = "SELECT cmt.content, cmt.time_send, cmt.iduser FROM comment as cmt 
@@ -22,7 +40,7 @@ include_once "database.php";
 function getCommentByProductId($idpro)
 {
     global $pdo;
-    $query = "SELECT cmt.content, cmt.time_send, us.iduser ,us.full_name, us.avatar,cmt.idcm
+    $query = "SELECT cmt.content, cmt.time_send,cmt.rating, us.iduser ,us.full_name, us.avatar,cmt.idcm
     from comment as cmt 
     join user as us on cmt.iduser = us.iduser
     join products as p on cmt.idpro = p.idpro

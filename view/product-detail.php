@@ -51,6 +51,7 @@
 <br>
 <br>
 <div class="row" id="binhluan">
+    
 <iframe src="view/binhluanform.php?idpro=<?=$product['idpro'] ?>" frameborder="0" width="100%" height="600px"></iframe>
 </div>
 
