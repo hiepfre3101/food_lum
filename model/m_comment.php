@@ -1,9 +1,9 @@
 <?php
 include_once "database.php";
     
-    function insert_binhluan($content,$iduser,$idpro,$time_send){
+    function insert_binhluan($content,$iduser,$idpro,$time_send,$rating){
         global $pdo;
-        $sql = "INSERT INTO comment(content,iduser,idpro,time_send) VALUES('$content','$iduser','$idpro','$time_send')";
+        $sql = "INSERT INTO comment(content,iduser,idpro,time_send,rating) VALUES('$content','$iduser','$idpro','$time_send','$rating')";
         $stmt = $pdo->prepare($sql);
         $stmt->execute();
     }

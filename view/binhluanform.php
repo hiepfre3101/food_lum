@@ -2,7 +2,7 @@
 include "../model/m_comment.php";
 $idpro= $_REQUEST['idpro'];
 $dsbl= getCommentByProductId($idpro);
-$dsv=loadonevote($idpro);
+// $dsv=loadonevote($idpro);
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -41,11 +41,11 @@ $dsv=loadonevote($idpro);
                         <h4>Để lại bình luận</h4>
                         <form action="<?= $_SERVER['PHP_SELF'];?>" method="post">   
                         <div class="rating" >
-                            <input type="radio" name="star" value="5" id="5"><label for="5">☆</label>
-                            <input type="radio" name="star" value="4" id="4"><label for="4">☆</label>
-                             <input type="radio" name="star" value="3" id="3"><label for="3">☆</label>
-                            <input type="radio" name="star" value="2" id="2"><label for="2">☆</label>
-                            <input type="radio" name="star" value="1" id="1"><label for="1">☆</label>
+                            <input type="radio" name="rating" value="5" id="5"><label for="5">☆</label>
+                            <input type="radio" name="rating" value="4" id="4"><label for="4">☆</label>
+                             <input type="radio" name="rating" value="3" id="3"><label for="3">☆</label>
+                            <input type="radio" name="rating" value="2" id="2"><label for="2">☆</label>
+                            <input type="radio" name="rating" value="1" id="1"><label for="1">☆</label>
                         </div>
                         <!-- <h5 class="text-center"><i class="text-danger">Bạn đã đánh giá</i></h5> -->
                         <div class="comment-area"> <textarea class="form-control" placeholder="Nội dung..."
@@ -56,24 +56,23 @@ $dsv=loadonevote($idpro);
                         </form>                        
                     </div>
             <div class="cmt-wrapper p-3">
-            <?php
-                foreach($dsbl as $bl){
-                    extract($bl);
-                echo '<div class="comment">
+            <?php foreach($dsbl as $bl) :?>
+                <div class="comment">
                     <div class="comment-left">
-                        <img class="img2" src="'.$avatar.'" alt="">
+                        <img class="img2" src="<?=$bl['avatar']?>" alt="">
                     </div>
                     <div class="comment-right">
-                        <p class="name" style="margin-right: 100%;">'.$full_name.'</p>
-                        
-                        <div class="date">'.$time_send.'</div>
-                        <div class="comment-user">'.$content.'</div>                        
+                        <p class="name fw-bold fs-4 "  style="margin-right: 100%;"><?=$bl['full_name']?></p>
+                    <div class="star">
+
+                    </div>
+                        <div class="date"><?=$bl['time_send']?></div>
+                        <div class="comment-user fw-bold"><?=$bl['content']?></div>                        
                     </div>
                     <hr>
-                </div>               
-            </div>';
-        }
-        ?>  
+                </div>
+                <?php endforeach ?>               
+            </div> 
         </div>
 
         <?php
@@ -83,9 +82,9 @@ $dsv=loadonevote($idpro);
                     $idpro=$_POST['idpro'];
                     $iduser=$_SESSION['idUser'];
                     $time_send = date("Y-m-d");
-                    $star=$_POST['star'];
-                    insert_binhluan($content,$iduser,$idpro,$time_send);
-                    insert_vote($idpro,$iduser,$star);
+                    $rating=$_POST['rating'];
+                    insert_binhluan($content,$iduser,$idpro,$time_send,$rating);
+                    // insert_vote($idpro,$iduser,$star);
                     header("location: ".$_SERVER['HTTP_REFERER']);
                     die;
                 }
