@@ -24,7 +24,7 @@
             <?php foreach ($arrProduct as $key => $value){?>
             <div class="item-order-product">
                 <div class="item-left">
-                    <img src="https://picsum.photos/200" alt="">
+                    <img src="<?= getImg($value['idpro'])[0]['src'] ?>" alt="">
                 </div>
                 <div class="item-right">
                     <p class="name-product-order">Sản phẩm : <span><?=$value['product_name']?></span></p>

@@ -2,14 +2,12 @@
 
 function showClientProductDetail()
 {
-    if (isset($_SESSION['idUser'])) {
-        $id = $_GET['id'];
-        $images = getImg($id);
-        $product = getOneDataProducts($id);
-        render("product-detail", ["product" => $product,"images"=>$images], 0);
-        die;
-    }
-    render("login", [], 0);
+    $id = $_GET['id'];
+    $images = getImg($id);
+    $product = getOneDataProducts($id);
+    $idCate = $product["iddm"];
+    $productSame = getAllProductCategory($idCate);
+    render("product-detail", ["product" => $product, "images" => $images, "productSame" => $productSame], 0);
 }
 
 function showAddProduct()
@@ -38,7 +36,7 @@ function addNewProduct()
     $price = $_POST['price-product-add'];
     $desc = $_POST['description'];
     $iddm = $_POST['category'];
-    
+
     $foder = "./public/img/";
     $img1 = $_FILES['img-product-add-1'];
     $name1 = $foder . $img1['name'];
@@ -52,13 +50,13 @@ function addNewProduct()
         "product_name" => $name,
         "product_price" => $price,
         "descripton" => $desc,
-        "image"=>$name1,
+        "image" => $name1,
         "iddm" => $iddm
     ];
-   
+
     addProduct($data);
 //    thêm ảnh sản phẩm vào bảng ảnh sản phẩm
-    
+
     $dataImg = [
         [
             "idpro" => $id,
@@ -76,19 +74,22 @@ function addNewProduct()
     foreach ($dataImg as $value) {
         addImg($value);
     }
-    move_uploaded_file($img1['tmp_name'],"public/img/".$img1["name"]);
-    move_uploaded_file($img2['tmp_name'],"public/img/".$img2["name"]);
-    move_uploaded_file($img3['tmp_name'],"public/img/".$img3["name"]);
+    move_uploaded_file($img1['tmp_name'], "public/img/" . $img1["name"]);
+    move_uploaded_file($img2['tmp_name'], "public/img/" . $img2["name"]);
+    move_uploaded_file($img3['tmp_name'], "public/img/" . $img3["name"]);
     header("location:index.php?ctr=product-list");
 }
 
-function showFormUpdateProduct(){
+function showFormUpdateProduct()
+{
     $arrInfo = getInfoProduct($_GET['id']);
     $categories = getAllDataCategory();
-    render("form-update-product",["arrInfo"=>$arrInfo,"categories"=>$categories],1);
+    render("form-update-product", ["arrInfo" => $arrInfo, "categories" => $categories], 1);
 }
 
-function updateProductAdmin(){
+function updateProductAdmin()
+{
 
 }
+
 ?>

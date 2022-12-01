@@ -33,17 +33,17 @@
                 <div class="row-left"><label for="img-form">Ảnh sản phẩm : </label></div>
                 <div class="row-rigth">
                     <label for="img-form-1" class="wrapper-img">
-                        <img src="https://picsum.photos/200/300" alt="">
+                        <img src="<?=getImg($_GET['id'])[0]['src']?>" style="display: block;" alt="">
                     </label>
                     <input  type="file" style="transform: translateY(-100000px)" class="img-form" name="img-product-add-1" id="img-form-1" >
 
                     <label for="img-form-2" class="wrapper-img">
-                        <img src="https://picsum.photos/200/300" alt="">
+                        <img src="<?=getImg($_GET['id'])[1]['src']?>" style="display: block;" alt="">
                     </label>
                     <input  type="file" style="transform: translateY(-100000px)" class="img-form" name="img-product-add-2" id="img-form-2" >
 
                     <label for="img-form-3" class="wrapper-img">
-                        <img src="https://picsum.photos/200/300" alt="">
+                        <img src="<?=getImg($_GET['id'])[2]['src']?>" style="display: block;" alt="">
                     </label>
                     <input  type="file" style="transform: translateY(-100000px)" class="img-form" name="img-product-add-3" id="img-form-3" >
                     <p class="form-message" style="color:red;"></p>

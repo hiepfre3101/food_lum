@@ -38,7 +38,7 @@
                         <td><a href="?ctr=form-update&&id=<?=$value['idpro']?>">
                                 <button type="button" class="btn-1">Sửa</button>
                             </a><a href="">
-                                <button class="btn2">Xóa</button>
+                                <button class="btn-2">Xóa</button>
                             </a></td>
                     </tr>
                 <?php } ?>
