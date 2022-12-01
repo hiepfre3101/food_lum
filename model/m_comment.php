@@ -7,6 +7,37 @@ include_once "database.php";
         $stmt = $pdo->prepare($sql);
         $stmt->execute();
     }
+    function insert_vote($idpro,$iduser,$star){
+        global $pdo;
+        $sql = "INSERT INTO vote(idpro,iduser,star) VALUES('$idpro','$iduser','$star')";
+        $stmt = $pdo->prepare($sql);
+        $stmt->execute();
+    }
+    function loadonevote($idpro){
+    global $pdo;
+    $query = "SELECT v.star,p.idpro,us.iduser,AVG(v.star) as 'avgstar'
+    from vote as v 
+    join user as us on v.iduser = us.iduser
+    join products as p on v.idpro = p.idpro
+    where v.idpro = $idpro";
+    $stm = $pdo->prepare($query);
+    $stm->execute();
+    $result = $stm->fetch();
+    return $result;
+    }
+//     function loadallvote($idpro)
+// {
+//     global $pdo;
+//     $query = "SELECT v.star, us.iduser ,us.user_name, us.avatar,v.id
+//     from vote as v 
+//     join user as us on v.iduser = us.iduser
+//     join products as p on v.idpro = p.idpro
+//     where v.idpro = $idpro";
+//     $stm = $pdo->prepare($query);
+//     $stm->execute();
+//     $result = $stm->fetchAll();
+//     return $result;
+// }
 
     function getAllComment(){
     global $pdo;

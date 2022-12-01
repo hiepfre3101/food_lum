@@ -2,7 +2,9 @@
 include "../model/m_comment.php";
 $idpro= $_REQUEST['idpro'];
 $dsbl= getCommentByProductId($idpro);
-
+$dsv=loadonevote($idpro);
+// $dsvt=loadallvote($idpro);
+extract($dsv);
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -18,19 +20,16 @@ $dsbl= getCommentByProductId($idpro);
         <link rel="stylesheet" href="./public/css/header.css">
         <link rel="stylesheet" href="./public/css/footer.css">
         <link rel="stylesheet" href="../public/css/product_detail.css">
+        <script src="https://kit.fontawesome.com/e6b03d2b34.js" crossorigin="anonymous"></script>
+
     <body>
     <div class="container-comment">
             <h3 class="dg">Đánh Giá Sản Phẩm</h3>
-
-            <div class="container-star">
-                <div class="star">
-                    <p class="ad">4.7 trên 5 </p>
-                    <i class="fa-solid fa-star"></i>
-                    <i class="fa-solid fa-star"></i>
-                    <i class="fa-solid fa-star"></i>
-                    <i class="fa-solid fa-star"></i>
-                    <i class="fa-regular fa-star"></i>
+            <div class="star">
+                    <p class="ad"><?= $dsv['avgstar'] ?>/5<span class="review_rating fa fa-star"></span></p>
+                   
                 </div>
+            <div class="container-star">               
                 <div class="star1">
                     <input class="s" type="button" value="Tất Cả">
                     <input class="s" type="button" value="5 Sao">
@@ -38,61 +37,57 @@ $dsbl= getCommentByProductId($idpro);
                     <input class="s" type="button" value="3 Sao">
                     <input class="s" type="button" value="2 Sao">
                     <input class="s" type="button" value="1 Sao">
-                </div>
-            </div>
-            
+                </div>                
+            </div>         
             <div class="comment-box text-center">
                         <h4>Để lại bình luận</h4>
-                        <form action="<?= $_SERVER['PHP_SELF'];?>" method="post">
-                        <div class="rating"> <input type="radio" name="rating" value="5" id="5"><label for="5">☆</label>
-                            <input type="radio" name="rating" value="4" id="4"><label for="4">☆</label> <input
-                                type="radio" name="rating" value="3" id="3"><label for="3">☆</label> <input type="radio"
-                                name="rating" value="2" id="2"><label for="2">☆</label> <input type="radio"
-                                name="rating" value="1" id="1"><label for="1">☆</label>
+                        <form action="<?= $_SERVER['PHP_SELF'];?>" method="post">   
+                        <div class="rating" >
+                            <input type="radio" name="star" value="5" id="5"><label for="5">☆</label>
+                            <input type="radio" name="star" value="4" id="4"><label for="4">☆</label>
+                             <input type="radio" name="star" value="3" id="3"><label for="3">☆</label>
+                            <input type="radio" name="star" value="2" id="2"><label for="2">☆</label>
+                            <input type="radio" name="star" value="1" id="1"><label for="1">☆</label>
                         </div>
+                        <!-- <h5 class="text-center"><i class="text-danger">Bạn đã đánh giá</i></h5> -->
                         <div class="comment-area"> <textarea class="form-control" placeholder="Nội dung..."
                                 rows="4" name="content"></textarea> </div>
                         <div class="text-center mt-4"> <input class="btn btn-success send px-5" name="guibinhluan" type="submit" value="Đăng bình luận"></div>
                                     <input type="hidden" name="idpro" value="<?=$idpro?>">
                                     
-                        </form>
+                        </form>                        
                     </div>
             <div class="cmt-wrapper p-3">
-            <?php
-                foreach($dsbl as $bl){
-                    extract($bl);
-                echo '<div class="comment">
+            <?php foreach ($dsbl as $bl) : ?>
+                <div class="comment">
                     <div class="comment-left">
-                        <img class="img2" src="'.$avatar.'" alt="">
+                        <img class="img2" src="<?= $bl['avatar'] ?>" alt="">
                     </div>
                     <div class="comment-right">
-                        <p class="name" style="margin-right: 100%;">'.$user_name.'</p>
-                        <div class="star2">
-                            <i class="fa-solid fa-star"></i>
-                            <i class="fa-solid fa-star"></i>
-                            <i class="fa-solid fa-star"></i>
-                            <i class="fa-solid fa-star"></i>
-                            <i class="fa-regular fa-star"></i>
-                        </div>
-                        <div class="date">'.$time_send.'</div>
-                        <div class="comment-user">'.$content.'</div>                        
+                        <p class="name" style="margin-right: 100%;"><?= $bl['user_name'] ?></p>
+                       
+                        <div class="date"><?= $bl['time_send'] ?></div>
+                        <div class="comment-user"><?= $bl['content'] ?></div>                        
                     </div>
                     <hr>
                 </div>               
-            </div>';
-        }
-        ?>  
+            </div>            
+        <?php endforeach ?>
         </div>
 
         <?php
-        if(isset($_POST['guibinhluan'])&&($_POST['guibinhluan'])){
+        if(isset($_POST['guibinhluan'])&&($_POST['guibinhluan'])){                   
                     $content=$_POST['content'];
                     $idpro=$_POST['idpro'];
                     $iduser=$_SESSION['idUser'];
                     $time_send = date("Y-m-d");
+                    $star=$_POST['star'];
                     insert_binhluan($content,$iduser,$idpro,$time_send);
-                    header("location: ".$_SERVER['HTTP_REFERER']);
+                    insert_vote($idpro,$iduser,$star);
+                                                        
+                   header("location: ".$_SERVER['HTTP_REFERER']);
                 }
+        
 
         ?>
 

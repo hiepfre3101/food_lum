@@ -47,13 +47,8 @@
 </div>
 <br>
 <br>
-<!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-            <script>
-                $(document).ready(function(){
-                    $("#binhluan").load("view/binhluanform.php", {idpro: <?=$product['idpro'] ?>?>});
-                });
-            </script> -->
 <div class="row" id="binhluan">
+    
 <iframe src="view/binhluanform.php?idpro=<?=$product['idpro'] ?>" frameborder="0" width="100%" height="600px"></iframe>
 </div>
 <div class="recomend w-100 p-4 h-50">
