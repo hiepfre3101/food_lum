@@ -86,7 +86,6 @@ $ds=loadstar($idpro);
                     $rating=$_POST['rating'];
                     insert_binhluan($content,$iduser,$idpro,$time_send,$rating);
                     header("location: ".$_SERVER['HTTP_REFERER']);
-                    die;
                 }
             }
 
