@@ -64,7 +64,7 @@ $dsv=loadonevote($idpro);
                         <img class="img2" src="'.$avatar.'" alt="">
                     </div>
                     <div class="comment-right">
-                        <p class="name" style="margin-right: 100%;">'.$user_name.'</p>
+                        <p class="name" style="margin-right: 100%;">'.$full_name.'</p>
                         
                         <div class="date">'.$time_send.'</div>
                         <div class="comment-user">'.$content.'</div>                        
