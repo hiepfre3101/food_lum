@@ -1,11 +1,18 @@
 <?php
+
+use function PHPSTORM_META\type;
+
 function displayCart()
 {
     $arrCarrt = getCart();
-    if($arrCarrt){
-         $vouchers = getAllVoucherUser($_SESSION['idUser']);
+    if($arrCarrt && isset($_SESSION["idUser"])){
+         $vouchers = getAllVoucherUserUseful($_SESSION['idUser']);
+    }else if(isset($_SESSION["idUser"])){
+        $arrCarrt ="";
+        $vouchers = getAllVoucherUserUseful($_SESSION['idUser']);
     }else{
-      return "Hãy mua hàng ngay nào";  
+         header("location:?ctr=login");
+      die;
     }
      render("cart",["arrCart"=>$arrCarrt, "vouchers"=>$vouchers],0);
 }
@@ -16,10 +23,19 @@ function addProductCart()
         if (isset($_POST['quantity'])) {
             $id = $_GET['id'];
             $quantity = $_POST['quantity'];
-            addCart($id, $quantity);
-        }
-       header("location:?ctr=home");
-        die;
+        if(isset($_SESSION["arrCart"])){
+             $arrCart = $_SESSION["arrCart"];
+           foreach($arrCart as $key=>$value){
+            if($id == $key ){
+                 $quantity += $value; 
+                 break;
+           }
+         } 
+        }   
+        addCart($id, $quantity);
+    }
+        header("location:?ctr=home");
+            die;
     }
     render("login", [], 0);
 }

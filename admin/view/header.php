@@ -15,7 +15,7 @@
     <div class="wraper">
         <div class="sidebar">
             <div class="logo">
-                <a href="">
+                <a href="?ctr=/">
                     <img src="https://www.brandbucket.com/sites/default/files/logo_uploads/212259/large_fooduro_0.png" alt="">
                 </a>
             </div>
@@ -42,7 +42,7 @@
                         </span>
                         <ul class="sub-menu">
                             <li class="sub-itme"><a href="?ctr=product-list">Danh Sách Sản Phẩm</a></li>
-                            <li class="sub-itme"><a href="">Danh Mục Sản Phẩm</a></li>
+                            <li class="sub-itme"><a href="?ctr=list-category">Danh Mục Sản Phẩm</a></li>
                         </ul>
                     </li>
                 </label>

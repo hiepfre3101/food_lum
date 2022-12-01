@@ -43,3 +43,34 @@ function logOunt(){
 function showListUser(){
     render("admin",[],1);
 }
+
+function showUserProfile(){
+    if(isset($_SESSION["idUser"])){
+        $user = getOneDataUser($_SESSION["idUser"]);
+         render("user-profile",["user"=>$user],0);
+         die;
+    }
+   render('login',[],0);
+}
+
+function saveUpdateUser(){
+    extract($_POST);
+    $avatar="";
+    $user = getOneDataUser($_SESSION["idUser"]);
+    $avatarSize = $_FILES["avatar"]["size"];
+    if($avatarSize == 0){
+      $avatar = $user["avatar"];
+    }else{
+        $avatar ="./public/img/".$_FILES["avatar"]["name"];
+    }
+    move_uploaded_file($_FILES["avatar"]["tmp_name"],"public/img/".$_FILES["avatar"]["name"]);
+    $data =[
+       $user_name,
+       $full_name,
+       $phone,
+       $address,
+       $avatar
+    ];
+    updateUser($data);
+    header("location:?ctr=user-profile");
+}

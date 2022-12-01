@@ -31,6 +31,20 @@ function getAllVoucherUser($idUser)
     $data = $stmt->fetchAll();
     return $data;
 }
+//return : những voucher còn dùng được của 1 user
+function getAllVoucherUserUseful($idUser)
+{
+    global $pdo;
+    $query = "SELECT vc.discount,vc.content,vc.conditionVoucher,vcdt.id,vcdt.status 
+            FROM voucher_detail as vcdt 
+            join voucher as vc 
+            on vc.idvc = vcdt.idvc
+            WHERE iduser=$idUser AND vcdt.status = 0";
+    $stmt = $pdo->prepare($query);
+    $stmt->execute();
+    $data = $stmt->fetchAll();
+    return $data;
+}
 
 function saveVoucherDetail($data)
 {
@@ -44,7 +58,7 @@ function saveVoucherDetail($data)
 function changeStatusVoucher($idVoucher, $idUser)
 {
     global $pdo;
-    $query = "UPDATE voucher_detail SET status = 1 WHERE idvc=$idVoucher AND iduser=$idUser";
+    $query = "UPDATE voucher_detail SET status = 1 WHERE id=$idVoucher AND iduser=$idUser";
     $stmt = $pdo->prepare($query);
     $stmt->execute();
 }

@@ -34,4 +34,14 @@ function getInfoHeader(){
     }
     render("header",["countCart"=>$countCart,"userInfo"=>$userInfo],0);
 }
+
+function showMenuClient(){
+    $arrCategory = getAllDataCategory();
+    $arrProductEachCategory =[];
+    foreach($arrCategory as $value){
+        $products = getAllProductWithCategory($value["iddm"]);
+        array_push($arrProductEachCategory,$products);
+    }
+    render("menu",["arrCategory"=>$arrCategory,"arrProductEachCategory"=>$arrProductEachCategory],0);
+}
 ?>

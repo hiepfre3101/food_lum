@@ -2,8 +2,8 @@
 // hiển thị danh sách đơn hànhg
 function showOrder()
 {
-    $pageCount = pageCount('order_user', 'idorder', '5');
-    $arrOrder = pagination('order_user', '5');
+    $pageCount = pageCount2('order_user', 'idorder', '5', '1');
+    $arrOrder = pagination2('order_user', '5', '1');
     render("order", ["arrOrder" => $arrOrder, "countPage" => $pageCount], 1);
 }
 // hiển thị chi tiết đơn hàng của admin
@@ -12,7 +12,7 @@ function showOrderDetail($role)
     $idUser = getOneDataUser($_GET['idUser']);
     $total = getOneDataOrder($_GET['idOrder']);
     $arrProduct = productDetailOrder($_GET['idOrder']);
-    render("detail-order", ["idUser"=>$idUser,"arrProduct"=>$arrProduct,"total"=>$total], $role);
+    render("detail-order", ["idUser" => $idUser, "arrProduct" => $arrProduct, "total" => $total], $role);
 }
 function updateSattusOrder()
 {
@@ -41,7 +41,8 @@ function addOrderNew()
         "idorder" => $idOrder,
         "id_user" => $iduser,
         "date_time" => $date,
-        "total" => $total
+        "total" => $total,
+
     ];
     addDataOrder($data);
     //// lấy mảng giỏ hàng
@@ -56,13 +57,28 @@ function addOrderNew()
         addDataOrderDetail($DetailOrder);
     }
     setArrCart([]);
-    changeStatusVoucher($idVouCher, $iduser);
+    if ($idVouCher) {
+        changeStatusVoucher($idVouCher, $iduser);
+    }
     header("location:index.php?ctr=order-user");
 }
 
 function showClientOrder()
 {
-    $idUser = $_SESSION["idUser"];
-    $orders = getUserOrder($idUser);
-    render('order-user', ["orders" => $orders], 0);
+    if (isset($_SESSION["idUser"])) {
+        $idUser = $_SESSION["idUser"];
+        $orders = getUserOrder($idUser);
+        render('order-user', ["orders" => $orders], 0);
+        die;
+    }
+    render('login', [], 0);
 }
+
+function showClientOrderDetail()
+{
+    $idOrder = $_GET["order"];
+    $order = getOneDataOrder($idOrder);
+    $orderDetails = productDetailOrder($idOrder);
+    render('order-detail', ["orderDetails" => $orderDetails, "order" => $order], 0);
+}
+

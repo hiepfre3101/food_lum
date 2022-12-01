@@ -7,8 +7,8 @@
     --header-xl-py-6:4rem;
 }
 *{
-    margin: 0;
-    padding: 0;
+    margin: 0 ;
+    padding: 0 ;
     box-sizing: border-box;
 }
 html{
@@ -68,3 +68,7 @@ button[disabled]{
 .w-30{
   width: 30%;
 }
+p{
+  margin-bottom: 0 !important;
+}
+
