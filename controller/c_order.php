@@ -81,4 +81,3 @@ function showClientOrderDetail()
     $orderDetails = productDetailOrder($idOrder);
     render('order-detail', ["orderDetails" => $orderDetails, "order" => $order], 0);
 }
-

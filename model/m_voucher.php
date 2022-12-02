@@ -3,7 +3,7 @@ require_once("database.php");
 function getAllVoucher()
 {
     global $pdo;
-    $query = "SELECT * FROM voucher";
+    $query = "SELECT * FROM voucher WHERE quantity>0";
     $stmt = $pdo->prepare($query);
     $stmt->execute();
     $data = $stmt->fetchAll();
@@ -21,7 +21,7 @@ function getOneVoucher($id)
 function getAllVoucherUser($idUser)
 {
     global $pdo;
-    $query = "SELECT vc.discount,vc.content,vc.conditionVoucher,vcdt.id,vcdt.status 
+    $query = "SELECT vc.discount,vc.content,vc.conditionVoucher,vcdt.id,vcdt.status ,vcdt.idvc
             FROM voucher_detail as vcdt 
             join voucher as vc 
             on vc.idvc = vcdt.idvc
