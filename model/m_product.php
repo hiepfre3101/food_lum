@@ -4,7 +4,7 @@ function addProduct($data = [])
 {
     global $pdo;
     // các khai báo chuẩn bị sql đọc tại https://www.php.net/manual/en/pdostatement.execute.phps
-    $query = "INSERT INTO products (idpro,product_name,product_price,descripton,image,iddm) VALUE (:idpro,:product_name,:product_price,:descripton,:image,:iddm)";
+    $query = "INSERT INTO products (idpro,product_name,product_price,descripton,iddm) VALUE (:idpro,:product_name,:product_price,:descripton,:iddm)";
     $stmt = $pdo->prepare($query);
     $stmt->execute($data);
 }
@@ -20,7 +20,7 @@ function deleteProduct($id)
 function updateProduct($data=[])
 {
     global $pdo;
-    $query = "UPDATE products SET product_name=:product_name,product_price=:product_price,descripton=:descripton,iddm=:iddm, WHERE idpro=:idpro";
+    $query = "UPDATE products SET product_name=:product_name,product_price=:product_price,descripton=:descripton,iddm=:iddm WHERE idpro=:idpro";
     $stmt = $pdo->prepare($query);
     $stmt->execute($data);
 }
@@ -129,7 +129,7 @@ function getAllProductCategory($id){
 
 function updateDataImgProduct($data){
     global $pdo;
-    $query = "UPDATE img_product SET position=:position,src=:src WHERE idpro=:idpro";
+    $query = "UPDATE img_product SET position=:position ,src=:src WHERE idpro=:idpro";
     $stmt = $pdo->prepare($query);
     $stmt->execute($data);
 }

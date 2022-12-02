@@ -91,35 +91,34 @@ function showFormUpdateProduct()
 
 function updateProductAdmin()
 {
-//    cập nhật sản phẩm
-    $idpro = $_GET['id'];
-    $productImg = getDataImg($idpro);
-    $name = $_POST['name-product-add'];
-    $price = $_POST['price-product-add'];
-    $category = $_POST['category'];
-    $description = $_POST['description'];
-    $data = [
-        "product_name" => $name,
-        "product_price" => $price,
-        "descripton" => $description,
-        "iddm" => $category,
-        "idpro" => $idpro
-    ]; 
-    updateProduct($data);
+///    cập nhật sản phẩm
+$idpro = $_GET['id'];
+$name = $_POST['name-product-add'];
+$price = $_POST['price-product-add'];
+$category = $_POST['category'];
+$description = $_POST['description'];
+$data = [
+    "product_name" => $name,
+    "product_price" => $price,
+    "descripton" => $description,
+    "iddm" => $category,
+    "idpro" => $idpro
+];
+updateProduct($data);
 //    cập nhật ảnh sản phẩm
-    for ($i = 1; $i < 4; $i++) {
-        $img = $_FILES['' . "img-product-add-$i" . ''];
-        $imgName = "./public/img/" . $img['name'];
-        if ($img['size'] > 0) {
-            $imgData = [
-                "src" => $imgName,
-                "position" => $i,
-                "idpro" => $idpro
-            ];
-            move_uploaded_file($img['tmp_name'], $imgName);
-            updateDataImgProduct($imgData);
-        }
+for ($i = 1; $i < 4; $i++) {
+    $img = $_FILES['' . "img-product-add-$i" . ''];
+    $imgName = "./public/img/" . $img['name'];
+    if ($img['size'] > 0) {
+        $imgData = [
+            "src" => $imgName,
+            "position" => $i,
+            "idpro" => $idpro
+        ];
+        move_uploaded_file($img['tmp_name'], $imgName);
+        updateDataImgProduct($imgData);
     }
+}
     header("location:index.php?ctr=product-list");
 }
 
