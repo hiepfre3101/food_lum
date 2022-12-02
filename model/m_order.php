@@ -73,7 +73,7 @@ function getAllDataOrderDetail($idorder)
 function productDetailOrder($id)
 {
     global $pdo;
-    $query = "SELECT product_name,product_price,quantity,idorder FROM products INNER JOIN order_detail ON products.idpro = order_detail.idpro AND idorder=$id";
+    $query = "SELECT products.idpro,product_name,product_price,quantity,idorder FROM products INNER JOIN order_detail ON products.idpro = order_detail.idpro AND idorder=$id";
     $stmt = $pdo->prepare($query);
     $stmt->execute();
     $data = $stmt->fetchAll();

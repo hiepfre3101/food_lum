@@ -373,9 +373,14 @@
 }
 
 .table-main .btn2:hover,
+.table-main .btn-2:hover,
 .btn-delete:hover{
     color: red !important;
     background: #fff !important;
+}
+.table-main .btn-2{
+    background: red;
+    border: 1px solid red;
 }
 
 .table-main button:hover {

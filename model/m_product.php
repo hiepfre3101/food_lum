@@ -20,7 +20,7 @@ function deleteProduct($id)
 function updateProduct($data=[])
 {
     global $pdo;
-    $query = "UPDATE products SET product_name=:product_name,product_price=:product_price,descripton=:descripton,image=:image,iddm=:iddm WHERE idpro=:idpro";
+    $query = "UPDATE products SET product_name=:product_name,product_price=:product_price,descripton=:descripton,iddm=:iddm WHERE idpro=:idpro";
     $stmt = $pdo->prepare($query);
     $stmt->execute($data);
 }
@@ -64,7 +64,7 @@ function getIdProduct()
 // thểm ảnh vào bảng ảnh
 function addImg($data = []){
     global $pdo;
-    $query = "INSERT INTO img_product (idpro, src) VALUE (:idpro, :src)";
+    $query = "INSERT INTO img_product (idpro, src, position) VALUE (:idpro, :src, :position)";
     $stmt = $pdo->prepare($query);
     $stmt->execute($data);
 }
@@ -99,6 +99,17 @@ function updateDataCategoryProduct($iddm,$idpro)
     $stmt->execute();
 }
 
+
+// lấy thông tin sản phẩm và ảnh sởn phẩm
+function getInfoProduct($id)
+{
+    global $pdo;
+    $query = "SELECT product_name,product_price,descripton,src,iddm FROM products INNER JOIN img_product ip on products.idpro = ip.idpro WHERE products.idpro = $id";
+    $stmt = $pdo->prepare($query);
+    $stmt->execute();
+    $info = $stmt->fetchAll();
+    return $info;
+}
 // lấy tất cả sản phẩm cùng danh mục
 function getAllProductCategory($id){
     global $pdo;
@@ -108,4 +119,13 @@ function getAllProductCategory($id){
     $stmt->execute();
     $arrProduct = $stmt->fetchAll();
     return $arrProduct;
+}
+
+// cập nhật ảnh sản phẩm
+
+function updateDataImgProduct($data){
+    global $pdo;
+    $query = "UPDATE img_product SET src=:src WHERE position=:position AND idpro=:idpro";
+    $stmt = $pdo->prepare($query);
+    $stmt->execute($data);
 }

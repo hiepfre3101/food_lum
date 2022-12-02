@@ -5,17 +5,18 @@ use function PHPSTORM_META\type;
 function displayCart()
 {
     $arrCarrt = getCart();
-    if($arrCarrt && isset($_SESSION["idUser"])){
-         $vouchers = getAllVoucherUserUseful($_SESSION['idUser']);
-    }else if(isset($_SESSION["idUser"])){
-        $arrCarrt ="";
+    if ($arrCarrt && isset($_SESSION["idUser"])) {
         $vouchers = getAllVoucherUserUseful($_SESSION['idUser']);
-    }else{
-         header("location:?ctr=login");
-      die;
+    } else if (isset($_SESSION["idUser"])) {
+        $arrCarrt = "";
+        $vouchers = getAllVoucherUserUseful($_SESSION['idUser']);
+    } else {
+        header("location:?ctr=login");
+        die;
     }
-     render("cart",["arrCart"=>$arrCarrt, "vouchers"=>$vouchers],0);
+    render("cart", ["arrCart" => $arrCarrt, "vouchers" => $vouchers], 0);
 }
+
 function addProductCart()
 {
     // nếu tồn tại số lượng tức là người dùng đang thực hiện thêm sản phẩm còn nếu không chỉ hiển thị sản phẩm trong giỏ hàng
@@ -23,19 +24,19 @@ function addProductCart()
         if (isset($_POST['quantity'])) {
             $id = $_GET['id'];
             $quantity = $_POST['quantity'];
-        if(isset($_SESSION["arrCart"])){
-             $arrCart = $_SESSION["arrCart"];
-           foreach($arrCart as $key=>$value){
-            if($id == $key ){
-                 $quantity += $value; 
-                 break;
-           }
-         } 
-        }   
-        addCart($id, $quantity);
-    }
+            if (isset($_SESSION["arrCart"])) {
+                $arrCart = $_SESSION["arrCart"];
+                foreach ($arrCart as $key => $value) {
+                    if ($id == $key) {
+                        $quantity += $value;
+                        break;
+                    }
+                }
+            }
+            addCart($id, $quantity);
+        }
         header("location:?ctr=home");
-            die;
+        die;
     }
     render("login", [], 0);
 }

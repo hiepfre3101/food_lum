@@ -128,14 +128,26 @@ switch ($ctr) {
     case "Add-product":
         addNewProduct();
         break;
+
+
+    case "form-update":
+        showFormUpdateProduct();
+        break;
+    case "update-product":
+        updateProductAdmin();
+        break;
+    case "delete-all-product":
+        deleteAllProduct();
+        break;
+
      case "comment-list":
         showListComment();
         break;
-    
+
     case "detail-comment":
         showDetailComment();
         break;
-   
+
     case "list-category":
         showListCategory();
         break;
@@ -164,5 +176,4 @@ switch ($ctr) {
     case "delete-category":
         deleteCategory($_GET['id']);
         break;
-
 }
