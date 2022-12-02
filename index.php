@@ -40,6 +40,9 @@ switch ($ctr) {
         getInfoHeader();
         addProductCart();
         break;
+    case "delete-item-cart":
+        deleteItemCart();
+        break;
     case "cart":
         getInfoHeader();
         displayCart();
@@ -121,6 +124,9 @@ switch ($ctr) {
         break;
     case "list-order":
         showOrder();
+        break;
+    case "list-order-transport":
+        showOrder2();
         break;
     case "detail-order":
         showOrderDetail(1);

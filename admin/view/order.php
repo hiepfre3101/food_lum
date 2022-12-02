@@ -21,7 +21,7 @@
                         <td><?= getOneDataUser($value['id_user'])['phone'] ?></td>
                         <td><?= $value['total'] ?>đ</td>
                         <td>
-                            <a href="?ctr=detail-order&&idOrder=<?= $value['idorder'] ?>&&idUser=<?=$value['id_user']?>">
+                            <a href="?ctr=detail-order&&idOrder=<?= $value['idorder'] ?>&&idUser=<?=$value['id_user']?>&&status=<?=($_GET['ctr']=="list-order")?"1":"2"?>">
                                 <button type="button">Chi tiết</button>
                             </a>
                         </td>

@@ -106,22 +106,19 @@ function updateProductAdmin()
         "idpro" => $idpro
     ]; 
     updateProduct($data);
-    for($i=0;$i<3;$i++){
-        $indexForm = $i+1;
-      $imgSize = $_FILES["img-product-add-$indexForm"]["size"];
-      if($imgSize > 0){
-        $image = "./public/img/" .$_FILES["img-product-add-$indexForm"]['name'];
-      } else{
-         $image = $productImg[$i]["src"];
-      }
-      $imgData = [
-         "position"=>$indexForm,
-         "src"=>$image,
-         "idpro"=>$idpro
-      ];
-      var_dump($imgData);
-      move_uploaded_file($_FILES["img-product-add-$indexForm"]['tmp_name'], $image);
-      updateDataImgProduct($imgData);
+//    cập nhật ảnh sản phẩm
+    for ($i = 1; $i < 4; $i++) {
+        $img = $_FILES['' . "img-product-add-$i" . ''];
+        $imgName = "./public/img/" . $img['name'];
+        if ($img['size'] > 0) {
+            $imgData = [
+                "src" => $imgName,
+                "position" => $i,
+                "idpro" => $idpro
+            ];
+            move_uploaded_file($img['tmp_name'], $imgName);
+            updateDataImgProduct($imgData);
+        }
     }
     header("location:index.php?ctr=product-list");
 }
@@ -130,7 +127,7 @@ function deleteAllProduct()
 {
     if (isset($_GET['idDelete'])) {
         deleteProduct($_GET['idDelete']);
-    }else{
+    } else {
         $arrProduct = getAllDataProducts();
         foreach ($_POST as $key => $value) {
             if ($value == "on") {
