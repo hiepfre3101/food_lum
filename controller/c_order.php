@@ -6,6 +6,12 @@ function showOrder()
     $arrOrder = pagination2('order_user', '5', '1');
     render("order", ["arrOrder" => $arrOrder, "countPage" => $pageCount], 1);
 }
+function showOrder2()
+{
+    $pageCount = pageCount2('order_user', 'idorder', '5', '1');
+    $arrOrder = pagination2('order_user', '5', '2');
+    render("order", ["arrOrder" => $arrOrder, "countPage" => $pageCount], 1);
+}
 // hiển thị chi tiết đơn hàng của admin
 function showOrderDetail($role)
 {
@@ -19,7 +25,11 @@ function updateSattusOrder()
     $status = $_POST['status'];
     $idOrder = $_GET['idOrder'];
     changeStatusOrder($idOrder, $status);
-    showOrder();
+    if($status == 2){
+        showOrder();
+    }else if($status = 3){
+        header("location:index.php?ctr=list-order-transport");
+    }
 }
 
 function addOrderNew()

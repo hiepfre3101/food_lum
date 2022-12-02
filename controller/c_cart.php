@@ -57,3 +57,7 @@ function showCheckOut()
     $arrInfoUsser = getOneDataUser($_SESSION['idUser']);
     render("cart-detail", ["arrCart" => $arrCart, "arrInfoUser" => $arrInfoUsser], 0);
 }
+function deleteItemCart(){
+    deleteCartItem($_GET['idItem']);
+    header("location:index.php?ctr=cart");
+}

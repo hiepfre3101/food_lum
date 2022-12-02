@@ -15,7 +15,7 @@
     <link rel="stylesheet" href="./public/css/base.css">
     <link rel="stylesheet" href="./public/css/header.css">
     <link rel="stylesheet" href="./public/css/footer.css">
-    <link rel="shortcut icon" href="./public/img/Picture1.png" type="image/x-icon">
+    <link rel="shortcut icon" href="./public/img/logo-Main-9989.png" type="image/x-icon">
     <!--    link gg icon -->
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
 

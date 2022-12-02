@@ -32,7 +32,7 @@
                                         </div>
                                     </div>
                                     <div class='xn'>
-                                        <a class='cn' href=''>Xoá</a>
+                                        <a class='cn' onclick=" return confirm('Bạn muốn xóa chứ.'); " href='?ctr=delete-item-cart&&idItem=<?=$key?>'>Xoá</a>
                                     </div>
                                 </div>
                             </div>
