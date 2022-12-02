@@ -2,7 +2,7 @@
     <!-- end header -->
     <div class="form-add-product">
         <p class="title">Thêm mới sản phẩm</p>
-        <form action="?ctr=Add-product" method="post" class="form-add" enctype="multipart/form-data">
+        <form action="?ctr=update-product&&id=<?=$_GET['id']?>" method="post" class="form-add" enctype="multipart/form-data">
             <div class="row-form">
                 <div class="row-left"><label for="name-form">Tên sản phẩm : </label></div>
                 <div class="row-rigth">
@@ -56,7 +56,7 @@
                     <p class="form-message" style="color:red;"></p>
                 </div>
             </div>
-            <button>Thêm sản phảm</button>
+            <button type="submit">Cập nhật</button>
         </form>
     </div>
     <script src="./public/js/validate.js"></script>
@@ -68,9 +68,6 @@
                 validator.isRequired("#name-form"),
                 validator.isRequired("#price-form"),
                 validator.isRequired("#category-form"),
-                validator.isRequired("#img-form-1"),
-                validator.isRequired("#img-form-2"),
-                validator.isRequired("#img-form-3"),
                 validator.isRequired("#description-form"),
             ]
         });
