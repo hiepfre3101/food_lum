@@ -107,38 +107,18 @@ function updateProductAdmin()
     ];
     updateProduct($data);
 //    cập nhật ảnh sản phẩm
-    $img1 = $_FILES['img-product-add-1'];
-    $img1Name = "./public/img/" . $img1['name'];
-    $img2 = $_FILES['img-product-add-2'];
-    $img2Name = "./public/img/" . $img2['name'];
-    $img3 = $_FILES['img-product-add-3'];
-    $img3Name = "./public/img/" . $img3['name'];
-    if ($img1['size'] > 0) {
-        $imgData = [
-            "src" => $img1Name,
-            "position" => 1,
-            "idpro" => $idpro
-        ];
-        move_uploaded_file($img1['tmp_name'], $img1Name);
-        updateDataImgProduct($imgData);
-    }
-    if ($img2['size'] > 0) {
-        $imgData = [
-            "src" => $img2Name,
-            "position" => 2,
-            "idpro" => $idpro
-        ];
-        move_uploaded_file($img2['tmp_name'], $img2Name);
-        updateDataImgProduct($imgData);
-    }
-    if ($img3['size'] > 0) {
-        $imgData = [
-            "src" => $img3Name,
-            "position" => 3,
-            "idpro" => $idpro
-        ];
-        move_uploaded_file($img3['tmp_name'], $img3Name);
-        updateDataImgProduct($imgData);
+    for ($i = 1; $i < 4; $i++) {
+        $img = $_FILES['' . "img-product-add-$i" . ''];
+        $imgName = "./public/img/" . $img['name'];
+        if ($img['size'] > 0) {
+            $imgData = [
+                "src" => $imgName,
+                "position" => $i,
+                "idpro" => $idpro
+            ];
+            move_uploaded_file($img['tmp_name'], $imgName);
+            updateDataImgProduct($imgData);
+        }
     }
     header("location:index.php?ctr=product-list");
 }
@@ -147,7 +127,7 @@ function deleteAllProduct()
 {
     if (isset($_GET['idDelete'])) {
         deleteProduct($_GET['idDelete']);
-    }else{
+    } else {
         $arrProduct = getAllDataProducts();
         foreach ($_POST as $key => $value) {
             if ($value == "on") {
