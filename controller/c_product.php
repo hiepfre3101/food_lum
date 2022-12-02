@@ -50,7 +50,6 @@ function addNewProduct()
         "product_name" => $name,
         "product_price" => $price,
         "descripton" => $desc,
-        "image" => $name1,
         "iddm" => $iddm
     ];
 
@@ -94,6 +93,7 @@ function updateProductAdmin()
 {
 //    cập nhật sản phẩm
     $idpro = $_GET['id'];
+    $productImg = getDataImg($idpro);
     $name = $_POST['name-product-add'];
     $price = $_POST['price-product-add'];
     $category = $_POST['category'];
@@ -104,41 +104,24 @@ function updateProductAdmin()
         "descripton" => $description,
         "iddm" => $category,
         "idpro" => $idpro
-    ];
+    ]; 
     updateProduct($data);
-//    cập nhật ảnh sản phẩm
-    $img1 = $_FILES['img-product-add-1'];
-    $img1Name = "./public/img/" . $img1['name'];
-    $img2 = $_FILES['img-product-add-2'];
-    $img2Name = "./public/img/" . $img2['name'];
-    $img3 = $_FILES['img-product-add-3'];
-    $img3Name = "./public/img/" . $img3['name'];
-    if ($img1['size'] > 0) {
-        $imgData = [
-            "src" => $img1Name,
-            "position" => 1,
-            "idpro" => $idpro
-        ];
-        move_uploaded_file($img1['tmp_name'], $img1Name);
-        updateDataImgProduct($imgData);
-    }
-    if ($img2['size'] > 0) {
-        $imgData = [
-            "src" => $img2Name,
-            "position" => 2,
-            "idpro" => $idpro
-        ];
-        move_uploaded_file($img2['tmp_name'], $img2Name);
-        updateDataImgProduct($imgData);
-    }
-    if ($img3['size'] > 0) {
-        $imgData = [
-            "src" => $img3Name,
-            "position" => 3,
-            "idpro" => $idpro
-        ];
-        move_uploaded_file($img3['tmp_name'], $img3Name);
-        updateDataImgProduct($imgData);
+    for($i=0;$i<3;$i++){
+        $indexForm = $i+1;
+      $imgSize = $_FILES["img-product-add-$indexForm"]["size"];
+      if($imgSize > 0){
+        $image = "./public/img/" .$_FILES["img-product-add-$indexForm"]['name'];
+      } else{
+         $image = $productImg[$i]["src"];
+      }
+      $imgData = [
+         "position"=>$indexForm,
+         "src"=>$image,
+         "idpro"=>$idpro
+      ];
+      var_dump($imgData);
+      move_uploaded_file($_FILES["img-product-add-$indexForm"]['tmp_name'], $image);
+      updateDataImgProduct($imgData);
     }
     header("location:index.php?ctr=product-list");
 }

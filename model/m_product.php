@@ -20,7 +20,7 @@ function deleteProduct($id)
 function updateProduct($data=[])
 {
     global $pdo;
-    $query = "UPDATE products SET product_name=:product_name,product_price=:product_price,descripton=:descripton,iddm=:iddm WHERE idpro=:idpro";
+    $query = "UPDATE products SET product_name=:product_name,product_price=:product_price,descripton=:descripton,iddm=:iddm, WHERE idpro=:idpro";
     $stmt = $pdo->prepare($query);
     $stmt->execute($data);
 }
@@ -104,7 +104,11 @@ function updateDataCategoryProduct($iddm,$idpro)
 function getInfoProduct($id)
 {
     global $pdo;
-    $query = "SELECT product_name,product_price,descripton,src,iddm FROM products INNER JOIN img_product ip on products.idpro = ip.idpro WHERE products.idpro = $id";
+    $query = "SELECT product_name,product_price,descripton,src,iddm
+    FROM products 
+    INNER JOIN img_product  ip 
+    on products.idpro = ip.idpro 
+    WHERE products.idpro = $id";
     $stmt = $pdo->prepare($query);
     $stmt->execute();
     $info = $stmt->fetchAll();
@@ -125,7 +129,15 @@ function getAllProductCategory($id){
 
 function updateDataImgProduct($data){
     global $pdo;
-    $query = "UPDATE img_product SET src=:src WHERE position=:position AND idpro=:idpro";
+    $query = "UPDATE img_product SET position=:position,src=:src WHERE idpro=:idpro";
     $stmt = $pdo->prepare($query);
     $stmt->execute($data);
+}
+function getDataImg($idpro){
+    global $pdo;
+    $query = "SELECT * FROM img_product WHERE idpro=$idpro";
+    $stmt = $pdo->prepare($query);
+    $stmt->execute();
+    $arrProduct = $stmt->fetchAll();
+    return $arrProduct;
 }
