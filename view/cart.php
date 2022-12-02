@@ -32,7 +32,7 @@
                                         </div>
                                     </div>
                                     <div class='xn'>
-                                        <a class='cn' href=''>Xoá</a>
+                                        <a class='cn' href='?ctr=delete-cart&id=<?=$key?>'>Xoá</a>
                                     </div>
                                 </div>
                             </div>

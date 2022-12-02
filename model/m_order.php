@@ -97,3 +97,14 @@ function changeStatusOrder($id, $status)
     $stmt->execute();
 }
 
+function getTotalMoney(){
+    global $pdo;
+  if(isset($_SESSION["idUser"])){
+    $id = $_SESSION["idUser"];
+    $query = "SELECT SUM(total) as 'totalOrder' from order_user WHERE id_user=$id";
+    $stmt = $pdo->prepare($query);
+    $stmt->execute();
+    $data = $stmt->fetch();
+    return $data;
+  }
+}

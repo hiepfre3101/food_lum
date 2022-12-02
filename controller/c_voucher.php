@@ -1,7 +1,11 @@
 <?php 
    function showVoucher(){
+    $totalMoney = getTotalMoney();
       $vouchers = getAllVoucher();
-    render("voucher",['vouchers'=>$vouchers],0);
+      if($totalMoney["totalOrder"] == null){
+        $totalMoney["totalOrder"] = 0;
+      }
+    render("voucher",['vouchers'=>$vouchers,"totalMoney"=>$totalMoney],0);
    }
    function showVoucherUser(){
     if(isset($_SESSION["idUser"]))
@@ -16,6 +20,13 @@
    function saveVoucherUser(){
       $idVoucher = $_GET["idVoucher"];
       $idUser =  $_SESSION["idUser"];
+      $voucherDetail = getAllVoucherUser($idUser);
+      foreach($voucherDetail as $value){
+        if($idVoucher == $value["idvc"]){
+          header("location:?ctr=voucher");
+          die;
+        }
+      }
       $status = 0;
       $data =[
         $idUser,

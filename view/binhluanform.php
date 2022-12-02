@@ -58,7 +58,7 @@ $ds=loadstar($idpro);
             <?php foreach($dsbl as $bl) :?>
                 <div class="comment d-flex justify-content-start mt-3 p-3">
                     <div class="comment-left w-5 h-25 rounded-circle overflow-hidden">
-                        <img class="img2 w-100  rounded-circle" src="<?=$bl['avatar']?>" alt="">
+                        <img class="img2 w-100  rounded-circle" src=".<?=$bl['avatar']?>" alt="">
                     </div>
                     <div class="comment-right px-3">
                         <p class="name text-dark fw-bold"><?=$bl['full_name']?></p>
