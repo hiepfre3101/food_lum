@@ -41,5 +41,25 @@ function showCmtByProduct($id){
     }
     render("product-detail", ["cmt" => $cmt, "product" => $product], 0);
 }
-
+// delete comment
+function deleteAllComment()
+{
+    if (isset($_GET['idDelete'])) {
+        deleteComment($_GET['idDelete']);
+      
+    } else {
+        $cmt =getAllDataComment();
+        
+        foreach ($_POST as $key => $value) {
+            if ($value == "on") {
+                foreach ($cmt as $valuePro) {
+                    if ($valuePro['idcm'] = $key) {
+                        deleteComment($valuePro['idcm']);
+                    }
+                }
+            }
+        }
+    }
+    header("location:index.php?ctr=comment-list");
+}
 ?>
