@@ -2,7 +2,7 @@
    function showVoucher(){
     $totalMoney = getTotalMoney();
       $vouchers = getAllVoucher();
-      if($totalMoney["totalOrder"] == null){
+      if($totalMoney == null ){
         $totalMoney["totalOrder"] = 0;
       }
     render("voucher",['vouchers'=>$vouchers,"totalMoney"=>$totalMoney],0);

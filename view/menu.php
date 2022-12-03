@@ -22,7 +22,7 @@
                 <div class="col-xxl-2 col-lg-3 col-12 col-sm-4 mb-5">
                     <div class="card w-100 shadow product" style="width: 18rem;">
                         <a class="overflow-hidden" href="?ctr=product-detail&&id=<?=$value["idpro"]?>">
-                            <img src="<?=$value["image"]?>" class="card-img-top img-col img-product" alt="...">
+                            <img src="<?=getImg($value["idpro"])[0]["src"]?>" class="card-img-top img-col img-product" alt="...">
                         </a>
                         <div class="card-body">
                             <div class="d-flex align-items-center justify-content-between ">
