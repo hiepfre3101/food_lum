@@ -51,9 +51,6 @@ switch ($ctr) {
         getInfoHeader();
         showCheckOut();
         break;
-    case "delete-item-cart":
-        deleteItemCart();
-        break;    
     case "login":
         getInfoHeader();
         showLogin();
