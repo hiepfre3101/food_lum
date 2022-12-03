@@ -78,3 +78,19 @@ function getCommentWithProduct()
     $arrComment = $stm->fetchAll();
     return $arrComment;
 }
+// delete comment
+function deleteComment($id)
+{
+    global $pdo;
+    $query = "DELETE FROM comment WHERE idcm=$id";
+    $stmt = $pdo->prepare($query);
+    $stmt->execute();
+}
+function getAllDataComment(){
+    global $pdo;
+    $query = "SELECT * FROM comment";
+    $stmt = $pdo->prepare($query);
+    $stmt->execute();
+    $result = $stmt->fetchAll();
+    return $result;
+}

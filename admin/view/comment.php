@@ -27,10 +27,10 @@
                     <tr>
                         <td><input type="checkbox" name="<?= $value['idcm'] ?>"></td>
                         <td><?= $value['product_name']?></td>
-                        <td><?= $value['countCmt']?></td>
-                        <td><?= $value['min_time'] ?></td>
-                        <td><?= $value['max_time'] ?></td>
-                        <td><a href="?ctr=detail-comment&idpro=<?=$value['idpro']?>">
+                        <td style="text-align: center;"><?= $value['countCmt']?></td>
+                        <td style="text-align: center;"><?= $value['min_time'] ?></td>
+                        <td style="text-align: center;"><?= $value['max_time'] ?></td>
+                        <td style="text-align: center;"><a href="?ctr=detail-comment&idpro=<?=$value['idpro']?>">
                                 <input role="button" class="btn2" value="Chi Tiết">
                             </a></td>
                     </tr>

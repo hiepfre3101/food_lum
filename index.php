@@ -153,7 +153,9 @@ switch ($ctr) {
     case "detail-comment":
         showDetailComment();
         break;
-
+    case "delete-comment":
+        deleteAllComment($idpro);
+        break;
     case "list-category":
         showListCategory();
         break;
