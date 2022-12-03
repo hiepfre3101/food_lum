@@ -3,6 +3,9 @@
 
     <div class="box-table" >
         <div class="action">
+        <a href="?ctr=comment-list">
+                <button>Trở Về</button>
+            </a>
             <a href="">
                 <button>Chọn Tất Cả</button>
             </a>
@@ -10,7 +13,7 @@
                 <button>Xóa Các Mục Đã Chọn</button>
             </a>
         </div>
-        <h1>Sản Phẩm: <?= $result['product_name']?></h1>
+        <h1 style="padding-top: 20px;">Sản Phẩm: <?= $result['product_name']?></h1>
         <form action="" class="tabel-form">
             <table class="table-main" id="table1">
                 <thead>
@@ -28,10 +31,10 @@
                         <td><input type="checkbox" name="<?= $value['idpro'] ?>"></td>
                         <td><?= $value['content']?></td>
                         <td><?= $value['time_send']?></td>
-                        <td><?= $value['user_name'] ?></td>
+                        <td style="text-align: center;"><?= $value['full_name'] ?></td>
                        
-                        <td><a href="">
-                                <button class="btn2">Xóa</button>
+                        <td style="text-align: center;"><a onclick="return confirm('Bạn có muốn xóa chứ ?')" href="?ctr=delete-comment&&idDelete=<?=$value['idcm']?>">
+                                <input role="button" class="btn2"value="Xóa">
                             </a></td>
                     </tr>
                 <?php } ?>
