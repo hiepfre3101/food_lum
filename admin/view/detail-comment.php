@@ -28,7 +28,7 @@
                         <td><input type="checkbox" name="<?= $value['idpro'] ?>"></td>
                         <td><?= $value['content']?></td>
                         <td><?= $value['time_send']?></td>
-                        <td><?= $value['user_name'] ?></td>
+                        <td><?= $value['full_name'] ?></td>
                        
                         <td><a href="">
                                 <button class="btn2">Xóa</button>
