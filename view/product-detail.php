@@ -2,14 +2,14 @@
 <link rel="stylesheet" href="./public/css/product_detail.css">
 <div>
     <div class="container">
-        <div class="row">
+        <div class="row mt-5">
             <div class="col-lg-6 sp oveflow-hidden">
                 <div class="tab-content" id="pills-tabContent">
-                    <div class="tab-pane fade show active" id="pills-home" role="tabpanel" aria-labelledby="pills-home-tab" tabindex="0"><img class="img1" src="<?= $images["0"]["src"] ?>" alt=""></div>
-                    <div class="tab-pane fade" id="pills-profile" role="tabpanel" aria-labelledby="pills-profile-tab" tabindex="0"><img class="img1" src="<?= $images["1"]["src"] ?>" alt=""></div>
-                    <div class="tab-pane fade" id="pills-contact" role="tabpanel" aria-labelledby="pills-contact-tab" tabindex="0"><img class="img1" src="<?= $images["2"]["src"] ?>" alt=""></div>
+                    <div class="tab-pane fade show active img-wrap" id="pills-home" role="tabpanel" aria-labelledby="pills-home-tab" tabindex="0"><img class="img1" src="<?= $images["0"]["src"] ?>" alt=""></div>
+                    <div class="tab-pane fade img-wrap" id="pills-profile" role="tabpanel" aria-labelledby="pills-profile-tab" tabindex="0"><img class="img1" src="<?= $images["1"]["src"] ?>" alt=""></div>
+                    <div class="tab-pane fade img-wrap" id="pills-contact" role="tabpanel" aria-labelledby="pills-contact-tab" tabindex="0"><img class="img1" src="<?= $images["2"]["src"] ?>" alt=""></div>
                 </div>
-                <ul class="nav nav-pills mb-3" id="pills-tab" role="tablist">
+                <ul class="nav nav-pills mb-3 d-flex justify-content-start" id="pills-tab" role="tablist">
                     <li class="nav-item" role="presentation">
                         <button class="nav-link active" id="pills-home-tab" data-bs-toggle="pill" data-bs-target="#pills-home" type="button" role="tab" aria-controls="pills-home" aria-selected="true"><img style="width: 100px;height:100px;" src="<?= $images["0"]["src"] ?>" alt=""></button>
                     </li>
@@ -22,7 +22,7 @@
 
                 </ul>
             </div>
-            <div class="col-lg-6 fo">
+            <div class="col-lg-6 mt-10 mt-lg-0">
                 <form action="?ctr=add-cart&id=<?= $product['idpro'] ?>" method="POST">
                     <div class="frames px-3">
                         <h3 class="font"><?= $product['product_name'] ?></h3>
@@ -62,7 +62,7 @@
         <?php foreach($productSame as $value):?>
         <div class="col-md-3 col-6 position-relative">
             <a href="?ctr=product-detail&id=<?=$value["idpro"]?>">
-                <img class="img4" src="<?=$value["image"]?>" alt="">
+                <img class="img4" src="<?=getImg($value["idpro"])[0]["src"]?>" alt="">
             </a>
             <a href="?ctr=product-detail&id=<?=$value["idpro"]?>" class="d-flex align-items-center justify-content-center p-3 position-absolute top-10 end-10 rounded-circle bg-secondary btn-add text-white text-decoration-none">
                 <span class="fw-semibold fs-3 ">+</span>

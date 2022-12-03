@@ -53,14 +53,7 @@
                             </li>
                         </ul>
                         <div class="w-50 d-lg-flex d-none d-lg-block" style="height:30px;">
-                            <form class="d-flex flex-fill h-100 " role="search">
-                                <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-                                <button role="button"
-    
-                                    class="btn btn-outline-primary w-10 h-100 d-flex align-items-center justify-content-center"
-                                    type="submit"><i class="fa-solid fa-magnifying-glass text-primary"></i></button>
-                        </form>
-                     <a href="?ctr=user-profile" class="d-block">
+                     <a href="?ctr=user-profile" class="d-block flex-fill">
                             <div  class="fa-solid fa-circle-user fs-1 px-3 d-none d-lg-block text-dark icon-user position-relative"
                                  role="button">
                                 <div class="menu-child  bg-primary position-absolute p-3">
