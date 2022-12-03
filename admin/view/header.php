@@ -1,3 +1,4 @@
+<?php (getOneDataUser($_SESSION['idUser'])['position'] == 0)?header("location:index.php?ctr=home"):""?>
 <!DOCTYPE html>
 <html lang="en">
 
