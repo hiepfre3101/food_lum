@@ -25,13 +25,13 @@
                 <tbody>
                 <?php foreach ($cmt as $value) { ?>
                     <tr>
-                        <td><input type="checkbox" ></td>
+                        <td><input type="checkbox" name="<?= $value['idpro'] ?>"></td>
                         <td><?= $value['content']?></td>
                         <td><?= $value['time_send']?></td>
-                        <td><?= $value['full_name'] ?></td>
+                        <td style="text-align: center;"><?= $value['full_name'] ?></td>
                        
-                        <td><a href="">
-                                <button class="btn2">Xóa</button>
+                        <td style="text-align: center;"><a onclick="return confirm('Bạn có muốn xóa chứ ?')" href="?ctr=delete-comment&&idDelete=<?=$value['idcm']?>">
+                                <input role="button" class="btn2"value="Xóa">
                             </a></td>
                     </tr>
                 <?php } ?>
