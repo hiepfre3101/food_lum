@@ -2,7 +2,7 @@
 <link rel="stylesheet" href="./public/css/cart.css">
 <div>
     <div class="container">
-        <form method="post" action="?ctr=add-order">
+        <form method="post" action="?ctr=add-order" id="form-cart">
             <div class="row">
                 <div class="col-lg-7">
                     <h4 class="card-title mb-4 ttdh"><i class="fa-solid fa-lock"></i>THÔNG TIN ĐẶT HÀNG</h4>
@@ -15,12 +15,28 @@
 
                         <div class="form-group">
                             <label for="" class="form-label formlb">Địa chỉ</label>
-                            <input name="" value="<?= $arrInfoUser['address'] ?>" class="form-control form1" type="text">
+                            <input name="address" readonly value="<?= $arrInfoUser['address'] ?>" class="form-control form1" type="text">
                         </div> <!-- form-group// -->
                         <div class="form-group">
+                           <label for="order_id" class="form-label formlb">Mã hóa đơn</label>
+                           <input class="form-control form1" readonly id="order_id" name="order_id" type="text" value="<?php echo date("YmdHis") ?>"/>
+                         </div> 
+                    <div class="form-group">
+                        <label class="formlb">Thời hạn thanh toán</label>
+                        <input class="form-control form1" id="txtexpire"
+                               name="txtexpire" readonly type="text" value="<?php echo $expire;?>"/>
+                    </div>
+                        <div class="form-group">
                             <label for="" class="form-label formlb">Ghi chú cho đơn hàng</label>
-                            <input name="" class="form-control form1" type="text">
+                            <input name="order_desc" class="form-control form1" id="order_desc" type="text">
                         </div> <!-- form-group// -->
+                        <div class="form-group">
+                          <label for="language" class="form-label formlb">Ngôn ngữ</label>
+                          <select name="language" id="language" class="form-control form1">
+                            <option value="vn">Tiếng Việt</option>
+                            <option value="en">English</option>
+                          </select>
+                       </div>
         </form>
         <br>
     </div>
@@ -30,17 +46,30 @@
 
         <div class="form-group">
             <label for="" class="form-label formlb">Họ và tên*</label>
-            <input name="" value="<?= $arrInfoUser['full_name'] ?>" class="form-control form1" type="text">
+            <input name="full_name" readonly value="<?= $arrInfoUser['full_name'] ?>" class="form-control form1" type="text">
         </div> <!-- form-group// -->
         <div class="form-group">
             <label for="" class="form-label formlb">Số điện thoại*</label>
-            <input name="" value="<?= $arrInfoUser['phone'] ?>" class="form-control form1" type="text">
+            <input name="phone" readonly value="<?= $arrInfoUser['phone'] ?>" class="form-control form1" type="text">
         </div> <!-- form-group// -->
         <div class="form-group">
             <label for="" class="form-label formlb">Địa chỉ email*</label>
-            <input name="" value="<?= $arrInfoUser['email'] ?>" class="form-control form1" type="text">
+            <input name="email" readonly value="<?= $arrInfoUser['email'] ?>" class="form-control form1" type="text">
         </div> <!-- form-group// -->
-
+        <div class="form-group">
+            <label for="" class="form-label formlb">Phương thức thanh toán*</label>
+             <div class="d-flex justify-content-between align-items-center bg-dark p-4 mt-3">
+               <p class="text-white fs-3 fw-semibold">Thanh toán khi nhận hàng</p> 
+              <input name="pay"  value="cod" onclick="changeActionForm()" type="radio" checked>
+             </div>
+        </div> <!-- form-group// -->
+        <div class="form-group mt-2">
+             <div class="d-flex justify-content-between align-items-center bg-dark p-4">
+               <p class="text-white fs-3 fw-semibold">Thanh toán online</p> 
+              <input name="pay"  value="online" onclick="changeActionForm()" type="radio">
+             </div>
+        </div> <!-- form-group// -->
+       
         <br>
     </div>
     <br>
@@ -72,5 +101,5 @@
 </form>
 </div>
 </div>
-
+<script src="./public/js/main.js"></script>
 <?php include_once("./view/footer.php") ?>

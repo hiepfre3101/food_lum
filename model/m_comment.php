@@ -50,10 +50,10 @@ function getCommentByProductId($idpro)
     $result = $stm->fetchAll();
     return $result;
 }
-function getOneProduct()
+function getOneProduct($idpro)
 {
   global $pdo;
-  $idpro = $_GET["idpro"];
+//   $idpro = $_GET["idpro"];
   $query2 = "select * from products where idpro=$idpro";
   $stm = $pdo->prepare($query2);
   $stm->execute();

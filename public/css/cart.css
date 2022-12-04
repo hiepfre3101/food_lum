@@ -119,8 +119,14 @@
 }
 .gh1{
     max-width: 25%;
-    max-height: 150px;
+    width: 25%;
+    height: 150px;
     float: left;
+}
+.img1{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
 }
 .namegh{
     margin-top: 7%;

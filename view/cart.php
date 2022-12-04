@@ -14,7 +14,7 @@
                     } else {
                         foreach ($arrCart as $key => $value) { ?>
                             <div class='giohang d-flex justify-content-start'>
-                                <img class='gh1' src="<?= getImg($key)[0]['src'] ?>" alt=''>
+                                <div class="gh1 overflow-hidden"><img class="img1" src="<?= getImg($key)[0]['src'] ?>" alt=''></div>
                                 <div class="info-cart-block w-75">
                                     <div class='tengh'>
                                         <p class='namegh'><?= getOneDataProducts($key)['product_name'] ?></p>
@@ -70,8 +70,7 @@
                             </input>
                         </p>
                         <hr class="hr">
-                        <button class="thanhtoan" type="submit">Thanh toán khi nhận hàng</button>
-                        <button class="thanhtoan" style="margin-top: 10px" type="submit">Thanh toán online</button>
+                        <button class="thanhtoan" type="submit">Thanh toán </button>
                         <br>
                         <br>
                     </div>

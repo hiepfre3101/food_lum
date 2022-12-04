@@ -46,7 +46,6 @@ function addOrderNew()
     } else {
         $idOrder = getIdOrder() + 1;
     }
-    var_dump(empty(countOrder()));
     $data = [
         "idorder" => $idOrder,
         "id_user" => $iduser,

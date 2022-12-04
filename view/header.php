@@ -19,7 +19,6 @@
     <!--    link gg icon -->
     <link rel="stylesheet"
           href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200"/>
-
 </head>
 <body onload="loadTotal()">
 <nav class="navbar navbar-expand-lg  container-fluid px-lg-5 py-lg-4 bg-white " id="header-menu">
