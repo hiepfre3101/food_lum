@@ -12,11 +12,6 @@ function showDetailComment()
     render("detail-comment", ["cmt" => $cmt, "countPage" => $page, 'result' => $result,'idpro'=> $idpro] , 1);
 }
 
-
-
-
-
-
 // hiển thị phân trang
 function showListComment()
 {
