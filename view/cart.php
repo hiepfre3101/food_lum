@@ -14,7 +14,7 @@
                     } else {
                         foreach ($arrCart as $key => $value) { ?>
                             <div class='giohang d-flex justify-content-start'>
-                                <img class='gh1' src="<?= getOneDataProducts($key)['image'] ?>" alt=''>
+                                <img class='gh1' src="<?= getImg($key)[0]['src'] ?>" alt=''>
                                 <div class="info-cart-block w-75">
                                     <div class='tengh'>
                                         <p class='namegh'><?= getOneDataProducts($key)['product_name'] ?></p>

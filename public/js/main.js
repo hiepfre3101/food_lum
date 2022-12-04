@@ -70,11 +70,6 @@ if (file2.length > 1) {
 
 }
 
-
-function tabImg(data = []) {
-    console.log(data);
-}
-
 // js sửe lý check trong bảng
 const btnCheck = document.querySelector("#checkAll");
 if (btnCheck) {

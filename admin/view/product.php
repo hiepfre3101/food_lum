@@ -32,7 +32,7 @@
                 <?php foreach ($arrProducts as $value) { ?>
                     <tr>
                         <td><input type="checkbox" name="<?= $value['idpro'] ?>"></td>
-                        <td><img src="<?= getImg($value['idpro'])[0]['src'] ?>" alt=""></td>
+                        <td><img src="<?=getImg($value["idpro"])[0]["src"]?>" alt=""></td>
                         <td><?= $value['product_name'] ?></td>
                         <td><?= $value['product_price'] ?></td>
                         <td><a href="?ctr=form-update&&id=<?=$value['idpro']?>">

@@ -4,7 +4,7 @@ function pagination($table, $end)
 {
     global $pdo;
 //    $end ở đây hiểu là số lượng bản gi muốn lấy ra
-//    công thức tính để lấy được điểm bắt đầu sẽ là = ( số bản gi )*(số tang - 1);
+//    công thức tính để lấy được điểm bắt đầu sẽ là = ( số bản ghi )*(số trang - 1);
     isset($_GET['page']) ? $page = $_GET['page'] : $page = 1;
     $start = $end * ($page - 1);
     $query = "SELECT * FROM $table LIMIT $start,$end";

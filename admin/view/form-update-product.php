@@ -1,7 +1,7 @@
 <?php require_once("./admin/view/header.php")?>
     <!-- end header -->
     <div class="form-add-product">
-        <p class="title">Thêm mới sản phẩm</p>
+        <p class="title">Thay đổi sản phẩm</p>
         <form action="?ctr=update-product&&id=<?=$_GET['id']?>" method="post" class="form-add" enctype="multipart/form-data">
             <div class="row-form">
                 <div class="row-left"><label for="name-form">Tên sản phẩm : </label></div>
@@ -33,7 +33,7 @@
                 <div class="row-left"><label for="img-form">Ảnh sản phẩm : </label></div>
                 <div class="row-rigth">
                     <label for="img-form-1" class="wrapper-img">
-                        <img src="<?=getImg($_GET['id'])[0]['src']?>" style="display: block;" alt="">
+                        <img src="<?=getImg($_GET['id'])[0]['src']?>" style="display: block;" alt="chọn ảnh sản phẩm">
                     </label>
                     <input  type="file" style="transform: translateY(-100000px)" class="img-form" name="img-product-add-1" id="img-form-1" >
 
