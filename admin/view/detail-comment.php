@@ -3,6 +3,9 @@
 
     <div class="box-table" >
         <div class="action">
+        <a href="?ctr=comment-list">
+                <button>Trở Về</button>
+            </a>
             <a href="">
                 <button>Chọn Tất Cả</button>
             </a>
@@ -10,7 +13,7 @@
                 <button>Xóa Các Mục Đã Chọn</button>
             </a>
         </div>
-        <h1>Sản Phẩm: <?= $result['product_name']?></h1>
+        <h1 style="padding-top: 20px;">Sản Phẩm: <?= $result['product_name']?></h1>
         <form action="" class="tabel-form">
             <table class="table-main" id="table1">
                 <thead>
