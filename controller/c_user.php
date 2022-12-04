@@ -24,7 +24,7 @@ function signIn($userName,$password){
                     header("location:index.php?ctr=home");
                     break;
                 }else{
-                    header("location:index.php?ctr=product-list");
+                    header("location:index.php?ctr=adminhome");
                     break;
                 }
             }
