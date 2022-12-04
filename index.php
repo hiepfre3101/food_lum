@@ -21,7 +21,7 @@ require_once("./controller/c_voucher.php");
 require_once("./controller/c_order.php");
 require_once("./controller/c_comment.php");
 
-require_once ("./controller/c_categories.php");
+require_once("./controller/c_categories.php");
 
 //@param : $ctr viết tắt controller, đây là biến để truyền lên thanh url có thể đặt tên tùy thích
 // nhưng để ctr nhằm thể hiện là đang gọi ctr nào.
@@ -91,7 +91,7 @@ switch ($ctr) {
         getInfoHeader();
         showClientOrder();
         break;
-        //admin
+    //admin
     case "order-detail-user":
         getInfoHeader();
         showClientOrderDetail();
@@ -102,11 +102,11 @@ switch ($ctr) {
         break;
     case "save-update-user":
         saveUpdateUser();
-        break;    
+        break;
     case "menu":
         getInfoHeader();
         showMenuClient();
-        break;    
+        break;
         //admin
         break;
     //admin
@@ -146,7 +146,7 @@ switch ($ctr) {
         deleteAllProduct();
         break;
 
-     case "comment-list":
+    case "comment-list":
         showListComment();
         break;
 
@@ -175,13 +175,31 @@ switch ($ctr) {
         showDetailCategory();
         break;
     case "update-category-product":
-        if(isset($_POST['btn-save'])){
+        if (isset($_POST['btn-save'])) {
             updateAllCategoryProduct();
-        }else{
+        } else {
             updateOneCategoryProduct();
         }
         break;
     case "delete-category":
         deleteCategory($_GET['id']);
+        break;
+    case "detail-user":
+        showDetailUser();
+        break;
+    case "add-new-user":
+        showFormAddUser();
+        break;
+    case "admin-add-user":
+        signUp();
+        break;
+    case "update-user":
+        formUpdateUser();
+        break;
+    case "admin-update-user":
+        adminUpdateUser();
+        break;
+    case "admin-delete-user":
+        adminDeleteUser();
         break;
 }

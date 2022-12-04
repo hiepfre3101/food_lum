@@ -74,6 +74,27 @@
     margin-bottom: 20px;
     cursor: pointer;
     flex-wrap: wrap;
+    padding: 10px 0px;
+}
+.img-user{
+    width: 100%;
+    height: 300px;
+}
+.img-user img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 10px;
+}
+.active-menu{
+    color: #3167eb !important;
+}
+.active-menu a{
+    color: #3167eb !important;
+}
+
+.active-menu .material-symbols-outlined{
+    color: #3167eb !important;
 }
 
 .item a {
@@ -127,6 +148,7 @@
     list-style: none;
     margin: 20px 0px;
     color: var(--text-color);
+    padding: 10px 0;
 }
 
 .box-main {

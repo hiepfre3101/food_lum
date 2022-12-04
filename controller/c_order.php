@@ -2,14 +2,14 @@
 // hiển thị danh sách đơn hànhg
 function showOrder()
 {
-    $pageCount = pageCount2('order_user', 'idorder', '5', '1');
-    $arrOrder = pagination2('order_user', '5', '1');
+    $pageCount = pageCount2('order_user', 'idorder', '5', 'status','1');
+    $arrOrder = pagination2('order_user', '5', 'status','1');
     render("order", ["arrOrder" => $arrOrder, "countPage" => $pageCount], 1);
 }
 function showOrder2()
 {
-    $pageCount = pageCount2('order_user', 'idorder', '5', '1');
-    $arrOrder = pagination2('order_user', '5', '2');
+    $pageCount = pageCount2('order_user', 'idorder', '5', 'status','2');
+    $arrOrder = pagination2('order_user', '5', 'status','2');
     render("order", ["arrOrder" => $arrOrder, "countPage" => $pageCount], 1);
 }
 // hiển thị chi tiết đơn hàng của admin
