@@ -29,6 +29,14 @@
                         <a href="">Bảng Điều Khiển</a>
                     </span>
                 </li>
+                <li class="item <?=($_GET['ctr']=='')?"active-menu":""?>">
+                    <span>
+                        <span class="material-symbols-outlined">
+                            home
+                        </span>
+                        <a href="">Quản lý slider</a>
+                    </span>
+                </li>
                 <label for="opent-1">
                     <li class="item">
                         <span>
