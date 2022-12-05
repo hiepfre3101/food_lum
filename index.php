@@ -93,6 +93,14 @@ switch ($ctr) {
         getInfoHeader();
         showClientOrder();
         break;
+    case "order-ship":
+        getInfoHeader();
+        showClientOrderShip();
+         break;    
+    case "order-done":
+        getInfoHeader();
+        showClientOrderDone();
+         break;    
      case "vnp_payment":
         vnpayment();
         break;   
