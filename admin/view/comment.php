@@ -25,7 +25,7 @@
                 <?php foreach ($arrComment as $value) { ?>
                     
                     <tr>
-                        <td><input type="checkbox" name="<?= $value['idcm'] ?>"></td>
+                        <td><input type="checkbox" ></td>
                         <td><?= $value['product_name']?></td>
                         <td style="text-align: center;"><?= $value['countCmt']?></td>
                         <td style="text-align: center;"><?= $value['min_time'] ?></td>

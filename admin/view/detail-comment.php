@@ -28,7 +28,7 @@
                 <tbody>
                 <?php foreach ($cmt as $value) { ?>
                     <tr>
-                        <td><input type="checkbox" name="<?= $value['idpro'] ?>"></td>
+                        <td><input type="checkbox" ></td>
                         <td><?= $value['content']?></td>
                         <td><?= $value['time_send']?></td>
                         <td style="text-align: center;"><?= $value['full_name'] ?></td>

@@ -10,6 +10,8 @@
     <link rel="stylesheet" href="./public/css/style-admin.css">
     <!-- link icon -->
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+    <script src="https://kit.fontawesome.com/e6b03d2b34.js" crossorigin="anonymous"></script>
+     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
 </head>
 
 <body>
@@ -26,7 +28,7 @@
                         <span class="material-symbols-outlined">
                             home
                         </span>
-                        <a href="">Bảng Điều Khiển</a>
+                        <a href="?ctr=adminhome">Bảng Điều Khiển</a>
                     </span>
                 </li>
                 <label for="opent-1">
@@ -42,7 +44,7 @@
                             expand_more
                         </span>
                         <ul class="sub-menu">
-                            <li class="sub-itme"><a href="?ctr=product-list">Danh Sách Sản Phẩm</a></li>
+                            <li class="sub-itme"><a href="?ctr=product-list">Tất Cả Sản Phẩm</a></li>
                             <li class="sub-itme"><a href="?ctr=list-category">Danh Mục Sản Phẩm</a></li>
                         </ul>
                     </li>
@@ -60,7 +62,7 @@
                             expand_more
                         </span>
                         <ul class="sub-menu">
-                            <li class="sub-itme"><a href="">Danh Sách Khách Hàng</a></li>
+                            <li class="sub-itme"><a href="">Tất Cả Khách Hàng</a></li>
                             <li class="sub-itme"><a href="">Thêm Khách Hàng</a></li>
                         </ul>
                     </li>
@@ -78,7 +80,7 @@
                             expand_more
                         </span>
                         <ul class="sub-menu">
-                            <li class="sub-itme"><a href="?ctr=comment-list">Tất Cả Bình Luận</a></li>
+                            <li class="sub-itme"><a href="?ctr=comment-list">Danh Sách Bình Luận</a></li>
                             <li class="sub-itme"><a href="">Thống Kê Bình Luận</a></li>
                         </ul>
                     </li>

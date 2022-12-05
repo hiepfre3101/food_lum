@@ -63,7 +63,7 @@
                                     <a href="?ctr=user-profile" class="text-dark fs-4 fw-semibold link-child">Hồ sơ của
                                         bạn</a>
                                     <?php if (getOneDataUser($_SESSION['idUser'])['position'] == 1) { ?>
-                                        <a href="?ctr=product-list" class="text-dark fs-4 fw-semibold link-child">Đến trang quản trị</a>
+                                        <a href="?ctr=adminhome" class="text-dark fs-4 fw-semibold link-child">Đến trang quản trị</a>
                                     <?php } ?>
                                     <a href="?ctr=logout" class="text-dark fs-4 fw-semibold link-child">Đăng xuất</a>
                                 <?php } else { ?>
