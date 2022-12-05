@@ -13,7 +13,8 @@ function displayCart()
         header("location:?ctr=login");
         die;
     }
-    render("cart", ["arrCart" => $arrCarrt, "vouchers" => $vouchers], 0);
+    $arrProduct = getBestSeller();
+    render("cart", ["arrCart" => $arrCarrt, "vouchers" => $vouchers,"arrProduct"=>$arrProduct], 0);
 }
 
 function addProductCart()

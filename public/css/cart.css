@@ -385,7 +385,9 @@
   }
   .img4{
     width: 100%;
+    height: 250px;
     border-radius: 5px;
+    object-fit: cover;
  }
  .recomend{
     border-radius: 15px;
@@ -411,7 +413,4 @@
 }
 .info-cart-block{
     padding-left: 2%;
-}
-.action-block{
-    
 }
