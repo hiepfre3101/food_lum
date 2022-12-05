@@ -10,6 +10,7 @@ require_once("./model/m_pagination.php");
 require_once("./model/m_voucher.php");
 require_once("./model/m_order.php");
 require_once("./model/m_comment.php");
+require_once("./model/m_thongke.php");
 
 // require controller here...
 require_once("./controller/c_render.php");
@@ -202,4 +203,13 @@ switch ($ctr) {
     case "admin-delete-user":
         adminDeleteUser();
         break;
+    case "adminhome" :
+    $countdm=count(loaddm());
+    $countsp=count(getAllDataProducts());
+    $countbl=count(getAllDataComment());
+    $countod=count(getAllDataOrder());
+    $listthongke=loadall_thongke();
+    include "./admin/view/home.php";  
+    break;
+
 }
