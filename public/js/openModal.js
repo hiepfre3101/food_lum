@@ -10,3 +10,11 @@ if(searchParams.has('vnp_SecureHash')){
 }else{
    modalWrapper.style.display = "none";
 }
+
+function changeTab(tab){
+  const listTab =Array.from(tab.parentElement.querySelectorAll(".nav-link"));
+  listTab.forEach((tab)=>{
+     tab.classList.remove("active-tab");
+  })
+  tab.classList.add("active-tab");
+}
