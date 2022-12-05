@@ -227,6 +227,7 @@ switch ($ctr) {
     $countsp=count(getAllDataProducts());
     $countbl=count(getAllDataComment());
     $countod=count(getAllDataOrder());
+    $countkh=count(getAllDataUser());
     $listthongke=loadall_thongke();
     include "./admin/view/home.php";  
     break;

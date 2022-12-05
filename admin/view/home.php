@@ -23,7 +23,7 @@
         </div>
         <div class="card-single col d-flex justify-content-around bg-danger text-white py-5 ml-3">
             <div>
-                <h1 class="font-weight-bold"></h1>
+                <h1 class="font-weight-bold"><?=$countkh?></h1>
                 <a href="index.php?act=dskh" style="color: white; text-decoration:none;"><span>Khách hàng</span></a>
             </div>
             <div>
