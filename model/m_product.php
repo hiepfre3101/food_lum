@@ -141,3 +141,19 @@ function getDataImg($idpro){
     $arrProduct = $stmt->fetchAll();
     return $arrProduct;
 }
+function getBestSeller(){
+    global $pdo;
+    $query = "SELECT SUM(quantity) as 'selled',p.product_name,p.product_price,p.idpro
+    FROM `order_detail` as oddt
+    join products as p
+    on p.idpro = oddt.idpro
+    JOIN categories as cate 
+    on cate.iddm = p.iddm
+    group by p.idpro
+    ORDER BY  SUM(quantity)DESC
+    LIMIT 0,3";
+     $stmt = $pdo->prepare($query);
+     $stmt->execute();
+     $arrProduct = $stmt->fetchAll();
+     return $arrProduct;
+}
