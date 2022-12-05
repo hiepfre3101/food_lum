@@ -20,6 +20,17 @@ function getOneDataOrder($id)
     $data = $stmt->fetch();
     return $data;
 }
+function getDataOrderOption($id,$status)
+{
+    global $pdo;
+    $query = "SELECT *
+    FROM `order_user` 
+    WHERE id_user =$id AND status = $status"; // xem csdl để biết ý nghĩa của status
+    $stmt = $pdo->prepare($query);  
+    $stmt->execute();
+    $data = $stmt->fetchAll();
+    return $data;
+}
 
 function addDataOrder($data = [])
 {
@@ -101,7 +112,7 @@ function getTotalMoney(){
     global $pdo;
   if(isset($_SESSION["idUser"])){
     $id = $_SESSION["idUser"];
-    $query = "SELECT SUM(total) as 'totalOrder' from order_user WHERE id_user=$id";
+    $query = "SELECT SUM(total) as 'totalOrder' from order_user WHERE id_user=$id AND status =3";
     $stmt = $pdo->prepare($query);
     $stmt->execute();
     $data = $stmt->fetch();

@@ -94,3 +94,15 @@ function showClientOrderDetail()
     $orderDetails = productDetailOrder($idOrder);
     render('order-detail', ["orderDetails" => $orderDetails, "order" => $order], 0);
 }
+function showClientOrderShip()
+{
+   $idUser =$_SESSION["idUser"];
+    $orders = getDataOrderOption($idUser,2);
+    render('order-shipping', [ "orders" => $orders], 0);
+}
+function showClientOrderDone()
+{
+   $idUser =$_SESSION["idUser"];
+    $orders = getDataOrderOption($idUser,3);
+    render('order-done', [ "orders" => $orders], 0);
+}
