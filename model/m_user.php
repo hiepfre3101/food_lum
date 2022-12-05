@@ -26,6 +26,19 @@ $iduser = $_SESSION["idUser"];
     $stmt = $pdo->prepare($query);
     $stmt->execute($data);
 }
+function updateUser2($data = [])
+{
+//    không cho cập nhật email và position
+// cập nhật password riêng để tìm hiểu php mailer đã !
+    global $pdo;
+    if (isset($data['avatar'])){
+        $query = "UPDATE user SET user_name=:user_name, full_name=:full_name, phone=:phone,pass=:pass, address=:address, avatar=:avatar where iduser=:iduser";
+    }else{
+        $query = "UPDATE user SET user_name=:user_name, full_name=:full_name, phone=:phone,pass=:pass, address=:address where iduser=:iduser";
+    }
+    $stmt = $pdo->prepare($query);
+    $stmt->execute($data);
+}
 
 function getAllDataUser()
 {

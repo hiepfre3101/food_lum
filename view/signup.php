@@ -9,7 +9,7 @@
       <div class="col-lg-7 p-5">
         <div class="card-body">
           <h4 class="card-title mb-4">TẠO TÀI KHOẢN</h4>
-          <form class="form-signup" action="?ctr=save-user" method="post">
+          <form class="form-signup" action="?ctr=save-user" method="post" enctype="multipart/form-data">
             <div class="form-group">
               <label for="email" class="form-label">Tên tài khoản</label>
               <input name="user_name" class="form-control form-input" type="text" id="username">

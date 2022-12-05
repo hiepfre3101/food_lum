@@ -12,7 +12,11 @@ function signUp(){
     ];
     addUser($data);
     move_uploaded_file($_FILES["avatar"]["tmp_name"],"./public/img/".$_FILES["avatar"]["name"]);
-    header("location:index.php");
+    if(isset($_POST['admin-add-user'])){
+        header("location:index.php?ctr=user-list");
+    }else{
+        header("location:index.php");
+    }
 }
 function signIn($userName,$password){
     $arrUser = getAllDataUser();
@@ -41,7 +45,30 @@ function logOunt(){
 }
 
 function showListUser(){
-    render("admin",[],1);
+    $arrUser = pagination2('user','5','position','0');
+    $pageCount = pageCount2('user','iduser','5','position','0');
+    render("admin",["arrUser"=>$arrUser,"countPage"=>$pageCount],1);
+}
+// hiển thị form update bên admin
+function formUpdateUser(){
+    render("form-update-user",[],1);
+}
+function adminUpdateUser(){
+    $idUser = $_GET['id'];
+    $data = [
+        "user_name" => $_POST['user_name'],
+        "full_name" => $_POST['full_name'],
+        "phone" => $_POST['phone'],
+        "address" => $_POST['address'],
+        "avatar" => "./public/img/".$_FILES["avatar"]["name"],
+        "pass" => $_POST['pass'],
+        "iduser"=>$idUser
+    ];
+    if($_FILES["avatar"]['size'] == 0){
+        unset($data['avatar']);
+    }
+    updateUser2($data);
+    header("location:index.php?ctr=detail-user&&id=$idUser");
 }
 
 function showUserProfile(){
@@ -73,4 +100,29 @@ function saveUpdateUser(){
     ];
     updateUser($data);
     header("location:?ctr=user-profile");
+}
+
+function showDetailUser(){
+    render('detail-user',[],1);
+}
+function showFormAddUser(){
+    render('form-add-user',[],1);
+}
+function adminDeleteUser()
+{
+    if (isset($_GET['idDelete'])) {
+        deleteUser($_GET['idDelete']);
+    } else {
+        $arrUser = getAllDataUser();
+        foreach ($_POST as $key => $value) {
+            if ($value == "on") {
+                foreach ($arrUser as $valueUser) {
+                    if ($valueUser['iduser'] = $key) {
+                        deleteUser($valueUser['iduser']);
+                    }
+                }
+            }
+        }
+    }
+    header("location:index.php?ctr=user-list");
 }
