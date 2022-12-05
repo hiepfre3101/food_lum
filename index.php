@@ -21,9 +21,8 @@ require_once("./controller/c_user.php");
 require_once("./controller/c_voucher.php");
 require_once("./controller/c_order.php");
 require_once("./controller/c_comment.php");
-
-require_once("./controller/c_categories.php");
-
+require_once ("./controller/vnpay_create_payment.php");
+require_once ("./controller/c_categories.php");
 //@param : $ctr viết tắt controller, đây là biến để truyền lên thanh url có thể đặt tên tùy thích
 // nhưng để ctr nhằm thể hiện là đang gọi ctr nào.
 $ctr = isset($_GET["ctr"]) ? $_GET['ctr'] : '/';
@@ -92,7 +91,10 @@ switch ($ctr) {
         getInfoHeader();
         showClientOrder();
         break;
-    //admin
+     case "vnp_payment":
+        vnpayment();
+        break;   
+        //admin
     case "order-detail-user":
         getInfoHeader();
         showClientOrderDetail();

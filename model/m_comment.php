@@ -40,7 +40,7 @@ include_once "database.php";
 function getCommentByProductId($idpro)
 {
     global $pdo;
-    $query = "SELECT cmt.content, cmt.time_send,cmt.rating, us.iduser ,us.full_name, us.avatar,cmt.idcm
+    $query = "SELECT cmt.content, cmt.time_send,cmt.rating, us.iduser ,us.full_name, us.avatar,cmt.idcm,p.idpro
     from comment as cmt 
     join user as us on cmt.iduser = us.iduser
     join products as p on cmt.idpro = p.idpro
@@ -50,10 +50,10 @@ function getCommentByProductId($idpro)
     $result = $stm->fetchAll();
     return $result;
 }
-function getOneProduct()
+function getOneProduct($idpro)
 {
   global $pdo;
-  $idpro = $_GET["idpro"];
+//   $idpro = $_GET["idpro"];
   $query2 = "select * from products where idpro=$idpro";
   $stm = $pdo->prepare($query2);
   $stm->execute();
@@ -68,7 +68,7 @@ function getCommentWithProduct()
     $sql = "SELECT MIN(cmt.time_send) as 'min_time',
     MAX(cmt.time_send) as 'max_time',
     p.product_name, count(cmt.idcm) as'countCmt',
-    p.idpro
+    p.idpro,cmt.idcm
     from comment as cmt
     join products as p
     on p.idpro = cmt.idpro
