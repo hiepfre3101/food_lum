@@ -1,4 +1,4 @@
-<?php (getOneDataUser($_SESSION['idUser'])['position'] == 0)?header("location:index.php?ctr=home"):""?>
+<?php (getOneDataUser($_SESSION['idUser'])['position'] == 0) ? header("location:index.php?ctr=home") : "" ?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -11,7 +11,6 @@
     <!-- link icon -->
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
     <script src="https://kit.fontawesome.com/e6b03d2b34.js" crossorigin="anonymous"></script>
-     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
 </head>
 
 <body>
@@ -23,7 +22,7 @@
                 </a>
             </div>
             <ul class="menu-item">
-                <li class="item <?=($_GET['ctr']=='')?"active-menu":""?>">
+                <li class="item <?= ($_GET['ctr'] == '') ? "active-menu" : "" ?>">
                     <span>
                         <span class="material-symbols-outlined">
                             home
@@ -31,12 +30,12 @@
                         <a href="?ctr=adminhome">Bảng Điều Khiển</a>
                     </span>
                 </li>
-                <li class="item <?=($_GET['ctr']=='')?"active-menu":""?>">
+                <li class="item <?= ($_GET['ctr'] == 'list-slider') ? "active-menu" : "" ?>">
                     <span>
                         <span class="material-symbols-outlined">
                             home
                         </span>
-                        <a href="">Quản lý slider</a>
+                        <a href="?ctr=list-slider">Quản lý slider</a>
                     </span>
                 </li>
                 <label for="opent-1">
@@ -47,13 +46,13 @@
                             </span>
                             <a>Sản Phẩm</a>
                         </span>
-                        <input <?php if($_GET['ctr']=='product-list' || $_GET['ctr']=='list-category') echo "checked";?> type="checkbox" hidden id="opent-1">
+                        <input <?php if ($_GET['ctr'] == 'product-list' || $_GET['ctr'] == 'list-category') echo "checked"; ?> type="checkbox" hidden id="opent-1">
                         <span class="material-symbols-outlined up">
                             expand_more
                         </span>
                         <ul class="sub-menu">
-                            <li class="sub-itme <?=($_GET['ctr']=='product-list')?"active-menu":""?>"><a href="?ctr=product-list">Danh Sách Sản Phẩm</a></li>
-                            <li class="sub-itme <?=($_GET['ctr']=='list-category')?"active-menu":""?>"><a href="?ctr=list-category">Danh Mục Sản Phẩm</a></li>
+                            <li class="sub-itme <?= ($_GET['ctr'] == 'product-list') ? "active-menu" : "" ?>"><a href="?ctr=product-list">Danh Sách Sản Phẩm</a></li>
+                            <li class="sub-itme <?= ($_GET['ctr'] == 'list-category') ? "active-menu" : "" ?>"><a href="?ctr=list-category">Danh Mục Sản Phẩm</a></li>
 
                         </ul>
                     </li>
@@ -66,13 +65,13 @@
                             </span>
                             <a>Khác Hàng</a>
                         </span>
-                        <input <?php if($_GET['ctr']=='user-list' || $_GET['ctr']=='add-new-user') echo "checked";?> type="checkbox" hidden id="opent-2">
+                        <input <?php if ($_GET['ctr'] == 'user-list' || $_GET['ctr'] == 'add-new-user') echo "checked"; ?> type="checkbox" hidden id="opent-2">
                         <span class="material-symbols-outlined up">
                             expand_more
                         </span>
                         <ul class="sub-menu">
-                            <li class="sub-itme <?=($_GET['ctr']=='user-list')?"active-menu":""?>"><a href="?ctr=user-list">Danh Sách Khách Hàng</a></li>
-                            <li class="sub-itme <?=($_GET['ctr']=='add-new-user')?"active-menu":""?>"><a href="?ctr=add-new-user">Thêm Khách Hàng</a></li>
+                            <li class="sub-itme <?= ($_GET['ctr'] == 'user-list') ? "active-menu" : "" ?>"><a href="?ctr=user-list">Danh Sách Khách Hàng</a></li>
+                            <li class="sub-itme <?= ($_GET['ctr'] == 'add-new-user') ? "active-menu" : "" ?>"><a href="?ctr=add-new-user">Thêm Khách Hàng</a></li>
 
                         </ul>
                     </li>
@@ -85,14 +84,14 @@
                             </span>
                             <a>Bình Luận</a>
                         </span>
-                        <input <?php if($_GET['ctr']=='comment-list' || $_GET['ctr']=='') echo "checked";?> type="checkbox" hidden id="opent-3">
+                        <input <?php if ($_GET['ctr'] == 'comment-list' || $_GET['ctr'] == '') echo "checked"; ?> type="checkbox" hidden id="opent-3">
                         <span class="material-symbols-outlined up">
                             expand_more
                         </span>
                         <ul class="sub-menu">
-                            <li class="sub-itme <?=($_GET['ctr']=='comment-list')?"active-menu":""?>"><a href="?ctr=comment-list">Tất Cả Bình Luận</a></li>
-                            <li class="sub-itme <?=($_GET['ctr']=='')?"active-menu":""?>"><a href="">Thống Kê Bình Luận</a></li>
-
+                            <li class="sub-itme <?= ($_GET['ctr'] == 'comment-list') ? "active-menu" : "" ?>"><a href="?ctr=comment-list">Tất Cả Bình Luận</a></li>
+                            <li class="sub-itme <?= ($_GET['ctr'] == '') ? "active-menu" : "" ?>"><a href="">Thống Kê Bình Luận</a></li>
+                        </ul>
                     </li>
                 </label>
                 <label for="opent-4">
@@ -103,13 +102,13 @@
                             </span>
                             <a>Đơn Hàng</a>
                         </span>
-                        <input <?php if($_GET['ctr']=='list-order' || $_GET['ctr']=='list-order-transport') echo "checked";?> type="checkbox" hidden id="opent-4">
+                        <input <?php if ($_GET['ctr'] == 'list-order' || $_GET['ctr'] == 'list-order-transport') echo "checked"; ?> type="checkbox" hidden id="opent-4">
                         <span class="material-symbols-outlined up">
                             expand_more
                         </span>
                         <ul class="sub-menu">
-                            <li class="sub-itme <?=($_GET['ctr']=='list-order')?"active-menu":""?>"><a href="?ctr=list-order">Đơn Hàng Mới</a></li>
-                            <li class="sub-itme <?=($_GET['ctr']=='list-order-transport')?"active-menu":""?>"><a href="?ctr=list-order-transport">Đơn Hàng Đang Giao</a></li>
+                            <li class="sub-itme <?= ($_GET['ctr'] == 'list-order') ? "active-menu" : "" ?>"><a href="?ctr=list-order">Đơn Hàng Mới</a></li>
+                            <li class="sub-itme <?= ($_GET['ctr'] == 'list-order-transport') ? "active-menu" : "" ?>"><a href="?ctr=list-order-transport">Đơn Hàng Đang Giao</a></li>
                         </ul>
                     </li>
                 </label>
@@ -133,7 +132,7 @@
                     <div class="popup-admin">
                         <p class="username">Nguyễn Ánh Dương</p>
                         <a href="">Hồ sơ</a>
-                        <a href="">Đăng suẩt</a>
+                        <a href="?ctr=logout">Đăng suẩt</a>
                     </div>
                 </div>
             </div>

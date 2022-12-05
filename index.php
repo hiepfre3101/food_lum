@@ -11,6 +11,7 @@ require_once("./model/m_voucher.php");
 require_once("./model/m_order.php");
 require_once("./model/m_comment.php");
 require_once("./model/m_thongke.php");
+require_once("./model/m_slider.php");
 
 // require controller here...
 require_once("./controller/c_render.php");
@@ -23,6 +24,7 @@ require_once("./controller/c_order.php");
 require_once("./controller/c_comment.php");
 require_once ("./controller/vnpay_create_payment.php");
 require_once ("./controller/c_categories.php");
+require_once("./controller/c_slider.php");
 //@param : $ctr viết tắt controller, đây là biến để truyền lên thanh url có thể đặt tên tùy thích
 // nhưng để ctr nhằm thể hiện là đang gọi ctr nào.
 $ctr = isset($_GET["ctr"]) ? $_GET['ctr'] : '/';
@@ -204,6 +206,21 @@ switch ($ctr) {
         break;
     case "admin-delete-user":
         adminDeleteUser();
+        break;
+    case"list-slider":
+        showSlide();
+        break;
+    case "slider-form":
+        updateSlider();
+        break;
+    case "delete-slider":
+        deleteSlider();
+        break;
+    case "add-slider":
+        showFormAddSlider();
+        if(isset($_POST['add-slider'])){
+            addSlider();
+        }
         break;
     case "adminhome" :
     $countdm=count(loaddm());

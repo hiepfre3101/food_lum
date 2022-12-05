@@ -44,8 +44,19 @@ function loadTotal() {
 // js admin hiển thị ảnh khi chọn file
 const boxImg = document.querySelector(".wrapper-img");
 const img = document.querySelector(".wrapper-img img");
+// lấy mảng id slider để lấy
+const arrID = document.querySelectorAll(".id-slider");
 const file = document.querySelector("#img-form");
-if (file) {
+if (arrID) {
+    for (var item of arrID) {
+        const arrInput = document.querySelector(''+'#img-form-'+item.value+'');
+        const arrImg = document.querySelector(''+'.slider-img-'+item.value+'')
+        arrInput.addEventListener("change", function () {
+            arrImg.src = URL.createObjectURL(arrInput.files[0]);
+        });
+    }
+}
+if (img) {
     file.addEventListener("change", function () {
         img.src = URL.createObjectURL(file.files[0]);
         img.style.display = "block";
@@ -88,13 +99,13 @@ if (btnCheck) {
                     if (slectCategory.value != 0) {
                         btnSave.removeAttribute('disabled');
                     }
-                }else {
+                } else {
                     btnSave.removeAttribute('disabled');
                 }
             } else {
                 item.checked = false;
                 btnCheck.innerText = 'Chọn tất cả';
-                if(slectCategory){
+                if (slectCategory) {
                     slectCategory.setAttribute('disabled', 'disabled');
                 }
                 btnSave.setAttribute('disabled', 'disabled');
@@ -119,6 +130,33 @@ if (btnCheck) {
 }
 
 
+const btnSlider = document.querySelector(".btn-slider");
+if (btnSlider) {
+    const iconDelete = document.querySelectorAll(".delete-slider");
+    const icon = document.querySelectorAll(".material-symbols-outlined.add");
+    const btnSave = document.querySelector(".btn-save-slider");
+    const inputDesc = document.querySelectorAll(".desc-slider");
+    const inputTitle = document.querySelectorAll(".title-slider");
+    btnSlider.addEventListener('click', function () {
+        btnSave.removeAttribute('disabled');
+        for (const item of icon) {
+            item.style.display = "block";
+            iconDelete.forEach((e)=>{
+                e.style.display = "block";
+            });
+            inputDesc.forEach(function (e){
+                e.removeAttribute('readonly');
+                e.style.background = "#fff";
+                e.style.color = "#000";
+            });
+            inputTitle.forEach(function (e){
+                e.removeAttribute('readonly');
+                e.style.background = "#fff";
+                e.style.color = "#000";
+            });
+        }
+    });
+}
 function changeActionForm(){
     const formElem = document.querySelector('#form-cart');
     const radios = document.getElementsByName('pay');
