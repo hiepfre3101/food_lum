@@ -38,6 +38,14 @@
                         <a href="?ctr=list-slider">Quản lý slider</a>
                     </span>
                 </li>
+                <li class="item <?= ($_GET['ctr'] == 'list-voucher') ? "active-menu" : "" ?>">
+                    <span>
+                        <span class="material-symbols-outlined">
+                            home
+                        </span>
+                        <a href="?ctr=list-voucher">Quản voucher</a>
+                    </span>
+                </li>
                 <label for="opent-1">
                     <li class="item">
                         <span>

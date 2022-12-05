@@ -22,8 +22,8 @@ require_once("./controller/c_user.php");
 require_once("./controller/c_voucher.php");
 require_once("./controller/c_order.php");
 require_once("./controller/c_comment.php");
-require_once ("./controller/vnpay_create_payment.php");
-require_once ("./controller/c_categories.php");
+require_once("./controller/vnpay_create_payment.php");
+require_once("./controller/c_categories.php");
 require_once("./controller/c_slider.php");
 //@param : $ctr viết tắt controller, đây là biến để truyền lên thanh url có thể đặt tên tùy thích
 // nhưng để ctr nhằm thể hiện là đang gọi ctr nào.
@@ -103,8 +103,8 @@ switch ($ctr) {
          break;    
      case "vnp_payment":
         vnpayment();
-        break;   
-        //admin
+        break;
+    //admin
     case "order-detail-user":
         getInfoHeader();
         showClientOrderDetail();
@@ -226,17 +226,30 @@ switch ($ctr) {
         break;
     case "add-slider":
         showFormAddSlider();
-        if(isset($_POST['add-slider'])){
+        if (isset($_POST['add-slider'])) {
             addSlider();
         }
         break;
     case "adminhome" :
-    $countdm=count(loaddm());
-    $countsp=count(getAllDataProducts());
-    $countbl=count(getAllDataComment());
-    $countod=count(getAllDataOrder());
-    $listthongke=loadall_thongke();
-    include "./admin/view/home.php";  
-    break;
+        $countdm = count(loaddm());
+        $countsp = count(getAllDataProducts());
+        $countbl = count(getAllDataComment());
+        $countod = count(getAllDataOrder());
+        $listthongke = loadall_thongke();
+        include "./admin/view/home.php";
+        break;
 
+    case "list-voucher":
+        showListVoucher();
+        break;
+
+    case "add-voucher":
+        showFormAddVoucher();
+        break;
+    case "delete-voucher":
+        deleteVoucher();
+        break;
+    case "admin-add-voucher":
+        addVoucher();
+        break;
 }
