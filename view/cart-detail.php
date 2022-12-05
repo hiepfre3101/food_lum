@@ -28,7 +28,8 @@
                     </div>
                         <div class="form-group">
                             <label for="" class="form-label formlb">Ghi chú cho đơn hàng</label>
-                            <input name="order_desc" class="form-control form1" id="order_desc" type="text">
+                            <input name="order_desc" class="form-control form1" id="order_desc" type="text" value="<?=getOneDataUser($_SESSION["idUser"])["user_name"]?> chuyen tien">
+                             <p style="color:red;" class="form-message fs-4 ms-5"></p>
                         </div> <!-- form-group// -->
                         <div class="form-group">
                           <label for="language" class="form-label formlb">Ngôn ngữ</label>
@@ -92,6 +93,7 @@
                 <p class="w-100 d-flex justify-content-between">Tổng thanh toán <span class="tdh1"><?= $_POST['total'] += 10000 ?>đ</span></p>
                 <input hidden type="text" name="total" value="<?= $_POST['total'] ?>">
                 <input hidden type="text" name="voucherId" value="<?= $_POST['voucherId'] ?>">
+                <input hidden type="text" name="idUser" value="<?= $_SESSION['idUser'] ?>">
             </div>
             <br>
         </div>
@@ -102,4 +104,14 @@
 </div>
 </div>
 <script src="./public/js/main.js"></script>
+<script src= "./public/js/validate.js"></script>
+<script >
+    validator({
+        form: "#form-cart",
+        erroSelector: ".form-message",
+        rules:[
+            validator.isRequired("#order_desc"),
+        ]
+    })
+</script>
 <?php include_once("./view/footer.php") ?>

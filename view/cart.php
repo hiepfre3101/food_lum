@@ -65,9 +65,8 @@
                         <hr class="hr">
                         <p class="ttt d-flex justify-content-start align-items-center">
                             Tổng thanh toán:
-                            <input type="text" readonly class="ttt1 fw-bold" id="totalOrder" name="total" value="">
-                            <span>đ</span>
-                            </input>
+                            <input type="text" readonly class="ttt1 fw-bold w-25" id="totalOrder" name="total" value="">
+                            <span class="">đ</span>
                         </p>
                         <hr class="hr">
                         <button class="thanhtoan" type="submit">Thanh toán </button>

@@ -124,7 +124,7 @@ function changeActionForm(){
     const radios = document.getElementsByName('pay');
     radios.forEach((radio)=>{
       if(radio.value==="online" && radio.checked === true){
-        formElem.action = "./controller/vnpay_create_payment.php";
+        formElem.action = "?ctr=vnp_payment";
       } else{
         formElem.action = "?ctr=add-order";
       }
