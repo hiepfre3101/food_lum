@@ -4,7 +4,8 @@ function showClientHome()
     $page = pageCount('products', 'idpro', '8');
     $arrProduct = pagination('products', '8');
     $arrCategory = getAllDataCategory();
-    render("home", ["arrProduct"=>$arrProduct,"arrCategory"=>$arrCategory,"countPage"=>$page], 0);
+    $arrSlider = getAllDataSlider();
+    render("home", ["arrProduct"=>$arrProduct,"arrCategory"=>$arrCategory,"countPage"=>$page,"arrSlider"=>$arrSlider], 0);
 }
 
 function showClientCart()

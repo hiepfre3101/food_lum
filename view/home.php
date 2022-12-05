@@ -5,27 +5,15 @@ include_once("./view/header.php");
 <div>
     <div id="carouselHeroInterval" class="carousel slide overflow-hidden carousel-size " data-bs-ride="carousel">
         <div class="carousel-inner h-100">
-            <a class="carousel-item active h-100" data-bs-interval="4000" href="#">
-                <img src="./public/img/slider1.jpg" class="d-block img-fluid img-fit" alt="...">
+            <?php for ($i = 0; $i < count($arrSlider); $i++){?>
+            <a class="carousel-item <?=($i==0)?"active":""?> h-100" data-bs-interval="4000" href="#">
+                <img src="<?=$arrSlider[$i]['image']?>" class="d-block img-fluid img-fit" alt="...">
                 <div class="carousel-caption d-none d-md-block">
-                    <h3>First slide label</h3>
-                    <p>Some representative placeholder content for the first slide.</p>
+                    <h3><?=$arrSlider[$i]['title']?></h3>
+                    <p><?=$arrSlider[$i]['description']?></p>
                 </div>
             </a>
-            <a class="carousel-item h-100" data-bs-interval="4000" href="#">
-                <img src="./public/img/slider4.jpg" class="d-block img-fluid img-fit" alt="...">
-                <div class="carousel-caption d-none d-md-block">
-                    <h3>First slide label</h3>
-                    <p>Some representative placeholder content for the first slide.</p>
-                </div>
-            </a>
-            <a class="carousel-item h-100" data-bs-interval="4000" href="#">
-                <img src="./public/img/slider3.jpg" class="d-block img-fluid img-fit" alt="...">
-                <div class="carousel-caption d-none d-md-block">
-                    <h3>First slide label</h3>
-                    <p>Some representative placeholder content for the first slide.</p>
-                </div>
-            </a>
+            <?php }?>
         </div>
         <button class="carousel-control-prev position-absolute top-50 ms-5 translate-middle rounded-4  h-10 w-10 btn-prev" type="button" data-bs-target="#carouselHeroInterval" data-bs-slide="prev">
             <span class="carousel-control-prev-icon text-white fs-1 fw-bold" aria-hidden="true"></span>
