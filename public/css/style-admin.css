@@ -895,7 +895,13 @@ button:disabled:hover {
     transition: .25s;
     margin-bottom: 20px;
 }
-
+.btn-add button{
+    padding: 10px 20px;
+    background: #05d34e;
+    border: none;
+    border-radius: 5px;
+    color: #fff;
+}
 .slider-form button:hover {
     color: #05d34e;
     background: #fff;
