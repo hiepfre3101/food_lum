@@ -19,7 +19,6 @@
     <!--    link gg icon -->
     <link rel="stylesheet"
           href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200"/>
-
 </head>
 <body onload="loadTotal()">
 <nav class="navbar navbar-expand-lg  container-fluid px-lg-5 py-lg-4 bg-white " id="header-menu">
@@ -54,7 +53,7 @@
                     </li>
                 </ul>
                 <div class="w-50 d-lg-flex d-none d-lg-block" style="height:30px;">
-                    <a href="?ctr=user-profile" class="d-block">
+                    <a href="?ctr=user-profile" class="d-block flex-fill">
                         <div class="fa-solid fa-circle-user fs-1 px-3 d-none d-lg-block text-dark icon-user position-relative"
                              role="button">
                             <div class="menu-child  bg-primary position-absolute p-3">
@@ -64,7 +63,7 @@
                                     <a href="?ctr=user-profile" class="text-dark fs-4 fw-semibold link-child">Hồ sơ của
                                         bạn</a>
                                     <?php if (getOneDataUser($_SESSION['idUser'])['position'] == 1) { ?>
-                                        <a href="?ctr=product-list" class="text-dark fs-4 fw-semibold link-child">Đến trang quản trị</a>
+                                        <a href="?ctr=adminhome" class="text-dark fs-4 fw-semibold link-child">Đến trang quản trị</a>
                                     <?php } ?>
                                     <a href="?ctr=logout" class="text-dark fs-4 fw-semibold link-child">Đăng xuất</a>
                                 <?php } else { ?>

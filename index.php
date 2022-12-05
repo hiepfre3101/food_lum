@@ -10,8 +10,6 @@ require_once("./model/m_pagination.php");
 require_once("./model/m_voucher.php");
 require_once("./model/m_order.php");
 require_once("./model/m_comment.php");
-require_once("./model/m_slider.php");
-
 
 // require controller here...
 require_once("./controller/c_render.php");
@@ -22,8 +20,6 @@ require_once("./controller/c_user.php");
 require_once("./controller/c_voucher.php");
 require_once("./controller/c_order.php");
 require_once("./controller/c_comment.php");
-require_once("./controller/c_slider.php");
-
 
 require_once("./controller/c_categories.php");
 
@@ -95,7 +91,10 @@ switch ($ctr) {
         getInfoHeader();
         showClientOrder();
         break;
-    //admin
+     case "vnp_payment":
+        vnpayment();
+        break;   
+        //admin
     case "order-detail-user":
         getInfoHeader();
         showClientOrderDetail();
@@ -205,20 +204,5 @@ switch ($ctr) {
         break;
     case "admin-delete-user":
         adminDeleteUser();
-        break;
-    case "list-slider":
-        showSlide();
-        break;
-    case "slider-form":
-        updateSlider();
-        break;
-    case "delete-slider":
-        deleteSlider();
-        break;
-    case "add-slider":
-        showFormAddSlider();
-        if(isset($_POST['add-slider'])){
-            addSlider();
-        }
         break;
 }

@@ -1,7 +1,6 @@
 <?php
 
 use function PHPSTORM_META\type;
-
 function displayCart()
 {
     $arrCarrt = getCart();
@@ -43,6 +42,8 @@ function addProductCart()
 
 function showCheckOut()
 {
+    $startTime = date("YmdHis");
+$expire = date('YmdHis',strtotime('+15 minutes',strtotime($startTime)));
     //    chuyển đổi mảng giỏ hàng mới nhất
     extract($_POST);
     $data = [];
@@ -55,7 +56,7 @@ function showCheckOut()
     //    lấy dữ liệu mới nhất của cart
     $arrCart = getCart();
     $arrInfoUsser = getOneDataUser($_SESSION['idUser']);
-    render("cart-detail", ["arrCart" => $arrCart, "arrInfoUser" => $arrInfoUsser], 0);
+    render("cart-detail", ["arrCart" => $arrCart, "arrInfoUser" => $arrInfoUsser,"expire"=>$expire], 0);
 }
 function deleteItemCart(){
     deleteCartItem($_GET['idItem']);

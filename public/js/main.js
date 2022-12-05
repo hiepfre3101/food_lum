@@ -157,3 +157,15 @@ if (btnSlider) {
         }
     });
 }
+function changeActionForm(){
+    const formElem = document.querySelector('#form-cart');
+    const radios = document.getElementsByName('pay');
+    radios.forEach((radio)=>{
+      if(radio.value==="online" && radio.checked === true){
+        formElem.action = "?ctr=vnp_payment";
+      } else{
+        formElem.action = "?ctr=add-order";
+      }
+    })
+    console.log(formElem.action);
+}
