@@ -76,46 +76,23 @@
                 </div>
             </div>
             <div class="recomend w-100 p-4 h-50">
-                <h2 class="dg fw-semibold ">Sản phẩm tương tự</h2>
+                <h2 class="dg fw-semibold ">Sản phẩm bán chạy</h2>
                 <div class="row">
-                    <div class="col-md-4 col-6 position-relative">
-                        <a href="#">
-                            <img class="img4" src="https://static.kfcvietnam.com.vn/images/items/lg/Chikoyaki_C.jpg?v=4pbPw3" alt="">
-                        </a>
-                        <a href="#" class="d-flex align-items-center justify-content-center p-3 position-absolute top-10 end-10 rounded-circle bg-primary h-15 w-10  text-white text-decoration-none">
-                            <span class="fw-semibold fs-3 ">+</span>
-                        </a>
-                        <div class="w-75 d-flex justify-content-around position-absolute bottom-0 flex-wrap">
-                            <p class="text-white fw-semibold">Gà Giòn Cay</p>
-                            <p class="text-white fw-semibold">60000</p>
-                        </div>
-                    </div>
-                    <!--  -->
+                    <?php foreach($arrProduct as $value):?>
                     <div class="col-md-4 col-6 position-relative mb-2">
-                        <a href="#">
-                            <img class="img4" src="https://static.kfcvietnam.com.vn/images/items/lg/Chikoyaki_C.jpg?v=4pbPw3" alt="">
+                        <a href="?ctr=product-detail&&id=<?=$value["idpro"]?>" class="img-overlay">
+                            <img class="img4" src="<?=getImg($value["idpro"])[0]["src"]?>" alt="">
                         </a>
-                        <a href="#" class="d-flex align-items-center justify-content-center p-3 position-absolute top-10 end-10 rounded-circle bg-primary h-15 w-10  text-white text-decoration-none">
+                        <a href="?ctr=product-detail&&id=<?=$value["idpro"]?>" class="d-flex align-items-center justify-content-center p-3 position-absolute top-10 end-10 rounded-circle bg-primary h-15 w-10  text-white text-decoration-none">
                             <span class="fw-semibold fs-3 ">+</span>
                         </a>
-                        <div class="w-75 d-flex justify-content-around position-absolute bottom-0 flex-wrap">
-                            <p class="text-white fw-semibold">Gà Giòn Cay</p>
-                            <p class="text-white fw-semibold">60000</p>
+                        <div class="w-75 d-flex justify-content-around position-absolute bottom-0 flex-wrap py-4">
+                            <p class="text-white fw-semibold"><?=$value["product_name"]?></p>
+                            <p class="text-white fw-semibold"><?=$value["product_price"]?><span>đ</span></p>
                         </div>
                     </div>
                     <!--  -->
-                    <div class="col-md-4 col-6 position-relative">
-                        <a href="#">
-                            <img class="img4" src="https://static.kfcvietnam.com.vn/images/items/lg/Chikoyaki_C.jpg?v=4pbPw3" alt="">
-                        </a>
-                        <a href="#" class="d-flex align-items-center justify-content-center p-3 position-absolute top-10 end-10 rounded-circle bg-primary h-15 w-10  text-white text-decoration-none">
-                            <span class="fw-semibold fs-3 ">+</span>
-                        </a>
-                        <div class="w-75 d-flex justify-content-around position-absolute bottom-0 flex-wrap">
-                            <p class="text-white fw-semibold">Gà Giòn Cay</p>
-                            <p class="text-white fw-semibold">60000</p>
-                        </div>
-                    </div>
+                    <?php endforeach?>
                 </div>
             </div>
         </form>
