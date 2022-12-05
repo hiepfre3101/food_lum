@@ -29,12 +29,12 @@
                         <a href="">Bảng Điều Khiển</a>
                     </span>
                 </li>
-                <li class="item <?=($_GET['ctr']=='')?"active-menu":""?>">
+                <li class="item <?=($_GET['ctr']=='list-slider')?"active-menu":""?>">
                     <span>
                         <span class="material-symbols-outlined">
                             home
                         </span>
-                        <a href="">Quản lý slider</a>
+                        <a href="?ctr=list-slider">Quản lý slider</a>
                     </span>
                 </li>
                 <label for="opent-1">

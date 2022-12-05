@@ -76,24 +76,28 @@
     flex-wrap: wrap;
     padding: 10px 0px;
 }
-.img-user{
+
+.img-user {
     width: 100%;
     height: 300px;
 }
-.img-user img{
+
+.img-user img {
     width: 100%;
     height: 100%;
     object-fit: cover;
     border-radius: 10px;
 }
-.active-menu{
-    color: #3167eb !important;
-}
-.active-menu a{
+
+.active-menu {
     color: #3167eb !important;
 }
 
-.active-menu .material-symbols-outlined{
+.active-menu a {
+    color: #3167eb !important;
+}
+
+.active-menu .material-symbols-outlined {
     color: #3167eb !important;
 }
 
@@ -119,20 +123,20 @@
     transition: .5s;
 }
 
-#opent-1:checked~.sub-menu,
-#opent-2:checked~.sub-menu,
-#opent-3:checked~.sub-menu,
-#opent-4:checked~.sub-menu{
+#opent-1:checked ~ .sub-menu,
+#opent-2:checked ~ .sub-menu,
+#opent-3:checked ~ .sub-menu,
+#opent-4:checked ~ .sub-menu {
     display: block;
     transform: translateX(0%);
     height: auto;
     transition: .5s;
 }
 
-#opent-1:checked~.up,
-#opent-2:checked~.up,
-#opent-3:checked~.up,
-#opent-4:checked~.up{
+#opent-1:checked ~ .up,
+#opent-2:checked ~ .up,
+#opent-3:checked ~ .up,
+#opent-4:checked ~ .up {
     transform: rotate(180deg);
 }
 
@@ -339,7 +343,8 @@
     padding: 30px 30px 80px 30px;
 }
 
-.tabel-form {}
+.tabel-form {
+}
 
 .table-main {
     width: 100%;
@@ -355,13 +360,16 @@
     height: 80px;
     border-bottom: 1px solid #676b84;
 }
-.table-main td{
+
+.table-main td {
     width: 100%;
 }
-.table-main tr td:first-child{
+
+.table-main tr td:first-child {
     padding-left: 50px;
 }
-.table-main td a{
+
+.table-main td a {
     text-decoration: none;
 }
 
@@ -396,11 +404,12 @@
 
 .table-main .btn2:hover,
 .table-main .btn-2:hover,
-.btn-delete:hover{
+.btn-delete:hover {
     color: red !important;
     background: #fff !important;
 }
-.table-main .btn-2{
+
+.table-main .btn-2 {
     background: red;
     border: 1px solid red;
 }
@@ -417,8 +426,8 @@
     flex-wrap: wrap;
 }
 
-.action button ,
-.action select{
+.action button,
+.action select {
     padding: 10px 20px;
     margin-right: 20px;
     border-radius: 5px;
@@ -428,7 +437,8 @@
     cursor: pointer;
     transition: .25s;
 }
-.table-main tbody td select{
+
+.table-main tbody td select {
     padding: 5px 10px;
     margin-right: 20px;
     border-radius: 5px;
@@ -479,11 +489,14 @@
     margin: 10px 0px;
 }
 
-.name-clident {}
+.name-clident {
+}
 
-.phone {}
+.phone {
+}
 
-.address {}
+.address {
+}
 
 .btn-status {
     width: 100%;
@@ -500,14 +513,14 @@
     cursor: pointer;
 }
 
-#check1:checked+label,
-#check2:checked+label,
-#check3:checked+label {
+#check1:checked + label,
+#check2:checked + label,
+#check3:checked + label {
     background-color: #05d34e;
     color: #fff;
 }
 
-.info-clident>form>button {
+.info-clident > form > button {
     padding: 10px 20px;
     background-color: #4d4dba;
     margin-right: 15px;
@@ -604,7 +617,8 @@
     border-radius: 5px;
 }
 
-.material-symbols-outlined {}
+.material-symbols-outlined {
+}
 
 .box-pagination {
     width: auto;
@@ -675,18 +689,21 @@
     height: 100%;
     width: 60%;
     font-size: 20px;
-    display:flex;
+    display: flex;
     flex-wrap: wrap;
 }
-.row-rigth p{
+
+.row-rigth p {
     display: block;
     width: 100%;
 }
-.row-rigth input[type="file"]{
+
+.row-rigth input[type="file"] {
     position: absolute;
     top: -100000px;
     left: -100000px;
 }
+
 .wrapper-img {
     width: 33.33%;
     height: 100px;
@@ -741,7 +758,7 @@
 }
 
 /*css detail category*/
-.box-detail-category{
+.box-detail-category {
     width: 100%;
     height: 200px;
     margin-bottom: 50px;
@@ -750,25 +767,29 @@
     align-items: center;
 }
 
-.box-detail-category .left{
-    width:50%;
+.box-detail-category .left {
+    width: 50%;
     height: 100%;
     display: flex;
     align-items: center;
 
 }
-.box-detail-category .right{
-    width:50%;
+
+.box-detail-category .right {
+    width: 50%;
     height: 100%;
 }
-.box-detail-category .left p{
+
+.box-detail-category .left p {
     font-size: 20px;
 }
-.box-detail-category .left p span{
+
+.box-detail-category .left p span {
     font-weight: bold;
     color: #3b76ef;
 }
-.box-detail-category .right img{
+
+.box-detail-category .right img {
     width: 100%;
     height: 100%;
     object-fit: cover;
@@ -777,13 +798,125 @@
 }
 
 select:disabled,
-button:disabled{
+button:disabled {
     background: #cccc;
     border: 1px solid #cccc;
     cursor: not-allowed;
 }
-button:disabled:hover{
+
+button:disabled:hover {
     background: #ccc;
     color: #fff;
     user-focus: not-allowed !important;
+}
+
+.mai-slider {
+    width: 100%;
+    height: 400px;
+}
+
+.swiper {
+    width: 100%;
+    height: 100%;
+}
+
+.swiper-slide {
+    text-align: center;
+    font-size: 18px;
+    background: #fff;
+
+    /* Center slide text vertically */
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    -webkit-justify-content: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    -webkit-align-items: center;
+    align-items: center;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.swiper-slide img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: inherit;
+}
+
+.swiper {
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.swiper-slide > p {
+    position: absolute;
+    bottom: 60px;
+    color: #fff;
+}
+
+.title-slider,
+.desc-slider {
+    display: block;
+    text-align: center;
+    width: 400px;
+    height: 30px;
+    font-size: 20px;
+    background: rgba(255,255,255,0);
+    border: none;
+    color: #ffff;
+    outline: none;
+}
+
+.material-symbols-outlined.add {
+    font-size: 80px;
+    position: absolute;
+    color: #ffff;
+    display: none;
+
+}
+.slider-form>a{
+    text-decoration: none;
+}
+.slider-form button {
+    padding: 10px 20px;
+    margin-right: 20px;
+    background: #05d34e;
+    color: #fff;
+    border: 1px solid #05d34e;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: .25s;
+    margin-bottom: 20px;
+}
+
+.slider-form button:hover {
+    color: #05d34e;
+    background: #fff;
+}
+
+.slider-form button:disabled{
+    background: #cccc;
+    border: 1px solid #cccc;
+    cursor: not-allowed;
+}
+.delete-slider{
+    text-decoration: none;
+    position: absolute;
+    top: 0;
+    right: 0;
+    background: red;
+    border-bottom-left-radius: 10px;
+    padding: 10px;
+    display: none;
+}
+.delete-slider span{
+    font-size: 50px;
+    color: #ffff;
 }
