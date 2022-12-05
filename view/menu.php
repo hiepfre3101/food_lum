@@ -13,7 +13,6 @@
         <?php for($i=0;$i<count($arrProductEachCategory);$i++){?>
         <div class="grid-block w-100 menu-block" id="menu-<?=$i+1?>" >
             <h1 class="d-flex align-items-center">
-                <img src="./public/img/gif1.gif" alt="..." class="w-10">
                 <span  class="fw-semibold fs-1"><?=$arrCategory[$i]["categories_name"]?></span>
             </h1>
             <!--hiển thị sản phẩm cũng là dùng đường dẫn ảnh tạm thời chỉnh sửa sau-->

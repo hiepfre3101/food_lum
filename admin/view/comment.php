@@ -38,7 +38,7 @@
                 </tbody>
             </table>
             <!--hiên thị số trang hiện có-->
-
+            <div style="<?php if($countPage == 1)echo "display:none;"?>">
             <div class="pagination">
                 <div class="pagination-left">
                     <a href="<?php if (isset($_GET['page']) && $_GET['page'] >= 2) {
@@ -80,6 +80,7 @@
                     </span>
                     </a>
                 </div>
+            </div>
             </div>
             <!-- end-->
         </form>

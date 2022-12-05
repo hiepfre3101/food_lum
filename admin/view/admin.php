@@ -82,27 +82,29 @@
                 </tr>
             </tbody>
         </table>
-        <div class="pagination">
-            <div class="pagination-left">
-                <a href="">
-                    <span class="material-symbols-outlined">
-                        navigate_before
-                    </span>
-                </a>
+        <div style="<?php if($countPage == 1)echo "display:none;"?>">
+            <div class="pagination">
+                <div class="pagination-left">
+                    <a href="">
+                        <span class="material-symbols-outlined">
+                            navigate_before
+                        </span>
+                    </a>
+                </div>
+                <div class="box-pagination">
+                    <div class="pagination-item"><a href="">1</a></div>
+                    <div class="pagination-item active"><a href="">2</a></div>
+                    <div class="pagination-item"><a href="">3</a></div>
+                </div>
+                <div class="pagination-right">
+                    <a href="">
+                        <span class="material-symbols-outlined">
+                            navigate_next
+                        </span>
+                    </a>
+                </div>
             </div>
-            <div class="box-pagination">
-                <div class="pagination-item"><a href="">1</a></div>
-                <div class="pagination-item active"><a href="">2</a></div>
-                <div class="pagination-item"><a href="">3</a></div>
-            </div>
-            <div class="pagination-right">
-                <a href="">
-                    <span class="material-symbols-outlined">
-                        navigate_next
-                    </span>
-                </a>
-            </div>
-        </div>
+       </div>
     </form>
 </div>
 <?php require_once("footer.php")?>

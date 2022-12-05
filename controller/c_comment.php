@@ -2,9 +2,9 @@
 
 function showDetailComment()
 {
-    $result = getOneProduct();
-    $page = pageCount('comment', 'idcm', '5');
     $idpro = $_GET["idpro"];
+    $result = getOneProduct($idpro);
+    $page = pageCount('comment', 'idcm', '5');
     $cmt = getCommentByProductId($idpro);
     if (!is_array($cmt)) {
         $cmt = [];
