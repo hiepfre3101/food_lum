@@ -23,20 +23,11 @@
             </div>
             <div class="card-single col d-flex justify-content-around bg-danger text-white py-5 ml-3">
                 <div>
-                    <h1 class="font-weight-bold"></h1>
+                    <h1 class="font-weight-bold"><?=$countkh?></h1>
                     <a href="index.php?act=dskh" style="color: white; text-decoration:none;"><span>Khách hàng</span></a>
                 </div>
                 <div>
                     <i class="fas fa-users" style="font-size: 80px;"></i>
-                </div>
-            </div>
-            <div class="card-single col d-flex justify-content-around bg-primary text-white py-5 ml-3">
-                <div>
-                    <h1 class="font-weight-bold"><?=$countbl?></h1>
-                    <a href="?ctr=comment-list" style="color: white; text-decoration:none;"><span>Bình luận</span></a>
-                </div>
-                <div>
-                    <i class="fas fa-comments" style="font-size: 80px;"></i>
                 </div>
             </div>
             <div class="card-single col d-flex justify-content-around bg-success text-white py-5 ml-3">

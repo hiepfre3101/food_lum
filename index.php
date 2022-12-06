@@ -231,13 +231,14 @@ switch ($ctr) {
         }
         break;
     case "adminhome" :
-        $countdm = count(loaddm());
-        $countsp = count(getAllDataProducts());
-        $countbl = count(getAllDataComment());
-        $countod = count(getAllDataOrder());
-        $listthongke = loadall_thongke();
-        include "./admin/view/home.php";
-        break;
+    $countdm=count(loaddm());
+    $countsp=count(getAllDataProducts());
+    $countbl=count(getAllDataComment());
+    $countod=count(getAllDataOrder());
+    $countkh=count(getAllDataUser());
+    $listthongke=loadall_thongke();
+    include "./admin/view/home.php";  
+    break;
 
     case "list-voucher":
         showListVoucher();
