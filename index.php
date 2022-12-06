@@ -120,8 +120,6 @@ switch ($ctr) {
         getInfoHeader();
         showMenuClient();
         break;
-        //admin
-        break;
     //admin
     case "add-product":
         showAddProduct();

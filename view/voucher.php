@@ -43,8 +43,10 @@
                                                    ?>.jpg" alt="img" class="w-75 h-100">
                      <div class="d-flex align-items-center justify-content-center flex-fill flex-column">
                         <p class="fs-2 fw-bold text-red"><?= $value["discount"] ?><span style="color: var(--secondary-color);">%</span></p>
-                        <a href="?ctr=save-user-voucher&idVoucher=<?= $value['idvc'] ?>" class="d-block w-75"> <button class="w-100 h-100 btn-save fw-semibold fs-4 text-white" <?php if (!isset($_SESSION["idUser"]) || $totalMoney["totalOrder"] < $value["conditionVoucher"]) echo "disabled"; ?>>Lưu</button></a>
+                        <a href="?ctr=save-user-voucher&idVoucher=<?= $value['idvc'] ?>" class="d-block w-75"> 
+                        <button class="w-100 h-100 btn-save fw-semibold fs-4 text-white" <?php if (!isset($_SESSION["idUser"]) || $totalMoney["totalOrder"] < $value["conditionVoucher"]||$value["exp"]<0) echo "disabled"; ?>>Lưu</button></a>
                         <p class="fs-4 text-dark">Số lượng: <span class=""><?= $value["quantity"] ?></span></p>
+                        <p class="fs-5 text-orange">HSD: <span class=""><?= $value["exp_date"] ?></span></p>
                         <p style="color:navy; cursor:pointer;" class="fs-4" data-bs-toggle="tooltip" data-bs-placement="top" data-bs-title="Tổng tiền tích lũy tối thiểu <?= $value["conditionVoucher"] ?>đ">Điều kiện</p>
                      </div>
                   </div>
