@@ -7,7 +7,7 @@ include_once("./view/header.php");
         <div class="carousel-inner h-100">
             <?php for ($i = 0; $i < count($arrSlider); $i++){?>
             <a class="carousel-item <?=($i==0)?"active":""?> h-100" data-bs-interval="4000" href="#">
-                <img src="<?=$arrSlider[$i]['image']?>" class="d-block img-fluid img-fit" alt="...">
+                <img src="<?=$arrSlider[$i]['image']?>" class="d-block img-fluid img-slide" alt="...">
                 <div class="carousel-caption d-none d-md-block">
                     <h3><?=$arrSlider[$i]['title']?></h3>
                     <p><?=$arrSlider[$i]['description']?></p>

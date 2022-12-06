@@ -70,6 +70,9 @@
 .cart{
   position: relative;
 }
+.img-slide{
+    object-fit: cover;
+}
 .cart-after{
     font-size: 1rem;
     display: flex;
