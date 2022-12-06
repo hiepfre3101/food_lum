@@ -61,7 +61,6 @@
                         <ul class="sub-menu">
                             <li class="sub-itme <?= ($_GET['ctr'] == 'product-list') ? "active-menu" : "" ?>"><a href="?ctr=product-list">Danh Sách Sản Phẩm</a></li>
                             <li class="sub-itme <?= ($_GET['ctr'] == 'list-category') ? "active-menu" : "" ?>"><a href="?ctr=list-category">Danh Mục Sản Phẩm</a></li>
-
                         </ul>
                     </li>
                 </label>
@@ -135,11 +134,10 @@
                     </form>
                 </div>
                 <div class="avatar">
-                    <div class="bg-avatar"><img src="https://scontent.fhan18-1.fna.fbcdn.net/v/t1.6435-9/199308887_1412477172468089_2593694400813705621_n.jpg?_nc_cat=103&ccb=1-7&_nc_sid=09cbfe&_nc_ohc=uIuvSapzfncAX--8NTY&tn=r0NWMo89mh0hrPxo&_nc_ht=scontent.fhan18-1.fna&oh=00_AfDCHCLCAHAu2zc9sL1Cl8GTprvzMICoiSojs_iehE7J0g&oe=639C2AEA" alt="">
+                    <div class="bg-avatar"><img src="<?=getOneDataUser($_SESSION['idUser'])['avatar']?>" alt="">
                     </div>
                     <div class="popup-admin">
-                        <p class="username">Nguyễn Ánh Dương</p>
-                        <a href="">Hồ sơ</a>
+                        <p class="username"><?=getOneDataUser($_SESSION['idUser'])['full_name']?></p>
                         <a href="?ctr=logout">Đăng suẩt</a>
                     </div>
                 </div>
