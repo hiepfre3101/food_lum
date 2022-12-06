@@ -24,7 +24,7 @@ $ds=loadstar($idpro);
     <div class="container-comment">
             <h3 class="dg">Đánh Giá Sản Phẩm</h3>
             <div class="star">
-                    <p class="ad"><?= $ds['avgstar'] ?>/5<span class="review_rating1 fa fa-star"></span></p>                  
+                    <p class="ad"><?= number_format($ds['avgstar'],1)?>/5<span class="review_rating1 fa fa-star"></span></p>                  
                 </div>
             <div class="container-star">               
                 <div class="star1">
@@ -38,17 +38,23 @@ $ds=loadstar($idpro);
             </div>         
             <div class="comment-box text-center">
                         <h4>Để lại bình luận</h4>
-                        <form action="<?= $_SERVER['PHP_SELF'];?>" method="post">   
-                        <div class="rating" >
-                            <input type="radio" name="rating" value="5" id="5"><label for="5">☆</label>
-                            <input type="radio" name="rating" value="4" id="4"><label for="4">☆</label>
-                             <input type="radio" name="rating" value="3" id="3"><label for="3">☆</label>
-                            <input type="radio" name="rating" value="2" id="2"><label for="2">☆</label>
-                            <input type="radio" name="rating" value="1" id="1"><label for="1">☆</label>
+                        <form action="<?= $_SERVER['PHP_SELF'];?>" method="post" id="form-vote">   
+                      <div>
+                            <div class="rating">
+                                <input type="radio" name="rating" value="5" id="inp5"><label for="inp5">☆</label>
+                                <input type="radio" name="rating" value="4" id="inp4"><label for="inp4">☆</label>
+                                 <input type="radio" name="rating" value="3" id="inp3"><label for="inp3">☆</label>
+                                <input type="radio" name="rating" value="2" id="inp2"><label for="inp2">☆</label>
+                                <input type="radio" name="rating" value="1" id="inp1"><label for="inp1">☆</label>
+                            </div>
+                           <p class="form-message" style="color:red;"><?php if(isset($_COOKIE["erroRate"])) echo $_COOKIE["erroRate"]?></p>
                         </div>
                         <!-- <h5 class="text-center"><i class="text-danger">Bạn đã đánh giá</i></h5> -->
-                        <div class="comment-area"> <textarea class="form-control" placeholder="Nội dung..."
-                                rows="4" name="content"></textarea> </div>
+                        <div class="comment-area"> 
+                            <textarea class="form-control" placeholder="Nội dung..."
+                                rows="4" name="content" id="comment"></textarea> 
+                           <p class="form-message" style="color:red;"></p>
+                        </div>
                         <div class="text-center mt-4"> <input class="btn btn-success send px-5" name="guibinhluan" type="submit" value="Đăng bình luận"></div>
                                     <input type="hidden" name="idpro" value="<?=$idpro?>">
                                     
@@ -83,6 +89,11 @@ $ds=loadstar($idpro);
                     $idpro=$_POST['idpro'];
                     $iduser=$_SESSION['idUser'];
                     $time_send = date("Y-m-d");
+                    if(!isset($_POST["rating"])){
+                        header("location: ".$_SERVER['HTTP_REFERER']);
+                        setcookie("erroRate","Vui lòng đánh giá !",time()+3,"/");
+                        die;
+                    }
                     $rating=$_POST['rating'];
                     insert_binhluan($content,$iduser,$idpro,$time_send,$rating);
                     header("location: ".$_SERVER['HTTP_REFERER']);
@@ -94,7 +105,16 @@ $ds=loadstar($idpro);
         <!--Optional JavaScript-->
         <!--jQuery first, then Popper.js, then Bootstrap JS-->
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossorigin="anonymous"></script>
-
+        <script src="../public/js/validate.js"></script>
+        <script>
+            validator({
+                form:"#form-vote",
+                erroSelector:".form-message",
+                rules:[
+                    validator.isRequired("#comment"),
+                ]
+            })
+        </script>
 </html>
 
 
