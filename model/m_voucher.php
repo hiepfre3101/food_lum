@@ -21,7 +21,7 @@ function getOneVoucher($id)
 function getAllVoucherUser($idUser)
 {
     global $pdo;
-    $query = "SELECT vc.discount,vc.content,vc.conditionVoucher,vcdt.id,vcdt.status ,vcdt.idvc
+    $query = "SELECT vc.exp_date,vc.discount,vc.content,vc.conditionVoucher,vcdt.id,vcdt.status ,vcdt.idvc,DATEDIFF(exp_date,CURDATE())as 'exp'
             FROM voucher_detail as vcdt 
             join voucher as vc 
             on vc.idvc = vcdt.idvc
@@ -81,6 +81,12 @@ function addDataVoucher($data){
 function deleteDataVoucher($id){
     global $pdo;
     $query = "DELETE FROM voucher WHERE idvc=$id";
+    $stmt = $pdo->prepare($query);
+    $stmt->execute();
+}
+function deleteDataVoucherUser($id){
+    global $pdo;
+    $query = "DELETE FROM voucher_detail WHERE id=$id";
     $stmt = $pdo->prepare($query);
     $stmt->execute();
 }

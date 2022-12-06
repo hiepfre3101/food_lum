@@ -104,6 +104,9 @@ switch ($ctr) {
      case "vnp_payment":
         vnpayment();
         break;
+     case "del-voucher-user":
+        delVoucherUser();
+        break;   
     //admin
     case "order-detail-user":
         getInfoHeader();

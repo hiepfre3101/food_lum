@@ -34,7 +34,8 @@
             </ul>
             <div class="row mt-4">
                <?php foreach ($vouchers as $value) : ?>
-                  <div class="col-lg-6 col-12 voucher shadow-lg d-flex justify-content-between mb-5">
+                  <div class="col-lg-6 col-12 voucher shadow-lg d-flex justify-content-between mb-5 position-relative">
+                     <a href="?ctr=del-voucher-user&id=<?=$value["id"]?>" class="del-btn">x</a>
                      <img src="./public/img/voucher<?php if ($value['discount'] > 20) {
                                                       echo "1";
                                                    } else {
@@ -43,8 +44,10 @@
                                                    ?>.jpg" alt="img" class="w-75 h-100">
                      <div class="d-flex align-items-center justify-content-center flex-fill flex-column">
                         <p class="fs-2 fw-bold text-red"><?= $value["discount"] ?><span style="color: var(--secondary-color);">%</span></p>
-                        <a href="?ctr=cart" class="d-block w-75"> <button class="w-100 h-100 btn-save fw-semibold fs-4 text-white" <?php if ($value['status'] == 1) echo "disabled"; ?>>Sử dụng ngay</button></a>
-                        <p style="color:navy; cursor:pointer;" class="fs-5" data-bs-toggle="tooltip" data-bs-placement="top" data-bs-title="Tổng tiền tích lũy tối thiểu <?= $value["conditionVoucher"] ?>đ">Điều kiện</p>
+                        <a href="?ctr=cart" class="d-block w-75">
+                            <button class="w-100 h-100 btn-save fw-semibold fs-4 text-white" <?php if ($value['status'] == 1||$value["exp"]<0) echo "disabled"; ?>>Sử dụng ngay</button></a>
+                            <p class="fs-5 text-orange">HSD: <span class=""><?= $value["exp_date"] ?></span></p>
+                            <p style="color:navy; cursor:pointer;" class="fs-5" data-bs-toggle="tooltip" data-bs-placement="top" data-bs-title="Tổng tiền tích lũy tối thiểu <?= $value["conditionVoucher"] ?>đ">Điều kiện</p>
                      </div>
                   </div>
                <?php endforeach ?>

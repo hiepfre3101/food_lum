@@ -68,3 +68,8 @@ function deleteVoucher(){
     deleteDataVoucher($_GET['idDelete']);
     header("location:index.php?ctr=list-voucher");
 }
+
+function delVoucherUser(){
+    deleteDataVoucherUser($_GET["id"]);
+    header("location:index.php?ctr=voucher-user");
+}
