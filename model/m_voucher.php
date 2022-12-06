@@ -3,7 +3,7 @@ require_once("database.php");
 function getAllVoucher()
 {
     global $pdo;
-    $query = "SELECT * FROM voucher WHERE quantity>0";
+    $query = "SELECT *,DATEDIFF(exp_date,CURDATE())as 'exp' FROM voucher WHERE quantity>0";
     $stmt = $pdo->prepare($query);
     $stmt->execute();
     $data = $stmt->fetchAll();
