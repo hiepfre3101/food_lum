@@ -9,6 +9,7 @@
     <title>Document</title>
     <link rel="stylesheet" href="./public/css/style-admin.css">
     <!-- link icon -->
+    <link rel="shortcut icon" href="./public/img/logo-Main-9989.png" type="image/x-icon">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
     <script src="https://kit.fontawesome.com/e6b03d2b34.js" crossorigin="anonymous"></script>
 </head>
@@ -18,7 +19,7 @@
         <div class="sidebar">
             <div class="logo">
                 <a href="?ctr=/">
-                    <img src="https://www.brandbucket.com/sites/default/files/logo_uploads/212259/large_fooduro_0.png" alt="">
+                    <img src="./public/img/logo.png" alt="logo" class="img-fluid">
                 </a>
             </div>
             <ul class="menu-item">
@@ -33,7 +34,7 @@
                 <li class="item <?= ($_GET['ctr'] == 'list-slider') ? "active-menu" : "" ?>">
                     <span>
                         <span class="material-symbols-outlined">
-                            home
+                            photo_library
                         </span>
                         <a href="?ctr=list-slider">Quản lý slider</a>
                     </span>
@@ -41,7 +42,7 @@
                 <li class="item <?= ($_GET['ctr'] == 'list-voucher') ? "active-menu" : "" ?>">
                     <span>
                         <span class="material-symbols-outlined">
-                            home
+                            photo_album
                         </span>
                         <a href="?ctr=list-voucher">Quản voucher</a>
                     </span>
@@ -50,7 +51,7 @@
                     <li class="item">
                         <span>
                             <span class="material-symbols-outlined">
-                                home
+                                inventory_2
                             </span>
                             <a>Sản Phẩm</a>
                         </span>
@@ -68,7 +69,7 @@
                     <li class="item">
                         <span>
                             <span class="material-symbols-outlined">
-                                home
+                                group
                             </span>
                             <a>Khách Hàng</a>
                         </span>
@@ -87,7 +88,7 @@
                     <li class="item">
                         <span>
                             <span class="material-symbols-outlined">
-                                home
+                                chat
                             </span>
                             <a>Bình Luận</a>
                         </span>
@@ -105,7 +106,7 @@
                     <li class="item">
                         <span>
                             <span class="material-symbols-outlined">
-                                home
+                                list_alt
                             </span>
                             <a>Đơn Hàng</a>
                         </span>
