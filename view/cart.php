@@ -39,7 +39,9 @@
                     <?php }
                     } ?>
                 </div>
-                <div class="col-lg-4 mt-5 mt-lg-0">
+                <div class="col-lg-4 mt-5 mt-lg-0 <?php   if (!is_array($arrCart)) {
+                        echo "d-none";
+                    }?>">
                     <div class="giohang-right">
                         <p class="mon">
                             <?php if (isset($_SESSION["arrCart"])) {

@@ -1,19 +1,10 @@
 <?php require_once("header.php") ?>
     <!-- end header -->
     <div class="box-table" >
-        <div class="action">
-            <a href="">
-                <button>Chọn Tất Cả</button>
-            </a>
-            <a href="">
-                <button>Xóa Các Mục Đã Chọn</button>
-            </a>
-        </div>
         <form action="" class="tabel-form">
             <table class="table-main" id="table1">
                 <thead>
                 <tr>
-                    <th>Chọn</th>
                     <th>Tên Sản Phẩm</th>
                     <th>Số lượng bình luận</th>
                     <th>Cũ Nhất</th>
@@ -25,7 +16,6 @@
                 <?php foreach ($arrComment as $value) { ?>
                     
                     <tr>
-                        <td><input type="checkbox" ></td>
                         <td><?= $value['product_name']?></td>
                         <td style="text-align: center;"><?= $value['countCmt']?></td>
                         <td style="text-align: center;"><?= $value['min_time'] ?></td>
