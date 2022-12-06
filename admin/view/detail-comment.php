@@ -6,19 +6,12 @@
         <a href="?ctr=comment-list">
                 <button>Trở Về</button>
             </a>
-            <a href="">
-                <button>Chọn Tất Cả</button>
-            </a>
-            <a href="">
-                <button>Xóa Các Mục Đã Chọn</button>
-            </a>
         </div>
         <h1 style="padding-top: 20px;">Sản Phẩm: <?= $result['product_name']?></h1>
         <form action="" class="tabel-form">
             <table class="table-main" id="table1">
                 <thead>
                 <tr>
-                    <th>Chọn</th>
                     <th>Nội dung</th>
                     <th>Ngày Bình luận</th>
                     <th>Người bình luận</th>
@@ -28,7 +21,6 @@
                 <tbody>
                 <?php foreach ($cmt as $value) { ?>
                     <tr>
-                        <td><input type="checkbox" ></td>
                         <td><?= $value['content']?></td>
                         <td><?= $value['time_send']?></td>
                         <td style="text-align: center;"><?= $value['full_name'] ?></td>

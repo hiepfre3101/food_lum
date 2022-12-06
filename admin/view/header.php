@@ -70,7 +70,7 @@
                             <span class="material-symbols-outlined">
                                 home
                             </span>
-                            <a>Khác Hàng</a>
+                            <a>Khách Hàng</a>
                         </span>
                         <input <?php if ($_GET['ctr'] == 'user-list' || $_GET['ctr'] == 'add-new-user') echo "checked"; ?> type="checkbox" hidden id="opent-2">
                         <span class="material-symbols-outlined up">
@@ -116,6 +116,7 @@
                         <ul class="sub-menu">
                             <li class="sub-itme <?= ($_GET['ctr'] == 'list-order') ? "active-menu" : "" ?>"><a href="?ctr=list-order">Đơn Hàng Mới</a></li>
                             <li class="sub-itme <?= ($_GET['ctr'] == 'list-order-transport') ? "active-menu" : "" ?>"><a href="?ctr=list-order-transport">Đơn Hàng Đang Giao</a></li>
+                            <li class="sub-itme <?= ($_GET['ctr'] == 'list-order-transport') ? "active-menu" : "" ?>"><a href=" https://sandbox.vnpayment.vn/merchantv2/Users/Login.htm" target="_blank">Quản lí GD VNPAY</a></li>
                         </ul>
                     </li>
                 </label>
