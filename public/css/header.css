@@ -94,7 +94,7 @@
 .menu-child{
     display: none;
     width: 200px;
-    z-index: 100;
+    z-index: 1000;
     border-radius: 10px;
     font-family: 'Roboto', sans-serif;
     top:105%;
