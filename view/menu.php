@@ -32,7 +32,7 @@
                                 <p class="card-text overflow-hidden mh-50 mw-50"><?=$value["descripton"]?></p>
                                 <a href="?ctr=product-detail&&id" class="fs-4 text-decoration-none ">...Xem chi tiết</a>
                             </div>
-                            <a href="?ctr=product-detail&&id=<?=$value["idpro"]?>"
+                            <a href="?ctr=add-cart&&id=<?=$value["idpro"]?>"
                                 class="btn bg-secondary text-white rounded-6 fs-3 w-50 fw-semibold">Thêm</a>
                         </div>
                     </div>

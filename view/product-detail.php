@@ -64,7 +64,7 @@
             <a href="?ctr=product-detail&id=<?=$value["idpro"]?>">
                 <img class="img4" src="<?=getImg($value["idpro"])[0]["src"]?>" alt="">
             </a>
-            <a href="?ctr=product-detail&id=<?=$value["idpro"]?>" class="d-flex align-items-center justify-content-center p-3 position-absolute top-10 end-10 rounded-circle bg-secondary btn-add text-white text-decoration-none">
+            <a href="?ctr=add-cart&id=<?=$value["idpro"]?>" class="d-flex align-items-center justify-content-center p-3 position-absolute top-10 end-10 rounded-circle bg-secondary btn-add text-white text-decoration-none">
                 <span class="fw-semibold fs-3 ">+</span>
             </a>
             <div class="w-75 d-flex justify-content-around position-absolute bottom-0 flex-column ms-3">
