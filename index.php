@@ -91,7 +91,7 @@ switch ($ctr) {
         break;
     case "order-user":
         getInfoHeader();
-        showClientOrder();
+        checkViewOrder();
         break;
     case "order-ship":
         getInfoHeader();
