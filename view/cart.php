@@ -82,7 +82,7 @@
                 <div class="row">
                     <?php foreach($arrProduct as $value):?>
                     <div class="col-md-4 col-6 position-relative mb-2">
-                        <a href="?ctr=product-detail&&id=<?=$value["idpro"]?>" class="img-overlay">
+                        <a href="?ctr=add-cart&id=<?=$value["idpro"]?>" class="img-overlay">
                             <img class="img4" src="<?=getImg($value["idpro"])[0]["src"]?>" alt="">
                         </a>
                         <a href="?ctr=product-detail&&id=<?=$value["idpro"]?>" class="d-flex align-items-center justify-content-center p-3 position-absolute top-10 end-10 rounded-circle bg-primary h-15 w-10  text-white text-decoration-none">

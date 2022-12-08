@@ -50,6 +50,12 @@ if (isset($vnp_HashSecret)) {
     $vnpSecureHash =   hash_hmac('sha512', $hashdata, $vnp_HashSecret);//  
     $vnp_Url .= 'vnp_SecureHash=' . $vnpSecureHash;
 }
+//respond trả về
+$returnData = array('code' => '01'
+    , 'message' => 'success'
+    , 'data' => $vnp_Url);
+
+        //lưu db
 $total = $_POST['total'];
 if(isset($_SESSION['idUser'])){
       $iduser = $_SESSION['idUser'];
@@ -71,26 +77,13 @@ $data = [
     "total" => $total,
 
 ];
-addDataOrder($data);
-//// lấy mảng giỏ hàng
-$arrCart = getCart();
-//    key của mảng này là id của sản phẩm trong giỏ hàng còn value của nó chính là số lượng sản phẩm có trong giỏ hàng
-foreach ($arrCart as $key => $value) {
-    $DetailOrder = [
-        "idpro" => $key,
-        "idorder" => $idOrder,
-        "quantity" => $value
-    ];
-    addDataOrderDetail($DetailOrder);
-}
-setArrCart([]);
-if ($idVouCher) {
-    changeStatusVoucher($idVouCher, $iduser);
-}
-$returnData = array('code' => '00'
-    , 'message' => 'success'
-    , 'data' => $vnp_Url);
-    if (isset($_POST['redirect'])) {
+$_SESSION["dataOfOrder"] = [
+ "dataOrder"=>$data,
+  "idVoucher"=>$idVouCher,
+  "idOrder"=>$idOrder
+];
+
+if (isset($_POST['redirect'])) {
         header("location:".$vnp_Url);
         die();
     } else {

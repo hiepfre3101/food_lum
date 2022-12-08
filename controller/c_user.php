@@ -126,3 +126,36 @@ function adminDeleteUser()
     }
     header("location:index.php?ctr=user-list");
 }
+
+function showRepasssword(){
+    render('re-password',[],0);
+}
+
+function checkCookie(){
+    if($_POST['otp'] == $_COOKIE['otp']){
+        // lấy dc iduser muốn đổi pass
+        $idUserChagePass = $_POST['iduser'];
+        render('change-pass',["idUserChagePass"=>$idUserChagePass],0);
+    }else{
+        header("location:index.php?ctr=enter-otp&&fail");
+    }
+}
+function showFormOtp(){
+    render('check-otp',[],0);
+}
+function showFormCheckEmail(){
+    $email = $_POST['email'];
+    if(empty(checkDataEmail($email))){
+        header("location:index.php?ctr=re-pass&&fail&&email=$email");
+    }else {
+        $idUser = checkDataEmail($email)['iduser'];
+        header("location:mail/send_mail.php?email=$email&&iduser=$idUser");
+    }
+}
+
+function changePass(){
+    $pass =$_POST['pass'];
+    $idUser = $_POST['idUserChangePass'];
+    updateDataPass($pass,$idUser);
+    header("location:index.php?ctr=login");
+}

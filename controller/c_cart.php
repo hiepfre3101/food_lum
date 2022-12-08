@@ -34,8 +34,21 @@ function addProductCart()
                 }
             }
             addCart($id, $quantity);
+        }else{
+            $id = $_GET['id'];
+            $quantity = 1;
+            if (isset($_SESSION["arrCart"])) {
+                $arrCart = $_SESSION["arrCart"];
+                foreach ($arrCart as $key => $value) {
+                    if ($id == $key) {
+                        $quantity += $value;
+                        break;
+                    }
+                }
+            }
+            addCart($id, $quantity);
         }
-        header("location:?ctr=home");
+        header("location:?ctr=menu");
         die;
     }
     render("login", [], 0);

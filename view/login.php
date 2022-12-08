@@ -22,7 +22,7 @@
                         </div> <!-- form-group// -->
 
                         <div class="form-group">
-                            <a href="#" class="float-right">Quên mật khẩu?</a>
+                            <a href="?ctr=re-pass" class="float-right">Quên mật khẩu?</a>
                         </div>
                         <br>
                         <br> <!-- form-group form-check .// -->
@@ -30,11 +30,6 @@
                             <button type="submit" class="btn btn-block dangnhap w-100"> Đăng nhập </button>
                         </div> <!-- form-group// -->
                     </form>
-                    <h5 class="card-title1 mb-4">HOẶC TIẾP TỤC VỚI</h5>
-                    <a href="#" class="btn btn-facebook btn-block mb-2 w-100"> <i class="fab fa-facebook-f"></i> &nbsp Đăng
-                        nhập bằng facebook</a>
-                    <a href="#" class="btn btn-google btn-block mb-4 w-100"> <i class="fab fa-google"></i> &nbsp Đăng nhập
-                        bằng google</a>
                     <p class="text-center mt-4">Bạn chưa có tài khoản? <a href="?ctr=sign-up">Đăng ký</a></p>
                 </div>
             </div>

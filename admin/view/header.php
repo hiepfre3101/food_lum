@@ -19,7 +19,7 @@
         <div class="sidebar">
             <div class="logo">
                 <a href="?ctr=/">
-                    <img src="./public/img/logo.png" alt="logo" class="img-fluid">
+                    <img src="./public/img/logo.png" alt="">
                 </a>
             </div>
             <ul class="menu-item">
