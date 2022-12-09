@@ -34,11 +34,11 @@ $ds=loadstar($idpro);
                 <div class="container-star flex-fill d-flex justify-content-start align-items-center p-2">               
                     <div class="star1 me-5">
                         <input class="s" type="button" value="Tất Cả" onclick="filterComment('Tat ca')">
-                        <input class="s" type="button" value="5" onclick="filterComment(5)">
-                        <input class="s" type="button" value="4" onclick="filterComment(4)">
-                        <input class="s" type="button" value="3" onclick="filterComment(3)">
-                        <input class="s" type="button" value="2" onclick="filterComment(2)">
-                        <input class="s" type="button" value="1" onclick="filterComment(1)">
+                        <input class="s" type="button" value="5☆" onclick="filterComment(5)">
+                        <input class="s" type="button" value="4☆" onclick="filterComment(4)">
+                        <input class="s" type="button" value="3☆" onclick="filterComment(3)">
+                        <input class="s" type="button" value="2☆" onclick="filterComment(2)">
+                        <input class="s" type="button" value="1☆" onclick="filterComment(1)">
                     </div>
                     <div class="selected-block justify-content-start align-items-center ms-7" style="display: none;">
                         <p class="fs-3 fw-bold back-btn" onclick="filterComment()">x</p>

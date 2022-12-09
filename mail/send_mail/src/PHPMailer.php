@@ -3599,7 +3599,6 @@ class PHPMailer
             //Is it a syntactically valid hostname?
             return true;
         }
-
         return false;
     }
 

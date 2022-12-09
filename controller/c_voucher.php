@@ -1,12 +1,9 @@
 <?php
 function showVoucher()
 {
-    $totalMoney = getTotalMoney();
+
     $vouchers = getAllVoucher();
-    if ($totalMoney == null) {
-        $totalMoney["totalOrder"] = 0;
-    }
-    render("voucher", ['vouchers' => $vouchers, "totalMoney" => $totalMoney], 0);
+    render("voucher", ['vouchers' => $vouchers], 0);
 }
 
 function showVoucherUser()
@@ -58,6 +55,7 @@ function addVoucher(){
         "discount"=>$discount,
         "content"=>$content,
         "conditionVoucher"=>$_POST['conditionVoucher'],
+        "start_date"=>$_POST['start_date'],
         "exp_date"=>$_POST['exp_date']
     ];
     addDataVoucher($data);

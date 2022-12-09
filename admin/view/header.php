@@ -44,7 +44,7 @@
                         <span class="material-symbols-outlined">
                             photo_album
                         </span>
-                        <a href="?ctr=list-voucher">Quản voucher</a>
+                        <a href="?ctr=list-voucher">Quản lý voucher</a>
                     </span>
                 </li>
                 <label for="opent-1">

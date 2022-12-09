@@ -73,7 +73,7 @@ function changeQuantityVoucher($idVoucher)
 
 function addDataVoucher($data){
     global $pdo;
-    $query = "INSERT INTO voucher (quantity, discount, content, conditionVoucher, exp_date) VALUE (:quantity, :discount, :content, :conditionVoucher,:exp_date)";
+    $query = "INSERT INTO voucher (quantity, discount, content, conditionVoucher,start_date ,exp_date) VALUE (:quantity, :discount, :content, :conditionVoucher,:start_date,:exp_date)";
     $stmt = $pdo->prepare($query);
     $stmt->execute($data);
 }
@@ -90,3 +90,4 @@ function deleteDataVoucherUser($id){
     $stmt = $pdo->prepare($query);
     $stmt->execute();
 }
+
