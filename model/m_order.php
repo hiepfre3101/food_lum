@@ -108,11 +108,12 @@ function changeStatusOrder($id, $status)
     $stmt->execute();
 }
 
-function getTotalMoney(){
+function getTotalMoney($start,$end){
     global $pdo;
   if(isset($_SESSION["idUser"])){
     $id = $_SESSION["idUser"];
-    $query = "SELECT SUM(total) as 'totalOrder' from order_user WHERE id_user=$id AND status =3";
+    $query = "SELECT SUM(ou.total) as 'total' from order_user as ou
+    WHERE ou.date_time BETWEEN '$start' and '$end' AND ou.id_user = 3 and ou.status =3";
     $stmt = $pdo->prepare($query);
     $stmt->execute();
     $data = $stmt->fetch();

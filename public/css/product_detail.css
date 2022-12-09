@@ -195,7 +195,7 @@
 .swip-left{
     position: absolute;
     left: -1000px;
-    transition: 1s;
+    transition: 3s;
 }
 .star{
     margin: 30px 30px 30px 30px;

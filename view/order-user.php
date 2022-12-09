@@ -7,6 +7,13 @@
                             <div class="d-flex align-items-center justify-content-center flex-fill flex-column">
                                 <p class="fw-bold">Đơn hàng ngày :<span class="text-red"> <?= $value["date_time"] ?></span></p>
                                 <p class="fw-bold">Tổng tiền: <span class="text-red"><?= $value["total"] ?>đ</span></p>
+                                <p class="fw-bold">Trạng thái: <span class="text-red">
+                                    <?php
+                                       if($value["status"]== 1) echo "Chờ xác nhận";
+                                       if($value["status"]== 2) echo "Giao hàng";
+                                       if($value["status"]== 3) echo "Đã nhận hàng";
+                                    ?>
+                                </span></p>
                                 <div class="dropdown">
                                     <a href="?ctr=order-detail-user&order=<?= $value["idorder"] ?>" class="d-block px-3 py-2 text-white btn-save w-100 h-100" type="button">
                                         Chi tiết

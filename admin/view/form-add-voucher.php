@@ -34,6 +34,13 @@
                 </div>
             </div>
             <div class="row-form">
+                <div class="row-left"><label for="exp_date">Ngày bắt đầu: </label></div>
+                <div class="row-rigth">
+                    <input type="date" name="start_date" id="exp_date">
+                    <p class="form-message" style="color:red;"></p>
+                </div>
+            </div>
+            <div class="row-form">
                 <div class="row-left"><label for="exp_date">Ngày hết hạn : </label></div>
                 <div class="row-rigth">
                     <input type="date" name="exp_date" id="exp_date">
