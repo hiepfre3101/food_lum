@@ -60,5 +60,21 @@ function getOneDataUser($id)
     return $result;
 }
 
+function updateDataPass($pass,$id){
+    global $pdo;
+    $query = "UPDATE user SET pass=$pass where iduser=$id";
+    $stmt = $pdo->prepare($query);
+    $stmt->execute();
+}
+
+function checkDataEmail($email){
+    global $pdo;
+    $query = "SELECT iduser FROM user WHERE email = '$email'";
+    $stmt = $pdo->prepare($query);
+    $stmt->execute();
+    $result = $stmt->fetch();
+    return $result;
+}
+
 
 

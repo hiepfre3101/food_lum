@@ -22,7 +22,7 @@
                         </div> <!-- form-group// -->
 
                         <div class="form-group">
-                            <a href="#" class="float-right">Quên mật khẩu?</a>
+                            <a href="?ctr=re-pass" class="float-right">Quên mật khẩu?</a>
                         </div>
                         <br>
                         <br> <!-- form-group form-check .// -->

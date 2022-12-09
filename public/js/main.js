@@ -43,7 +43,7 @@ function loadTotal() {
 
 // js admin hiển thị ảnh khi chọn file
 const boxImg = document.querySelector(".wrapper-img");
-const img = document.querySelector(".wrapper-img img");
+const img = document.querySelector(".wrapper-img.check img");
 // lấy mảng id slider để lấy
 const arrID = document.querySelectorAll(".id-slider");
 const file = document.querySelector("#img-form");

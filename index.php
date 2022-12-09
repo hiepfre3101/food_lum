@@ -61,6 +61,27 @@ switch ($ctr) {
         getInfoHeader();
         signIn($_POST['username'], $_POST['password']);
         break;
+//        lấy lại mật khẩu
+    case "re-pass":
+        getInfoHeader();
+        showRepasssword();
+        break;
+    case "check-email":
+        getInfoHeader();
+        showFormCheckEmail();
+        break;
+    case "enter-otp":
+        getInfoHeader();
+        showFormOtp();
+        break;
+    case "check-otp":
+        getInfoHeader();
+        checkCookie();
+        break;
+    case "change-pass":
+        changePass();
+        break;
+//        kết thúc lấy lại mật khẩu
     case "logout":
         getInfoHeader();
         logOunt();
