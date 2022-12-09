@@ -157,3 +157,20 @@ function getBestSeller(){
      $arrProduct = $stmt->fetchAll();
      return $arrProduct;
 }
+
+function getProductUserOrdered($iduser, $idpro){
+    global $pdo;
+   $query = "SELECT oddt.idorder
+   FROM order_detail as oddt 
+   JOIN order_user as od
+   on od.idorder = oddt.idorder
+   JOIN user as us
+   on us.iduser = od.id_user
+   JOIN products as p
+   on oddt.idpro = p.idpro
+   WHERE od.id_user = $iduser and oddt.idpro = $idpro";
+    $stmt = $pdo->prepare($query);
+    $stmt->execute();
+    $result = $stmt->fetchAll();
+    return $result;
+}

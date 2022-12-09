@@ -32,10 +32,10 @@
                         <p class="p">Giá: <strong class="price1" id="money"><?= $product['product_price'] ?></strong><span style="color:red;">đ</span></p>
                         <div class="input-group il">
                             <p class="sl ">Số lượng: </p>
-                            <div class="d-flex w-50 justify-content-around">
-                                <span onclick="mathPrice(<?= $product['product_price'] ?>,'minus',<?= $product['idpro'] ?>,'money')" style="border:2px solid black" class="input-group-text btn p-4 rounded-circle fw-semibold d-flex align-items-center justify-content-center fs-3"> - </span>
-                                <input type="number" id="<?= $product['idpro'] ?>" value="1" class="outline-none border-none shadow-none form-control text-center w-25 h-50 fs-3 fw-semibold" name="quantity" min="1" max="100" readonly />
-                                <span onclick="mathPrice(<?= $product['product_price'] ?>,'plus',<?= $product['idpro'] ?>,'money')" style="border:2px solid black" class="input-group-text btn p-4 rounded-circle fw-semibold d-flex align-items-center justify-content-center fs-3"> + </span>
+                            <div class="d-flex w-40 justify-content-around">
+                                <span onclick="mathPrice(<?= $product['product_price'] ?>,'minus',<?= $product['idpro'] ?>,'money')" style="border:3px solid black" class="w-25 input-group-text btn p-1 rounded-circle fw-bold d-flex align-items-center justify-content-center fs-3"> - </span>
+                                <input type="number" id="<?= $product['idpro'] ?>" value="1" class="mt-3 outline-none border-none shadow-none form-control text-center w-25 h-50 fs-3 fw-semibold" name="quantity" min="1" max="100" readonly />
+                                <span onclick="mathPrice(<?= $product['product_price'] ?>,'plus',<?= $product['idpro'] ?>,'money')" style="border:3px solid black" class="w-25 input-group-text btn p-1 rounded-circle fw-bold d-flex align-items-center justify-content-center fs-3"> + </span>
                             </div>
                         </div>
                         <hr class="hr1">
@@ -52,7 +52,7 @@
 <br>
 <div class="row" id="binhluan">
     
-<iframe src="view/binhluanform.php?idpro=<?=$product['idpro'] ?>" frameborder="0" width="100%" height="600px"></iframe>
+<iframe src="view/binhluanform.php?idpro=<?=$product['idpro'] ?>" frameborder="0" width="100%" height="400px"></iframe>
 </div>
 
 

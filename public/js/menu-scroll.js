@@ -12,7 +12,7 @@ function scrollNav() {
   const headerHeight = header.offsetHeight;
   const x = window.scrollY;
   if (x >= headerHeight) {
-    navMenu.style.top = "2rem";
+    navMenu.style.top = "0px";
     navMenu.style.boxShadow = "0px 0px 5px gray";
   } else {
     navMenu.style.top = "16rem";
