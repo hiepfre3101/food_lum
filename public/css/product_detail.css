@@ -174,9 +174,6 @@
     color: gray;
     margin-right: 5%;
 }
-.btn{
-    height: 50%;
-}
 /* css binh luan */
 .container-comment{
     width: 100%;
@@ -192,30 +189,55 @@
 .container-star{
     width: 100%;
     height: 100%;
-    border: solid 1px #F9EDE5;
-    background-color: #FFFBF8;
-    padding-bottom: 100px;
+    overflow: hidden;
+    position: relative;
+}
+.swip-left{
+    position: absolute;
+    left: -1000px;
+    transition: 1s;
 }
 .star{
     margin: 30px 30px 30px 30px;
     float: left;
 }
+.text-redline{
+    color: var(--secondary-color);
+}
 .s{
     font-family: Oswald, sans-serif;
+    border: 2px solid #00c1e4;
+    border-radius: 5px;
+    margin: 5px;
+    padding: 3px 30px 5px ;
+    color: #01d9ff;
+    transition: 0.3s;
+    font-weight: bold;
+    background-color: white;
+}
+.s:hover{
+    background-color: #00c1e4;
+    color: white;
+}
+.s-select{
+    background-color: #00c1e4;
+    color: white;
 }
 .ad{
     font-family: Oswald, sans-serif;
     font-size: 20px;
     float: left;
 }
-.star1{
-    margin-top : 30px;
-    
+.back-btn{
+    color: var(--secondary-color);
+    transition: 0.5s;
+    cursor: pointer;
+    padding-left: 1rem;
+    padding-right: 1rem;
+    border-radius: 10px;
 }
-.s{
-    margin: 5px;
-    padding: 3px 30px 5px ;
-    background-color: white;
+.back-btn:hover{
+    box-shadow: 0px 2px 5px var(--secondary-color);
 }
 .comment{
     margin: 0;
@@ -280,14 +302,14 @@
 }
 .review_rating1 {
     font-size: 20px;
-    color: #E4002B;
+    color: var(--primary-color);
     cursor: pointer;
 }
 .rating > label {
     position: relative;
     width: 28px;
     font-size: 35px;
-    color: #ff0000;
+    color: var(--primary-color);
     cursor: pointer;
 }
 
@@ -315,18 +337,32 @@
 
 .comment-area textarea {
     resize: none;
-    border: 1px solid #ff0000;
+     border: none;
 }
 .send {
+    width: 20%;
     color: #fff;
-    background-color: #ff0000;
-    border-color: #ff0000;
+    background-color: var(--secondary-color);
+    border-color: var(--secondary-color);
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .send:hover {
     color: #fff;
-    background-color: #f50202;
-    border-color: #f50202;
+    background-color: var(--secondary-color);
+    border-color: var(--secondary-color);
+}
+.send:disabled{
+    cursor: not-allowed !important;
+}
+.cmt-input{
+    background-color: white !important;
+    border-bottom: 1px solid gray !important;
+    border-radius: none !important;
+    outline: none !important;
+    padding-left: 1.2rem;
 }
 /* Css sản phẩm cùng loại */
 .sp{
@@ -419,4 +455,7 @@
 }
 .mt-10{
     margin-top: 22rem;
+}
+.w-40{
+    width: 40%;
 }

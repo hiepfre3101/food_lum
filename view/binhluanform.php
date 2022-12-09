@@ -1,7 +1,11 @@
 <?php
 include "../model/m_comment.php";
+include "../model/m_product.php";
 $idpro= $_REQUEST['idpro'];
 $dsbl= getCommentByProductId($idpro);
+if(isset($_SESSION["idUser"])){
+    $condition = getProductUserOrdered($_SESSION["idUser"],$idpro);
+}
 $ds=loadstar($idpro);
 ?>
 <!DOCTYPE html>
@@ -23,21 +27,26 @@ $ds=loadstar($idpro);
     <body>
     <div class="container-comment">
             <h3 class="dg">Đánh Giá Sản Phẩm</h3>
-            <div class="star">
-                    <p class="ad"><?= number_format($ds['avgstar'],1)?>/5<span class="review_rating1 fa fa-star"></span></p>                  
-                </div>
-            <div class="container-star">               
-                <div class="star1">
-                    <input class="s" type="button" value="Tất Cả">
-                    <input class="s" type="button" value="5 Sao">
-                    <input class="s" type="button" value="4 Sao">
-                    <input class="s" type="button" value="3 Sao">
-                    <input class="s" type="button" value="2 Sao">
-                    <input class="s" type="button" value="1 Sao">
-                </div>                
-            </div>         
-            <div class="comment-box text-center">
-                        <h4>Để lại bình luận</h4>
+          <div class="d-flex justify-content-start flex-wrap ">
+                <div class="star w-25">
+                        <p class="ad text-redline"><?= number_format($ds['avgstar'],1)?>/5<span class="review_rating1 fa fa-star"></span></p>                  
+                    </div>
+                <div class="container-star flex-fill d-flex justify-content-start align-items-center p-2">               
+                    <div class="star1 me-5">
+                        <input class="s" type="button" value="Tất Cả" onclick="filterComment('Tat ca')">
+                        <input class="s" type="button" value="5" onclick="filterComment(5)">
+                        <input class="s" type="button" value="4" onclick="filterComment(4)">
+                        <input class="s" type="button" value="3" onclick="filterComment(3)">
+                        <input class="s" type="button" value="2" onclick="filterComment(2)">
+                        <input class="s" type="button" value="1" onclick="filterComment(1)">
+                    </div>
+                    <div class="selected-block justify-content-start align-items-center ms-7" style="display: none;">
+                        <p class="fs-3 fw-bold back-btn" onclick="filterComment()">x</p>
+                       <input class="s s-select" disabled type="button" value="">
+                    </div>                
+                </div>   
+          </div >      
+            <div class="comment-box <?php if(!isset($_SESSION["idUser"])|| $condition ==0) echo "d-none"?>">
                         <form action="<?= $_SERVER['PHP_SELF'];?>" method="post" id="form-vote">   
                       <div>
                             <div class="rating">
@@ -50,25 +59,28 @@ $ds=loadstar($idpro);
                            <p class="form-message" style="color:red;"><?php if(isset($_COOKIE["erroRate"])) echo $_COOKIE["erroRate"]?></p>
                         </div>
                         <!-- <h5 class="text-center"><i class="text-danger">Bạn đã đánh giá</i></h5> -->
-                        <div class="comment-area"> 
-                            <textarea class="form-control" placeholder="Nội dung..."
-                                rows="4" name="content" id="comment"></textarea> 
-                           <p class="form-message" style="color:red;"></p>
-                        </div>
-                        <div class="text-center mt-4"> <input class="btn btn-success send px-5" name="guibinhluan" type="submit" value="Đăng bình luận"></div>
-                                    <input type="hidden" name="idpro" value="<?=$idpro?>">
-                                    
+                       <di class="w-100 w-lg-75 d-flex justify-content-start">
+                            <div class="comment-area w-50 mt-3"> 
+                                <textarea class="w-100 fs-4 cmt-input" placeholder="Thêm bình luận ..."
+                               rows="1" name="content" id="comment"></textarea> 
+                               <p class="form-message" style="color:red;"></p>
+                            </div>
+                            <div class="ms-3 flex-fill"> 
+                                <input class="btn btn-success send px-5 py-3" <?=isset($_SESSION["idUser"])?'':'disabled'?> name="guibinhluan" type="submit" value="Đăng bình luận">
+                            </div>
+                       </di >
+                            <input type="hidden" name="idpro" value="<?=$idpro?>">
                         </form>                        
                     </div>
             <div class="cmt-wrapper p-3">
             <?php foreach($dsbl as $bl) :?>
-                <div class="comment d-flex justify-content-start mt-3 p-3">
+                <div class="comment d-flex justify-content-start mt-3 p-3 rate<?=$bl["rating"]?>">
                     <div class="comment-left w-5 h-25 rounded-circle overflow-hidden">
                         <img class="img2 w-100  rounded-circle" src=".<?=$bl['avatar']?>" alt="">
                     </div>
                     <div class="comment-right px-3">
                         <p class="name text-dark fw-bold"><?=$bl['full_name']?></p>
-                        <div class="star2">
+                        <div class="star2 all-star">
                         <?php for ($i = 1; $i <= $bl['rating']; $i++) {
                         echo '<span class="review_rating fa fa-star fs-7"></span>';
                     } ?>
@@ -113,8 +125,9 @@ $ds=loadstar($idpro);
                 rules:[
                     validator.isRequired("#comment"),
                 ]
-            })
+            });
         </script>
+        <script src="../public/js/filter-comment.js"></script>
 </html>
 
 
