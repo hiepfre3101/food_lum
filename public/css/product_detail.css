@@ -234,10 +234,13 @@
     cursor: pointer;
     padding-left: 1rem;
     padding-right: 1rem;
-    border-radius: 10px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 .back-btn:hover{
-    box-shadow: 0px 2px 5px var(--secondary-color);
+    box-shadow: 0px 0px 10px #ffb4c2;
 }
 .comment{
     margin: 0;

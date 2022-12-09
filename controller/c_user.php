@@ -25,7 +25,7 @@ function signIn($userName,$password){
             if($password == $value['pass']){
                 $_SESSION['idUser'] = $value['iduser'];
                 if($value['position'] == 0){
-                    header("location:index.php?ctr=home");
+                    header("location:".$_SERVER['HTTP_REFERER']);
                     break;
                 }else{
                     header("location:index.php?ctr=adminhome");
