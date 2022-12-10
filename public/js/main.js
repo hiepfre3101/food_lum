@@ -1,3 +1,11 @@
+const converter = new Intl.NumberFormat({
+    style:"currency",
+    currency:"VND",
+});
+const moneyNeedConvert = document.querySelector(".money-js");
+if(moneyNeedConvert){
+    moneyNeedConvert.innerText= converter.format(parseInt(moneyNeedConvert.innerText));
+}
 function mathPrice(price, action, selector, moneyUiId) {
     const quantity = document.getElementById(`${selector}`);
     let quantityAfter;
@@ -37,9 +45,8 @@ function loadTotal() {
     for (let i = 0; i < listTotal.length; i++) {
         totalMoney += parseInt(listTotal[i].innerText);
     }
-    totalOrder.value = totalMoney - totalMoney * parseInt(discount) / 100;
+    totalOrder.value =converter.format(totalMoney - totalMoney * parseInt(discount) / 100);
 }
-
 
 // js admin hiển thị ảnh khi chọn file
 const boxImg = document.querySelector(".wrapper-img");

@@ -71,7 +71,7 @@ $ds=loadstar($idpro);
                        </di >
                             <input type="hidden" name="idpro" value="<?=$idpro?>">
                         </form>                        
-                    </div>
+                </div>
             <div class="cmt-wrapper p-3">
             <?php foreach($dsbl as $bl) :?>
                 <div class="comment d-flex justify-content-start mt-3 p-3 rate<?=$bl["rating"]?>">

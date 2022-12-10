@@ -25,6 +25,7 @@ require_once("./controller/c_comment.php");
 require_once("./controller/vnpay_create_payment.php");
 require_once("./controller/c_categories.php");
 require_once("./controller/c_slider.php");
+require_once("./controller/c_admin.php");
 //@param : $ctr viết tắt controller, đây là biến để truyền lên thanh url có thể đặt tên tùy thích
 // nhưng để ctr nhằm thể hiện là đang gọi ctr nào.
 $ctr = isset($_GET["ctr"]) ? $_GET['ctr'] : '/';
@@ -252,16 +253,10 @@ switch ($ctr) {
             addSlider();
         }
         break;
-    case "adminhome" :
-    $countdm=count(loaddm());
-    $countsp=count(getAllDataProducts());
-    $countbl=count(getAllDataComment());
-    $countod=count(getAllDataOrder());
-    $countkh=count(getAllDataUser());
-    $listthongke=loadall_thongke();
-    include "./admin/view/home.php";  
-    break;
 
+    case "adminhome" :
+    showAdminHome();
+    break;
     case "list-voucher":
         showListVoucher();
         break;

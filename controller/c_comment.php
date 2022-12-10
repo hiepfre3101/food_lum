@@ -9,7 +9,7 @@ function showDetailComment()
     if (!is_array($cmt)) {
         $cmt = [];
     }
-    render("detail-comment", ["cmt" => $cmt, "countPage" => $page, 'result' => $result,'idpro'=> $idpro] , 1);
+    render("detail-comment", ["idpro" => $idpro,"cmt" => $cmt, "countPage" => $page, 'result' => $result,'idpro'=> $idpro] , 1);
 }
 
 // hiển thị phân trang

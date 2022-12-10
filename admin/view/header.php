@@ -98,7 +98,6 @@
                         </span>
                         <ul class="sub-menu">
                             <li class="sub-itme <?= ($_GET['ctr'] == 'comment-list') ? "active-menu" : "" ?>"><a href="?ctr=comment-list">Tất Cả Bình Luận</a></li>
-                            <li class="sub-itme <?= ($_GET['ctr'] == '') ? "active-menu" : "" ?>"><a href="">Thống Kê Bình Luận</a></li>
                         </ul>
                     </li>
                 </label>
@@ -127,12 +126,12 @@
             <div class="header">
                 <div class="search-header">
                     <form action="">
-                        <button class="btn" name="btn-search">
+                        <button class="btn" name="btn-search" type="button">
                             <span class="material-symbols-outlined">
                                 search
                             </span>
                         </button>
-                        <input type="text" placeholder="Search here....">
+                        <input type="text" placeholder="Coming soon...." disabled>
                     </form>
                 </div>
                 <div class="avatar">

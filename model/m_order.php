@@ -113,10 +113,19 @@ function getTotalMoney($start,$end){
   if(isset($_SESSION["idUser"])){
     $id = $_SESSION["idUser"];
     $query = "SELECT SUM(ou.total) as 'total' from order_user as ou
-    WHERE ou.date_time BETWEEN '$start' and '$end' AND ou.id_user = 3 and ou.status =3";
+    WHERE ou.date_time BETWEEN '$start' and '$end' AND ou.id_user = $id and ou.status =3";
     $stmt = $pdo->prepare($query);
     $stmt->execute();
     $data = $stmt->fetch();
     return $data;
   }
+}
+//coming soon :)
+function getFrequencyUser($id){
+  global $pdo;
+  $sql = "SELECT date_time from order_user WHERE id_user =$id and status = 3";
+  $stmt = $pdo->prepare($sql);
+  $stmt->execute();
+  $data = $stmt->fetchAll();
+  return $data;
 }

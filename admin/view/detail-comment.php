@@ -33,7 +33,7 @@
                 </tbody>
             </table>
             <!--hiên thị số trang hiện có-->
-
+          <!--đang lỗi fix pls-->
        <div style="<?php if($countPage == 1) echo "display:none;" ?>">
                 <div class="pagination">
                     <div class="pagination-left">

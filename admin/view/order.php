@@ -6,20 +6,26 @@
             <table class="table-main" id="table1">
                 <thead>
                 <tr>
-                    <th>Mã</th>
+                    <th>Ngày đặt hàng</th>
                     <th>Tên khách hàng</th>
                     <th>Số điện thoại</th>
-                    <th>Tổng đơn</th>
+                    <th>Trạng thái</th>
                     <th>Thao tác</th>
                 </tr>
                 </thead>
                 <tbody>
                 <?php foreach ($arrOrder as $value) { ?>
                     <tr>
-                        <td><?= $value['idorder'] ?></td>
+                        <td><?= $value['date_time'] ?></td>
                         <td><?= getOneDataUser($value['id_user'])['full_name'] ?></td>
                         <td><?= getOneDataUser($value['id_user'])['phone'] ?></td>
-                        <td><?= $value['total'] ?>đ</td>
+                        <td style="color:brown">
+                            <?php 
+                             if ($value['status']==1) echo "Chờ xác nhận"; 
+                             if ($value['status']==2) echo "Đang giao"; 
+                             if ($value['status']==3) echo "Giao thành công"; 
+                             ?>
+                        </td>
                         <td>
                             <a href="?ctr=detail-order&&idOrder=<?= $value['idorder'] ?>&&idUser=<?=$value['id_user']?>&&status=<?=($_GET['ctr']=="list-order")?"1":"2"?>">
                                 <button type="button">Chi tiết</button>
