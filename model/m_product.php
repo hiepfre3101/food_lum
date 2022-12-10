@@ -174,3 +174,19 @@ function getProductUserOrdered($iduser, $idpro){
     $result = $stmt->fetchAll();
     return $result;
 }
+
+function getSalesProduct(){
+    global $pdo;
+    $query = "SELECT p.*,SUM(oddt.quantity) as 'sales'
+    from products as p
+    JOIN order_detail as oddt
+    on oddt.idpro = p.idpro
+    JOIN order_user as od
+    on od.idorder = oddt.idorder
+    WHERE od.status =3 
+    GROUP BY oddt.idpro";
+     $stmt = $pdo->prepare($query);
+     $stmt->execute();
+     $result = $stmt->fetchAll();
+     return $result;
+}

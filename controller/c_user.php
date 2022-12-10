@@ -159,3 +159,14 @@ function changePass(){
     updateDataPass($pass,$idUser);
     header("location:index.php?ctr=login");
 }
+//in progress :)
+function filterLoyalUser(){
+    $dateOfWeek = 7;
+    $secondFiveDay = 86400*5;
+    $users = getAllDataUser();
+    $loyalUser = [];
+    for($i = 0; $i<count($users);$i++){
+        $timelineOrder = getFrequencyUser($users[$i]["iduser"]);
+       
+    }
+}

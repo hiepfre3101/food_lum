@@ -76,5 +76,13 @@ function checkDataEmail($email){
     return $result;
 }
 
+function getAllDataClient(){
+    global $pdo;
+    $query = "SELECT * FROM user where position = 0";
+    $stmt = $pdo->prepare($query);
+    $stmt->execute();
+    $result = $stmt->fetchAll();
+    return $result;
+}
 
 

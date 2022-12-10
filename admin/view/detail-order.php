@@ -8,6 +8,7 @@
                     <p class="name-clident">Họ và tên : <span><?= $idUser['full_name'] ?></span></p>
                     <p class="phone">Số điện thoại : <span><?= $idUser['phone'] ?></span></p>
                     <p class="address">Địa chỉ : <span><?= $idUser['address'] ?></span></p>
+                    <p class="address">Ngày đặt hàng: <span><?= $total['date_time'] ?></span></p>
                     <p class="total-price">Tổng đơng hàng : <span><?= $total['total'] ?></span>đ</p>
                     <div class="btn-status">
                         <?php if ($_GET['status'] == 1) { ?>
