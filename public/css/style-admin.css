@@ -141,7 +141,7 @@
 }
 
 .sub-menu {
-    transform: translateX(-100%);
+    transform: translateX(-150%);
     width: 100%;
     height: 0px;
     flex: 1 0 100%;

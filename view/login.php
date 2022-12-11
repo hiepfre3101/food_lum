@@ -11,8 +11,8 @@
                     <h4 class="card-title mb-4">ĐĂNG NHẬP</h4>
                     <form class="form-login" action="?ctr=check-login" method="post">
                         <div class="form-group">
-                            <label for="email" class="form-label">Tài khoản</label>
-                            <input name="username" class="form-control form-input" type="text">
+                            <label for="email" class="form-label">Email</label>
+                            <input name="email" class="form-control form-input" type="text">
                             <p class="form-message" style="color: red"><?= isset($_GET['fail']) ? "Sai tên đăng nhập hoặc mật khẩu" : "" ?></p>
                         </div> <!-- form-group// -->
                         <div class="form-group">
