@@ -13,7 +13,7 @@ function displayCart()
         header("location:?ctr=login");
         die;
     }
-    $arrProduct = getBestSeller();
+    $arrProduct = getSellerOption("DESC");
     render("cart", ["arrCart" => $arrCarrt, "vouchers" => $vouchers,"arrProduct"=>$arrProduct], 0);
 }
 

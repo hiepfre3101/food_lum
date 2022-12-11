@@ -120,12 +120,4 @@ function getTotalMoney($start,$end){
     return $data;
   }
 }
-//coming soon :)
-function getFrequencyUser($id){
-  global $pdo;
-  $sql = "SELECT date_time from order_user WHERE id_user =$id and status = 3";
-  $stmt = $pdo->prepare($sql);
-  $stmt->execute();
-  $data = $stmt->fetchAll();
-  return $data;
-}
+
