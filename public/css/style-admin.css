@@ -363,6 +363,9 @@
 
 .table-main td {
     width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .table-main tr td:first-child {
@@ -926,9 +929,21 @@ button:disabled:hover {
     font-size: 50px;
     color: #ffff;
 }
-#chartBestSeller{
-    height: 400px;
-}
-.chart-block{
-    height: 400px;
-}
+.title-yellow::after{
+    content: "";
+    position: absolute;
+    width: 1.6rem;
+    height: 3rem;
+    border-radius: 5px;
+    background-color: rgb(219, 227, 0);
+    left: -45px;
+  }
+.title-green::after{
+    content: "";
+    position: absolute;
+    width: 1.6rem;
+    height: 3rem;
+    border-radius: 5px;
+    background-color: rgb(0, 227, 117);
+    left: -45px;
+  }

@@ -6,13 +6,15 @@ function showAdminHome(){
     $countbl=count(getAllDataComment());
     $countod=count( getDataOrderOption($idUser, 1));
     $countkh=count(getAllDataClient());
-    $arrProduct = getSalesProduct();
+    $badProducts= getSellerOption("ASC");
+    $bestProducts = getSellerOption("DESC");
     render("home",["countdt"=>$countdt,
                    "countsp"=>$countsp,
                    "countbl"=>$countbl,
                    "countod"=>$countod,
                    "countkh"=>$countkh,
-                   "arrProduct"=>$arrProduct],1);
+                   "badProducts"=>$badProducts,
+                   "bestProducts"=>$bestProducts,],1);
 }
 
 
