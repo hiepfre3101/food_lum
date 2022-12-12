@@ -42,7 +42,7 @@
             <div class="row-form">
                 <div class="row-left"><label for="img-form">Ảnh sản phẩm : </label></div>
                 <div class="row-rigth">
-                    <label for="img-form" class="wrapper-img">
+                    <label for="img-form" class="wrapper-img check">
                         <img src="https://picsum.photos/200/300" alt="">
                     </label>
                     <input  type="file" style="transform: translateY(-100000px)" class="img-form" name="avatar" id="img-form" >

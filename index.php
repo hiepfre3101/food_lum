@@ -60,7 +60,7 @@ switch ($ctr) {
         break;
     case "check-login":
         getInfoHeader();
-        signIn($_POST['username'], $_POST['password']);
+        signIn($_POST['email'], $_POST['password']);
         break;
 //        lấy lại mật khẩu
     case "re-pass":

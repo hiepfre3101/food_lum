@@ -10,18 +10,24 @@ function signUp(){
         "position" => 0,
         "avatar" => "./public/img/".$_FILES["avatar"]["name"]
     ];
-    addUser($data);
-    move_uploaded_file($_FILES["avatar"]["tmp_name"],"./public/img/".$_FILES["avatar"]["name"]);
-    if(isset($_POST['admin-add-user'])){
-        header("location:index.php?ctr=user-list");
-    }else{
-        header("location:index.php");
+    $email =$data['email'];
+    if(empty(checkDataEmail($email))){
+        header("location:index.php?ctr=sign-up&fail");
+    }else {
+        addUser($data);
+        move_uploaded_file($_FILES["avatar"]["tmp_name"],"./public/img/".$_FILES["avatar"]["name"]);
+        if(isset($_POST['admin-add-user'])){
+            header("location:index.php?ctr=user-list");
+        }else{
+            header("location:index.php");
+        }
     }
+
 }
 function signIn($userName,$password){
     $arrUser = getAllDataUser();
     foreach ($arrUser as $value){
-        if($userName == $value['user_name']){
+        if($userName == $value['email']){
             if($password == $value['pass']){
                 $_SESSION['idUser'] = $value['iduser'];
                 if($value['position'] == 0){

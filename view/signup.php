@@ -23,7 +23,7 @@
             <div class="form-group">
               <label for="email" class="form-label">Email</label>
               <input name="email" class="form-control form-input" type="text" id="email">
-              <p class="form-message"></p>
+              <p class="form-message" style="color: red"><?=isset($_GET['fail'])?"Email đã tồn tại trên hệ thống":""?></p>
             </div> <!-- form-group// -->
             <div class="form-group">
               <label for="email" class="form-label">Số điện thoại</label>
