@@ -11,9 +11,11 @@ function signUp(){
         "avatar" => "./public/img/".$_FILES["avatar"]["name"]
     ];
     $email =$data['email'];
-    if(empty(checkDataEmail($email))){
+    $_SESSION["valueInput"] = $data;
+    if(!empty(checkDataEmail($email))){
         header("location:index.php?ctr=sign-up&fail");
     }else {
+        unset($_SESSION["valueInput"]);
         addUser($data);
         move_uploaded_file($_FILES["avatar"]["tmp_name"],"./public/img/".$_FILES["avatar"]["name"]);
         if(isset($_POST['admin-add-user'])){
@@ -81,6 +83,13 @@ function showUserProfile(){
     if(isset($_SESSION["idUser"])){
         $user = getOneDataUser($_SESSION["idUser"]);
          render("user-profile",["user"=>$user],0);
+         die;
+    }
+   render('login',[],0);
+}
+function showChangePass(){
+    if(isset($_SESSION["idUser"])){
+         render("change_pass",[],0);
          die;
     }
    render('login',[],0);
@@ -157,6 +166,20 @@ function showFormCheckEmail(){
         $idUser = checkDataEmail($email)['iduser'];
         header("location:mail/send_mail.php?email=$email&&iduser=$idUser");
     }
+}
+
+function saveChangePass(){
+    $passBefore = $_POST["password"];
+    $idUser = $_SESSION["idUser"];
+    $user = getOneDataUser($idUser);
+    if($passBefore != $user["pass"]){
+        header("location:?ctr=change-pass&fail");
+        die;
+    };
+    $newPass = $_POST["new_pass"];
+    updateDataPass($newPass,$idUser);
+    logOunt();
+    header("location:index.php?ctr=login");
 }
 
 function changePass(){

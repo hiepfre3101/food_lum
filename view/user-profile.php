@@ -23,7 +23,7 @@
       </div>
       <div class="list-wrapper col-lg-9 col-12 p-5 ">
          <p class="text-dark fw-semibold fs-1 title-orange position-relative ms-4">Hồ sơ của tôi</p>
-         <form enctype="multipart/form-data" method="post" action="?ctr=save-update-user" class="mt-5 row">
+         <form enctype="multipart/form-data" method="post" action="?ctr=save-update-user" class="mt-5 row" id="form-user">
             <div class="col-12 col-lg-7">
                <div class="form-group d-flex  justify-content-start">
                   <label class="w-25">Tên đăng nhập</label>
@@ -60,6 +60,7 @@
                      <p class="form-message"></p>
                   </div>
                </div>
+               <a href="?ctr=change-pass" class="fs-3 d-flex justify-content-end p-2">Đổi mật khẩu</a>
                <button type="submit" class="btn-update">Lưu</button>
             </div>
             <div class="col-12 col-lg-5 px-3">
@@ -72,5 +73,19 @@
       </div>
    </div>
 </div>
-
+<script src="./public/js/validate.js"></script>
+<script type="text/javascript">
+   validator({
+      form:"#form-user",
+      erroSelector:".form-message",
+      rules:[
+         validator.isRequired("#username"),
+         validator.isRequired("#fullname"),
+         validator.isRequired("#phone"),
+         validator.isRequired("#email"),
+         validator.isRequired("#address"),
+         validator.isEmail("#email"),
+      ]
+   })
+</script>
 <?php include_once("./view/footer.php") ?>

@@ -12,27 +12,32 @@
           <form class="form-signup" action="?ctr=save-user" method="post" enctype="multipart/form-data">
             <div class="form-group">
               <label for="email" class="form-label">Tên tài khoản</label>
-              <input name="user_name" class="form-control form-input" type="text" id="username">
+              <input name="user_name" class="form-control form-input" type="text" id="username" 
+              value="<?=isset($_SESSION["valueInput"])?$_SESSION["valueInput"]["user_name"]:''?>">
               <p class="form-message"></p>
             </div> <!-- form-group// -->
             <div class="form-group">
               <label for="email" class="form-label">Họ và tên</label>
-              <input name="full_name" class="form-control form-input" type="text" id="fullname">
+              <input name="full_name" class="form-control form-input" type="text" id="fullname"
+              value="<?=isset($_SESSION["valueInput"])?$_SESSION["valueInput"]["full_name"]:''?>">
               <p class="form-message"></p>
             </div> <!-- form-group// -->
             <div class="form-group">
               <label for="email" class="form-label">Email</label>
-              <input name="email" class="form-control form-input" type="text" id="email">
+              <input name="email" class="form-control form-input" type="text" id="email"
+              value="<?=isset($_SESSION["valueInput"])?$_SESSION["valueInput"]["email"]:''?>">
               <p class="form-message" style="color: red"><?=isset($_GET['fail'])?"Email đã tồn tại trên hệ thống":""?></p>
             </div> <!-- form-group// -->
             <div class="form-group">
               <label for="email" class="form-label">Số điện thoại</label>
-              <input name="phone" class="form-control form-input" type="text" id="phone">
+              <input name="phone" class="form-control form-input" type="text" id="phone"
+              value="<?=isset($_SESSION["valueInput"])?$_SESSION["valueInput"]["phone"]:''?>">
               <p class="form-message"></p>
             </div> <!-- form-group// -->
             <div class="form-group">
               <label for="email" class="form-label">Địa chỉ</label>
-              <input name="address" class="form-control form-input" type="text" id="address">
+              <input name="address" class="form-control form-input" type="text" id="address"
+              value="<?=isset($_SESSION["valueInput"])?$_SESSION["valueInput"]["address"]:''?>">
               <p class="form-message"></p>
             </div> <!-- form-group// -->
             <div class="form-group">
