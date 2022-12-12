@@ -129,3 +129,82 @@
 .bg-white{
     background-color: white;
 }
+@keyframes wiggle {
+    0%, 7% {
+      transform: rotateZ(0);
+    }
+    15% {
+      transform: rotateZ(-15deg);
+    }
+    20% {
+      transform: rotateZ(10deg);
+    }
+    25% {
+      transform: rotateZ(-10deg);
+    }
+    30% {
+      transform: rotateZ(6deg);
+    }
+    35% {
+      transform: rotateZ(-4deg);
+    }
+    40%, 100% {
+      transform: rotateZ(0);
+    }
+}
+
+.cart-wrap{
+    animation: wiggle 2s linear 3;
+}
+@keyframes firework {
+    0% { 
+      transform: translate(-50%, 0);
+      width: 0.5vmin;
+      height: 1vh;
+      opacity: 1;
+    }
+    50% { 
+      width: 0.5vmin;
+      height: 1vh;
+      opacity: 1;
+    }
+    100% { 
+      width: 15vmin; 
+      height: 1vh;
+      opacity: 0; 
+      display: none;
+    }
+  }
+.firework,
+.firework::after,
+.firework::before{
+    --top: 60vh;
+    content: "";
+    position: absolute;
+    border-radius: 4px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width:2vmin;
+    height: 1vmin;
+    aspect-ratio: 1;
+    background: 
+    radial-gradient(circle, #ff0 0.5vmin, #0000 0) 50% 00%,
+    radial-gradient(circle, rgb(255, 81, 0) 0.8vmin, #0000 0) 00% 50%,
+    radial-gradient(circle, rgb(102, 255, 0) 0.75vmin, #0000 0) 50% 99%,
+    radial-gradient(circle, rgb(0, 255, 179) 0.3vmin, #0000 0) 99% 50%,
+    radial-gradient(circle, rgb(0, 102, 255) 0.9vmin, #0000 0) 80% 90%,
+    radial-gradient(circle, rgb(76, 0, 255) 1vmin, #0000 0) 95% 90%,
+    radial-gradient(circle, rgb(255, 0, 255) 0.6vmin, #0000 0) 10% 60%;
+    background-size: 3vmin 3vmin;
+    background-repeat: no-repeat;
+    animation: firework 1.5s 3;
+    z-index: -1;
+}
+.firework::before {
+    transform: translate(-50%, -50%) rotate(45deg) !important; 
+  }
+  
+  .firework::after {
+    transform: translate(-50%, -50%) rotate(-45deg) !important;
+  }

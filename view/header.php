@@ -34,8 +34,8 @@
             <div class="offcanvas-header w-100 d-lg-none d-flex justify-content-between border-b-gray py-3">
                 <h1 class="offcanvas-title fw-bold" id="offcanvasNavbarLabel">DANH MỤC</h1>
                 <div class="d-block d-lg-none">
-                    <a href="#" class="text-dark text-decoration-none fw-semibold">Đăng nhập</a>/
-                    <a href="#" class="text-dark text-decoration-none fw-semibold">Đăng ký</a> ->
+                    <a href="?ctr=login" class="text-dark text-decoration-none fw-semibold">Đăng nhập</a>/
+                    <a href="?ctr=sign-up" class="text-dark text-decoration-none fw-semibold">Đăng ký</a> ->
                 </div>
                 <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
             </div>
@@ -52,8 +52,7 @@
                         <img src="./public/img/slider3.jpg" alt="..." class="d-lg-none w-30 rounded-3 ms-3">
                     </li>
                 </ul>
-                <div class="w-50 d-lg-flex d-none d-lg-block" style="height:30px;">
-                    <a href="?ctr=user-profile" class="d-block flex-fill">
+                <div class="w-50 d-lg-flex d-none d-lg-block justify-content-end " style="height:30px;">
                         <div class="fa-solid fa-circle-user fs-1 px-3 d-none d-lg-block text-dark icon-user position-relative"
                              role="button">
                             <div class="menu-child  bg-primary position-absolute p-3">
@@ -72,9 +71,9 @@
                                 <?php } ?>
                             </div>
                         </div>
-                    </a>
-                    <a href="?ctr=cart" class="d-none d-lg-block">
+                    <a href="?ctr=cart" class="d-none d-lg-block <?=$countCart >0 ? 'cart-wrap':''?>">
                         <i class="fa-solid fa-burger fs-1 cart text-dark" role="button">
+                            <?=$countCart> 0?'<section class="firework"></section>':''?>
                             <div class="cart-after"><?= $countCart ?></div>
                         </i>
                     </a>
