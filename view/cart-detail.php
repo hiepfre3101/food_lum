@@ -90,7 +90,7 @@
             <div class="d-flex flex-column align-items-center px-4 fw-bold">
                 <p class="w-100 d-flex justify-content-between">Tổng đơn hàng <span class="tdh1"><?= $_POST['total'] ?>đ</span></p>
                 <p class="w-100 d-flex justify-content-between">Phí giao hàng <span class="tdh1">10000đ</span></p>
-                <p class="w-100 d-flex justify-content-between">Tổng thanh toán <span class="tdh1"><?= $_POST['total'] += 10000 ?>đ</span></p>
+                <p class="w-100 d-flex justify-content-between">Tổng thanh toán <span class="tdh1"><?= $_POST['total']+10000?>đ</span></p>
                 <input hidden type="text" name="total" value="<?= $_POST['total'] ?>">
                 <input hidden type="text" name="voucherId" value="<?= $_POST['voucherId'] ?>">
                 <input hidden type="text" name="idUser" value="<?= $_SESSION['idUser'] ?>">

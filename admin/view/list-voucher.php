@@ -11,6 +11,7 @@
                 <th>Giảm giá (%)</th>
                 <th>Số Lượng</th>
                 <th>Điều kiện sử dụng</th>
+                <th>Ngày bắt đầu</th>
                 <th>Ngày hết hạn</th>
                 <th>Thao tác</th>
             </tr>
@@ -21,6 +22,7 @@
                     <td><?=$value['discount']?></td>
                     <td><?= $value['quantity'] ?></td>
                     <td><?= $value['conditionVoucher'] ?></td>
+                    <td><?= $value['start_date'] ?></td>
                     <td><?= $value['exp_date'] ?></td>
                     <td>
                         <a onclick="return confirm('Bạn có muốn xóa chứ ?')" href="?ctr=delete-voucher&&idDelete=<?=$value['idvc']?>">

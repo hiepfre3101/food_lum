@@ -45,7 +45,7 @@ function loadTotal() {
     for (let i = 0; i < listTotal.length; i++) {
         totalMoney += parseInt(listTotal[i].innerText);
     }
-    totalOrder.value =converter.format(totalMoney - totalMoney * parseInt(discount) / 100);
+    totalOrder.value =totalMoney - totalMoney * parseInt(discount) / 100;
 }
 
 // js admin hiển thị ảnh khi chọn file

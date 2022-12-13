@@ -78,7 +78,14 @@ function getImg($id){
     $arrImg = $stmt->fetchAll();
     return $arrImg;
 }
-
+function getAllImg($id){
+    global $pdo;
+    $query = "SELECT * FROM img_product WHERE idpro = $id";
+    $stmt = $pdo->prepare($query);
+    $stmt->execute();
+    $arrImg = $stmt->fetchAll();
+    return $arrImg;
+}
 function getAllProductWithCategory($idCate){
     global $pdo;
     $query = "SELECT p.*,cate.categories_name
@@ -129,7 +136,7 @@ function getAllProductCategory($id){
 
 function updateDataImgProduct($data){
     global $pdo;
-    $query = "UPDATE img_product SET position=:position ,src=:src WHERE idpro=:idpro";
+    $query = "UPDATE img_product SET src=:src WHERE id=:id";
     $stmt = $pdo->prepare($query);
     $stmt->execute($data);
 }
