@@ -9,7 +9,7 @@
                     <p class="phone">Số điện thoại : <span><?= $idUser['phone'] ?></span></p>
                     <p class="address">Địa chỉ : <span><?= $idUser['address'] ?></span></p>
                     <p class="address">Ngày đặt hàng: <span><?= $total['date_time'] ?></span></p>
-                    <p class="total-price">Tổng đơng hàng : <span><?= $total['total'] ?></span>đ</p>
+                    <p class="total-price">Tổng đơn hàng : <span><?= $total['total'] ?></span>đ</p>
                     <div class="btn-status">
                         <?php if ($_GET['status'] == 1) { ?>
                             <input type="radio" value="1" hidden

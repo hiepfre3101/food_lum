@@ -106,22 +106,22 @@ $data = [
 ];
 updateProduct($data);
 //    cập nhật ảnh sản phẩm
-for ($i = 1; $i < 4; $i++) {
+$imgs = getAllImg($idpro);
+for ($i = 1; $i < (count($imgs)+1); $i++) {
     $img = $_FILES['' . "img-product-add-$i" . ''];
     $imgName = "./public/img/" . $img['name'];
     if ($img['size'] > 0) {
         $imgData = [
+            "id"=>$imgs[$i-1]["id"],
             "src" => $imgName,
-            "position" => $i,
-            "idpro" => $idpro
         ];
+        
         move_uploaded_file($img['tmp_name'], $imgName);
         updateDataImgProduct($imgData);
     }
 }
     header("location:index.php?ctr=product-list");
 }
-
 function deleteAllProduct()
 {
     if (isset($_GET['idDelete'])) {
