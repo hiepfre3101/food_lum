@@ -86,7 +86,7 @@ switch ($ctr) {
         getInfoHeader();
         checkCookie();
         break;
-    case "change-pass":
+    case "save-change-pass":
         changePass();
         break;
 //        kết thúc lấy lại mật khẩu

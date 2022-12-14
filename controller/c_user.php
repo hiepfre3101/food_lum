@@ -185,6 +185,7 @@ function saveChangePass(){
 function changePass(){
     $pass =$_POST['pass'];
     $idUser = $_POST['idUserChangePass'];
+    echo $pass."=hihih=".$idUser;
     updateDataPass($pass,$idUser);
     header("location:index.php?ctr=login");
 }
