@@ -69,10 +69,10 @@ function updateDataPass($pass,$id){
 
 function checkDataEmail($email){
     global $pdo;
-    $query = "SELECT iduser FROM user WHERE email = '$email'";
+    $query = "SELECT iduser FROM user WHERE email='$email'";
     $stmt = $pdo->prepare($query);
     $stmt->execute();
-    $result = $stmt->fetchAll();
+    $result = $stmt->fetch();
     return $result;
 }
 

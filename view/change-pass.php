@@ -9,7 +9,7 @@
                 <div class="col-lg-7 p-5">
                     <div class="card-body">
                         <h4 class="card-title mb-4">NHẬP MẬT KHẨU MỚI</h4>
-                        <form class="form-change-pass" action="?ctr=change-pass" method="post">
+                        <form class="form-change-pass" action="?ctr=save-change-pass" method="post">
                             <input type="text" name="idUserChangePass" value="<?=$idUserChagePass[0]?>" hidden>
                             <div class="form-group">
                                 <label for="otp" class="form-label">Nhập mật khẩu mới</label>
