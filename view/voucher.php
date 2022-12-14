@@ -32,7 +32,7 @@
                   <a class="nav-link fs-3 text-dark" href="?ctr=voucher-user">Của bạn</a>
                </li>
             </ul>
-            <div class="row mt-4">
+            <div class="row mt-4" >
                <?php foreach ($vouchers as $value) : ?>
                   <div class="col-lg-6 col-12 voucher shadow-lg d-flex justify-content-between mb-5">
                      <img src="./public/img/voucher<?php if ($value['discount'] > 20) {
