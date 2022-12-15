@@ -78,7 +78,7 @@ $ds=loadstar($idpro);
                     <div class="comment-left w-5 h-25 rounded-circle overflow-hidden">
                         <img class="img2 w-100  rounded-circle" src=".<?=$bl['avatar']?>" alt="">
                     </div>
-                    <div class="comment-right px-3">
+                    <div class="comment-right px-3 d-flex flex-column align-items-start">
                         <p class="name text-dark fw-bold"><?=$bl['full_name']?></p>
                         <div class="star2 all-star">
                         <?php for ($i = 1; $i <= $bl['rating']; $i++) {

@@ -16,13 +16,11 @@ function deleteUser($id)
     $stmt->execute();
 }
 
-function updateUser($data = [])
+function updateUser($data)
 {
-//    không cho cập nhật email và position
-// cập nhật password riêng để tìm hiểu php mailer đã !
-$iduser = $_SESSION["idUser"];
+    $iduser = $_SESSION["idUser"];
     global $pdo;
-    $query = "UPDATE user SET user_name=?, full_name=?, phone=?, address=?, avatar=? where iduser=$iduser";
+    $query = "UPDATE user SET full_name=?, email=?, phone=?, address=?, avatar=? where iduser=$iduser";
     $stmt = $pdo->prepare($query);
     $stmt->execute($data);
 }

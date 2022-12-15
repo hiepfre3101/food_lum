@@ -100,6 +100,10 @@ function saveUpdateUser(){
     $avatar="";
     $user = getOneDataUser($_SESSION["idUser"]);
     $avatarSize = $_FILES["avatar"]["size"];
+     if(checkDataEmail($email)["iduser"] != $_SESSION["idUser"] && checkDataEmail($email)!=null){
+        header("location:?ctr=user-profile&&fails");
+        die;
+     };
     if($avatarSize == 0){
       $avatar = $user["avatar"];
     }else{
@@ -107,8 +111,8 @@ function saveUpdateUser(){
     }
     move_uploaded_file($_FILES["avatar"]["tmp_name"],"public/img/".$_FILES["avatar"]["name"]);
     $data =[
-       $user_name,
        $full_name,
+       $email,
        $phone,
        $address,
        $avatar
