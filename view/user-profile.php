@@ -43,7 +43,7 @@
                   <label class="w-25">Email</label>
                   <div class="flex-fill ms-3">
                      <input type="text input-not-border" name="email" id="email" class="form-control input-profile" value="<?= $user["email"] ?>">
-                     <p class="form-message"></p>
+                     <p class="form-message" style="color:red;"><?=isset($_GET["fails"])?'Email đã tồn tại!':''?></p>
                   </div>
                </div>
                <div class="form-group d-flex align-items-center justify-content-start">

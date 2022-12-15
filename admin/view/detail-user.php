@@ -9,7 +9,6 @@
                     <p class="phone">Số điện thoại : <span><?= getOneDataUser($_GET['id'])['phone'] ?></span></p>
                     <p class="address">Địa chỉ : <span><?= getOneDataUser($_GET['id'])['address'] ?></span></p>
                     <p class="total-price">Địa chỉ email : <span><?= getOneDataUser($_GET['id'])['email'] ?></span></p>
-                    <button type="submit">Cập nhật thông tin</button>
                 </form>
             </div>
             <div class="list-product-order">
