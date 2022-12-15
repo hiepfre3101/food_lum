@@ -126,6 +126,7 @@ function showFormAddUser(){
 function adminDeleteUser()
 {
     if (isset($_GET['idDelete'])) {
+        deleteOrder($_GET['idDelete']);
         deleteUser($_GET['idDelete']);
     } else {
         $arrUser = getAllDataUser();
@@ -133,6 +134,7 @@ function adminDeleteUser()
             if ($value == "on") {
                 foreach ($arrUser as $valueUser) {
                     if ($valueUser['iduser'] = $key) {
+                        deleteOrder($valueUser['iduser']);
                         deleteUser($valueUser['iduser']);
                     }
                 }

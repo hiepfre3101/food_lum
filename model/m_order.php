@@ -121,3 +121,9 @@ function getTotalMoney($start,$end){
   }
 }
 
+function deleteOrder($id){
+    global $pdo;
+    $query = "DELETE FROM order_user WHERE id_user=$id";
+    $stmt = $pdo->prepare($query);
+    $stmt->execute();
+}
