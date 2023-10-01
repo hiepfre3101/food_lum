@@ -5,15 +5,15 @@ include_once("./view/header.php");
 <div>
     <div id="carouselHeroInterval" class="carousel slide overflow-hidden carousel-size " data-bs-ride="carousel">
         <div class="carousel-inner h-100">
-            <?php for ($i = 0; $i < count($arrSlider); $i++){?>
-            <a class="carousel-item <?=($i==0)?"active":""?> h-100" data-bs-interval="4000" href="#">
-                <img src="<?=$arrSlider[$i]['image']?>" class="d-block img-fluid img-slide" alt="...">
-                <div class="carousel-caption d-none d-md-block">
-                    <h3><?=$arrSlider[$i]['title']?></h3>
-                    <p><?=$arrSlider[$i]['description']?></p>
-                </div>
-            </a>
-            <?php }?>
+            <?php for ($i = 0; $i < count($arrSlider); $i++) { ?>
+                <a class="carousel-item <?= ($i == 0) ? "active" : "" ?> h-100" data-bs-interval="4000" href="#">
+                    <img src="<?= $arrSlider[$i]['image'] ?>" class="d-block img-fluid img-slide" alt="...">
+                    <div class="carousel-caption d-none d-md-block">
+                        <h3><?= $arrSlider[$i]['title'] ?></h3>
+                        <p><?= $arrSlider[$i]['description'] ?></p>
+                    </div>
+                </a>
+            <?php } ?>
         </div>
         <button class="carousel-control-prev position-absolute top-50 ms-5 translate-middle rounded-4  h-10 w-10 btn-prev" type="button" data-bs-target="#carouselHeroInterval" data-bs-slide="prev">
             <span class="carousel-control-prev-icon text-white fs-1 fw-bold" aria-hidden="true"></span>
@@ -31,13 +31,13 @@ include_once("./view/header.php");
         </h1>
         <!--danh mục sản phẩm-->
         <div class="row mt-5">
-            <?php for($i=0;$i<count($arrCategory);$i++) { ?>
+            <?php for ($i = 0; $i < count($arrCategory); $i++) { ?>
                 <div class="col-xxl-2 col-lg-3 col-6 col-sm-4  mb-5 rounded-6">
                     <div class="card rounded-6 overflow-hidden shadow-sm">
                         <!--Đang sử dụng đường dẫn ảnh tamj thời cần chinh ảnh său khi làm phần admin-->
                         <div class="overflow-hidden"><img src="<?= $arrCategory[$i]['image'] ?>" class="card-img-top img-col rounded-top-6" alt="..."></div>
                         <div class="card-body">
-                            <a href="?ctr=menu#menu-<?=$i+1?>" class="d-flex justify-content-start align-items-center fs-3 fw-bold text-dark text-uppercase"><?= $arrCategory[$i]['categories_name'] ?></a>
+                            <a href="?ctr=menu#menu-<?= $i + 1 ?>" class="d-flex justify-content-start align-items-center fs-3 fw-bold text-dark text-uppercase"><?= $arrCategory[$i]['categories_name'] ?></a>
                         </div>
                     </div>
                 </div>
@@ -67,7 +67,7 @@ include_once("./view/header.php");
                                 <p class="card-text overflow-hidden mh-50 mw-50"><?= $value['descripton'] ?></p>
                                 <a href="?ctr=product-detail&&id=<?= $value['idpro'] ?>" class="fs-4 text-decoration-none ">...Xem chi tiết</a>
                             </div>
-                            <a href="?ctr=add-cart&id=<?= $value['idpro'] ?>" class="btn bg-secondary text-white rounded-6 fs-3 w-50 fw-semibold">Thêm</a>
+                            <button class="btn bg-secondary text-white rounded-6 fs-3 w-50 fw-semibold" onclick="addToCart(<?= $value['idpro'] ?>,1,<?= $value['product_price'] ?>,'<?= getImg($value['idpro'])[0]['src'] ?>','<?= $value['product_name'] ?>')">Thêm</button>
                         </div>
                     </div>
                 </div>
@@ -75,7 +75,7 @@ include_once("./view/header.php");
         </div>
     </div>
 </div>
-<div style="<?php if($countPage == 1)echo "display:none;"?>">
+<div style="<?php if ($countPage == 1) echo "display:none;" ?>">
     <div class="pagination">
         <div class="pagination-left">
             <a href="<?php if (isset($_GET['page']) && $_GET['page'] >= 2) {
@@ -122,4 +122,5 @@ include_once("./view/header.php");
 </div>
 </div>
 </div>
+<script src="./public/js/cart.js"></script>
 <?php include_once("./view/footer.php") ?>
