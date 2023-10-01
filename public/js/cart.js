@@ -128,16 +128,8 @@ const displayCart = () => {
                                 },${product.idProduct})"> - </span>
                                 <input onChange ="changeProductInCart(${
                                   product.idProduct
-                                },${this.value})" type='number' name="${
-      product.idProduct
-    }" value='${
-      product.quantity
-    }' class='form-control text-center border h-100 fs-3 flex-fill ms-2 me-2' id="${
-      product.idProduct
-    }" min='1' max='100'  />
-                                <span class='input-group-text btn btn-success h-100 d-flex align-items-center justify-content-center fw-bold fs-3'  onclick="mathPrice('plus',${
-                                  product.idProduct
-                                },${product.idProduct})"> + </span>
+                                },${this.value})" type='number' name="${product.idProduct}" value='${product.quantity}' class='form-control text-center border h-100 fs-3 flex-fill ms-2 me-2' id="${product.idProduct}" min='1' max='100'  />
+                                <span class='input-group-text btn btn-success h-100 d-flex align-items-center justify-content-center fw-bold fs-3'  onclick="mathPrice('plus',${product.idProduct},${product.idProduct})"> + </span>
                             </div>
                             <!--lấy giá ở đây-->
                             <p class='pr w-25 fs-3 d-flex align-items-center ms-3'>
